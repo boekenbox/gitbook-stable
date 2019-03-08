@@ -12,7 +12,7 @@ Notifications work by first creating a personal bot on Telegram, Gunbot then con
 
 This is how to create a bot:
 
-1. Talk to [@botfather](https://telegram.me/botfather). Create a new bot with the command /newbot and choose a name and username for your bot. Save the bot token shown
+1. Talk to [@botfather](https://telegram.me/botfather). Create a new bot with the command /newbot and choose a name and username for your bot. Save the bot token shown.
 2. Talk to [@myidbot](https://telegram.me/myidbot) to see your Chat ID, save it.
 3. Enable Telegram notifications for Gunbot, and enter the token and ID you've just gathered.
 4. Start a chat with the username you've picked for your bot, and hit the start button. If you don't see a start button, write "/start" and click on it afterwards.
