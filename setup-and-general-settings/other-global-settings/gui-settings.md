@@ -6,9 +6,7 @@ The GUI Notifications menu lets you change which notifications are shown.
 
 To change them, go to **Settings** &gt; **GUI Notifications**.
 
-![](../../.gitbook/assets/image%20%2821%29.png)
-
-
+![](../../.gitbook/assets/image-21.png)
 
 ### Settings descriptions
 
@@ -239,6 +237,4 @@ In case you need to reset 2FA, set this to false.
 Parameter name in `config.js`: `twoFA`
 {% endtab %}
 {% endtabs %}
-
-#### 
 

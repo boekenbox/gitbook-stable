@@ -1,10 +1,8 @@
 # Order types
 
-Throughout this wiki you will notice that some settings apply to specific "order types". The table below explains these order types. 
+Throughout this wiki you will notice that some settings apply to specific "order types". The table below explains these order types.
 
 It's OK if you don't fully understand all order types at this moment, just be aware that there are different order types and settings often only affect some types.
-
-
 
 | Order type | Quick explanation |
 | :--- | :--- |

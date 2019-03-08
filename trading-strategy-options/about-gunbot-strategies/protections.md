@@ -8,7 +8,7 @@ Trading methods have a few common protections:
 
 See the tables below for details about protections/constraints per method.
 
-##  Protections for regular trading \(spot\)
+## Protections for regular trading \(spot\)
 
 | Method | Allows for pyramid buying? | Protection against buying above EMA? | Protection against selling below break-even point? |
 | :--- | :--- | :--- | :--- |
@@ -27,8 +27,6 @@ See the tables below for details about protections/constraints per method.
 | `stepgain` | no | yes | yes |
 | `tsa` | no | no | yes |
 | `tssl` | no | yes | yes |
-
-####  
 
 ## Protections for margin trading
 

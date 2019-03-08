@@ -1,6 +1,6 @@
 # How to enable SSL/TLS
 
-### Run the GUI on https with a self-signed certificate
+## Run the GUI on https with a self-signed certificate
 
 To run the GUI on https, you'll need a certificate. Below are instructions to generate a self-signed certificate on Windows, Mac and Linux.
 
@@ -14,11 +14,11 @@ When connecting to the GUI for the first time, you'll probably encounter a brows
 
 **Windows**
 
-1.  [Download](https://slproweb.com/products/Win32OpenSSL.html) and install OpenSSL for windows
+1. [Download](https://slproweb.com/products/Win32OpenSSL.html) and install OpenSSL for windows
 2. Go to the following folder: C:\OpenSSL-Win64\bin\
 3. Right click "openssl" and run as administrator, a cmd window opens
 4. Run the following command: `req -newkey rsa:2048 -nodes -keyout localhost.key -x509 -days 365 -out localhost.crt` \(you'll be asked to fill in some details, you can do this or leave the fields blank by hitting enter several times\)
-5. Copy the `localhost.key` and `localhost.crt` from C:\OpenSSL-Win64\bin\ to your Gunbot folder
+5. Copy the `localhost.key` and `localhost.crt` from C:\OpenSSL-Win64\bin to your Gunbot folder
 
 **Mac**
 

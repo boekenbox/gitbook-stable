@@ -4,27 +4,23 @@ Monitoring and evaluating your trades is an important aspect of bot trading. Gun
 
 ## Charts
 
-The built in charts exclusively use data available to the Gunbot Core. You can let it draw every indicator that Gunbot offers. Trades are visualized on the chart. 
+The built in charts exclusively use data available to the Gunbot Core. You can let it draw every indicator that Gunbot offers. Trades are visualized on the chart.
 
-Charts go as far back as the exchange API returns candles to your bot. 
+Charts go as far back as the exchange API returns candles to your bot.
 
-![](../.gitbook/assets/image%20%282%29.png)
-
-
+![](../.gitbook/assets/image-2.png)
 
 ## Dashboard
 
-Monitor your portfolio value on the dashboard, it shows the combined value of active BTC, USD\(T\) and EUR trading pairs. 
+Monitor your portfolio value on the dashboard, it shows the combined value of active BTC, USD\(T\) and EUR trading pairs.
 
 The pair overview quickly shows you which of your trading pairs are doing good.
 
-![](../.gitbook/assets/image%20%2813%29.png)
-
-
+![](../.gitbook/assets/image-13.png)
 
 ## Trading map
 
 The trading map gives you instant information about how your pairs are doing.
 
-![](../.gitbook/assets/image%20%2820%29.png)
+![](../.gitbook/assets/image-20.png)
 

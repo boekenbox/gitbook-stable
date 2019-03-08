@@ -4,9 +4,7 @@ The bot settings menu lets you change global settings that affect all trading pa
 
 To change them, go to **Settings** &gt; **Bot Settings**.
 
-![Global bot settings](../../.gitbook/assets/image%20%2819%29.png)
-
-
+![Global bot settings](../../.gitbook/assets/image-19.png)
 
 ## Settings descriptions
 
@@ -20,7 +18,7 @@ When set to true, Gunbot will process the configured pairs, but will not place a
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** true or false 
+**Values:** true or false
 
 **Default value:** false
 {% endtab %}
@@ -34,7 +32,7 @@ Parameter name in `config.js`: `WATCH_MODE`
 
 {% tabs %}
 {% tab title="Description" %}
-Use this option to trade pairs with cross-over between quote and base \(for example BTC-ETH and ETH-ADA\). 
+Use this option to trade pairs with cross-over between quote and base \(for example BTC-ETH and ETH-ADA\).
 
 When enabled, Gunbot won't sell all available quote units when selling, instead it will only sell the invested funds \(as defined in the trading limit\). Also affects the TradingView add-on.
 
@@ -42,7 +40,7 @@ Only enable this when you really need it.
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** true or false 
+**Values:** true or false
 
 **Default value:** false
 {% endtab %}
@@ -60,7 +58,7 @@ Used to show debug messages in the bot, when set to true. Only use this if you r
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** true or false 
+**Values:** true or false
 
 **Default value:** false
 {% endtab %}
@@ -78,7 +76,7 @@ Setting this to true will lead to more detailed information being shown in the c
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** true or false 
+**Values:** true or false
 
 **Default value:** false
 {% endtab %}
@@ -96,7 +94,7 @@ When set to true, trading gains will be automatically added to the funds reserve
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** true or false 
+**Values:** true or false
 
 **Default value:** false
 {% endtab %}
@@ -118,7 +116,7 @@ This is the global setting for bot delay, it is ignored when an exchange specifi
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** numerical – represents time in seconds. 
+**Values:** numerical – represents time in seconds.
 
 **Default value:** 1
 {% endtab %}
@@ -138,7 +136,7 @@ Only set this to a low value when your bot actually has problems not trading aft
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** numerical – represents time in hours. 
+**Values:** numerical – represents time in hours.
 
 **Default value:** 2
 {% endtab %}
@@ -188,7 +186,7 @@ This is an internal timeout that prevents the bot from buying again within the s
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** numerical – represents time in milliseconds. 
+**Values:** numerical – represents time in milliseconds.
 
 **Default value:** 59000
 {% endtab %}
@@ -206,7 +204,7 @@ This is an internal timeout that prevents the bot from selling again within the 
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** numerical – represents time in milliseconds. 
+**Values:** numerical – represents time in milliseconds.
 
 **Default value:** 60000
 {% endtab %}
@@ -220,11 +218,11 @@ Parameter name in `config.js`: `timeout_sell`
 
 {% tabs %}
 {% tab title="Description" %}
-When set to true, the bot will cancel unfilled or partially filled orders when the price has moved away from the buy or sell price. 
+When set to true, the bot will cancel unfilled or partially filled orders when the price has moved away from the buy or sell price.
 
 Set this to false if you also trade manually to prevent the bot from cancelling your open orders.
 
-**Simulated Fill Or Kill \(FOK\)** 
+**Simulated Fill Or Kill \(FOK\)**
 
 When an order is not or only partially filled and gets cancelled, Gunbot will attempt to fill the order by replacing it at current bid/ask.
 
@@ -234,7 +232,7 @@ For sell orders this means that FOK orders are sent as long as the number of quo
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** true or false 
+**Values:** true or false
 
 **Default value:** false
 {% endtab %}
@@ -248,13 +246,13 @@ Parameter name in `config.js`: `CANCEL_ORDERS_ENABLED`
 
 {% tabs %}
 {% tab title="Description" %}
-This only applies when using `MAKER_FEES`. 
+This only applies when using `MAKER_FEES`.
 
 Set the number of rounds that pending orders need to be kept open. After this number of rounds passes, Gunbot will cancel the pending order.
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** numerical - represents a number of rounds. 
+**Values:** numerical - represents a number of rounds.
 
 **Default value:** 10
 {% endtab %}
@@ -268,8 +266,8 @@ Parameter name in `config.js`: `CANCEL_ORDERS_CYCLE_CAP`
 
 {% tabs %}
 {% tab title="Description" %}
-Set a valid BTC wallet address to enable automatic withdraws each time the threshold is reached.  
-  
+Set a valid BTC wallet address to enable automatic withdraws each time the threshold is reached.
+
 Please use this feature on your own risk only.
 {% endtab %}
 
@@ -301,8 +299,4 @@ Set the amount of BTC to be accumulated with `RESERVE_PILE_UP` before an automat
 Parameter name in `config.js`: `withdraw_threshold`
 {% endtab %}
 {% endtabs %}
-
-
-
-
 

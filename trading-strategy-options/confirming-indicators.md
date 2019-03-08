@@ -1104,7 +1104,7 @@ Setting this to true will enable the use of renko candles, instead of regular ca
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** true or false 
+**Values:** true or false
 
 **Default value:** false
 {% endtab %}
@@ -1131,7 +1131,7 @@ Sets which regular candle size is used as input for renko candles. Make sure to 
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** numerical 
+**Values:** numerical
 
 **Default value:** 15
 {% endtab %}
@@ -1162,7 +1162,7 @@ If you are unfamiliar with renko charts, it's recommended to first set the brick
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** numerical 
+**Values:** numerical
 
 **Default value:** 0.0001
 {% endtab %}
@@ -1191,7 +1191,7 @@ For fiat pairs, 1 pip equals 1 cent. For crypto, 1 pip equals 1 satoshi.
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** true or false 
+**Values:** true or false
 
 **Default value:** false
 {% endtab %}

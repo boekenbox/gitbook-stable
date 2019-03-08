@@ -1,20 +1,18 @@
 # IMAP listener
 
 {% hint style="info" %}
-The IMAP listener settings are only needed when you use the TradingView add-on to let Gunbot execute email alerts. 
+The IMAP listener settings are only needed when you use the TradingView add-on to let Gunbot execute email alerts.
 {% endhint %}
 
 Using these settings, Gunbot connects to the email address where alerts are sent to.
 
 To change them, go to **Settings** &gt; **IMAP Listener**.
 
-![Imap listener settings options](../../.gitbook/assets/image%20%2816%29.png)
-
-
+![Imap listener settings options](../../.gitbook/assets/image-16.png)
 
 ## Settings descriptions
 
-Below you'll find detailed descriptions of all available parameters for the IMAP listener. 
+Below you'll find detailed descriptions of all available parameters for the IMAP listener.
 
 ### Enabled
 
@@ -24,7 +22,7 @@ Set this to true to enable the TradingView plugin. Not all license types support
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** true or false 
+**Values:** true or false
 
 **Default value:** false
 {% endtab %}
@@ -40,14 +38,13 @@ Parameter name in `config.js`: `enabled`
 {% tab title="Description" %}
 Sets the email addresses that should be processed for incoming alerts. Make sure that the alert message in contained in the email subject.
 
-  
 Multiple address are possible if you enter them like this: \["email-1@mail.com","email-2@mail.com"\]
 {% endtab %}
 
 {% tab title="Values" %}
 **Values:** string, represents one or more email addresses
 
-**Default value:**  \["noreply@tradingview.com"\]
+**Default value:** \["noreply@tradingview.com"\]
 {% endtab %}
 
 {% tab title="Name" %}
@@ -65,7 +62,7 @@ Set the username for the IMAP server, usually your own email address. Gunbot wil
 {% tab title="Values" %}
 **Values:** string, represents a username
 
-**Default value:**  YOUREMAIL
+**Default value:** YOUREMAIL
 {% endtab %}
 
 {% tab title="Name" %}
@@ -83,7 +80,7 @@ Enter the password for your own email address, used for connecting to the IMAP s
 {% tab title="Values" %}
 **Values:** string, represents a password
 
-**Default value:**  YOURPASSWORD
+**Default value:** YOURPASSWORD
 {% endtab %}
 
 {% tab title="Name" %}
@@ -101,7 +98,7 @@ The address of the IMAP server that the listener needs to connect to.
 {% tab title="Values" %}
 **Values:** string, represents a hostname
 
-**Default value:**  imap.gmail.com
+**Default value:** imap.gmail.com
 {% endtab %}
 
 {% tab title="Name" %}
@@ -119,7 +116,7 @@ The port number for the IMAP server.
 {% tab title="Values" %}
 **Values:** number, represents a port number
 
-**Default value:**  993
+**Default value:** 993
 {% endtab %}
 
 {% tab title="Name" %}
@@ -135,7 +132,7 @@ Defines if TLS encryption is used for the IMAP connection.
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** true or false 
+**Values:** true or false
 
 **Default value:** true
 {% endtab %}
@@ -144,6 +141,4 @@ Defines if TLS encryption is used for the IMAP connection.
 Parameter name in `config.js`: `tls`
 {% endtab %}
 {% endtabs %}
-
-
 

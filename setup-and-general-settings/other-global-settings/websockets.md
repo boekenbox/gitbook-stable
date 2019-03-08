@@ -6,8 +6,6 @@ To change websocket settings, go to **Settings** &gt; **Websocket**.
 
 ![Configuration options for websocket output](../../.gitbook/assets/image.png)
 
-
-
 ## Settings descriptions
 
 Below you'll find detailed descriptions of all available parameters for websockets.
@@ -20,7 +18,7 @@ Sets the port used for websockets.
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** numerical, represents a port number 
+**Values:** numerical, represents a port number
 
 **Default value:** 5001
 {% endtab %}
@@ -38,7 +36,7 @@ You can change the client port for third party web interfaces here.
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** numerical, represents a port number. 
+**Values:** numerical, represents a port number.
 
 **Default value:** 3000
 {% endtab %}
@@ -56,7 +54,7 @@ The IP address or hostname to be used for WebSockets. Defaults to your localhost
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** string, represents an IP-address or hostname 
+**Values:** string, represents an IP-address or hostname
 
 **Default value:** 127.0.0.1
 {% endtab %}
@@ -65,6 +63,4 @@ The IP address or hostname to be used for WebSockets. Defaults to your localhost
 Parameter name in `config.js`: `hostname`
 {% endtab %}
 {% endtabs %}
-
-### 
 

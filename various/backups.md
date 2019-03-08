@@ -4,8 +4,6 @@ Each time you apply saved settings, a copy of the previously working `config.js`
 
 Backups are automatically saved in the /backups folder within your Gunbot folder.
 
-
-
 ## Restore a backup
 
 To restore a backup, follow these steps:

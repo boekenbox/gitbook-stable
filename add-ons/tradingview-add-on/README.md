@@ -17,11 +17,9 @@ Before you start setting up your alerts, you need:
 
 {% embed url="https://www.youtube.com/watch?v=H2EybuYxc3Y" caption="This video was made for an older Gunbot version. The basic steps still apply." %}
 
- [Script used in example: Finn's Microprofit Strategy](https://gunthy.org/forum/index.php/topic,1548.0.html)
+[Script used in example: Finn's Microprofit Strategy](https://gunthy.org/forum/index.php/topic,1548.0.html)
 
 {% page-ref page="imap-listener.md" %}
-
-
 
 ## Alert message contents
 
@@ -29,9 +27,7 @@ The alerts messages have to be in the following format in order for Gunbot to ac
 
 Trading limits can only be specifically defined in buy/long/short alerts, for other alerts or buy/long/short alerts without specified amounts, the limits as set in your TradingView settings apply.
 
-_Replace `EXCHANGE` with the name of your exchange._
-
-####  
+_Replace_ `EXCHANGE` _with the name of your exchange._
 
 #### For all exchanges
 
@@ -42,8 +38,6 @@ _Replace `EXCHANGE` with the name of your exchange._
 | SELL\_EXCHANGE\_USDT-BTC | Sell BTC for USDT |
 | STOPLOSS\_EXCHANGE\_BTC-ETH | Sell ETH for BTC if stoploss is triggered |
 
-####  
-
 #### Alerts for margin trading, supported on Bitmex, Kraken, Poloniex, Huobi and Bitfinex
 
 | Alert message | Action |
@@ -53,8 +47,6 @@ _Replace `EXCHANGE` with the name of your exchange._
 | LONG\_EXCHANGE\_BTC-ETH\_0.1 | Long order for BTC-ETH with a trading limit of 0.1 BTC |
 | CLOSE\_EXCHANGE\_BTC-ETH | Close an open margin position for BTC-ETH |
 
-####  
-
 #### To close positions at Bitfinex, use the following alerts
 
 | Alert message | Action |
@@ -62,27 +54,23 @@ _Replace `EXCHANGE` with the name of your exchange._
 | CLOSELONG\_BITFINEX\_USD-BTC | Close an open margin long position for USD-BTC |
 | CLOSESHORT\_BITFINEX\_USD-BTC | Close an open margin short position for USD-BTC |
 
-
-
 ## TradingView settings
 
 To run Gunbot with the TradingView add-on, the following are the only relevant settings. Normal Gunbot strategy and pair settings are not relevant and not used unless `TV_GB` is enabled.
 
 Open the settings by going to **Settings** &gt; **TradingView.**
 
-![](../../.gitbook/assets/image%20%281%29.png)
+![](../../.gitbook/assets/image-1.png)
 
 Trading limits for buy orders are set in the configuration settings, optionally you can override these by specifying the trading limit in the alert message contents.
 
 Orders placed by the TradingView add-on are placed as market orders to ensure they will get filled.
 
 {% hint style="info" %}
-Be sure to add one pair for any exchange you want to execute alerts on. 
+Be sure to add one pair for any exchange you want to execute alerts on.
 
 This can be any pair, it will not be used by the add-on.
 {% endhint %}
-
-
 
 ### Gain
 
@@ -94,7 +82,7 @@ When TradingView sell alerts are sent that would have a lower gain than this val
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** numerical, represents a percentage. 
+**Values:** numerical, represents a percentage.
 
 **Default value:** 0.6
 {% endtab %}
@@ -120,7 +108,7 @@ When not using `TV_PYRAMID`, a sell alert will place a sell order for the full q
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** numerical – represents an amount in base currency. 
+**Values:** numerical – represents an amount in base currency.
 
 **Default value:** 0.002
 {% endtab %}
@@ -158,11 +146,11 @@ Parameter name in `config.js`: `TV_TRADING_LIMIT_BUY`
 
 {% tabs %}
 {% tab title="Description" %}
- Setting this to true enables pyramid trading, the amount for each pyramid order is defined by `TV_TRADING_LIMIT_SELL` or `TV_TRADING_LIMIT_BUY_PYRAMID`.
+Setting this to true enables pyramid trading, the amount for each pyramid order is defined by `TV_TRADING_LIMIT_SELL` or `TV_TRADING_LIMIT_BUY_PYRAMID`.
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** true or false 
+**Values:** true or false
 
 **Default value:** false
 {% endtab %}
@@ -186,7 +174,7 @@ The default value of 0.002 would place maximum orders of 0.002 BTC when used on 
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** numerical – represents an amount in base currency. 
+**Values:** numerical – represents an amount in base currency.
 
 **Default value:** 0.002
 {% endtab %}
@@ -206,7 +194,7 @@ When set to false, Gunbot will execute all TradingView alerts without interferin
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** true or false 
+**Values:** true or false
 
 **Default value:** false
 {% endtab %}
@@ -264,7 +252,7 @@ When set to true, each buy order will use all available base currency balance.
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** true or false 
+**Values:** true or false
 
 **Default value:** false
 {% endtab %}
@@ -278,13 +266,13 @@ Parameter name in `config.js`: `TV_TRADING_LIMIT_ALLIN`
 
 {% tabs %}
 {% tab title="Description" %}
-Enable this when you have problems receiving multiple alerts. 
+Enable this when you have problems receiving multiple alerts.
 
 Gunbot will retry processing orders for 15 minutes.
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** true or false 
+**Values:** true or false
 
 **Default value:** false
 {% endtab %}
@@ -302,7 +290,7 @@ Sets a threshold for sell orders, If you own less than the set amount, sell orde
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** numerical – represents the total value of a coins holdings in base currency. 
+**Values:** numerical – represents the total value of a coins holdings in base currency.
 
 **Default value:** 0.001
 {% endtab %}
@@ -322,7 +310,7 @@ The IMAP listener needs to be enabled to use this option.
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** true or false 
+**Values:** true or false
 
 **Default value:** false
 {% endtab %}
@@ -349,6 +337,4 @@ For margin trading at Bitmex only. Sets the leverage for opening any position. S
 Parameter name in `config.js`: `TV_LEVERAGE`
 {% endtab %}
 {% endtabs %}
-
-### 
 

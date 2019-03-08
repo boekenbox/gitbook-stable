@@ -4,8 +4,6 @@
 
 {% page-ref page="download.md" %}
 
-
-
 ## Installation instructions
 
 Installation guides per platform can be found here:
@@ -17,8 +15,6 @@ Installation guides per platform can be found here:
 {% page-ref page="linux.md" %}
 
 {% page-ref page="arm.md" %}
-
-
 
 ## Upgrading
 

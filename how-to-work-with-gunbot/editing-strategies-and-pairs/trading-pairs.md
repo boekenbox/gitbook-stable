@@ -9,29 +9,26 @@ You can use an unlimited number of trading pairs, across multiple exchanges.
 * 2 enabled trading pairs
 * Exchange delay set to 5
 * "Processing" below means that Gunbot retrieves data and trades when strategy trading conditions happen in that round
-
-1. First round of pair 1 is processed
-2. Waits 5 seconds \(as defined in the exchange delay\)
-3. First round of pair 2 is processed
-4. Waits 5 seconds
-5. Second round of pair 1 is processed
-6. Waits 5 seconds
-7. Second round of pair 2 is processed.
-8. ... continues cycling through further rounds
+* First round of pair 1 is processed
+* Waits 5 seconds \(as defined in the exchange delay\)
+* First round of pair 2 is processed
+* Waits 5 seconds
+* Second round of pair 1 is processed
+* Waits 5 seconds
+* Second round of pair 2 is processed.
+* ... continues cycling through further rounds
 
 {% hint style="info" %}
 **Parallel processing of multiple exchanges**
 
-If you have trading pairs across multiple exchanges, each exchange will process pairs in parallel. This means that a pair on exchange 1 does not wait for pairs on exchange 2 to be processed first. 
+If you have trading pairs across multiple exchanges, each exchange will process pairs in parallel. This means that a pair on exchange 1 does not wait for pairs on exchange 2 to be processed first.
 
 Every exchange will individually cycle through enabled pairs like described above. Each exchange can have it's individual delay setting.
 {% endhint %}
 
-
-
 ## Add trading pairs
 
-![](../../.gitbook/assets/image%20%284%29.png)
+![](../../.gitbook/assets/image-4.png)
 
 Gunbot uses a standardized format for entering trading pairs, this allows you to use the same syntax for all exchanges you might use.
 
@@ -52,22 +49,20 @@ All pairs with USDT as base currency are written like: USDT-BTC, USDT-ETH, USDT-
 
 For a few coins on Bitfinex, the API display name is required. These are:
 
-IOTA = IOT,  DASH = DSH,  QTUM = QTM,  DATA = DAT,  QASH = QSH
+IOTA = IOT, DASH = DSH, QTUM = QTM, DATA = DAT, QASH = QSH
 
 Kraken calls Bitcoin XBT, use BTC instead.
 
 Pairs on Bitmex use almost the same symbols as on Bitmex itself, but with a hyphen-minus between the two asset names. Example: XBT-USD
 {% endhint %}
 
- 
-
 ## Override settings
 
 Overrides are pair specific settings, overruling the assigned strategy. Every strategy parameter can be used as an override.
 
-![](../../.gitbook/assets/image%20%2822%29.png)
+![](../../.gitbook/assets/image-22.png)
 
 You can use this, for example, to set a different `TRADING_LIMIT` for a specific pair.
 
-When adding overrides, make sure to only enter accepted values as described on the strategy pages. 
+When adding overrides, make sure to only enter accepted values as described on the strategy pages.
 

@@ -1,6 +1,6 @@
 # Period
 
-### Choosing the right period
+## Choosing the right period
 
 The `PERIOD` you set for candlesticks in your strategy is very important, since it has a big effect on indicators like `EMA1` and `EMA2`. This article provides a really quick overview of what the impact of `PERIOD` is.
 
@@ -14,13 +14,11 @@ In the image below, you can see the effect on EMA \(the green and red lines\) wh
 
 > tl;dr: Set `PERIOD` low to trade on short trends, set it higher to trade on longer trends.
 
-
-
-### Supported period values
+## Supported period values
 
 Gunbot supports different values for `PERIOD` for each exchange.
 
 Currently the following periods are supported:
 
-![](../../.gitbook/assets/image%20%287%29.png)
+![](../../.gitbook/assets/image-7.png)
 

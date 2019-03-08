@@ -1,6 +1,6 @@
 # Connect exchange
 
-To be able to trade, you need to enter the exchange [API key](creating-api-keys.md) and secret. 
+To be able to trade, you need to enter the exchange [API key](creating-api-keys.md) and secret.
 
 To enter these, go to **Settings &gt; Trading &gt; Exchanges**.
 
@@ -48,7 +48,6 @@ Select your exchange and fill in all the fields for this exchange.
       </td>
       <td style="text-align:left">
         <p>The delay factor (in seconds) for processing pairs on this exchange.</p>
-        <p></p>
         <p>Setting this to 10 should work in almost all cases, you can lower it later
           to speed up pair processing after you&apos;ve verified that everything
           works.</p>
@@ -92,4 +91,3 @@ Select your exchange and fill in all the fields for this exchange.
     </tr>
   </tbody>
 </table>
-
