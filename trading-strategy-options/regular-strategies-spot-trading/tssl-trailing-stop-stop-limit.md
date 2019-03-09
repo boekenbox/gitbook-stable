@@ -261,13 +261,48 @@ Parameter name in `config.js`: `SELL_ENABLED`
 {% endtab %}
 {% endtabs %}
 
-### Sell Range
+### Gain
 
 {% tabs %}
 {% tab title="Description" %}
 This sets the starting point for sell trailing. Gunbot will start trailing once price reaches the set percentage above the break-even point.
 
 When you set this to 1, trailing for a sell order starts when price reaches a point 1% above the average bought price.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** numerical – represents a percentage.
+
+**Default value:** 0.5
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| Strategy sell | Strategy buy |
+|  | RT buy |
+|  | RT buyback |
+|  | RT sell |
+|  | Close |
+|  | DCA buy |
+|  | Stop limit |
+|  |  |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `GAIN`
+{% endtab %}
+{% endtabs %}
+
+### Sell Range
+
+{% tabs %}
+{% tab title="Description" %}
+This sets the sell range for trailing. 
+
+Setting a range of 0.5% at a starting price of 0.1 would set a range between 0.0995 and 0.1005.
+
+As long as prices keep moving upwards, the range moves up along with the price. As soon as prices start going downward, the range freezes and a sell order is placed when the prices crosses the lower boundary of the range.
 {% endtab %}
 
 {% tab title="Values" %}
