@@ -268,7 +268,7 @@ Parameter name in `config.js`: `CANCEL_ORDERS_CYCLE_CAP`
 {% tab title="Description" %}
 Set a valid BTC wallet address to enable automatic withdraws each time the threshold is reached.
 
-Please use this feature on your own risk only.
+Please use this feature at your own risk only.
 {% endtab %}
 
 {% tab title="Values" %}
