@@ -176,9 +176,9 @@ Parameter name in `config.js`: `COUNT_SELL`
 
 {% tabs %}
 {% tab title="Description" %}
-Bitmex: When set to true, limit orders will placed as post only orders. If the order can be \(partially\) filled immediately, it will get cancelled by Bitmex. Using `PRE_ORDER` you can configure how far from bid/ask the order gets placed.
+**Bitmex:** When set to true, limit orders will placed as post only orders. If the order can be \(partially\) filled immediately, it will get cancelled by Bitmex. Using `PRE_ORDER` you can configure how far from bid/ask the order gets placed.
 
-Other exchanges: When set to true, limit buy orders are placed at bid, limit sell orders are placed at ask. This increases the likelyhood that the trade is executed with maker fees.
+**Other exchanges:** When set to true, limit buy orders are placed at bid, limit sell orders are placed at ask. This increases the likelyhood that the trade is executed with maker fees.
 {% endtab %}
 
 {% tab title="Values" %}
