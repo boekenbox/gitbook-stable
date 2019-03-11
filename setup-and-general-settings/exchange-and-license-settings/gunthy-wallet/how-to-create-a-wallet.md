@@ -8,6 +8,10 @@ Below you'll find short descriptions on how to do that with a few of the most us
 
 ## Ethereum Wallet
 
+{% hint style="success" %}
+[https://www.ethereum.org/](https://www.ethereum.org/)
+{% endhint %}
+
 **Step 1: create an account**
 
 Click **Add Account** and follow all the security advice given.
@@ -32,6 +36,10 @@ Copy the account address using the **Copy address** button. Use this address in 
 
 ## MyEtherWallet
 
+{% hint style="success" %}
+[https://www.myetherwallet.com/](https://www.myetherwallet.com/)
+{% endhint %}
+
 **Step 1: create a wallet**
 
 Create a new wallet and follow all the security advice given.
@@ -54,6 +62,10 @@ Copy the account address shown on top of the page. Use this address in Gunbot.
 
 ## Metamask
 
+{% hint style="success" %}
+[https://metamask.io/](https://metamask.io/)
+{% endhint %}
+
 **Step 1: install browser add-on and create a wallet**
 
 Follow the steps shown to be able to use Metamask. Create a new wallet and follow all the security advice given.
@@ -75,6 +87,10 @@ Enter the GUNTHY token contract address and confirm.
 Copy the account address shown on top left side of the page. Use this address in Gunbot.
 
 ## MyCrypto
+
+{% hint style="success" %}
+[https://mycrypto.com/](https://mycrypto.com/)
+{% endhint %}
 
 **Step 1: create a wallet**
 
