@@ -4,7 +4,7 @@ To run multiple instances of Gunbot, just make a copy of its folder for each ins
 
 * `port` - both in the GUI and ws section
 * `clientport` - in the ws section
-* `TOKEN` in the bot section
+* `TOKEN` in the bot section \(this is the token for Telegram notifications\)
 
 The GUI of each instance will be available on localhost through the specified port number.
 
