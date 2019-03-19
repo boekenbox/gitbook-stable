@@ -11,7 +11,7 @@
   * [New in v8](about/whats-new/new-in-v8.md)
   * [New in v7](about/whats-new/new-in-v7.md)
   * [New in v6](about/whats-new/new-in-v6.md)
-* [How to purchase Gunbot](about/resellers.md)
+* [Purchasing Gunbot](https://github.com/GuntharDeNiro/BTCT/wiki/Resellers)
 * [Supported exchanges](about/supported-exchanges.md)
 * [System requirements](about/system-requirements.md)
 
