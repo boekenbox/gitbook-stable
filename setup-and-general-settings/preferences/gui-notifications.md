@@ -1,4 +1,4 @@
-# GUI settings
+# GUI notifications
 
 ## GUI settings
 

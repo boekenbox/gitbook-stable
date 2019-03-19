@@ -20,18 +20,20 @@
   * [How to enable SSL/TLS](setup-and-general-settings/installation/enable-ssl-tls.md)
   * [Running multiple instances](setup-and-general-settings/installation/running-multiple-instances.md)
   * [Headless mode](setup-and-general-settings/installation/headless-mode.md)
-* [Authentication](setup-and-general-settings/authentication.md)
+* [Preferences](setup-and-general-settings/preferences/README.md)
+  * [Bot settings](setup-and-general-settings/preferences/bot-settings.md)
+  * [Authentication](setup-and-general-settings/preferences/authentication.md)
+  * [GUI notifications](setup-and-general-settings/preferences/gui-notifications.md)
+  * [Websockets](setup-and-general-settings/preferences/websockets.md)
+  * [Telegram notifications](setup-and-general-settings/preferences/telegram-notifications.md)
+  * [TradingView](setup-and-general-settings/preferences/tradingview-add-on.md)
+  * [IMAP listener](setup-and-general-settings/preferences/imap-listener.md)
 * [Exchange & license settings](setup-and-general-settings/exchange-and-license-settings/README.md)
   * [Register GUNTHY wallet](setup-and-general-settings/exchange-and-license-settings/gunthy-wallet/README.md)
     * [How to create a wallet](setup-and-general-settings/exchange-and-license-settings/gunthy-wallet/how-to-create-a-wallet.md)
   * [Connect exchange](setup-and-general-settings/exchange-and-license-settings/connect-exchange/README.md)
     * [Swap exchanges](setup-and-general-settings/exchange-and-license-settings/connect-exchange/api-slots.md)
     * [Creating API keys](setup-and-general-settings/exchange-and-license-settings/connect-exchange/creating-api-keys.md)
-* [Telegram notifications](setup-and-general-settings/telegram-notifications.md)
-* [Other global settings](setup-and-general-settings/other-global-settings/README.md)
-  * [Bot settings](setup-and-general-settings/other-global-settings/bot-settings.md)
-  * [GUI settings](setup-and-general-settings/other-global-settings/gui-settings.md)
-  * [Websockets](setup-and-general-settings/other-global-settings/websockets.md)
 
 ## How to work with Gunbot
 
@@ -92,8 +94,6 @@
 
 ## Add-ons
 
-* [TradingView](add-ons/tradingview-add-on/README.md)
-  * [IMAP listener](add-ons/tradingview-add-on/imap-listener.md)
 * [Backtesting](add-ons/backtesting-add-on.md)
 * [Cryptosight](add-ons/cryptosight-add-on.md)
 
