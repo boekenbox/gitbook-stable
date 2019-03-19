@@ -80,7 +80,7 @@ When set to true, all quote will be sold at market value as soon as possible. Th
 
 You should only enable this when you want to sell your current holdings immediately.
 
-For margin trading, this setting will delete any open order and close any position as soon as possible. Pairs are not automatically disabled afterwards.
+For margin trading, this setting will delete any open orders and close any position as soon as possible. Pairs are not automatically disabled afterwards.
 {% endtab %}
 
 {% tab title="Values" %}
