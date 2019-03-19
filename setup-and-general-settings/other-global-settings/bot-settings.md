@@ -246,7 +246,7 @@ Parameter name in `config.js`: `CANCEL_ORDERS_ENABLED`
 
 {% tabs %}
 {% tab title="Description" %}
-This only applies when using `MAKER_FEES`.
+This only applies when using `MAKER_FEES` or `CANCEL_ONCAP`. 
 
 Set the number of rounds that pending orders need to be kept open. After this number of rounds passes, Gunbot will cancel the pending order.
 {% endtab %}
@@ -259,6 +259,24 @@ Set the number of rounds that pending orders need to be kept open. After this nu
 
 {% tab title="Name" %}
 Parameter name in `config.js`: `CANCEL_ORDERS_CYCLE_CAP`
+{% endtab %}
+{% endtabs %}
+
+### Cancel Orders Oncap
+
+{% tabs %}
+{% tab title="Description" %}
+Enabling this changes the behavior of cancelling orders: orders are cancelled after `CANCEL_ORDERS_CYCLE_CAP` passes.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** true or false
+
+**Default value:** false
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `CANCEL_ONCAP`
 {% endtab %}
 {% endtabs %}
 
