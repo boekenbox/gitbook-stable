@@ -29,7 +29,7 @@
   * [TradingView](setup-and-general-settings/preferences/tradingview-add-on.md)
   * [IMAP listener](setup-and-general-settings/preferences/imap-listener.md)
 * [Exchange & license settings](setup-and-general-settings/exchange-and-license-settings/README.md)
-  * [Register GUNTHY wallet](setup-and-general-settings/exchange-and-license-settings/gunthy-wallet/README.md)
+  * [GUNTHY wallet](setup-and-general-settings/exchange-and-license-settings/gunthy-wallet/README.md)
     * [How to create a wallet](setup-and-general-settings/exchange-and-license-settings/gunthy-wallet/how-to-create-a-wallet.md)
   * [Connect exchange](setup-and-general-settings/exchange-and-license-settings/connect-exchange/README.md)
     * [Swap exchanges](setup-and-general-settings/exchange-and-license-settings/connect-exchange/api-slots.md)
@@ -92,10 +92,10 @@
 * [TrailMe](trading-strategy-options/trailme.md)
 * [Misc settings](trading-strategy-options/misc-settings.md)
 
-## Add-ons
+## Extras
 
-* [Backtesting](add-ons/backtesting-add-on.md)
-* [Cryptosight](add-ons/cryptosight-add-on.md)
+* [Backtesting](extras/backtesting-add-on.md)
+* [Cryptosight](extras/cryptosight-add-on.md)
 
 ## Various
 
