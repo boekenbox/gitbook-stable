@@ -4,7 +4,7 @@ description: >-
   v12.
 ---
 
-# What's new in v12?
+# What's new?
 
 ## New features / changes
 
@@ -36,7 +36,7 @@ Many critical issues were already patched in the bugfix releases for v11. Notabl
 * Fix support for TUSD as base currency at Binance.
 * Fix libraries for Raspberry Pi support.
 * Reduced data/resource usage for the GUI.
-* [Workaround](https://github.com/GuntharDeNiro/BTCT/wiki/TradingView#to-close-positions-at-bitfinex-use-the-following-alerts) for an issue with Bitfinex not accepting close orders.
+* Workaround for an issue with Bitfinex not accepting close orders.
 * Fix an issue that reset DU count after a partial sell order.
 * Fix an issue with marging trading through TV add-on on Huobi.
 * Various smaller fixes.
@@ -51,5 +51,5 @@ New strategy parameters for v12 will be automatically added through the GUI the 
 
 _Due to new libraries used, you cannot simply overwrite the executable for this release._
 
-{% page-ref page="../setup-and-general-settings/installation/download.md" %}
+{% page-ref page="../../setup-and-general-settings/installation/download.md" %}
 

@@ -38,6 +38,8 @@ Using the `BUY_METHOD` and `SELL_METHOD` parameters you can combine different me
 
 Buy settings are the primary trigger for buy orders. These parameters control the execution of buy orders when using `BBTA` as buy method.
 
+Take Buy is only available for Gunbot Standard and higher.
+
 ### Buy enabled
 
 {% tabs %}

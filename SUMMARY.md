@@ -4,7 +4,13 @@
 
 ## About
 
-* [What's new in v12?](about/whats-new-v12.md)
+* [What's new?](about/whats-new/README.md)
+  * [New in v11](about/whats-new/new-in-v11.md)
+  * [New in v10](about/whats-new/new-in-v10.md)
+  * [New in v9](about/whats-new/new-in-v9.md)
+  * [New in v8](about/whats-new/new-in-v8.md)
+  * [New in v7](about/whats-new/new-in-v7.md)
+  * [New in v6](about/whats-new/new-in-v6.md)
 * [How to purchase Gunbot](about/resellers.md)
 * [Supported exchanges](about/supported-exchanges.md)
 * [System requirements](about/system-requirements.md)
