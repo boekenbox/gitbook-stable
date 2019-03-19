@@ -75,3 +75,33 @@ All of your registered API keys connected to the old wallet address will be regi
 
 ![](../../../.gitbook/assets/image-5.png)
 
+## FAQ
+
+**Are there costs involved when I update my API key?**
+
+No, when you manage your own API keys there are no costs for changing them.
+
+**How often can I update my API key?**
+
+You can update your API keys as often as you want.
+
+**Can I run multiple Gunbot instances using the same GUNTHY wallet?**
+
+Yes.
+
+**I have more than one registered API key for the same exchange, what to do?**
+
+If you have multiple registered API keys for the same exchange, each key needs to be registered to a different GUNTHY wallet. You must run multiple Gunbot instances to do so.
+
+**Can I change my API key to another exchange?**
+
+Yes, you can change to any supported exchange at any time.
+
+**Is it mandatory to register a GUNTHY wallet for my API keys?**
+
+This new system will soon be mandatory, meaning you must register a wallet address to be able to continue using Gunbot.
+
+**Can't I just use any wallet address?**
+
+Abuse will not be tolerated. Only use your own GUNTHY wallet address in Gunbot, not a wallet provided by an exchange. Using your own wallet address is the only way to receive and control the required amount of tokens.
+
