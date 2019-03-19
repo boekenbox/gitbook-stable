@@ -36,13 +36,9 @@ Login to your TradingView account and click the Chart button.
 
 ![](https://user-images.githubusercontent.com/2372008/45930634-0452c180-bf63-11e8-95db-0a34c1a88254.png)
 
-The scripts are best viewed in Dark theme so click the Gear settings button next.
+The scripts are best viewed in Dark theme.
 
-![](https://user-images.githubusercontent.com/2372008/45930636-0b79cf80-bf63-11e8-893c-d3133b377050.png)
-
-Now click the Dark Theme and then click OK.
-
-![](https://user-images.githubusercontent.com/2372008/45930637-12084700-bf63-11e8-81b2-6c31d37d4169.png)
+![](../.gitbook/assets/image%20%283%29.png)
 
 Enter the Pair and the Period you wish to use and then click Indicators.
 
@@ -110,7 +106,13 @@ TradingView scripts trade on the OPEN price of the NEXT candle AFTER conditions 
 
 When using the "Gunbot Deluxe Tuners BE \[Alerts\]" script the green "BUY!" and red "SELL!" indicate on screen where the alerts will trigger and send to Gunbot's TradingView add-on.
 
-![](https://user-images.githubusercontent.com/2372008/45930675-6e6b6680-bf63-11e8-94ec-d21fac09b974.png)
+![](../.gitbook/assets/image.png)
+
+![](../.gitbook/assets/image%20%282%29.png)
+
+![](../.gitbook/assets/image%20%284%29.png)
+
+![](../.gitbook/assets/image%20%281%29.png)
 
 ## FAQ
 
