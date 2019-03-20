@@ -8,7 +8,7 @@ All Gunbot license types can use an API slot system, this allows you to switch b
 
 On the **Swap Exchanges** page you can see how many API slots your license has, and enter up to this number of API keys to be registered for use.
 
-![](../../../.gitbook/assets/image%20%282%29.png)
+![](../../../.gitbook/assets/image%20%283%29.png)
 
 {% hint style="info" %}
 If you regularly switch between exchange accounts, it's easiest to leave your exchange API details in the exchange section for every exchange you plan to use.

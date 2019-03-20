@@ -14,7 +14,7 @@ No need for a subscription, a one time fee gets you lifetime support and softwar
 
 #### Gunbot is used by thousands of users and has an awesome community ❤️
 
-![](.gitbook/assets/image%20%283%29.png)
+![](.gitbook/assets/image%20%285%29.png)
 
 {% page-ref page="setup-and-general-settings/installation/" %}
 

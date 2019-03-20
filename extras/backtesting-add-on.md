@@ -38,7 +38,7 @@ Login to your TradingView account and click the Chart button.
 
 The scripts are best viewed in Dark theme.
 
-![](../.gitbook/assets/image%20%285%29.png)
+![](../.gitbook/assets/image%20%288%29.png)
 
 Enter the Pair and the Period you wish to use and then click Indicators.
 
@@ -108,11 +108,11 @@ When using the "Gunbot Deluxe Tuners BE \[Alerts\]" script the green "BUY!" and 
 
 ![](../.gitbook/assets/image.png)
 
-![](../.gitbook/assets/image%20%284%29.png)
-
 ![](../.gitbook/assets/image%20%286%29.png)
 
-![](../.gitbook/assets/image%20%281%29.png)
+![](../.gitbook/assets/image%20%2811%29.png)
+
+![](../.gitbook/assets/image%20%282%29.png)
 
 ## FAQ
 
