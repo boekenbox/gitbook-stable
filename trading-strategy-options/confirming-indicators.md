@@ -125,9 +125,9 @@ This setting is dependent on `BTC_MONEY_FLOW`. Only use this if BTC pumps have a
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** numerical, ranging between 1 and 99.
+**Values:** true or false
 
-**Default value:** 35
+**Default value:** false
 {% endtab %}
 
 {% tab title="Order types" %}
