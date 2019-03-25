@@ -450,8 +450,6 @@ The following parameters in `config.js` have no function for this strategy and a
 
 | Parameter | Description |
 | :--- | :--- |
-| `ATRX` | Placeholder. |
-| `ATR_PERIOD` | Placeholder. |
 | `BUYLVL1` | Placeholder. |
 | `BUYLVL2` | Placeholder. |
 | `BUYLVL3` | Placeholder. |
