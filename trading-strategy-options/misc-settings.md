@@ -132,7 +132,7 @@ Sets a timeout between two trades for a single pair, in this time no trades will
 {% endtab %}
 
 {% tab title="Name" %}
-Parameter name in `config.js`: `PANIC_SELL`
+Parameter name in `config.js`: `TRADES_TIMEOUT`
 {% endtab %}
 {% endtabs %}
 
@@ -352,7 +352,7 @@ When set to true, RT\_SELL orders will be placed as market order.
 {% endtab %}
 
 {% tab title="Name" %}
-Parameter name in `config.js`: `MARKET_RTBUY`
+Parameter name in `config.js`: `MARKET_RTSELL`
 {% endtab %}
 {% endtabs %}
 

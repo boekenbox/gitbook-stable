@@ -100,17 +100,17 @@ Default range settings of 50 / 50 is equal to source settings of HL2 / HL2 for P
 
 ![](https://user-images.githubusercontent.com/2372008/45930681-817e3680-bf63-11e8-8323-dc8fb4aa4c9f.png)
 
-TradingView scripts trade on the OPEN price of the NEXT candle AFTER conditions have been met. The green "BUY!" and red "SELL!" indicate the candle where the decision to trade was made, the blue and purple markers indicate where the trade was made.
+TradingView scripts trade on the OPEN price of the NEXT candle AFTER conditions have been met. The green "LONG!" or "CLOSE SHORT!" and red "SHORT!" or "CLOSE LONG!" indicate the candle where the decision to trade was made, the blue, red, and purple markers indicate where the trade was made.
 
-![](https://user-images.githubusercontent.com/2372008/45930672-690e1c00-bf63-11e8-91f1-ae5a1ebb13cf.png)
+![](../.gitbook/assets/image%20%2811%29.png)
 
-When using the "Gunbot Deluxe Tuners BE \[Alerts\]" script the green "BUY!" and red "SELL!" indicate on screen where the alerts will trigger and send to Gunbot's TradingView add-on.
+When using the "Gunbot Deluxe Tuners BE \[Alerts\]" script the green "LONG!" or "CLOSE SHORT!" and red "SHORT!" or "CLOSE LONG!" indicate on screen where the alerts will trigger and send to Gunbot's TradingView add-on.
 
 ![](../.gitbook/assets/image.png)
 
 ![](../.gitbook/assets/image%20%286%29.png)
 
-![](../.gitbook/assets/image%20%2811%29.png)
+![](../.gitbook/assets/image%20%2812%29.png)
 
 ![](../.gitbook/assets/image%20%282%29.png)
 
@@ -134,7 +134,7 @@ Do NOT change any of these settings EXCEPT for Commission.
 
 ### **Why am I not seeing any trades?**
 
-Because the pair is likely bagged up to the left of your screen. Temporarily lower the STOP\_LIMIT to a small value like 5 or scroll left to see. Other reasons may be that you have unrealistic levels set so no buy is ever made.
+Because the pair is likely bagged up to the left of your screen. Temporarily lower the STOP\_LIMIT to a small value like 5 or scroll left to see. Other reasons may be that you have levels too conservative for that pair so no trade is ever made. **Temporarily lower BUY\_LEVEL, LONG\_LEVEL, and SHORT\_LEVEL to 0.1 to see.**
 
 ### **Why did it not trade where I think it should?**
 
@@ -150,7 +150,7 @@ Chrome, Edge, Safari browsers seems to work the best with TradingView, Internet 
 
 ### **Can I use Heikin Ashi or other types of candles?**
 
-No, the Tuner scripts \(and Gunbot\) only use regular style "Candles". Some of the other types will run and give results but they will not be accurate.
+No, the Tuner scripts only use regular style "Candles". Some of the other types will run and give results but they will not be accurate.
 
 ### **Why has my Tuner stopped working?**
 
