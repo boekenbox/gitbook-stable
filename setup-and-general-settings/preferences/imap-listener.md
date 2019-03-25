@@ -14,7 +14,7 @@ To change them, go to **Settings** &gt; **IMAP Listener**.
 
 Below you'll find detailed descriptions of all available parameters for the IMAP listener.
 
-### Enabled
+### Enabled \(IMAP listener\)
 
 {% tabs %}
 {% tab title="Description" %}

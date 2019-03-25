@@ -8,11 +8,11 @@ To change them, go to **Settings** &gt; **GUI Notifications**.
 
 ![](../../.gitbook/assets/image-21.png)
 
-### Settings descriptions
+## Settings descriptions
 
 Below you'll find detailed descriptions of all available parameters for GUI settings. A few advanced settings are only available in the `config.js` file.
 
-#### Callback Messages
+### Callback Messages
 
 {% tabs %}
 {% tab title="Description" %}
@@ -30,7 +30,7 @@ Parameter name in `config.js`: `callback`
 {% endtab %}
 {% endtabs %}
 
-#### Error Messages
+### Error Messages
 
 {% tabs %}
 {% tab title="Description" %}
@@ -48,7 +48,7 @@ Parameter name in `config.js`: `error`
 {% endtab %}
 {% endtabs %}
 
-#### Trade Messages
+### Trade Messages
 
 {% tabs %}
 {% tab title="Description" %}
@@ -66,7 +66,7 @@ Parameter name in `config.js`: `trade`
 {% endtab %}
 {% endtabs %}
 
-#### Enabled
+### Enabled \(GUI\)
 
 {% tabs %}
 {% tab title="Description" %}
@@ -84,7 +84,7 @@ Parameter name in `config.js`: `enabled`
 {% endtab %}
 {% endtabs %}
 
-#### Start
+### Start
 
 {% tabs %}
 {% tab title="Description" %}
@@ -104,7 +104,7 @@ Parameter name in `config.js`: `start`
 {% endtab %}
 {% endtabs %}
 
-#### Port
+### Port
 
 {% tabs %}
 {% tab title="Description" %}
@@ -122,7 +122,7 @@ Parameter name in `config.js`: `port`
 {% endtab %}
 {% endtabs %}
 
-#### Https
+### Https
 
 {% tabs %}
 {% tab title="Description" %}
@@ -142,7 +142,7 @@ Parameter name in `config.js`: `https`
 {% endtab %}
 {% endtabs %}
 
-#### Key
+### Key
 
 {% tabs %}
 {% tab title="Description" %}
@@ -160,7 +160,7 @@ Parameter name in `config.js`: `key`
 {% endtab %}
 {% endtabs %}
 
-#### Cert
+### Cert
 
 {% tabs %}
 {% tab title="Description" %}
@@ -178,7 +178,7 @@ Parameter name in `config.js`: `cert`
 {% endtab %}
 {% endtabs %}
 
-#### Networktraffic
+### Networktraffic
 
 {% tabs %}
 {% tab title="Description" %}
@@ -198,7 +198,7 @@ Parameter name in `config.js`: `networktraffic`
 {% endtab %}
 {% endtabs %}
 
-#### Login
+### Login
 
 {% tabs %}
 {% tab title="Description" %}
@@ -218,7 +218,7 @@ Parameter name in `config.js`: `login`
 {% endtab %}
 {% endtabs %}
 
-#### TwoFA
+### TwoFA
 
 {% tabs %}
 {% tab title="Description" %}

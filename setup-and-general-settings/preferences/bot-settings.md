@@ -318,3 +318,43 @@ Parameter name in `config.js`: `withdraw_threshold`
 {% endtab %}
 {% endtabs %}
 
+### Withdraw Address
+
+{% tabs %}
+{% tab title="Description" %}
+Set a valid BTC wallet address to enable automatic withdraws each time the threshold is reached.
+
+Please use this feature at your own risk only.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** string
+
+**Default value:** YOURBTCADDRESSHERE
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `withdraw_address`
+{% endtab %}
+{% endtabs %}
+
+### Json\_output
+
+{% tabs %}
+{% tab title="Description" %}
+Sets the path for storing .json files. These files are where Gunbot saves its trading information.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** text, represents a folder location.
+
+**Default value:** ./json
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `json_output`
+{% endtab %}
+{% endtabs %}
+
+
+
