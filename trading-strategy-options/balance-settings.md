@@ -176,9 +176,9 @@ This parameter is irrelevant for trading at Bitmex.
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** true or false
+**Values:** numerical, represents volume in base currency
 
-**Default value:** false
+**Default value:** 0.001
 {% endtab %}
 
 {% tab title="Order types" %}
@@ -214,9 +214,9 @@ This parameter is irrelevant for trading at Bitmex.
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** true or false
+**Values:** numerical, represents volume in base currency
 
-**Default value:** false
+**Default value:** 0.001
 {% endtab %}
 
 {% tab title="Order types" %}
@@ -233,4 +233,6 @@ This parameter is irrelevant for trading at Bitmex.
 Parameter name in `config.js`: `MIN_VOLUME_TO_BUY`
 {% endtab %}
 {% endtabs %}
+
+
 
