@@ -10,7 +10,7 @@ To change websocket settings, go to **Settings** &gt; **Websocket**.
 
 Below you'll find detailed descriptions of all available parameters for websockets.
 
-### Port
+### Port \(WS\)
 
 {% tabs %}
 {% tab title="Description" %}

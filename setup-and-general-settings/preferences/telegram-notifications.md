@@ -145,7 +145,7 @@ During the set amount of seconds you can choose to allow the order \(and it will
 {% endtab %}
 
 {% tab title="Name" %}
-Parameter name in `config.js`: `TG_PL_ONLY`
+Parameter name in `config.js`: `TG_ORDER_TIMEOUT`
 {% endtab %}
 {% endtabs %}
 

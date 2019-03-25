@@ -29,7 +29,7 @@ Trading limits can only be specifically defined in buy/long/short alerts, for ot
 
 _Replace_ `EXCHANGE` _with the name of your exchange._
 
-#### For all exchanges
+#### For all spot exchanges
 
 | Alert message | Action |
 | :--- | :--- |
@@ -98,7 +98,7 @@ Parameter name in `config.js`: `TV_GAIN`
 {% tab title="Description" %}
 This value defines the trading limit for each buy order placed through the add-on.
 
-The default value of 0.002 would place maximum orders of 0.002 BTC when used on a BTC-x pair.
+The default value of 0.002 would place orders of 0.002 BTC when used on a BTC-x pair.
 
 When not using `TV_PYRAMID`, a sell alert will place a sell order for the full quote balance held.
 
@@ -124,7 +124,7 @@ Parameter name in `config.js`: `TV_TRADING_LIMIT_BUY`
 {% tab title="Description" %}
 This value defines the trading limit for each pyramid buy order placed through the add-on.
 
-The default value of 0.002 would place maximum orders of 0.002 BTC when used on a BTC\_x pair.
+The default value of 0.002 would place orders of 0.002 BTC when used on a BTC-x pair.
 
 {% hint style="info" %}
 **Bitmex**: enter the desired number of contracts
@@ -138,7 +138,7 @@ The default value of 0.002 would place maximum orders of 0.002 BTC when used on 
 {% endtab %}
 
 {% tab title="Name" %}
-Parameter name in `config.js`: `TV_TRADING_LIMIT_BUY`
+Parameter name in `config.js`: `TV_TRADING_LIMIT_BUY_PYRAMID`
 {% endtab %}
 {% endtabs %}
 
@@ -166,7 +166,7 @@ Parameter name in `config.js`: `TV_PYRAMID`
 {% tab title="Description" %}
 This value defines the trading limit for sell orders when `TV_PYRAMID` is enabled.
 
-The default value of 0.002 would place maximum orders of 0.002 BTC when used on a BTC-x pair.
+The default value of 0.002 would place orders of 0.002 BTC when used on a BTC-x pair.
 
 {% hint style="info" %}
 **Bitmex**: enter the desired number of contracts
@@ -296,7 +296,7 @@ Sets a threshold for sell orders, If you own less than the set amount, sell orde
 {% endtab %}
 
 {% tab title="Name" %}
-Parameter name in `config.js`: `WATCH_MODE`
+Parameter name in `config.js`: `TV_MVTS`
 {% endtab %}
 {% endtabs %}
 

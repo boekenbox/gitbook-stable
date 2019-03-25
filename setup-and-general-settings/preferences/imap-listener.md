@@ -106,11 +106,11 @@ Parameter name in `config.js`: `host`
 {% endtab %}
 {% endtabs %}
 
-### Port
+### Port \(IMAP\)
 
 {% tabs %}
 {% tab title="Description" %}
-The port number for the IMAP server.
+Defines the port number for the IMAP server.
 {% endtab %}
 
 {% tab title="Values" %}
@@ -141,4 +141,24 @@ Defines if TLS encryption is used for the IMAP connection.
 Parameter name in `config.js`: `tls`
 {% endtab %}
 {% endtabs %}
+
+### rejectUnauthorized
+
+{% tabs %}
+{% tab title="Description" %}
+Enable this to allow connections to IMAP servers using a certificate unknown to certificate authorities. $$a = b$$ 
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** true or false
+
+**Default value:** false
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `rejectUnauthorized (child of tlsOptions)`
+{% endtab %}
+{% endtabs %}
+
+### 
 

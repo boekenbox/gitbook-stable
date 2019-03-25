@@ -104,7 +104,7 @@ Parameter name in `config.js`: `start`
 {% endtab %}
 {% endtabs %}
 
-### Port
+### Port \(GUI\)
 
 {% tabs %}
 {% tab title="Description" %}
