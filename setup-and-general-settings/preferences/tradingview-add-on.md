@@ -180,7 +180,7 @@ The default value of 0.002 would place orders of 0.002 BTC when used on a BTC-x 
 {% endtab %}
 
 {% tab title="Name" %}
-Parameter name in `config.js`: `WATCH_MODE`
+Parameter name in `config.js`: `TV_TRADING_LIMIT_SELL`
 {% endtab %}
 {% endtabs %}
 
