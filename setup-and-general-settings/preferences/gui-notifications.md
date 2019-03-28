@@ -88,7 +88,9 @@ Parameter name in `config.js`: `enabled`
 
 {% tabs %}
 {% tab title="Description" %}
-When set to false, Gunbot starts the GUI but does not process pairs until the core is started from the GUI. This setting is toggled with the **START BOT CORE** button.
+When set to false, Gunbot starts the GUI \(if enabled\)  but does not process pairs until the core is started from the GUI. 
+
+This setting is toggled with the **START BOT CORE** button in the GUI.
 
 In case you don't want to use the GUI, set this to true.
 {% endtab %}
