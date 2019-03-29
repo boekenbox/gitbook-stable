@@ -7,7 +7,7 @@ Many different order types can use trailing, the basic principles are always the
 * Trailing is purely based on prices, not on indicators. 
 * When confirming indicators are used, trailing must finish while their conditions are still met.
 * When buying, the ask price is used as reference. When selling, bid is used.
-* Ranges for trailing are defined in a percentage of the latest bid or ask price.
+* Ranges for trailing are defined as a percentage of the latest bid or ask price.
 * When price moves in the direction of your target, ranges are set around bid/ask every round.
 * When price moves in the opposite direction of your target, trailing limits are frozen.
 * Ranges are reset when price moves outside of the target.
