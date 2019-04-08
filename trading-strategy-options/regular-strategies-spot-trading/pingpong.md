@@ -161,7 +161,7 @@ Parameter name in `config.js`: `SELL_ENABLED`
 {% tab title="Description" %}
 This sets the exact target price for placing a sell order. A sell order will be placed as soon as this price is hit or an even better price is available.
 
-For example: when trading a BTC-x pair with `PP_SELL` set to 0.00123456, a buy order will be placed in the first cycle where the bid price is 0.00123456 or lower.
+For example: when trading a BTC-x pair with `PP_SELL` set to 0.00123456, a sell order will be placed in the first cycle where the bid price is 0.00123456 or higher.
 {% endtab %}
 
 {% tab title="Values" %}
