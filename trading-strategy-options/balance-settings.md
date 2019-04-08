@@ -114,15 +114,11 @@ Parameter name in `config.js`: `TL_ALLIN`
 {% endtab %}
 {% endtabs %}
 
-### Trading Fees
+### Trading Limit All-In
 
 {% tabs %}
 {% tab title="Description" %}
-This sets the trading fees paid to the exchange. Gunbot uses this data to calculate the break-even point.
-
-Does your exchange charge 0.25% fees per trade? Then set this to 0.25. When your exchange has different fees for different types of trades, set the average fees per trade.
-
-Trading fees are reflected in the average bought price. Exchanges only calculate fees after the trade comes in, Gunbot needs to know about fees before the trade is sent to the exchange.
+Alternative method for setting the investment per buy order to use all available base currency at the time the trade takes place.
 
 {% hint style="info" %}
 This parameter is irrelevant for trading at Bitmex.
@@ -130,13 +126,51 @@ This parameter is irrelevant for trading at Bitmex.
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** numerical - represents a percentage.
+**Values:** true or false
 
-**Default value:** 0.25
+**Default value:** false
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| Strategy buy | Strategy sell |
+|  | RT buy |
+|  | RT buyback |
+|  | RT sell |
+|  | Close |
+|  | DCA buy |
+|  | Stop limit |
 {% endtab %}
 
 {% tab title="Name" %}
-Parameter name in `config.js`: `TRADING_FEES`
+Parameter name in `config.js`: `TL_ALLIN`
+{% endtab %}
+{% endtabs %}
+
+### Keep Quote
+
+{% tabs %}
+{% tab title="Description" %}
+Sets an amount of quote currency that will not be sold. For a BTC-ALT pair, a set amount of ALT will not be sold.
+
+For example: when `KEEP_QUOTE` is set to 10 for trading BTC-BNB, then Gunbot will leave 10 BNB in your account when placing a sell order, any balance above 10 will get sold as long as it is worth more than `MIN_VOLUME_TO_SELL`.
+
+To make sure trading continues after a sell order where an amount of quote is kept, make sure to set `MIN_VOLUME_TO_SELL` at least higher than the assumed value of the kept quote \(expressed in base currency\). When you do not do this, and set `MIN_VOLUME_TO_SELL` lower than the value of quote kept, Gunbot will attempt to sell again after the initial sell order \(as balance is higher than `MIN_VOLUME_TO_SELL`\) - which won't succeed since you only own the amount specified in `KEEP_QUOTE`.
+
+{% hint style="info" %}
+This parameter is irrelevant for trading at Bitmex.
+{% endhint %}
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** numerical - represents an amount in quote currency.
+
+**Default value:** 0
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `KEEP_QUOTE`
 {% endtab %}
 {% endtabs %}
 
