@@ -40,7 +40,7 @@ The resulting sell order would have profitably sold all available units at a muc
 Configurable options for averaging down are:
 
 * **Buydown:** A minimum price difference between the last buy and next DU buy. Regardless which DU method is picked, buydown must be reached for a DU buy.
-* **DU method:** **HIGHBB** as shown above, **RSI** where DU buys are only placed within a configurable RSI range, a **numerical** value defining a percentage price drop compared to the last bought price.
+* **DU method:** **HIGHBB** as shown above, **RSI** where DU buys are only placed within a configurable RSI range, and a **numerical** value defining a percentage price drop compared to the last bought price.
 * **Ratio:** Defines how much extra quote units are bought for each DU buy.
 * **Frequency:** How many DU buy orders are allowed.
 * **Trailing:** DU buy orders can optionally use trailing.

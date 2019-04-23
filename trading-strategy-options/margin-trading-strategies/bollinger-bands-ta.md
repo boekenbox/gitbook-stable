@@ -438,7 +438,7 @@ This sets the target for buying. Negative values are allowed.
 
 The bot will buy when price hits the set percentage from the lower Bollinger Band and the price is below the entry point as defined by `BUY_LEVEL`.
 
-When set to 0, the lower Bollinger Band is the target. When set to 30, the target is 30% above the lower Bollinger Band - the upper band is at 100% from the lower band.
+When set to 0, the lower Bollinger Band is the target. When set to 30, the target is 30% above the lower Bollinger Band - the upper band is at 100% from the lower band. Negative values are allowed.
 {% endtab %}
 
 {% tab title="Values" %}
@@ -472,7 +472,7 @@ This sets the target for selling. Negative values are allowed.
 
 The bot will sell when price hits the set percentage from the upper Bollinger Band and `GAIN` is reached.
 
-When set to 0, the upper Bollinger Band is the target \(well, almost\). When set to 30, the target is 30% under the upper Bollinger Band - the lower band is at 100% from the upper band.
+When set to 0, the upper Bollinger Band is the target \(well, almost\). When set to 30, the target is 30% under the upper Bollinger Band - the lower band is at 100% from the upper band. Negative values are allowed.
 {% endtab %}
 
 {% tab title="Values" %}

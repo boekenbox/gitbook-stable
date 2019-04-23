@@ -243,7 +243,7 @@ It works by trailing prices upwards between the break-even point and the strateg
 
 Sells at minimal loss are possible when using `TAKE_PROFIT`, acting as a sort of mini stop loss.
 
-This option should not be used together with reversal trading and `DOUBLE_CHECK_GAIN`
+This option should not be used together with reversal trading or `DOUBLE_CHECK_GAIN`
 {% endtab %}
 
 {% tab title="Values" %}
@@ -442,7 +442,7 @@ This sets the target for buying. Negative values are allowed.
 
 The bot will buy after prices first move under the set % from the lower Bollinger Band, then cross over the set level.
 
-When set to 0, the lower Bollinger Band is the target. When set to 30, the target is 30% above the lower Bollinger Band - the upper band is at 100% from the lower band.
+When set to 0, the lower Bollinger Band is the target. When set to 30, the target is 30% above the lower Bollinger Band - the upper band is at 100% from the lower band. Negative values are allowed.
 {% endtab %}
 
 {% tab title="Values" %}
@@ -476,7 +476,7 @@ This sets the target for selling. Negative values are allowed.
 
 The bot will sell after prices first move over the set % from the upper Bollinger Band, then cross down the set level. Additionally `GAIN` must be reached.
 
-When set to 0, the upper Bollinger Band is the target. When set to 30, the target is 30% under the upper Bollinger Band - the lower band is at 100% from the upper band.
+When set to 0, the upper Bollinger Band is the target. When set to 30, the target is 30% under the upper Bollinger Band - the lower band is at 100% from the upper band. Negative values are allowed.
 {% endtab %}
 
 {% tab title="Values" %}

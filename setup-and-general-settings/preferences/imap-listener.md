@@ -146,7 +146,7 @@ Parameter name in `config.js`: `tls`
 
 {% tabs %}
 {% tab title="Description" %}
-Enable this to allow connections to IMAP servers using a certificate unknown to certificate authorities. $$a = b$$ 
+Enable this to allow connections to IMAP servers using a certificate unknown to certificate authorities.
 {% endtab %}
 
 {% tab title="Values" %}
