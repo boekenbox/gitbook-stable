@@ -55,7 +55,263 @@ Be careful about the set ratio and frequency, make sure you have enough free fun
 
 Following settings options are available Double Up.
 
-Reversal trading is available in most Gunbot strategies, on each strategy page you'll find an overview with only the relevant settings for that strategy.
+### Double Up
+
+{% tabs %}
+{% tab title="Description" %}
+When set to true, `DOUBLE_UP` will try to get rid of bags by averaging down. Works on all strategies. Averaging down can use up a lot of balance, make sure you have enough of your base currency available to cover each double up buy. Gunbot will start averaging down a bag according to your setting for `DU_METHOD`.
+
+Averaging down means that you buy more units at a lower price, bringing down the average price per unit.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** true or false
+
+**Default value:** false
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| DCA buy | Strategy buy |
+|  | Strategy sell |
+|  | Close |
+|  | RT sell |
+|  | Stop limit |
+|  | RT buyback |
+|  | RT buy |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `DOUBLE_UP`
+{% endtab %}
+{% endtabs %}
+
+### DU Method
+
+{% tabs %}
+{% tab title="Description" %}
+This sets the trigger for placing buy orders with double up.
+
+When set to **HIGHBB** Gunbot will start averaging down a bag when the actual upper Bollinger Band drops below bought price \(not the distance from it as set in `HIGH_BB`\) and the current price is a percentage below last bought price, as set in `DU_BUYDOWN`.
+
+When set to **RSI**, buy orders will only be placed when the set `RSI_BUY_LEVEL` is reached and the current price is a percentage below last bought price, as set in `DU_BUYDOWN`.
+
+When set to a **numerical** value like 2, buy orders will be placed when the price drops by 2% compared to the last bought price. Keep in mind that `DU_BUYDOWN` must still be reached when using numerical values for `DU_METHOD`.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** HIGHBB, RSI, or a numerical value representing a percentage
+
+**Default value:** HIGHBB
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| DCA buy | Strategy buy |
+|  | Strategy sell |
+|  | Close |
+|  | RT sell |
+|  | Stop limit |
+|  | RT buyback |
+|  | RT buy |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `DU_METHOD`
+{% endtab %}
+{% endtabs %}
+
+### Double Up Cap
+
+{% tabs %}
+{% tab title="Description" %}
+This defines the ratio to the pairs balance to be used for each consecutive buy when doubling up. Setting it to 0.5 would mean it uses a 0.5:1 ratio for averaging down. 
+
+It is recommended to set this as high as you can afford, to increase your chance to actually average down and sell at profit. Make sure that the resulting amount for the first double up order exceeds `MIN_VOLUME_TO_SELL`
+
+Example with ratio of 1: initial buy of 100 LTC, first double up buy order is 100 LTC, second will be 200 LTC, then 400 LTC, etc. Example with 0.5 ratio: initial buy of 100 LTC, first double up buy order is 50 LTC, then 75 LTC, then 112.5 LTC.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** numerical, represents a ratio.
+
+**Default value:** 1
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| DCA buy | Strategy buy |
+|  | Strategy sell |
+|  | Close |
+|  | RT sell |
+|  | Stop limit |
+|  | RT buyback |
+|  | RT buy |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `DOUBLE_UP_CAP`
+{% endtab %}
+{% endtabs %}
+
+### DU Cap Count
+
+{% tabs %}
+{% tab title="Description" %}
+Sets the maximum number of times double up orders may be placed.
+
+When set to 1, a maximum number of 1 double up orders will be placed to average down. When you set this higher, double up can place more orders and has a higher chance of effectively averaging down and come closer to a profitable exit point each time it places a double up order.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** numerical
+
+**Default value:** 0
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| DCA buy | Strategy buy |
+|  | Strategy sell |
+|  | Close |
+|  | RT sell |
+|  | Stop limit |
+|  | RT buyback |
+|  | RT buy |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `DU_CAP_COUNT`
+{% endtab %}
+{% endtabs %}
+
+### DU Buydown
+
+{% tabs %}
+{% tab title="Description" %}
+The minimum price drop compared to the last bought price that needs to occur for double up buys to be placed.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** numerical, represents a percentage
+
+**Default value:** 2
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| DCA buy | Strategy buy |
+|  | Strategy sell |
+|  | Close |
+|  | RT sell |
+|  | Stop limit |
+|  | RT buyback |
+|  | RT buy |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `DU_BUYDOWN`
+{% endtab %}
+{% endtabs %}
+
+### RSI DU Buy
+
+{% tabs %}
+{% tab title="Description" %}
+ Use this to specify the maximum RSI level for buying when `DU_METHOD` is set to RSI.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** numerical, ranging between 1 and 99
+
+**Default value:** 30
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| DCA buy | Strategy buy |
+|  | Strategy sell |
+|  | Close |
+|  | RT sell |
+|  | Stop limit |
+|  | RT buyback |
+|  | RT buy |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `RSI_DU_BUY`
+{% endtab %}
+{% endtabs %}
 
 Double up depends on several TrailMe settings to reach better entry points. The relevant settings are listed below.
+
+### Trail Me DU
+
+{% tabs %}
+{% tab title="Description" %}
+Use this to enable tssl-style trailing for double up orders.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** true or false
+
+**Default value:** false
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| DCA buy | Strategy buy |
+|  | Strategy sell |
+|  | Close |
+|  | RT sell |
+|  | Stop limit |
+|  | RT buyback |
+|  | RT buy |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `TRAIL_ME_DU`
+{% endtab %}
+{% endtabs %}
+
+### Trail Me Buy Range
+
+{% tabs %}
+{% tab title="Description" %}
+This sets the buy range for TrailMe.
+
+Setting a range of 0.5% at a starting price of 0.1 would set a range between 0.0995 and 0.1005. As long as prices keep moving downwards, the range moves down along with the price.
+
+As soon as prices start going upward, the range freezes and a buy order is placed when the price crosses the upper boundary of the range.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** numerical – represent a percentage.
+
+**Default value:** 0.5
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| Strategy buy | RT sell |
+| RT Buy | Strategy sell |
+| DCA buy | Close |
+|  | Stop limit |
+|  | RT buyback |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `TRAIL_ME_BUY_RANGE`
+{% endtab %}
+{% endtabs %}
+
+### 
 
