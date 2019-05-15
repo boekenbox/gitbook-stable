@@ -114,40 +114,6 @@ Parameter name in `config.js`: `TL_ALLIN`
 {% endtab %}
 {% endtabs %}
 
-### Trading Limit All-In
-
-{% tabs %}
-{% tab title="Description" %}
-Alternative method for setting the investment per buy order to use all available base currency at the time the trade takes place.
-
-{% hint style="info" %}
-This parameter is irrelevant for trading at Bitmex.
-{% endhint %}
-{% endtab %}
-
-{% tab title="Values" %}
-**Values:** true or false
-
-**Default value:** false
-{% endtab %}
-
-{% tab title="Order types" %}
-| Affects | Does not affect |
-| :--- | :--- |
-| Strategy buy | Strategy sell |
-|  | RT buy |
-|  | RT buyback |
-|  | RT sell |
-|  | Close |
-|  | DCA buy |
-|  | Stop limit |
-{% endtab %}
-
-{% tab title="Name" %}
-Parameter name in `config.js`: `TL_ALLIN`
-{% endtab %}
-{% endtabs %}
-
 ### Keep Quote
 
 {% tabs %}
