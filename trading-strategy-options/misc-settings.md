@@ -14,7 +14,9 @@ After a stop limit sell order has been placed, the bot will go into buying mode 
 
 Setting a stop limit at 60 would make sure that all holdings for a coin are sold when 60% value is lost, compared to the averaged bought price. E.g. average bought price is 100, stop limit is executed at 40 and all assets are sold.
 
-When in a short margin position with a stop set to 60 and an entry at 100, the stop would hit when price reaches 160.
+{% hint style="info" %}
+On margin exchanges, the stop limit is set as a ROE value. Setting it to 1 will lead to the stop limit triggering when ROE reaches -1.
+{% endhint %}
 {% endtab %}
 
 {% tab title="Values" %}
