@@ -66,14 +66,6 @@ Enter your GUNTHY wallet address on **Settings &gt; Prefences &gt; Gunthy Wallet
 
 Make sure that all of your master keys are set on the [Swap Exchanges](../connect-exchange/api-slots.md) page. Anytime you need to update a key, you can do it yourself using this page.
 
-## Updating GUNTHY wallet
-
-If you need to switch to another GUNTHY wallet, you can update it on **Settings &gt; Prefences &gt; Gunthy Wallet**.
-
-All of your registered API keys connected to the old wallet address will be registered to the new wallet address after updating it.
-
-![](../../../.gitbook/assets/image-5.png)
-
 ## FAQ
 
 **Are there costs involved when I update my API key?**
