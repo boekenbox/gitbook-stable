@@ -101,8 +101,8 @@
 ## Extras
 
 * [Backtesting](extras/backtesting-add-on.md)
-* [Cryptosight](extras/cryptosight-add-on.md)
 * [TradingView](https://wiki.gunthy.org/setup-and-general-settings/preferences/tradingview-add-on)
+* [CryptoSight](https://wiki.gunthy.org/setup-and-general-settings/preferences/telegram-notifications)
 
 ## Various
 
