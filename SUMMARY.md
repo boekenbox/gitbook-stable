@@ -11,8 +11,8 @@
   * [New in v8](about/whats-new/new-in-v8.md)
   * [New in v7](about/whats-new/new-in-v7.md)
   * [New in v6](about/whats-new/new-in-v6.md)
-* [Purchasing Gunbot](https://github.com/GuntharDeNiro/BTCT/wiki/Resellers)
 * [Supported exchanges](about/supported-exchanges.md)
+* [Purchasing Gunbot](https://github.com/GuntharDeNiro/BTCT/wiki/Resellers)
 * [System requirements](about/system-requirements.md)
 
 ## Setup & general settings
@@ -101,8 +101,8 @@
 ## Extras
 
 * [Backtesting](extras/backtesting-add-on.md)
+* [Cryptosight](extras/cryptosight-add-on.md)
 * [TradingView](https://wiki.gunthy.org/setup-and-general-settings/preferences/tradingview-add-on)
-* [CryptoSight](https://wiki.gunthy.org/setup-and-general-settings/preferences/telegram-notifications)
 
 ## Various
 

@@ -1,18 +1,23 @@
+---
+description: >-
+  Gunbot comes with a built-in Telegram bot that can be used to receive trade
+  notifications, retrieve stats and control certain options of Gunbot right from
+  from your Telegram client.
+---
+
 # Telegram notifications
 
-
-
 {% hint style="info" %}
-**CryptoSight is now fully integrated into Gunbot.** 
+CryptoSight is now fully integrated into Gunbot. All you need to do to start the Telegram bot is enable Telegram notifications in your Gunbot settings.
 
-All you need to do to start the Telegram bot is enable Telegram notifications in your Gunbot settings. After setting it up, type **`/start`** to your bot to open the menu.
+After setting it up, type `/start` to your bot to open the menu.
 {% endhint %}
 
-Gunbot comes with a built-in Telegram bot that can be used to receive trade notifications, retrieve stats and control certain options of Gunbot right from from your Telegram client.
+## Demo video
 
-{% embed url="https://www.youtube.com/watch?v=11fHq22nNFo" %}
+{% embed url="https://www.youtube.com/watch?v=11fHq22nNFo" caption="" %}
 
-
+## Get started
 
 To set this up, go to **Settings** &gt; **Telegram**.
 
@@ -168,6 +173,10 @@ Parameter name in `config.js`: `TG_ORDER_TIMEOUT`
 Enable this to test if your Telegram bot is working.
 
 A test message will be sent on the first round for each pair. Disable after verifying your bot works.
+
+{% hint style="info" %}
+This option is temporarily not available. It will be activated again in one of the next Gunbot updates.
+{% endhint %}
 {% endtab %}
 
 {% tab title="Values" %}
