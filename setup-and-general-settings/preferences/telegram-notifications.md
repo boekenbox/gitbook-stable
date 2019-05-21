@@ -1,9 +1,11 @@
 # Telegram notifications
 
-{% hint style="info" %}
-CryptoSight is now fully integrated into Gunbot. All you need to do to start the Telegram bot is enable Telegram notifications in your Gunbot settings.
 
-After setting it up, type `/start` to your bot to open the menu.
+
+{% hint style="info" %}
+**CryptoSight is now fully integrated into Gunbot.** 
+
+All you need to do to start the Telegram bot is enable Telegram notifications in your Gunbot settings. After setting it up, type **`/start`** to your bot to open the menu.
 {% endhint %}
 
 Gunbot comes with a built-in Telegram bot that can be used to receive trade notifications, retrieve stats and control certain options of Gunbot right from from your Telegram client.
