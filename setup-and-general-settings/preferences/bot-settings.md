@@ -280,26 +280,6 @@ Parameter name in `config.js`: `CANCEL_ONCAP`
 {% endtab %}
 {% endtabs %}
 
-### Withdraw Address
-
-{% tabs %}
-{% tab title="Description" %}
-Set a valid BTC wallet address to enable automatic withdraws each time the threshold is reached.
-
-Please use this feature at your own risk only.
-{% endtab %}
-
-{% tab title="Values" %}
-**Values:** string
-
-**Default value:** YOURBTCADDRESSHERE
-{% endtab %}
-
-{% tab title="Name" %}
-Parameter name in `config.js`: `withdraw_address`
-{% endtab %}
-{% endtabs %}
-
 ### Withdraw Threshold
 
 {% tabs %}
