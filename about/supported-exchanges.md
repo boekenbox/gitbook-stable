@@ -14,7 +14,7 @@ For trading at Bitmex Testnet no Gunbot license is needed.
 | **Bittrex** | `bittrex` | Regular | Regular |
 | **Bitfinex** | `bitfinex` | Regular | Regular & Margin |
 | **Bitmex** | `bitmex` | Margin | Margin |
-| **Bitmex testnet** | `bitmex_testnet` | Margin | Margin |
+| **Bitmex testnet** | `bitmex_testnet` | Margin | Not supported |
 | **CEX** | `cex` | Regular | Regular |
 | **Coinbase Pro** | `gdax` | Regular | Regular |
 | **Cryptopia** | `cryptopia` | Regular | Regular |

@@ -30,7 +30,7 @@ Look up the minimum trade size for your pair, and set it exactly like this.
 
 When min volume to sell is correctly set to 10, Gunbot will ignore the current balance and proceed with looking for a buy opportunity.
 
-When min volume to buy is set incorrectly, for example to 3, Gunbot will attempt to sell the current balance worth only 8 USDT. This will fail because the exchange does not allow the trade.
+When min volume to sell is set incorrectly, for example to 3, Gunbot will attempt to sell the current balance worth only 8 USDT. This will fail because the exchange does not allow the trade.
 
 ## Min volume to buy
 

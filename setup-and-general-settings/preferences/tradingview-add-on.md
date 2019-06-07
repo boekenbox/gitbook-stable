@@ -218,7 +218,7 @@ The maximum amount of base currency to be invested in a pair.
 {% tab title="Values" %}
 **Values:** numerical – represents an amount in base currency.
 
-**Default value:** 0.002
+**Default value:** 0.0001
 {% endtab %}
 
 {% tab title="Name" %}

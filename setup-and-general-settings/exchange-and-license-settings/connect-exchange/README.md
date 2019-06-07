@@ -21,6 +21,11 @@ Select your exchange and fill in all the fields for this exchange.
       </td>
       <td style="text-align:left">
         <p>The API key registered to be used with Gunbot.</p>
+        <p>
+          <br /><b>This is the key you&apos;ve registered during an order, or have entered on the &quot;swap exchanges&quot; page. Each exchange has it&apos;s own master key.</b>
+          <br
+          />
+        </p>
         <p>This key may have read only access as long as you use a different Key
           for actual trading.</p>
       </td>
