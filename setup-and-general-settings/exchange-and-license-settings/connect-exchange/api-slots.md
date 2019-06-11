@@ -10,7 +10,7 @@ On the **Swap Exchanges** page you can see how many API slots your license has, 
 
 To register a new key, follow these steps:
 
-* Make sure the Gunbot core is running
+* Make sure the Gunbot core is running, without errors, on an already registered API key
 * Go to the **Swap Exchanges** page, select the exchange, enter your key and save the changes.
 * Refresh the page in case you don't see the form to update your keys.
 
