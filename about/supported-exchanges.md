@@ -4,10 +4,6 @@ description: Gunbot currently supports trading at the following exchanges.
 
 # Supported exchanges
 
-{% hint style="success" %}
-For trading at Bitmex Testnet no Gunbot license is needed. 
-{% endhint %}
-
 | Exchange | Name in config | Native strategies | TradingView alerts |
 | :--- | :--- | :--- | :--- |
 | **Binance** | `binance` | Regular | Regular |
