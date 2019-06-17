@@ -13,7 +13,6 @@ description: Gunbot currently supports trading at the following exchanges.
 | **Bitmex testnet** | `bitmex_testnet` | Margin | Not supported |
 | **CEX** | `cex` | Regular | Regular |
 | **Coinbase Pro** | `gdax` | Regular | Regular |
-| **Cryptopia** | `cryptopia` | Regular | Regular |
 | **Huobi Global** | `huobi` | Regular | Regular & Margin |
 | **Kraken** | `kraken` | Regular | Regular & Margin |
 | **KuCoin** | `kucoin` | Regular | Regular |
