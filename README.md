@@ -1,5 +1,5 @@
 ---
-description: 'This wiki is written for the latest stable Gunbot release: v12'
+description: 'This wiki is written for the latest stable Gunbot release: v13'
 ---
 
 # Welcome to the Gunbot wiki
@@ -14,7 +14,7 @@ No need for a subscription, a one time fee gets you lifetime support and softwar
 
 ### Gunbot is used by thousands of users and has an awesome community ❤️
 
-![](.gitbook/assets/image%20%286%29.png)
+![](.gitbook/assets/image%20%2822%29.png)
 
 {% page-ref page="setup-and-general-settings/installation/" %}
 
@@ -23,6 +23,28 @@ No need for a subscription, a one time fee gets you lifetime support and softwar
 {% page-ref page="how-to-work-with-gunbot/basic-workings/" %}
 
 {% page-ref page="how-to-work-with-gunbot/editing-strategies-and-pairs/" %}
+
+### 
+
+### Shortcuts to strategy descriptions
+
+| Strategy | Link to regular trading description | Link to margin trading description |
+| :--- | :--- | :--- |
+| `ADX` | [Regular](trading-strategy-options/regular-strategies-spot-trading/adx.md) | [Margin](trading-strategy-options/margin-trading-strategies/adx.md) |
+| `ATRTS` | [Regular](trading-strategy-options/regular-strategies-spot-trading/atrts.md) | [Margin](trading-strategy-options/margin-trading-strategies/atrts.md) |
+| `bb` | [Regular](trading-strategy-options/regular-strategies-spot-trading/bollinger-bands.md) | [Margin](trading-strategy-options/margin-trading-strategies/bollinger-bands.md) |
+| `BBTA` | [Regular](trading-strategy-options/regular-strategies-spot-trading/bollinger-bands-ta.md) | [Margin](trading-strategy-options/margin-trading-strategies/bollinger-bands-ta.md) |
+| `EMASPREAD` | [Regular](trading-strategy-options/regular-strategies-spot-trading/ema-spread.md) | [Margin](trading-strategy-options/margin-trading-strategies/ema-spread.md) |
+| `emotionless` | [Regular](trading-strategy-options/regular-strategies-spot-trading/emotionless.md) | N/A |
+| `gain` | [Regular](trading-strategy-options/regular-strategies-spot-trading/gain.md) | [Margin](trading-strategy-options/margin-trading-strategies/gain.md) |
+| `ichimoku` | [Regular](trading-strategy-options/regular-strategies-spot-trading/ichimoku.md) | [Margin](trading-strategy-options/margin-trading-strategies/ichimoku.md) |
+| `MACD` | [Regular](trading-strategy-options/regular-strategies-spot-trading/macd.md) | [Margin](trading-strategy-options/margin-trading-strategies/macd.md) |
+| `MACDH` | [Regular](trading-strategy-options/regular-strategies-spot-trading/macdh.md) | [Margin](trading-strategy-options/margin-trading-strategies/macdh.md) |
+| `pp` | [Regular](trading-strategy-options/regular-strategies-spot-trading/pingpong.md) | [Margin](trading-strategy-options/margin-trading-strategies/pingpong.md) |
+| `stepgain` | [Regular](trading-strategy-options/regular-strategies-spot-trading/stepgain.md) | [Margin](trading-strategy-options/margin-trading-strategies/stepgain.md) |
+| `SMACROSS` | [Regular](trading-strategy-options/regular-strategies-spot-trading/sma-cross.md) | [Margin](trading-strategy-options/margin-trading-strategies/sma-cross.md) |
+| `tsa` | [Regular](trading-strategy-options/regular-strategies-spot-trading/time-series-analysis.md) | [Margin](trading-strategy-options/margin-trading-strategies/time-series-analysis.md) |
+| `tssl` | [Regular](trading-strategy-options/regular-strategies-spot-trading/tssl-trailing-stop-stop-limit.md) | [Margin](trading-strategy-options/margin-trading-strategies/tssl-trailing-stop-stop-limit.md) |
 
 {% hint style="warning" %}
 ## Disclaimer

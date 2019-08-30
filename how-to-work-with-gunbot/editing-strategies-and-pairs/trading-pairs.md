@@ -1,3 +1,7 @@
+---
+description: 'Adding trading pairs to Gunbot, information about how cycling works.'
+---
+
 # Trading pairs
 
 To configure which trading pairs Gunbot should trade, go to **Settings &gt; Trading &gt; Trading Pairs**.
@@ -28,7 +32,7 @@ Every exchange will individually cycle through enabled pairs like described abov
 
 ## Add trading pairs
 
-![](../../.gitbook/assets/image-4.png)
+![](../../.gitbook/assets/image%20%2831%29.png)
 
 Gunbot uses a standardized format for entering trading pairs, this allows you to use the same syntax for all exchanges you might use.
 
@@ -60,7 +64,7 @@ Pairs on Bitmex use almost the same symbols as on Bitmex itself, but with a hyph
 
 Overrides are pair specific settings, overruling the assigned strategy. Every strategy parameter can be used as an override.
 
-![](../../.gitbook/assets/image-22.png)
+![](../../.gitbook/assets/image%20%2821%29.png)
 
 You can use this, for example, to set a different `TRADING_LIMIT` for a specific pair.
 

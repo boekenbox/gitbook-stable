@@ -1,10 +1,14 @@
+---
+description: How to connect Gunbot to your exchange account.
+---
+
 # Connect exchange
 
 To be able to trade, you need to enter the exchange [API key](creating-api-keys.md) and secret.
 
 To enter these, go to **Settings &gt; Trading &gt; Exchanges**.
 
-![](https://user-images.githubusercontent.com/2372008/52206416-707ef380-287a-11e9-8f93-881abdbe9e5b.png)
+![](../../../.gitbook/assets/image%20%2820%29.png)
 
 Select your exchange and fill in all the fields for this exchange.
 
@@ -85,7 +89,7 @@ Select your exchange and fill in all the fields for this exchange.
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><b>password</b>
+      <td style="text-align:left"><b>passphrase</b>
       </td>
       <td style="text-align:left">
         <p>Your KuCoin trading passphrase. This setting is only relevant for KuCoin.</p>

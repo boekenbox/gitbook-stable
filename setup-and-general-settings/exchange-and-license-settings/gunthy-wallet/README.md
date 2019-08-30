@@ -1,3 +1,7 @@
+---
+description: 'To use Gunbot, an ERC-20 compatible wallet is required.'
+---
+
 # GUNTHY wallet
 
 Gunbot uses a blockchain based license validation system. It uses our own ERC-20 utility token called "GUNTHY". Using this system, you can manage your own API keys and change them anytime, or even sell your license to a third party.
@@ -22,6 +26,8 @@ These are the required amounts per license:
 * **Ultimate**: 2500 GUNTHY
 
 Tokens are generally airdropped within 24 hours after registering the wallet address.
+
+In periods when there are discounts available for Gunbot, it's possible that different token requirements apply for users with a discounted license.
 
 ## Registering API keys to a GUNTHY wallet address
 
@@ -62,7 +68,7 @@ After everything is registered, you'll receive the required number of tokens and
 
 Enter your GUNTHY wallet address on **Settings &gt; Prefences &gt; Gunthy Wallet**.
 
-![](../../../.gitbook/assets/image-8.png)
+![](../../../.gitbook/assets/image%20%2837%29.png)
 
 Make sure that all of your master keys are set on the [Swap Exchanges](../connect-exchange/api-slots.md) page. Anytime you need to update a key, you can do it yourself using this page.
 

@@ -1,3 +1,7 @@
+---
+description: Price trailing for various types of orders.
+---
+
 # TrailMe
 
 TrailMe is a group of features that allows you to trail different types of trades to reach better entry or exit points. This page describes all available configuration options.

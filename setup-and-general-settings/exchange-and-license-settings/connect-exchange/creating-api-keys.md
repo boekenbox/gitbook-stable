@@ -1,3 +1,7 @@
+---
+description: Requirements when creating a new API key at supported exchanges.
+---
+
 # Creating API keys
 
 To use Gunbot you need to create an API key at your exchange.
@@ -22,7 +26,7 @@ This page shows the minimum required settings per exchange to create a working A
 
 ## Bittrex
 
-![](https://user-images.githubusercontent.com/2372008/41608793-a2eecc6e-73e9-11e8-8535-693c9fb48e90.png)
+![](../../../.gitbook/assets/photo_2019-08-12_18-36-10.jpg)
 
 ## CEX
 

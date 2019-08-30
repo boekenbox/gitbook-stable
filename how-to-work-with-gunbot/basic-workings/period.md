@@ -1,3 +1,7 @@
+---
+description: Which candle stick periods are supported.
+---
+
 # Period
 
 ## Supported period values
@@ -6,7 +10,7 @@ Gunbot supports different values for `PERIOD` for each exchange.
 
 Currently the following periods are supported:
 
-![](../../.gitbook/assets/image%20%285%29.png)
+![](../../.gitbook/assets/image%20%2819%29.png)
 
 ## Choosing the right period
 

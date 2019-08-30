@@ -1,3 +1,7 @@
+---
+description: Articles about basic concepts in Gunbot.
+---
+
 # Learning the basics
 
 {% hint style="info" %}

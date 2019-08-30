@@ -1,3 +1,7 @@
+---
+description: Various extra strategy options.
+---
+
 # Misc settings
 
 ### Miscellaneous settings parameters
@@ -15,7 +19,9 @@ After a stop limit sell order has been placed, the bot will go into buying mode 
 Setting a stop limit at 60 would make sure that all holdings for a coin are sold when 60% value is lost, compared to the averaged bought price. E.g. average bought price is 100, stop limit is executed at 40 and all assets are sold.
 
 {% hint style="info" %}
-On margin exchanges, the stop limit is set as a ROE value. Setting it to 1 will lead to the stop limit triggering when ROE reaches -1.
+On margin exchanges, the stop limit is set as a ROE value. Setting it to 1 will lead to the stop limit triggering when ROE reaches -1. 
+
+It's recommended to use STOP\_BUY / STOP\_SELL instead, as these are placed at the same time as the position is opened.
 {% endhint %}
 {% endtab %}
 
@@ -225,6 +231,41 @@ Use [https://currentmillis.com/](https://currentmillis.com/) to convert human re
 
 {% tab title="Name" %}
 Parameter name in `config.js`: `IGNORE_TRADES_BEFORE`
+{% endtab %}
+{% endtabs %}
+
+### Bought price
+
+{% tabs %}
+{% tab title="Description" %}
+Exchanges often don't provide order information anymore on trades that happened longer ago. This parameter exists to manually specify a reference price per unit that Gunbot should consider when selling an asset for which no bought price is provided by the exchange.
+
+This parameter should only be used as an override. 
+
+The override is only valid when no bought price can be retrieved from the exchange. In case you want to forcefully override an available bought price, you can apply `IGNORE_TRADES_BEFORE` and remove the pairs state json file after doing so.
+
+{% hint style="info" %}
+This parameter is irrelevant for trading at Bitmex.
+{% endhint %}
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** numerical, represents a price per unit in base currency.
+
+**Default value:** n/a
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| Strategy sell | RT buy |
+| Stop limit | RT buyback |
+| DCA buy | Close |
+| RT sell |  |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `MAKER_FEES`
 {% endtab %}
 {% endtabs %}
 

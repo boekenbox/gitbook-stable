@@ -32,7 +32,7 @@ A position is closed when the desired `ROE` is reached.
 
 ### Stop
 
-A position is closed at loss when `STOP_LIMIT` is reached.
+A position is closed at loss when `STOP_BUY` or `STOP_SELL` is reached.
 
 ## Strategy parameters
 

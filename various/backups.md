@@ -1,3 +1,7 @@
+---
+description: Config backups are made automatically after every settings change.
+---
+
 # Backups
 
 Each time you apply saved settings, a copy of the previously working `config.js` file is backed up.

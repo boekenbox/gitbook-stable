@@ -1,11 +1,15 @@
+---
+description: Trading strategies are sets of rules that govern trading execution.
+---
+
 # About Gunbot strategies
 
 A strategy in Gunbot is a set of rules for trading, you can assign it to one or more trading pairs and tweak every setting precisely how you want it.
 
 {% hint style="info" %}
-**Gunbot strategies follow an AND principle**
+**Gunbot strategies follow the AND principle**
 
-Every buy or sell condition you set, must occur in the same round of processing. 
+Every buy or sell condition you set, must occur in the **same** round of processing. 
 {% endhint %}
 
 \*\*\*\*

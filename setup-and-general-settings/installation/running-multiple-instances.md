@@ -1,3 +1,7 @@
+---
+description: Instructions to run multiple installations of Gunbot on the same machine.
+---
+
 # Running multiple instances
 
 To run multiple instances of Gunbot, just make a copy of its folder for each instance and make sure the following settings parameters are unique for each instance:

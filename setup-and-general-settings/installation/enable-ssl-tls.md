@@ -1,3 +1,7 @@
+---
+description: Instructions to run the Gunbot browser interface over a secure connection.
+---
+
 # How to enable SSL/TLS
 
 ## Run the GUI on https with a self-signed certificate

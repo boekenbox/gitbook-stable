@@ -8,7 +8,7 @@ description: >-
 # Telegram notifications
 
 {% hint style="info" %}
-CryptoSight is now fully integrated into Gunbot. All you need to do to start the Telegram bot is enable Telegram notifications in your Gunbot settings.
+The Telegram bot \(formerly called CryptoSight\) is fully integrated into Gunbot. All you need to do to start the Telegram bot is enable Telegram notifications in your Gunbot settings.
 
 After setting it up, type `/start` to your bot to open the menu.
 {% endhint %}
@@ -21,7 +21,7 @@ After setting it up, type `/start` to your bot to open the menu.
 
 To set this up, go to **Settings** &gt; **Telegram**.
 
-![Available settings options for Telegram notifications.](../../.gitbook/assets/image-24.png)
+![Settings options for your Telegram bot](../../.gitbook/assets/image%20%2833%29.png)
 
 ## Steps to create a Telegram bot
 
@@ -31,7 +31,7 @@ This is how to create a bot:
 
 1. Talk to [@botfather](https://telegram.me/botfather). Create a new bot with the command /newbot and choose a name and username for your bot. Save the bot token shown.
 2. Talk to [@myidbot](https://telegram.me/myidbot) to see your Chat ID, save it.
-3. Enable Telegram notifications for Gunbot, and enter the token and ID you've just gathered.
+3. Enable Telegram notifications for Gunbot, and enter the token and ID you've just gathered. Use the ID for both the user and admin ID fields, this makes sure that only you can interact with the Telegram bot. _Alternatively, you can set a comma separated list for Admin ID, specifying multiple IDs who may interact with the bot._
 4. Start a chat with the username you've picked for your bot, and hit the start button. If you don't see a start button, write "/start" and click on it afterwards.
 
 ## Settings descriptions
@@ -125,6 +125,28 @@ This must be listed in chat\_id with a - symbol in front, in this case "-12345"
 
 {% tab title="Name" %}
 Parameter name in `config.js`: `chat_id`
+{% endtab %}
+{% endtabs %}
+
+### Admin ID
+
+{% tabs %}
+{% tab title="Description" %}
+Defines which Telegram user IDs are allowed to interact with the bot. Must be used next to Chat ID.
+
+When you leave this value empty, every Telegram user is able to interact with your Telegram bot.
+
+Multiple IDs can be entered as a comma separated list.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** string
+
+**Default value:** empty
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `admin_id`
 {% endtab %}
 {% endtabs %}
 

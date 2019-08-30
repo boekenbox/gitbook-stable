@@ -1,3 +1,7 @@
+---
+description: Quick guides to get up and running on all supported platforms.
+---
+
 # Installation & startup
 
 ## Download Gunbot

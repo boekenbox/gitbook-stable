@@ -20,8 +20,6 @@ With reversal trading Gunbot automatically accumulates quote currency while pric
 
 A common way to prevent accumulating bags is to cut your losses fast. With Gunbot you can set a `STOP_LIMIT` to sell a pair automatically after it loses x% of it's value.
 
-To prevent getting into a negative spiral of consecutive buy orders and stop limit orders, no further buy orders will be placed until the price reaches a point again that is above the level of that of the stop limit sell order.
-
 ## Averaging down
 
 By buying more assets at a lower price than the initial price, you get a lower average buy price - this allows you to sell at a lower price than the price you initially bought for and get rid of your bags with profit. You can do this manually, or automatically by using `DOUBLE_UP`.

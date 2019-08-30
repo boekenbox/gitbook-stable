@@ -1,3 +1,7 @@
+---
+description: Options for notifications in the browser interface.
+---
+
 # GUI notifications
 
 ## GUI settings
@@ -6,7 +10,7 @@ The GUI Notifications menu lets you change which notifications are shown.
 
 To change them, go to **Settings** &gt; **GUI Notifications**.
 
-![](../../.gitbook/assets/image-21.png)
+![](../../.gitbook/assets/image%20%2810%29.png)
 
 ## Settings descriptions
 

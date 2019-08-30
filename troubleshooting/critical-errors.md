@@ -115,11 +115,12 @@ The following orders can prevent trading when occurring very often. When any of 
 
 ### WARNING: BUY order from more than 30 days ago.
 
-**Reason:** Bought price for asset is unknown
+**Reason:** Bought price for asset is unknown or it's impossible to sell an asset due to a wrongly configured `MIN_VOLUME_TO_SELL`
 
 **Possible solutions:**
 
 * Add `BOUGHT_PRICE` as an override for your pair. 
+* Correct the `MIN_VOLUME_TO_SELL` value for your pair.
 
 ### TypeError: Cannot read x of undefined
 
@@ -138,4 +139,18 @@ The following orders can prevent trading when occurring very often. When any of 
 **Possible solution:**
 
 * Increase the exchange delay for Poloniex.
+
+
+
+### Stop trying to access exchanges you don't have a license to
+
+**Reason:** Gunbot core is not running on an already registered key
+
+**Solution**:
+
+1. Stop Gunbot core. 
+2. Check your exchanges/pairs and make sure to only have pairs set for exchanges that you already have a registered API key for.
+3. Start Gunbot core, verify it starts without errors.
+4. Refresh Gunbot in your browser.
+5. Go to the "swap exchanges" page and make your desired changes.
 

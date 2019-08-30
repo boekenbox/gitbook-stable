@@ -1,3 +1,7 @@
+---
+description: Every strategy can use confirming indicators.
+---
+
 # Confirming indicators
 
 To further restrict trading criteria for your strategy, you can use a number of confirming indicators for regular buy and sell orders. This page describes all settings options available for confirming indicators.
@@ -10,6 +14,10 @@ Especially when TrailMe is used together with confirming indicators, it makes se
 **Indicators in Gunbot are calculated with live data.**
 
 For example for a 14 period RSI calculation, that means that the period close values for the past 13 completed candles are used, plus the live data for the current cycle.
+
+**Exchanges do not provide indicator data.**
+
+Gunbot has to calculate its own indicator data, since exchanges only provide the raw data to calculate indicators with. Although we use the, in our opinion, [best library](https://tulipindicators.org/) for indicators it's always possible that exchanges or TradingView show slightly different indicator values because they opted for a different way of calculating them.
 {% endhint %}
 
 {% hint style="info" %}
@@ -121,7 +129,7 @@ Parameter name in `config.js`: `DI_PERIOD`
 {% tab title="Description" %}
 Setting this to true disables buy orders when there is too much price and volume pressure on BTC.
 
-This setting is dependent on `BTC_MONEY_FLOW`. Only use this if BTC pumps have a significant effect on your trading pair.
+This setting is dependent on `BTC_MONEY_FLOW`. Only use this if BTC price changes have a significant effect on your trading pair.
 {% endtab %}
 
 {% tab title="Values" %}
@@ -152,7 +160,7 @@ Parameter name in `config.js`: `BTC_PND_PROTECTION`
 {% tab title="Description" %}
 Sets the value on the Money Flow Index \(MFI\) for BTC-USD that `BTC_PND_PROTECTION` disables orders for. As soon as MFI hits the set value or drops below it, `BTC_PND_PROTECTION` will be active.
 
-The default value of 35 indicates that the BTC-USD market is moving into oversold territory and might start pumping soon, no buy orders would be placed while BTC-USD MFI is between 35 and 0.
+The default value of 35 indicates that the BTC-USD market is moving into oversold territory and might start moving soon, no buy orders would be placed while BTC-USD MFI is between 35 and 0.
 
 As long as BTC-USD is the defined oversold territory, no orders will be placed.
 {% endtab %}

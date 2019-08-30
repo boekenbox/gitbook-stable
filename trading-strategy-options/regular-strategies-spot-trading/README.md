@@ -1,3 +1,7 @@
+---
+description: Trading strategies for spot trading.
+---
+
 # Regular strategies \(spot trading\)
 
 {% hint style="info" %}

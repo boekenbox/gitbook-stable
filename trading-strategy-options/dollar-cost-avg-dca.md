@@ -1,3 +1,7 @@
+---
+description: Average down automatically.
+---
+
 # Dollar Cost Avg \(DCA\)
 
 Double Up \(DU\) is a Gunbot feature to automatically average down assets, bringing down the average cost per unit when prices drop after a regular buy order.

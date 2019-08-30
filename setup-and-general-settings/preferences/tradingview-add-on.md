@@ -1,3 +1,7 @@
+---
+description: Learn how to use Gunbot to execute trades based on incoming email alerts.
+---
+
 # TradingView
 
 TradingView is the most active social network for traders and investors. TradingView allows users to create and share technical analysis and advanced trading strategies on their interactive charts.
@@ -29,6 +33,8 @@ Trading limits can only be specifically defined in buy/long alerts, for other al
 
 _Replace_ `EXCHANGE` _with the name of your exchange._
 
+\_\_
+
 #### For all spot exchanges
 
 | Alert message | Action |
@@ -38,7 +44,30 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
 | SELL\_EXCHANGE\_USDT-BTC | Sell BTC for USDT |
 | STOPLOSS\_EXCHANGE\_BTC-ETH | Sell ETH for BTC if stoploss is triggered |
 
-#### Alerts for margin trading, supported on Bitmex, Kraken, Poloniex, Huobi and Bitfinex
+
+
+#### Alerts for margin trading  on Bitmex and Bitfinex
+
+| Alert message | Action |
+| :--- | :--- |
+| SHORT\_EXCHANGE\_XBT-USD | Short order for XBT-USD |
+| LONG\_EXCHANGE\_XBT-USD | Long order for XBT-USD |
+| LONG\_EXCHANGE\_XBT-USD\_amount | Long order for XBT-USD with a specified trading limit |
+| LONG\_EXCHANGE\_XBT-USD\_amount | Long order for XBT-USD with a specified trading limit |
+| CLOSELONG\_EXCHANGE\_XBT-USD | Closes a long position for XBT-USD |
+| CLOSESHORT\_EXCHANGE\_XBT-USD | Closes a short position for XBT-USD |
+
+{% hint style="info" %}
+**Note about trading limits on Bitmex and Bitfinex**
+
+On Bitmex, every setting related to trading limits for margin trading must be specified in contracts.   
+  
+On Bitfinex, every setting related to margin trading limits must be specified in amounts of quote currency.
+{% endhint %}
+
+
+
+#### Alerts for margin trading at Kraken, Poloniex and Huobi.
 
 | Alert message | Action |
 | :--- | :--- |
@@ -47,20 +76,13 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
 | LONG\_EXCHANGE\_BTC-ETH\_0.1 | Long order for BTC-ETH with a trading limit of 0.1 BTC |
 | CLOSE\_EXCHANGE\_BTC-ETH | Close an open margin position for BTC-ETH |
 
-#### To close positions at Bitfinex, use the following alerts
-
-| Alert message | Action |
-| :--- | :--- |
-| CLOSELONG\_BITFINEX\_USD-BTC | Close an open margin long position for USD-BTC |
-| CLOSESHORT\_BITFINEX\_USD-BTC | Close an open margin short position for USD-BTC |
-
 ## TradingView settings
 
 To run Gunbot with the TradingView add-on, the following are the only relevant settings. Normal Gunbot strategy and pair settings are not relevant and not used unless `TV_GB` is enabled.
 
 Open the settings by going to **Settings** &gt; **TradingView.**
 
-![](../../.gitbook/assets/image-1.png)
+![Settings options for the TradingView add-on](../../.gitbook/assets/image%20%2839%29.png)
 
 Trading limits for buy orders are set in the configuration settings, optionally you can override these by specifying the trading limit in the alert message contents.
 
@@ -104,6 +126,8 @@ When not using `TV_PYRAMID`, a sell alert will place a sell order for the full q
 
 {% hint style="info" %}
 **Bitmex**: enter the desired number of contracts
+
+**Bitfinex margin:** enter an amount in quote currency
 {% endhint %}
 {% endtab %}
 
@@ -128,6 +152,8 @@ The default value of 0.002 would place orders of 0.002 BTC when used on a BTC-x 
 
 {% hint style="info" %}
 **Bitmex**: enter the desired number of contracts
+
+**Bitfinex margin:** enter an amount in quote currency
 {% endhint %}
 {% endtab %}
 
@@ -170,6 +196,8 @@ The default value of 0.002 would place orders of 0.002 BTC when used on a BTC-x 
 
 {% hint style="info" %}
 **Bitmex**: enter the desired number of contracts
+
+**Bitfinex margin:** enter an amount in quote currency
 {% endhint %}
 {% endtab %}
 
@@ -210,8 +238,8 @@ Parameter name in `config.js`: `TV_PROTECTION`
 {% tab title="Description" %}
 The maximum amount of base currency to be invested in a pair.
 
-{% hint style="info" %}
-**Bitmex**: enter the desired number of contracts
+{% hint style="warning" %}
+**Only works for spot trading.**
 {% endhint %}
 {% endtab %}
 
@@ -324,7 +352,7 @@ Parameter name in `config.js`: `TV_GB`
 
 {% tabs %}
 {% tab title="Description" %}
-For margin trading at Bitmex only. Sets the leverage for opening any position. Setting 0 places the order with cross margin.
+For margin trading only. Sets the leverage for opening any position. Setting 0 places the order with cross margin, if your exchange supports cross leverage.
 {% endtab %}
 
 {% tab title="Values" %}

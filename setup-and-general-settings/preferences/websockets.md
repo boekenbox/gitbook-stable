@@ -1,10 +1,14 @@
+---
+description: 'Websocket port settings, only needed for devs.'
+---
+
 # Websockets
 
 Gunbot emits certain data through websockets. Limited documentation for this feature is available on the following repository: [https://github.com/GuntharDeNiro/Gunthy/\#webgui-informations-for-devs-](https://github.com/GuntharDeNiro/Gunthy/#webgui-informations-for-devs-)
 
 To change websocket settings, go to **Settings** &gt; **Websocket**.
 
-![Configuration options for websocket output](../../.gitbook/assets/image%20%2814%29.png)
+![](../../.gitbook/assets/image%20%2836%29.png)
 
 ## Settings descriptions
 

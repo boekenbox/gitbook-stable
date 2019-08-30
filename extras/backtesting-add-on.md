@@ -1,3 +1,7 @@
+---
+description: Gunbot strategies can be backtested on tradingview.com
+---
+
 # Backtesting
 
 {% hint style="info" %}
@@ -38,7 +42,7 @@ Login to your TradingView account and click the Chart button.
 
 The scripts are best viewed in Dark theme.
 
-![](../.gitbook/assets/image%20%289%29.png)
+![](../.gitbook/assets/image%20%2832%29.png)
 
 Enter the Pair and the Period you wish to use and then click Indicators.
 
@@ -102,17 +106,17 @@ Default range settings of 50 / 50 is equal to source settings of HL2 / HL2 for P
 
 TradingView scripts trade on the OPEN price of the NEXT candle AFTER conditions have been met. The green "LONG!" or "CLOSE SHORT!" and red "SHORT!" or "CLOSE LONG!" indicate the candle where the decision to trade was made, the blue, red, and purple markers indicate where the trade was made.
 
-![](../.gitbook/assets/image%20%2812%29.png)
+![](../.gitbook/assets/image%20%2842%29.png)
 
 When using the "Gunbot Deluxe Tuners BE \[Alerts\]" script the green "LONG!" or "CLOSE SHORT!" and red "SHORT!" or "CLOSE LONG!" indicate on screen where the alerts will trigger and send to Gunbot's TradingView add-on.
 
-![](../.gitbook/assets/image.png)
-
-![](../.gitbook/assets/image%20%287%29.png)
-
-![](../.gitbook/assets/image%20%2813%29.png)
-
 ![](../.gitbook/assets/image%20%282%29.png)
+
+![](../.gitbook/assets/image%20%2824%29.png)
+
+![](../.gitbook/assets/image%20%2843%29.png)
+
+![](../.gitbook/assets/image%20%286%29.png)
 
 ## FAQ
 

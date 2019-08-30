@@ -1,64 +1,118 @@
 ---
 description: >-
   Here's a quick overview of the most important changes introduced with Gunbot
-  v12.
+  v13.
 ---
 
 # What's new?
 
-## Bugfix release v12.9.1
-
-* Fixes non triggering behavior of: `SL_DISABLE_BUY`, `RT_ONCE`, `RT_ONCE_AND_CONTINUE` and `COUNT_SELL`
-* Fix amounts for long orders on Bitmex when using `MARKET_BUY` or TradingView alerts.
-
-This is a recommended upgrade if you use any of the features mentioned above. 
-
-To install, just [download](../../setup-and-general-settings/installation/download.md) the release and overwrite the gunthy executable file in your existing Gunbot folder. 
-
-## New features / changes in v12
-
-* **Bitmex support:** Gunbot now supports leveraged trading at Bitmex and Bitmex testnet. The new `PRE_ORDER` function lets you get ahead of the order book to increase the chance limit orders get filled. With `MAKER_FEES` all trades can be placed as post only orders, making Gunbot a market maker!
-* **Margin trading strategies:** Strategies for Bitmex offer triggers to go long, short, stop and close on the desired ROE - or trail ROE up!
-* **Blockchain license verification**: Using GUNTHY token, it is now possible to self-manage your API keys for free. 
-* **Improved ichimoku:** Both the regular and margin version of the ichimoku strategy got a lot more powerful, you can now choose to open and close trades using either Tenkan-Sen, Kumo or Kijun-Sen.
-* **Market orders:** Option to use market orders instead of limit orders, customizable for all order types. Works on exchanges that support Market orders: Binance, Bitfinex, Bitmex, Coinbase Pro, Kraken and Poloniex.
-* **List view in GUI dashboard**: New list view for pairs on the dashoard: all relevant info in one quick overview, improves load times especially for setups with many trading pairs.
-* **Chart improvements**: The GUI can now show all Gunbot supported indicators. Trading targets are now shown in charts.
-* **Renko candles:** You can now use Renko candles instead of regular candle sticks \(Currently only works for margin trading with ichimoku\).
-* **Deprecating** `CANCEL_ORDERS_CYCLE_CAP` **except when using** `MAKER_FEES`: orders are now only automatically cancelled if bid/ask are above/below the order rate.
-* **Retain GUI access on startup errors**: Automatically stop Gunbot core when ran without pairs. If startup errors occur, a Telegram notification is sent and core gets stopped.
-* **Dark theme for the settings page**: the settings page in the GUI is now dark.
-* **Renamed executables**: the main executable files got renamed to be more coherent between operating systems.
-* **Various small changes**
-
-## **Bugfixes**
-
-Many critical issues were already patched in the bugfix releases for v11. Notable new fixes:
-
-* Fix an issue that would not save some settings changes made in the GUI.
-* Work around Binance "minPrice" / "maxPrice" being 0.
-* Improved handling of PAX & TUSD as base currency.
-* Improved handling of sell orders at Binance.
-* Fixes to SMACROSS, MACD and MACDH that prevented trades in specific conditions.
-* Fix "RSI undefined" callback.
-* Make sure a pair actually sold before letting `COUNT_SELL` disable it.
-* Fix support for TUSD as base currency at Binance.
-* Fix libraries for Raspberry Pi support.
-* Reduced data/resource usage for the GUI.
-* Workaround for an issue with Bitfinex not accepting close orders.
-* Fix an issue that reset DU count after a partial sell order.
-* Fix an issue with marging trading through TV add-on on Huobi.
-* Various smaller fixes.
+Gunbot v13 focuses on bugfixes and improving user experience. That's why this time there is no long list of new features, just a long list of improvements.
 
 ## **Upgrading**
 
-Download the update and unpack it to a new folder, copy the `config.js` and `gunbotgui.db` files from your previous v11 installation into the new folder to keep your settings. In case you used https for the GUI, also make sure to copy both the key and certificate files to the new folder.
+[Download](../../setup-and-general-settings/installation/download.md) the update and unpack it to a new folder, copy the `config.js` and `gunbotgui.db` files from your previous v12 installation into the new folder to keep your settings. 
 
-If you have pairs that are already in DU or RT, also copy the /json folder from v11 to v12.
-
-New strategy parameters for v12 will be automatically added through the GUI the first time you update a strategy. This happens on a per strategy basis.
+* Empty your browser cache for your Gunbot GUI \(for example with ctrl-F5\).
+* In case you used https for the GUI, also make sure to copy both the key and certificate files to the new folder.
+* If you have pairs that are already in DU or RT, also copy the /json folder from v12 to v13.
+* New strategy parameters for v13 will be automatically added through the GUI the first time you update a strategy. This happens on a per strategy basis.
+* Make sure to set the new Admin ID for Telegram, for better privacy.
+* When you use email alerts, make sure the [syntax of your alerts](../../setup-and-general-settings/preferences/tradingview-add-on.md#alert-message-contents) is correct.
 
 _Due to new libraries used, you cannot simply overwrite the executable for this release._
+
+\*\*\*\*
+
+## New features / changes in v13
+
+* **New exchanges:** Gunbot now supports trading on Idax and Cobinhood. Please note that Cobinhood only has an API key, not an API secret - use an IP restriction for your key for added security.
+* **Restrict buying with `SMACROSS` :** you can now restrict `SMACROSS` to only place a single buy order, instead of buying on every cross up. Set `SINGLE_BUY` true to only allow a single buy order.
+* **Improved privacy for Cryptosight:** restrict who is allowed to view and interact with your Telegram bot.  Use the `admin_id` setting to specify one or more user IDs that are allowed to use your Telegram bot.
+* **Improved GUI template:** better optimized for mobile usage, different color schemes and support for setting a custom highlight color.
+* **Changes to margin trading on Bitfinex \(TV add-on\):** all amounts should now be specified in quote. 
+* **Different alert syntax for closing positions on Bitmex \(TV add-on\):** longs are now closed with CLOSELONG\_, shorts with CLOSESHORT\_ instead of CLOSE\_ for both.
+* **New path for log files:** per pair log files are now saved in the /gunbot\_logs folder.
+
+{% hint style="warning" %}
+**Notice for Bitmex users**
+
+It is strongly recommended to now use `STOP_BUY` and `STOP_SELL` instead of `STOP_LIMIT`.
+
+Disable `STOP_LIMIT` by setting it's value to 99999, to prevent accidental triggers.
+{% endhint %}
+
+## **Gunbot core bugfixes**
+
+Notable fixes:
+
+* Better support for new currencies on Kraken, whatever shitcoin they are going to list, Gunbot will be ready to trade without needing an update
+* Fix reversed orders array at Bittrex and Huobi
+* Fix an issue that would cause multiple buys at Binance
+* Fix an issue that would wrongly calculate trading map values on Binance
+* Improve backward compatibility of ABP calculations
+* Fix Huobi ABP
+* Fix "lowerCase of undefined" error
+* Improve SMACROSS behavior
+* Cancel all stop orders if ROE is reached, on Bitmex
+* Various fixes for manual orders through the GUI
+* Fix buy/sell stop orders on Bitmex, for both market and limit orders.
+* Fix STOP\_LIMIT sometimes not working on Kraken
+* Fix stop orders triggering "waiting for open orders"
+* Fix Tl\_ALLIN for long orders on Bitmex.
+* Fix MACD-H display on custom strat
+* Fix "toLowerCase" error
+* Available funds are now used only after an RT\_SELL. 
+* Fix FUNDS\_RESERVE not being respected
+* Fix clientId issue on KuCoin
+* If a buy gets canceled then set off double buy protection. 
+* Correct an error that sometimes caused orders to be cancelled too early
+* Improved triggering of DU orders
+* Fix RT\_SELL, RT\_BUY triggering
+* Fix "just bought"
+* Fix price precision for CoinBase Pro
+
+## TradingView add-on bugfixes
+
+* Fix TV plugin LONG orders amounts
+* Fix TV buy order at Bittrex
+* Fx an issue that would prevent some buy orders at Bitfinex using TV plugin
+* Fix CLOSELONG,CLOSESHORT for Bitfinex. All amounts for Bitfinex margin are now defined in quote
+* Better respect order amounts in LONG and SHORT alerts on Bitfinex.
+* Fix occasional errors for LONG,SHORT,CLOSELONG,CLOSESHORT on Bitmex.
+
+## GUI changes
+
+Notable bugfixes and changes to the GUI:
+
+* New style and searchable dropdown selections
+* Add GUI Tone color-picker in theme
+* Fix navbar default active tab
+* Fix imap tooltips
+* Add themes for mobile
+* Add Notification panel for mobile
+* Update jquery cdn
+* Major graphic update
+* Improve mobile layout
+* Redesign login page
+* Update all the setting sections
+* Improved tooltip texts
+* Hide ROE\_CLOSE for strategies that don't use it
+
+## Telegram changes
+
+Notable changes to the Telegram bot:
+
+* Fix notification profit percentage
+* Hide wrong data in overview with multiple base
+* Ability to restrict Cryptosight access to one or more Telegram users
+* Fix creation/deletion of pairs. Changes are saved after going back to the main menu.
+* Show contracts and liquidation price for margin
+
+
+
+
+
+## GUI changes
 
 {% page-ref page="../../setup-and-general-settings/installation/download.md" %}
 

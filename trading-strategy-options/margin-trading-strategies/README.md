@@ -1,3 +1,7 @@
+---
+description: Trading strategies for margin trading.
+---
+
 # Margin trading strategies
 
 {% hint style="info" %}

@@ -4,7 +4,7 @@ Gunbot logs contain most of the information it works with. This article provides
 
 This article applies to all strategies except Emotionless, which has intentionally limited log output.
 
-Log files per trading pair are automatically saved in the /logs folder and automatically rotated to zipped backups after reaching a filesize of 25MB. Up to three backup logfiles are kept per trading pair.
+Log files per trading pair are automatically saved in the /gunbot\_logs folder and automatically rotated to zipped backups after reaching a filesize of 25MB. Up to three backup logfiles are kept per trading pair.
 
 ## Trailing
 
@@ -23,7 +23,7 @@ _Log entries for TrailMe trailing and TSSL look almost identical and follow the 
 | `Target to buy` | Starting point for buy trailing, a percentage from the lowest EMA as defined with `BUY_LEVEL`. |
 | `Stop limit` | The upper limit for trailing, as defined by the set buy range. This value is updated every cycle, following price movement for `Last price`. |
 
-A buy order will occur when `Last price` crosses up `Stop limit` and is above lowest EMA.
+A buy order will occur when `Last price` crosses up `Stop limit` and is below the lowest EMA.
 
 When the logs state that the price is in range, that means the current price is between `Stop limit` and `TrailingBuy limit`.
 

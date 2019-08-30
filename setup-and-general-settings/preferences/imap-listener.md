@@ -1,3 +1,9 @@
+---
+description: >-
+  Settings to connect Gunbot to an IMAP email box, to receive alerts for the
+  TradingView add-on.
+---
+
 # IMAP listener
 
 {% hint style="info" %}
@@ -8,7 +14,14 @@ Using these settings, Gunbot connects to the email address where alerts are sent
 
 To change them, go to **Settings** &gt; **IMAP Listener**.
 
-![Imap listener settings options](../../.gitbook/assets/image-16.png)
+![Settings options to connect Gunbot to your IMAP mailbox.](../../.gitbook/assets/image%20%2812%29.png)
+
+{% hint style="success" %}
+**Tips for Gmail users**
+
+* enable access for "[less secure apps](https://support.google.com/accounts/answer/6010255?hl=en)"
+* use an [app password](https://support.google.com/accounts/answer/185833?hl=en) if you use 2FA for your Google account
+{% endhint %}
 
 ## Settings descriptions
 

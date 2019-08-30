@@ -1,3 +1,7 @@
+---
+description: Information about running Gunbot in headless mode.
+---
+
 # Headless mode
 
 {% hint style="info" %}

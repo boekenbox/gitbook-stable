@@ -1,10 +1,14 @@
+---
+description: Information about global bot settings.
+---
+
 # Bot settings
 
 The bot settings menu lets you change global settings that affect all trading pairs.
 
 To change them, go to **Settings** &gt; **Bot Settings**.
 
-![Global bot settings](../../.gitbook/assets/image-19.png)
+![Global bot settings](../../.gitbook/assets/image%20%2845%29.png)
 
 ## Settings descriptions
 

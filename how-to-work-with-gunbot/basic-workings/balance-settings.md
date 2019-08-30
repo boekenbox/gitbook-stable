@@ -1,3 +1,9 @@
+---
+description: >-
+  Understand the most important settings: balance setting that define how much
+  Gunbot can spend.
+---
+
 # Important settings
 
 {% hint style="info" %}
@@ -36,7 +42,7 @@ When min volume to sell is set incorrectly, for example to 3, Gunbot will attemp
 
 This setting is very similar to min volume to sell, it defines what the minimum amount is that Gunbot can place a buy order for.
 
-Look up the minimum trade size for your pair, and set it exactly like this. It is normal to set this parameter exactly the same as min volume to buy.
+Look up the minimum trade size for your pair, and set it exactly like this. It is normal to set this parameter exactly the same as min volume to sell.
 
 In some cases Gunbot will place a buy order in multiple parts, the setting min volume to buy tells the bot what the absolute minimum amount for a partial order can be. If you set it too low, such trades will fail.
 
