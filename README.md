@@ -1,5 +1,5 @@
 ---
-description: 'This wiki is written for the latest stable Gunbot release: v13'
+description: 'This wiki is written for the latest stable Gunbot release: v13.'
 ---
 
 # Welcome to the Gunbot wiki
