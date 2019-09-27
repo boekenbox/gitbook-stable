@@ -290,7 +290,7 @@ Parameter name in `config.js`: `EMAx`
 {% tab title="Description" %}
 Setting this to true will make sure Gunbot only trades when both strategy conditions and `MFI_BUY_LEVEL` / `MFI_SELL_LEVEL` are met.
 
-If you only want to use this indicator for buying or selling, but not both, then set the side you don't want to use to -100
+If you only want to use this indicator for buying or selling, but not both, then set the side you don't want to use to -1001
 {% endtab %}
 
 {% tab title="Values" %}
