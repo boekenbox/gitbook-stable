@@ -13,7 +13,7 @@
   * [New in v7](about/whats-new/new-in-v7.md)
   * [New in v6](about/whats-new/new-in-v6.md)
 * [Supported exchanges](about/supported-exchanges.md)
-* [Purchasing Gunbot](https://github.com/GuntharDeNiro/BTCT/wiki/Resellers)
+* [Purchasing Gunbot](https://gunthy.org/forum/index.php?topic=1241.0)
 * [System requirements](about/system-requirements.md)
 
 ## Setup & general settings
