@@ -20,7 +20,7 @@ Many different order types can use trailing, the basic principles are always the
 
 The same basic process applies for most kinds of buy trailing \(exception: Take Buy\). The example below shows how trailing works for buying with the [tssl strategy](../../trading-strategy-options/regular-strategies-spot-trading/tssl-trailing-stop-stop-limit.md).
 
-![](../../.gitbook/assets/image%20%2835%29.png)
+![](../../.gitbook/assets/image%20%2837%29.png)
 
 When trailing with tssl, the most important part to know is that trailing must finish below Buy Level. Make sure to set a Buy Level that leaves enough room for trailing.
 
@@ -57,7 +57,7 @@ Buy trailing with Take Buy is a bit different, because it acts as a second buy l
 
 The idea is that sometimes prices will come close to your target, but not close enough for your main strategy to catch a buy. In this case you can use Take Buy as an extra threshold above your regular entry point.
 
-![](../../.gitbook/assets/image%20%2829%29.png)
+![](../../.gitbook/assets/image%20%2830%29.png)
 
 The example above shows that price was on its way reaching the primary buy trigger Buy Level, but didn't quite make it. Instead, Take Buy took the order when prices started moving upwards again.
 
@@ -65,5 +65,5 @@ The example above shows that price was on its way reaching the primary buy trigg
 
 Similar to Take Buy, Take Profit acts as a secondary sell layer in your strategy. It trails between the break-even point and the target for Gain. In case prices do move over your Gain target, trailing stops and the normal strategy conditions apply.
 
-![](../../.gitbook/assets/image%20%2839%29.png)
+![](../../.gitbook/assets/image%20%2841%29.png)
 
