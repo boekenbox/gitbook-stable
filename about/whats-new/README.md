@@ -34,12 +34,19 @@ _Due to new libraries used, you cannot simply overwrite the executable for this 
 * **Different alert syntax for closing positions on Bitmex \(TV add-on\):** longs are now closed with CLOSELONG\_, shorts with CLOSESHORT\_ instead of CLOSE\_ for both.
 * **New path for log files:** per pair log files are now saved in the /gunbot\_logs folder.
 
+### Additional changes in patch release:
+
+* **Improved ROE calculation for Bitmex**: values now closely match the leveraged ROE values on Bitmex itself. If you're unsure what value to use in Gunbot, refer to the examples on the margin strategy pages for `ROE`.
+* **TradingView alerts on Bitmex:** email alerts can now also be used on Testnet.
+* **`SL_DISABLE_SELL` :** Disabled the sell side after a short position hit `STOP_LIMIT`.
+* **Lending Rate \(Poloniex\):** Allow for entering a maximum lending rate for margin positions.
+
 {% hint style="warning" %}
 **Notice for Bitmex users**
 
-It is strongly recommended to now use `STOP_BUY` and `STOP_SELL` instead of `STOP_LIMIT`.
+Disable `STOP_LIMIT` by setting it's value to 9999, to prevent accidental triggers. 
 
-Disable `STOP_LIMIT` by setting it's value to 99999, to prevent accidental triggers.
+Because it now triggers on leveraged ROE value, it could be that a previous lower setting causes unwanted stops.
 {% endhint %}
 
 ## **Gunbot core bugfixes**
@@ -71,6 +78,25 @@ Notable fixes:
 * Fix RT\_SELL, RT\_BUY triggering
 * Fix "just bought"
 * Fix price precision for CoinBase Pro
+
+### Additional fixes in patch release:
+
+* Fix rate NaN for some stop orders
+* Fix invalid tickSize for limit orders at Bitmex with USD-ETH.
+* Fix market sell orders with stop sell higher than zero. 
+* Fix an issue that would keep stacking orders at Bitmex.
+* Fix an issue that would send wrong quantity for market buy at Bitmex.
+* Fix an issue that would silently fail to send sell market orders at Bitmex.
+* Fix to "min volume not matched" message. 
+* Fix tick size for stop orders. 
+* Fix Huobi fiat pairs
+* Fix stop order being sent at ask for stop buy.
+* Show `MARKET_CLOSE` in the GUI if is margin strat. 
+* Fix ROE\_TRAILING priority over ROE close. 
+* Fix stop loss when a position is not even built yet because of exchanges delay. 
+* Fix "just bought" not resetting, preventing further trades.
+* Fix ROE close and ROE trailing.
+* Fix send sell at ask and buy at bid, for certain trades.
 
 ## TradingView add-on bugfixes
 
