@@ -355,6 +355,8 @@ Sets the gap between the best bid/ask price in the orderbook and the rate at whi
 It is possible to use negative values, this will increase the chance of receiving maker fees.
 
 Example when set to 1 and a buy signal occurs at an ask price of 100: a limit order gets placed at a rate of 101. When set to -1 and a buy signal occurs at an ask price of 100: a limit order gets placed at a rate of 99.
+
+Don't use a negative gap together with `STOP_BUY` and/or `STOP_SELL`, as these stops do not combine well with position that do not always fill. Instead use `STOP_LIMIT`.
 {% endtab %}
 
 {% tab title="Values" %}
