@@ -54,13 +54,13 @@ Parameter name in `config.js`: `STOP_LIMIT`
 {% tab title="Description" %}
 When set to true, buy orders will be disabled after a pair hits `STOP_LIMIT`.
 
-For margin trading, the pair will be disabled after a stop limit is hit.
+For margin trading, buy orders will be disabled when a long position hits `STOP_LIMIT`.
 {% endtab %}
 
 {% tab title="Values" %}
 **Values:** true or false
 
-**Default value:** true
+**Default value:** false
 {% endtab %}
 
 {% tab title="Order types" %}
@@ -77,6 +77,40 @@ For margin trading, the pair will be disabled after a stop limit is hit.
 
 {% tab title="Name" %}
 Parameter name in `config.js`: `SL_DISABLE_BUY`
+{% endtab %}
+{% endtabs %}
+
+### SL Disable Sell
+
+{% tabs %}
+{% tab title="Description" %}
+When set to true, sell orders will be disabled after a short position hits `STOP_LIMIT`.
+
+{% hint style="success" %}
+Specific for margin trading.
+{% endhint %}
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** true or false
+
+**Default value:** false
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| Stop limit | Strategy buy |
+|  | RT buy |
+|  | RT buyback |
+|  | RT sell |
+|  | Close |
+|  | DCA buy |
+|  | Strategy sell |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `SL_DISABLE_SELL`
 {% endtab %}
 {% endtabs %}
 
