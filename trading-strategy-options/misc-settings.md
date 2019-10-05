@@ -87,7 +87,7 @@ Parameter name in `config.js`: `SL_DISABLE_BUY`
 When set to true, sell orders will be disabled after a short position hits `STOP_LIMIT`.
 
 {% hint style="success" %}
-Specific for margin trading.
+Specific to margin trading.
 {% endhint %}
 {% endtab %}
 
