@@ -134,7 +134,18 @@ Parameter name in `config.js`: `SHORT_LEVEL`
 {% tab title="Description" %}
 This sets the target for closing a position.
 
-ROE is measured as a percentage from the opening rate of a position, leverage and fees are not taken into consideration.
+ROE is the Return On Equity for a position, the percentage profit and loss on your invested margin. This value is calculated in a similar way to how Bitmex calculates it, it does include leverage and does not include fees.
+
+**Examples:**  
+  
+Long position, 1x leverage.  
+When price moves 1% above the average entry price, 1% ROE is reached.
+
+Long position, 100x leverage \(or cross leverage\).  
+When price moves 1% above the average entry price, 100% ROE is reached.
+
+Short position, 20x leverage  
+When price moves 1% below the average entry price, 20% ROE is reached.
 {% endtab %}
 
 {% tab title="Values" %}
