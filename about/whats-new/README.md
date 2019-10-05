@@ -36,8 +36,9 @@ _Due to new libraries used, you cannot simply overwrite the executable for this 
 
 ### Additional changes in patch release:
 
-* **Improved ROE calculation for Bitmex**: values now closely match the leveraged ROE values on Bitmex itself. If you're unsure what value to use in Gunbot, refer to the examples on the margin strategy pages for `ROE`.
-* **TradingView alerts on Bitmex:** email alerts can now also be used on Testnet.
+* **Improved ROE calculation for Bitmex**: values now closely match the **leveraged ROE values on Bitmex** itself. If you're unsure what value to use in Gunbot, refer to the examples on the margin strategy pages for `ROE`.
+* **TradingView alerts on Bitmex Testnet:** email alerts can now also be used on Testnet.
+* **Close entire positions on Bitmex using alerts:** enable `TV_CLOSE_ALL` to close an entire position when a close alert arrives, instead of closing the amount specified in trading limit settings.
 * **`SL_DISABLE_SELL` :** Disabled the sell side after a short position hit `STOP_LIMIT`.
 * **Lending Rate \(Poloniex\):** Allow for entering a maximum lending rate for margin positions.
 
