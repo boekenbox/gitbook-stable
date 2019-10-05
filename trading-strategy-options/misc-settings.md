@@ -19,9 +19,9 @@ After a stop limit sell order has been placed, the bot will go into buying mode 
 Setting a stop limit at 60 would make sure that all holdings for a coin are sold when 60% value is lost, compared to the averaged bought price. E.g. average bought price is 100, stop limit is executed at 40 and all assets are sold.
 
 {% hint style="info" %}
-On margin exchanges, the stop limit is set as a ROE value. Setting it to 1 will lead to the stop limit triggering when ROE reaches -1. 
+On Bitmex, the stop limit is set as a ROE value. Setting it to 1 will lead to the stop limit triggering when ROE reaches -1. Use a value that includes your leverage.
 
-It's recommended to use STOP\_BUY / STOP\_SELL instead, as these are placed at the same time as the position is opened.
+It's recommended to use STOP\_BUY / STOP\_SELL instead, when possible.These are placed at the same time as the position is opened.
 {% endhint %}
 {% endtab %}
 
