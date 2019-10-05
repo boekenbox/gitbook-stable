@@ -46,7 +46,7 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
 
 
 
-#### Alerts for margin trading  on Bitmex and Bitfinex
+#### Alerts for margin trading
 
 | Alert message | Action |
 | :--- | :--- |
@@ -58,23 +58,16 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
 | CLOSESHORT\_EXCHANGE\_XBT-USD | Closes a short position for XBT-USD |
 
 {% hint style="info" %}
-**Note about trading limits on Bitmex and Bitfinex**
+**Note about trading limits**
 
-On Bitmex, every setting related to trading limits for margin trading must be specified in contracts.   
+On **Bitmex**, every setting related to trading limits for margin trading must be specified in contracts.   
   
-On Bitfinex, every setting related to margin trading limits must be specified in amounts of quote currency.
+On **all other supported margin exchanges**, every setting related to margin trading limits must be specified in amounts of quote currency.
 {% endhint %}
 
-
-
-#### Alerts for margin trading at Kraken, Poloniex and Huobi.
-
-| Alert message | Action |
-| :--- | :--- |
-| SHORT\_EXCHANGE\_BTC-ETH | Short order for BTC-ETH |
-| LONG\_EXCHANGE\_BTC-ETH | Long order for BTC-ETH |
-| LONG\_EXCHANGE\_BTC-ETH\_0.1 | Long order for BTC-ETH with a trading limit of 0.1 BTC |
-| CLOSE\_EXCHANGE\_BTC-ETH | Close an open margin position for BTC-ETH |
+{% hint style="success" %}
+To test alerts on Bitmex Testnet, you should write the alerts like this: LONG\_BITMEXTESTNET\_XBT-USD
+{% endhint %}
 
 ## TradingView settings
 
@@ -131,7 +124,7 @@ When not using `TV_PYRAMID`, a sell alert will place a sell order for the full q
 {% hint style="info" %}
 **Bitmex**: enter the desired number of contracts
 
-**Bitfinex margin:** enter an amount in quote currency
+**Other margin exchanges:** enter an amount in quote currency
 {% endhint %}
 {% endtab %}
 
@@ -157,7 +150,7 @@ The default value of 0.002 would place orders of 0.002 BTC when used on a BTC-x 
 {% hint style="info" %}
 **Bitmex**: enter the desired number of contracts
 
-**Bitfinex margin:** enter an amount in quote currency
+**Other margin exchanges:** enter an amount in quote currency
 {% endhint %}
 {% endtab %}
 
@@ -201,7 +194,7 @@ The default value of 0.002 would place orders of 0.002 BTC when used on a BTC-x 
 {% hint style="info" %}
 **Bitmex**: enter the desired number of contracts
 
-**Bitfinex margin:** enter an amount in quote currency
+**Other margin exchanges:** enter an amount in quote currency
 {% endhint %}
 {% endtab %}
 
@@ -237,6 +230,28 @@ When set to false, Gunbot will execute all TradingView alerts without interferin
 
 {% tab title="Name" %}
 Parameter name in `config.js`: `TV_PROTECTION`
+{% endtab %}
+{% endtabs %}
+
+### Close all
+
+{% tabs %}
+{% tab title="Description" %}
+When enabled, an entire position will be closed upon receiving a close command - even if the position is bigger than the set trading limits.
+
+{% hint style="warning" %}
+**Only works for Bitmex.**
+{% endhint %}
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** numerical – represents an amount in base currency.
+
+**Default value:** false
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `TV_CLOSE_ALL`
 {% endtab %}
 {% endtabs %}
 
@@ -360,7 +375,9 @@ Parameter name in `config.js`: `TV_GB`
 
 {% tabs %}
 {% tab title="Description" %}
-For margin trading only. Sets the leverage for opening any position. Setting 0 places the order with cross margin, if your exchange supports cross leverage.
+For margin trading only. Sets the leverage for opening any position. Setting 0 places the order with cross margin, if your exchange supports cross leverage.  
+  
+Only use values supported by your exchange.
 {% endtab %}
 
 {% tab title="Values" %}
@@ -373,4 +390,30 @@ For margin trading only. Sets the leverage for opening any position. Setting 0 p
 Parameter name in `config.js`: `TV_LEVERAGE`
 {% endtab %}
 {% endtabs %}
+
+### TV Lending
+
+{% tabs %}
+{% tab title="Description" %}
+Sets the maximum acceptable lending rate when opening a position. 
+
+The default setting of 0.02 stands for 2% interest per day.
+
+{% hint style="info" %}
+**Only works on Poloniex.**
+{% endhint %}
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** numerical 
+
+**Default value:** 0.02
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `TV_LENDING`
+{% endtab %}
+{% endtabs %}
+
+
 
