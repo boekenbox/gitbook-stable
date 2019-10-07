@@ -68,7 +68,7 @@ After everything is registered, you'll receive the required number of tokens and
 
 Enter your GUNTHY wallet address on **Settings &gt; Prefences &gt; Gunthy Wallet**.
 
-![](../../../.gitbook/assets/image%20%2840%29.png)
+![](../../../.gitbook/assets/image%20%2841%29.png)
 
 Make sure that all of your master keys are set on the [Swap Exchanges](../connect-exchange/api-slots.md) page. Anytime you need to update a key, you can do it yourself using this page.
 

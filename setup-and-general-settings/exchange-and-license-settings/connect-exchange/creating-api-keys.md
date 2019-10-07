@@ -46,7 +46,7 @@ This page shows the minimum required settings per exchange to create a working A
 
 ## Kraken
 
-![](https://user-images.githubusercontent.com/2372008/41608797-a3892250-73e9-11e8-930a-aac6d5dc9c1d.png)
+![](../../../.gitbook/assets/image%20%2816%29.png)
 
 ## Kucoin
 
