@@ -34,7 +34,7 @@ _Due to new libraries used, you cannot simply overwrite the executable for this 
 * **Different alert syntax for closing positions on Bitmex \(TV add-on\):** longs are now closed with CLOSELONG\_, shorts with CLOSESHORT\_ instead of CLOSE\_ for both.
 * **New path for log files:** per pair log files are now saved in the /gunbot\_logs folder.
 
-### Additional changes in patch release:
+### Additional changes in patch release \(v14\):
 
 * **Improved ROE calculation for Bitmex**: values now closely match the **leveraged ROE values on Bitmex** itself. If you're unsure what value to use in Gunbot, refer to the examples on the margin strategy pages for `ROE`.
 * **TradingView alerts on Bitmex Testnet:** email alerts can now also be used on Testnet.
@@ -80,8 +80,9 @@ Notable fixes:
 * Fix "just bought"
 * Fix price precision for CoinBase Pro
 
-### Additional fixes in patch release:
 
+
+* **Additional fixes in patch release \(v14\):**
 * Fix rate NaN for some stop orders
 * Fix invalid tickSize for limit orders at Bitmex with USD-ETH.
 * Fix market sell orders with stop sell higher than zero. 
@@ -98,6 +99,9 @@ Notable fixes:
 * Fix "just bought" not resetting, preventing further trades.
 * Fix ROE close and ROE trailing.
 * Fix send sell at ask and buy at bid, for certain trades.
+* Various fixes for order rounding and price precision for different exchanges.
+
+
 
 ## TradingView add-on bugfixes
 
