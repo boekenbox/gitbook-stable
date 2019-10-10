@@ -1,7 +1,7 @@
 ---
 description: >-
   Here's a quick overview of the most important changes introduced with Gunbot
-  v13.
+  v14.
 ---
 
 # What's new?
