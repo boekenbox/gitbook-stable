@@ -1,16 +1,24 @@
 ---
 description: >-
   Here's a quick overview of the most important changes introduced with Gunbot
-  v14.
+  v13.
 ---
 
 # What's new?
+
+* Empty your browser cache for your Gunbot GUI \(for example with ctrl-F5\).
+* In case you used https for the GUI, also make sure to copy both the key and certificate files to the new folder.
+* If you have pairs that are already in DU or RT, also copy the /json folder.
+* New strategy parameters will be automatically added through the GUI the first time you update a strategy. This happens on a per strategy basis.
+* Make sure to set the new Admin ID for Telegram, for better privacy.
+* When you use email alerts, make sure the [syntax of your alerts](../../setup-and-general-settings/preferences/tradingview-add-on.md#alert-message-contents) is correct.
+* If you also want to migrate your settings for the Telegram bot, copy the `tgconfig.json` file to your new folder as well.
 
 Gunbot v13 focuses on bugfixes and improving user experience. That's why this time there is no long list of new features, just a long list of improvements.
 
 ## **Upgrading**
 
-[Download](../../setup-and-general-settings/installation/download.md) the update and unpack it to a new folder, copy the `config.js` and `gunbotgui.db` files from your previous v12 installation into the new folder to keep your settings. 
+[Download](../../setup-and-general-settings/installation/download.md) the update and unpack it to a new folder, copy the `config.js` and `gunbotgui.db` files from your previous v12 installation into the new folder to keep your settings.
 
 * Empty your browser cache for your Gunbot GUI \(for example with ctrl-F5\).
 * In case you used https for the GUI, also make sure to copy both the key and certificate files to the new folder.
@@ -45,7 +53,7 @@ _Due to new libraries used, you cannot simply overwrite the executable for this 
 {% hint style="warning" %}
 **Notice for Bitmex users**
 
-Disable `STOP_LIMIT` by setting it's value to 9999, to prevent accidental triggers. 
+Disable `STOP_LIMIT` by setting it's value to 9999, to prevent accidental triggers.
 
 Because it now triggers on leveraged ROE value, it could be that a previous lower setting causes unwanted stops.
 {% endhint %}
@@ -80,8 +88,6 @@ Notable fixes:
 * Fix "just bought"
 * Fix price precision for CoinBase Pro
 
-
-
 #### **Additional fixes in patch release \(v14\):**
 
 * Fix rate NaN for some stop orders
@@ -101,8 +107,6 @@ Notable fixes:
 * Fix ROE close and ROE trailing.
 * Fix send sell at ask and buy at bid, for certain trades.
 * Various fixes for order rounding and price precision for different exchanges.
-
-
 
 ## TradingView add-on bugfixes
 
@@ -140,10 +144,6 @@ Notable changes to the Telegram bot:
 * Ability to restrict Cryptosight access to one or more Telegram users
 * Fix creation/deletion of pairs. Changes are saved after going back to the main menu.
 * Show contracts and liquidation price for margin
-
-
-
-
 
 ## GUI changes
 
