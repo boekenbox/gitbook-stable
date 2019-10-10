@@ -82,7 +82,8 @@ Notable fixes:
 
 
 
-* **Additional fixes in patch release \(v14\):**
+#### **Additional fixes in patch release \(v14\):**
+
 * Fix rate NaN for some stop orders
 * Fix invalid tickSize for limit orders at Bitmex with USD-ETH.
 * Fix market sell orders with stop sell higher than zero. 
