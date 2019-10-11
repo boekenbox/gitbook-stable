@@ -6,15 +6,7 @@ description: >-
 
 # What's new?
 
-* Empty your browser cache for your Gunbot GUI \(for example with ctrl-F5\).
-* In case you used https for the GUI, also make sure to copy both the key and certificate files to the new folder.
-* If you have pairs that are already in DU or RT, also copy the /json folder.
-* New strategy parameters will be automatically added through the GUI the first time you update a strategy. This happens on a per strategy basis.
-* Make sure to set the new Admin ID for Telegram, for better privacy.
-* When you use email alerts, make sure the [syntax of your alerts](../../setup-and-general-settings/preferences/tradingview-add-on.md#alert-message-contents) is correct.
-* If you also want to migrate your settings for the Telegram bot, copy the `tgconfig.json` file to your new folder as well.
-
-Gunbot v13 focuses on bugfixes and improving user experience. That's why this time there is no long list of new features, just a long list of improvements.
+Gunbot v13/v14 focuses on bugfixes and improving user experience. That's why this time there is no long list of new features, just a long list of improvements.
 
 ## **Upgrading**
 
