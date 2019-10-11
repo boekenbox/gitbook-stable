@@ -22,8 +22,6 @@ Gunbot v13/v14 focuses on bugfixes and improving user experience. That's why thi
 
 _Due to new libraries used, you cannot simply overwrite the executable for this release._
 
-\*\*\*\*
-
 ## New features / changes in v13
 
 * **New exchanges:** Gunbot now supports trading on Idax and Cobinhood. Please note that Cobinhood only has an API key, not an API secret - use an IP restriction for your key for added security.
