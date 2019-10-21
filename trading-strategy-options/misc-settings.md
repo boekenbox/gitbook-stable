@@ -299,7 +299,7 @@ This parameter is irrelevant for trading at Bitmex.
 {% endtab %}
 
 {% tab title="Name" %}
-Parameter name in `config.js`: `MAKER_FEES`
+Parameter name in `config.js`: `BOUGHT_PRICE`
 {% endtab %}
 {% endtabs %}
 
