@@ -14,7 +14,7 @@ Using these settings, Gunbot connects to the email address where alerts are sent
 
 To change them, go to **Settings** &gt; **IMAP Listener**.
 
-![Settings options to connect Gunbot to your IMAP mailbox.](../../.gitbook/assets/image%20%2812%29.png)
+![Settings options to connect Gunbot to your IMAP mailbox.](../../.gitbook/assets/image%20%2814%29.png)
 
 {% hint style="success" %}
 **Tips for Gmail users**

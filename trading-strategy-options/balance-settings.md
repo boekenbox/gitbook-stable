@@ -48,42 +48,6 @@ Parameter name in `config.js`: `TRADING_LIMIT`
 {% endtab %}
 {% endtabs %}
 
-### Trading Fees
-
-{% tabs %}
-{% tab title="Description" %}
-This sets the trading fees paid to the exchange. Gunbot uses this data to calculate the break-even point.
-
-Does your exchange charge 0.25% fees per trade? Then set this to 0.25. When your exchange has different fees for different types of trades, set the average fees per trade.
-
-Trading fees are reflected in the average bought price. Exchanges only calculate fees after the trade comes in, Gunbot needs to know about fees before the trade is sent to the exchange.
-
-{% hint style="info" %}
-This parameter is irrelevant for trading at Bitmex.
-{% endhint %}
-{% endtab %}
-
-{% tab title="Values" %}
-**Values:** numerical – represents a percentage
-
-**Default value:** 0.25
-{% endtab %}
-
-{% tab title="Order types" %}
-| Affects | Does not affect |
-| :--- | :--- |
-| Strategy sell | Strategy buy |
-| Stop limit | RT buy |
-| RT buyback | RT sell |
-|  | DCA buy |
-|  | Close |
-{% endtab %}
-
-{% tab title="Name" %}
-Parameter name in `config.js`: `TRADING_FEES`
-{% endtab %}
-{% endtabs %}
-
 ### Trading Limit Percentage
 
 {% tabs %}

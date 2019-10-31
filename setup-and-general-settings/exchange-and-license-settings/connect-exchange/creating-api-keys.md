@@ -46,7 +46,7 @@ This page shows the minimum required settings per exchange to create a working A
 
 ## Kraken
 
-![](../../../.gitbook/assets/image%20%2816%29.png)
+![](../../../.gitbook/assets/image%20%2818%29.png)
 
 ## Kucoin
 

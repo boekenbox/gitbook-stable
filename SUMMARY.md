@@ -5,6 +5,7 @@
 ## About
 
 * [What's new?](about/whats-new/README.md)
+  * [New in v13 / v14](about/whats-new/new-in-v13-v14.md)
   * [New in v12](about/whats-new/new-in-v12.md)
   * [New in v11](about/whats-new/new-in-v11.md)
   * [New in v10](about/whats-new/new-in-v10.md)
@@ -55,6 +56,7 @@
   * [Strategy configurator](how-to-work-with-gunbot/editing-strategies-and-pairs/strategy-configurator.md)
   * [Trading pairs](how-to-work-with-gunbot/editing-strategies-and-pairs/trading-pairs.md)
 * [Monitoring](how-to-work-with-gunbot/monitoring.md)
+* [AutoConfig](how-to-work-with-gunbot/autoconfig.md)
 
 ## Trading strategy options
 

@@ -4,11 +4,11 @@ description: How to connect Gunbot to your exchange account.
 
 # Connect exchange
 
-To be able to trade, you need to enter the exchange [API key](creating-api-keys.md) and secret.
+To be able to trade, you need to enter the exchange [API key](creating-api-keys.md) and secret, as well as the trading fees level for each exchange.
 
 To enter these, go to **Settings &gt; Trading &gt; Exchanges**.
 
-![](../../../.gitbook/assets/image%20%2822%29.png)
+![](../../../.gitbook/assets/image%20%2824%29.png)
 
 Select your exchange and fill in all the fields for this exchange.
 
@@ -99,4 +99,41 @@ Select your exchange and fill in all the fields for this exchange.
       </td>
     </tr>
   </tbody>
-</table>
+</table>### Trading Fees
+
+{% tabs %}
+{% tab title="Description" %}
+This sets the trading fees paid to the exchange. Gunbot uses this data to calculate the break-even point.
+
+Does your exchange charge 0.25% fees per trade? Then set this to 0.25. When your exchange has different fees for different types of trades, set the average fees per trade.
+
+Trading fees are reflected in the average bought price. Exchanges only calculate fees after the trade comes in, Gunbot needs to know about fees before the trade is sent to the exchange.
+
+{% hint style="info" %}
+This parameter is irrelevant for trading at Bitmex.
+{% endhint %}
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** numerical – represents a percentage
+
+**Default value:** 0.25
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| Strategy sell | Strategy buy |
+| Stop limit | RT buy |
+| RT buyback | RT sell |
+|  | DCA buy |
+|  | Close |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `TRADING_FEES`
+{% endtab %}
+{% endtabs %}
+
+
+
