@@ -42,7 +42,7 @@ When a job is processed, changes to `config.js` are only made for pairs that hav
 
 If a job successfully completes, the changes are written to `config.js` and Gunbot restarts using the new settings. If a job causes no changes, for example because it tries to place already existing overrides, it won't cause a Gunbot restart.
 
-Schedules are set in a format similar to how cron jobs are set. If you're not used to the format, use a website like [https://crontab-generator.org/](https://crontab-generator.org/) to generate it. 
+Schedules are set in a [format similar to how cron jobs are set](https://www.npmjs.com/package/node-schedule#cron-style-scheduling). If you're not used to the format, use a website like [https://crontab-generator.org/](https://crontab-generator.org/) to generate it.
 
 ## Job types \(with config examples\)
 
@@ -201,31 +201,29 @@ Filter options are described later in this article.
 
 ```text
 {
-	"changeStrat": {
-		"pairs": {
-			"exclude": "",
-			"bag": true,
-			"exchange": "binance"
-		},
-		"filters": {
-			"filter1": {
-				"type": "minSpreadPct",
-				"min": 0.000001
-			},
-			"filter2": {
-				"type": "minVolatilityPct24h",
-				"min": -10
-			}
-		},
-		"schedule": "* * * * *",
-		"type": "changeStrategy",
-		"snapshots": 10,
-		"strategy": "baghandler"
-	}
+    "changeStrat": {
+        "pairs": {
+            "exclude": "",
+            "bag": true,
+            "exchange": "binance"
+        },
+        "filters": {
+            "filter1": {
+                "type": "minSpreadPct",
+                "min": 0.000001
+            },
+            "filter2": {
+                "type": "minVolatilityPct24h",
+                "min": -10
+            }
+        },
+        "schedule": "* * * * *",
+        "type": "changeStrategy",
+        "snapshots": 10,
+        "strategy": "baghandler"
+    }
 }
 ```
-
-### 
 
 ### Managing overrides
 
@@ -359,14 +357,14 @@ For job types: `manageOverrides`, `changeDelay`, `removePairs2`, `changeStrategy
 ![Available pair state filters](../.gitbook/assets/image%20%2856%29.png)
 
 Formula used in `differenceBigger`:  
-`100 * ((ema2 - ema1) / ema1) > delta` 
+`100 * ((ema2 - ema1) / ema1) > delta`
 
 Formula used in `differenceSmaller`:  
-`100 * ((ema2 - ema1) / ema1) < delta` 
+`100 * ((ema2 - ema1) / ema1) < delta`
 
 _Formula examples use ema1 and ema2 like set in the screenshot above. Of course you can compare any two keys. The position of the keys to compare in the config file do matter._
 
-## Various 
+## Various
 
 * It's fine to schedule many jobs for the same times, but in case multiple of those jobs causes a config change, the first one to finish will write it's changes and the others jobs will need to wait for another chance.
 * The output of every job is that the `config.js` file is updated, this will always cause Gunbot to restart.
@@ -378,345 +376,345 @@ _Formula examples use ema1 and ema2 like set in the screenshot above. Of course 
 
 ![Elements like these cannot be used for filtering.](../.gitbook/assets/image%20%288%29.png)
 
-## Example config with all possible job types and filters 
+## Example config with all possible job types and filters
 
 You don't want to use this ever in this form, but use it as reference for how each job can be formatted.
 
 ```text
 {
-	"addPairs-jobname": {
-		"pairs": {
-			"exclude": "DOGE,XLM,PAX",
-			"include": "BTC,USDT",
-			"maxPairs": 25,
-			"exchange": "binance"
-		},
-		"filters": {
-			"filter1": {
-				"type": "minPrice",
-				"min": 0.0000001
-			},
-			"filter2": {
-				"type": "maxPrice",
-				"max": 0.0000010
-			},
-			"filter3": {
-				"type": "minPricePctChangeInterval",
-				"min": 0.00002
-			},
-			"filter4": {
-				"type": "maxPricePctChangeInterval",
-				"max": 1
-			},
-			"filter5": {
-				"type": "minVolumePctChangeInterval",
-				"min": 10
-			},
-			"filter6": {
-				"type": "maxVolumePctChangeInterval",
-				"max": 50
-			},
-			"filter7": {
-				"type": "minVolume24h",
-				"min": 500
-			},
-			"filter8": {
-				"type": "maxVolume24h",
-				"max": 1000
-			},
-			"filter9": {
-				"type": "minVolatilityPct24h",
-				"min": 1
-			},
-			"filter10": {
-				"type": "maxVolatilityPct24h",
-				"max": 1
-			},
-			"filter11": {
-				"type": "minSpreadPct",
-				"min": 0.00001
-			},
-			"filter12": {
-				"type": "maxSpreadPct",
-				"max": 1
-			}
-		},
-		"schedule": "* * * * *",
-		"type": "addPairs",
-		"strategy": "gain",
-		"snapshots": 2,
-		"debug": "true"
-	},
-	"removePairs-jobname": {
-		"pairs": {
-			"exclude": "BNB,XVG",
-			"noBag": false,
-			"removeDisabled": true,
-			"exchange": "binance"
-		},
-		"filters": {
-			"filter1": {
-				"type": "minPrice",
-				"min": 0.0000001
-			},
-			"filter2": {
-				"type": "maxPrice",
-				"max": 0.0000010
-			},
-			"filter3": {
-				"type": "minPricePctChangeInterval",
-				"min": 0.00002
-			},
-			"filter4": {
-				"type": "maxPricePctChangeInterval",
-				"max": 1
-			},
-			"filter5": {
-				"type": "minVolumePctChangeInterval",
-				"min": 10
-			},
-			"filter6": {
-				"type": "maxVolumePctChangeInterval",
-				"max": 50
-			},
-			"filter7": {
-				"type": "minVolume24h",
-				"min": 500
-			},
-			"filter8": {
-				"type": "maxVolume24h",
-				"max": 1000
-			},
-			"filter9": {
-				"type": "minVolatilityPct24h",
-				"min": 1
-			},
-			"filter10": {
-				"type": "maxVolatilityPct24h",
-				"max": 1
-			},
-			"filter11": {
-				"type": "minSpreadPct",
-				"min": 0.00001
-			},
-			"filter12": {
-				"type": "maxSpreadPct",
-				"max": 1
-			}
-		},
-		"schedule": "* * * * *",
-		"type": "removePairs",
-		"snapshots": 10,
-		"debug": "true"
-	},
-	"removePairs2-jobname": {
-		"pairs": {
-			"exclude": "BNB,XVG",
-			"noBag": false,
-			"removeDisabled": true,
-			"exchange": "binance"
-		},
-		"filters": {
-			"filter1": {
-				"type": "exact",
-				"ducount": 1
-			},
-			"filter2": {
-				"type": "biggerThan",
-				"ducount": 1
-			},
-			"filter3": {
-				"type": "smallerThan",
-				"ducount": 1
-			},
-			"filter4": {
-				"type": "compareBigger",
-				"ema1": 1,
-				"ema2": 1
-			},
-			"filter5": {
-				"type": "compareSmaller",
-				"ema1": 1,
-				"ema2": 1
-			},
-			"filter6": {
-				"type": "differenceBigger",
-				"ema1": 1,
-				"ema2": 1,
-				"delta": 10
-			},
-			"filter7": {
-				"type": "differenceSmaller",
-				"ema1": 1,
-				"ema2": 1,
-				"delta": 10
-			}
-		},
-		"schedule": "* * * * *",
-		"type": "removePairs2",
-		"snapshots": 10,
-		"debug": "true"
-	},
-	"changeStrategy-jobname": {
-		"pairs": {
-			"exclude": "",
-			"bag": true,
-			"exchange": "binance"
-		},
-		"filters": {
-			"filter1": {
-				"type": "minPrice",
-				"min": 0.0000001
-			},
-			"filter2": {
-				"type": "maxPrice",
-				"max": 0.0000010
-			},
-			"filter3": {
-				"type": "minPricePctChangeInterval",
-				"min": 0.00002
-			},
-			"filter4": {
-				"type": "maxPricePctChangeInterval",
-				"max": 1
-			},
-			"filter5": {
-				"type": "minVolumePctChangeInterval",
-				"min": 10
-			},
-			"filter6": {
-				"type": "maxVolumePctChangeInterval",
-				"max": 50
-			},
-			"filter7": {
-				"type": "minVolume24h",
-				"min": 500
-			},
-			"filter8": {
-				"type": "maxVolume24h",
-				"max": 1000
-			},
-			"filter9": {
-				"type": "minVolatilityPct24h",
-				"min": 1
-			},
-			"filter10": {
-				"type": "maxVolatilityPct24h",
-				"max": 1
-			},
-			"filter11": {
-				"type": "minSpreadPct",
-				"min": 0.00001
-			},
-			"filter12": {
-				"type": "maxSpreadPct",
-				"max": 1
-			}
-		},
-		"schedule": "* * * * *",
-		"type": "changeStrategy",
-		"snapshots": 10,
-		"strategy": "baghandler",
-		"debug": "true"
-	},
-	"changeStrategy2-jobname": {
-		"pairs": {
-			"exclude": "",
-			"bag": true,
-			"exchange": "binance"
-		},
-		"filters": {
-			"filter1": {
-				"type": "exact",
-				"ducount": 1
-			},
-			"filter2": {
-				"type": "biggerThan",
-				"ducount": 1
-			},
-			"filter3": {
-				"type": "smallerThan",
-				"ducount": 1
-			},
-			"filter4": {
-				"type": "compareBigger",
-				"ema1": 1,
-				"ema2": 1
-			},
-			"filter5": {
-				"type": "compareSmaller",
-				"ema1": 1,
-				"ema2": 1
-			},
-			"filter6": {
-				"type": "differenceBigger",
-				"ema1": 1,
-				"ema2": 1,
-				"delta": 10
-			},
-			"filter7": {
-				"type": "differenceSmaller",
-				"ema1": 1,
-				"ema2": 1,
-				"delta": 10
-			}
-		},
-		"schedule": "* * * * *",
-		"type": "changeStrategy2",
-		"snapshots": 10,
-		"strategy": "baghandler",
-		"debug": "true"
-	},
-	"manageOverrides-jobname": {
-		"pairs": {
-			"exclude": "DOGE,ETH",
-			"include": "USDT,BNB",
-			"exchange": "binance"
-		},
-		"filters": {
-			"filter1": {
-				"type": "exact",
-				"ducount": 1
-			},
-			"filter2": {
-				"type": "biggerThan",
-				"ducount": 1
-			},
-			"filter3": {
-				"type": "smallerThan",
-				"ducount": 1
-			},
-			"filter4": {
-				"type": "compareBigger",
-				"ema1": 1,
-				"ema2": 1
-			},
-			"filter5": {
-				"type": "compareSmaller",
-				"ema1": 1,
-				"ema2": 1
-			},
-			"filter6": {
-				"type": "differenceBigger",
-				"ema1": 1,
-				"ema2": 1,
-				"delta": 10
-			},
-			"filter7": {
-				"type": "differenceSmaller",
-				"ema1": 1,
-				"ema2": 1,
-				"delta": 10
-			}
-		},
-		"overrides": {
-			"DU_BUYDOWN": 3
-		},
-		"clearOverrides": false,
-		"schedule": "*/10 * * * *",
-		"type": "manageOverrides",
-		"debug": "true"
-	}
+    "addPairs-jobname": {
+        "pairs": {
+            "exclude": "DOGE,XLM,PAX",
+            "include": "BTC,USDT",
+            "maxPairs": 25,
+            "exchange": "binance"
+        },
+        "filters": {
+            "filter1": {
+                "type": "minPrice",
+                "min": 0.0000001
+            },
+            "filter2": {
+                "type": "maxPrice",
+                "max": 0.0000010
+            },
+            "filter3": {
+                "type": "minPricePctChangeInterval",
+                "min": 0.00002
+            },
+            "filter4": {
+                "type": "maxPricePctChangeInterval",
+                "max": 1
+            },
+            "filter5": {
+                "type": "minVolumePctChangeInterval",
+                "min": 10
+            },
+            "filter6": {
+                "type": "maxVolumePctChangeInterval",
+                "max": 50
+            },
+            "filter7": {
+                "type": "minVolume24h",
+                "min": 500
+            },
+            "filter8": {
+                "type": "maxVolume24h",
+                "max": 1000
+            },
+            "filter9": {
+                "type": "minVolatilityPct24h",
+                "min": 1
+            },
+            "filter10": {
+                "type": "maxVolatilityPct24h",
+                "max": 1
+            },
+            "filter11": {
+                "type": "minSpreadPct",
+                "min": 0.00001
+            },
+            "filter12": {
+                "type": "maxSpreadPct",
+                "max": 1
+            }
+        },
+        "schedule": "* * * * *",
+        "type": "addPairs",
+        "strategy": "gain",
+        "snapshots": 2,
+        "debug": "true"
+    },
+    "removePairs-jobname": {
+        "pairs": {
+            "exclude": "BNB,XVG",
+            "noBag": false,
+            "removeDisabled": true,
+            "exchange": "binance"
+        },
+        "filters": {
+            "filter1": {
+                "type": "minPrice",
+                "min": 0.0000001
+            },
+            "filter2": {
+                "type": "maxPrice",
+                "max": 0.0000010
+            },
+            "filter3": {
+                "type": "minPricePctChangeInterval",
+                "min": 0.00002
+            },
+            "filter4": {
+                "type": "maxPricePctChangeInterval",
+                "max": 1
+            },
+            "filter5": {
+                "type": "minVolumePctChangeInterval",
+                "min": 10
+            },
+            "filter6": {
+                "type": "maxVolumePctChangeInterval",
+                "max": 50
+            },
+            "filter7": {
+                "type": "minVolume24h",
+                "min": 500
+            },
+            "filter8": {
+                "type": "maxVolume24h",
+                "max": 1000
+            },
+            "filter9": {
+                "type": "minVolatilityPct24h",
+                "min": 1
+            },
+            "filter10": {
+                "type": "maxVolatilityPct24h",
+                "max": 1
+            },
+            "filter11": {
+                "type": "minSpreadPct",
+                "min": 0.00001
+            },
+            "filter12": {
+                "type": "maxSpreadPct",
+                "max": 1
+            }
+        },
+        "schedule": "* * * * *",
+        "type": "removePairs",
+        "snapshots": 10,
+        "debug": "true"
+    },
+    "removePairs2-jobname": {
+        "pairs": {
+            "exclude": "BNB,XVG",
+            "noBag": false,
+            "removeDisabled": true,
+            "exchange": "binance"
+        },
+        "filters": {
+            "filter1": {
+                "type": "exact",
+                "ducount": 1
+            },
+            "filter2": {
+                "type": "biggerThan",
+                "ducount": 1
+            },
+            "filter3": {
+                "type": "smallerThan",
+                "ducount": 1
+            },
+            "filter4": {
+                "type": "compareBigger",
+                "ema1": 1,
+                "ema2": 1
+            },
+            "filter5": {
+                "type": "compareSmaller",
+                "ema1": 1,
+                "ema2": 1
+            },
+            "filter6": {
+                "type": "differenceBigger",
+                "ema1": 1,
+                "ema2": 1,
+                "delta": 10
+            },
+            "filter7": {
+                "type": "differenceSmaller",
+                "ema1": 1,
+                "ema2": 1,
+                "delta": 10
+            }
+        },
+        "schedule": "* * * * *",
+        "type": "removePairs2",
+        "snapshots": 10,
+        "debug": "true"
+    },
+    "changeStrategy-jobname": {
+        "pairs": {
+            "exclude": "",
+            "bag": true,
+            "exchange": "binance"
+        },
+        "filters": {
+            "filter1": {
+                "type": "minPrice",
+                "min": 0.0000001
+            },
+            "filter2": {
+                "type": "maxPrice",
+                "max": 0.0000010
+            },
+            "filter3": {
+                "type": "minPricePctChangeInterval",
+                "min": 0.00002
+            },
+            "filter4": {
+                "type": "maxPricePctChangeInterval",
+                "max": 1
+            },
+            "filter5": {
+                "type": "minVolumePctChangeInterval",
+                "min": 10
+            },
+            "filter6": {
+                "type": "maxVolumePctChangeInterval",
+                "max": 50
+            },
+            "filter7": {
+                "type": "minVolume24h",
+                "min": 500
+            },
+            "filter8": {
+                "type": "maxVolume24h",
+                "max": 1000
+            },
+            "filter9": {
+                "type": "minVolatilityPct24h",
+                "min": 1
+            },
+            "filter10": {
+                "type": "maxVolatilityPct24h",
+                "max": 1
+            },
+            "filter11": {
+                "type": "minSpreadPct",
+                "min": 0.00001
+            },
+            "filter12": {
+                "type": "maxSpreadPct",
+                "max": 1
+            }
+        },
+        "schedule": "* * * * *",
+        "type": "changeStrategy",
+        "snapshots": 10,
+        "strategy": "baghandler",
+        "debug": "true"
+    },
+    "changeStrategy2-jobname": {
+        "pairs": {
+            "exclude": "",
+            "bag": true,
+            "exchange": "binance"
+        },
+        "filters": {
+            "filter1": {
+                "type": "exact",
+                "ducount": 1
+            },
+            "filter2": {
+                "type": "biggerThan",
+                "ducount": 1
+            },
+            "filter3": {
+                "type": "smallerThan",
+                "ducount": 1
+            },
+            "filter4": {
+                "type": "compareBigger",
+                "ema1": 1,
+                "ema2": 1
+            },
+            "filter5": {
+                "type": "compareSmaller",
+                "ema1": 1,
+                "ema2": 1
+            },
+            "filter6": {
+                "type": "differenceBigger",
+                "ema1": 1,
+                "ema2": 1,
+                "delta": 10
+            },
+            "filter7": {
+                "type": "differenceSmaller",
+                "ema1": 1,
+                "ema2": 1,
+                "delta": 10
+            }
+        },
+        "schedule": "* * * * *",
+        "type": "changeStrategy2",
+        "snapshots": 10,
+        "strategy": "baghandler",
+        "debug": "true"
+    },
+    "manageOverrides-jobname": {
+        "pairs": {
+            "exclude": "DOGE,ETH",
+            "include": "USDT,BNB",
+            "exchange": "binance"
+        },
+        "filters": {
+            "filter1": {
+                "type": "exact",
+                "ducount": 1
+            },
+            "filter2": {
+                "type": "biggerThan",
+                "ducount": 1
+            },
+            "filter3": {
+                "type": "smallerThan",
+                "ducount": 1
+            },
+            "filter4": {
+                "type": "compareBigger",
+                "ema1": 1,
+                "ema2": 1
+            },
+            "filter5": {
+                "type": "compareSmaller",
+                "ema1": 1,
+                "ema2": 1
+            },
+            "filter6": {
+                "type": "differenceBigger",
+                "ema1": 1,
+                "ema2": 1,
+                "delta": 10
+            },
+            "filter7": {
+                "type": "differenceSmaller",
+                "ema1": 1,
+                "ema2": 1,
+                "delta": 10
+            }
+        },
+        "overrides": {
+            "DU_BUYDOWN": 3
+        },
+        "clearOverrides": false,
+        "schedule": "*/10 * * * *",
+        "type": "manageOverrides",
+        "debug": "true"
+    }
 }
 ```
 

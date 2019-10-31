@@ -6,7 +6,7 @@ description: >-
 
 # What's new?
 
-Gunbot v15 is a major release: it includes support for over 100 new exchanges - including Binance US - and a pre release of AutoConfig. 
+Gunbot v15 is a major release: it includes support for over 100 new exchanges - including Binance US and HitBTC - and a pre release of AutoConfig. 
 
 ## **Upgrading**
 

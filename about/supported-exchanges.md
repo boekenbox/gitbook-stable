@@ -6,6 +6,15 @@ description: >-
 
 # Supported exchanges
 
+## Partner exchanges
+
+These exchanges are official Gunbot partners. We are in direct contact with their teams.
+
+| Exchange | Name in config | Native strategies | TradingView alerts |
+| :--- | :--- | :--- | :--- |
+| **HitBTC** | `hitbtc2` | Regular | Regular |
+| **KuCoin** | `kucoin` | Regular | Regular |
+
 ## Certified exchanges
 
 These exchanges have been supported in Gunbot for a long time, you can expect high quality API support.
