@@ -254,6 +254,7 @@ Filter options are described later in this article.
         "filters": {
             "ducount": {
                 "type": "exact",
+                "type": "manageOverrides",
                 "ducount": 1
             }
         },
@@ -281,6 +282,7 @@ Filter options are described later in this article.
       "GAIN": 1
         },
         "clearOverrides": false,
+        "type": "manageOverrides",
         "schedule": "1 * * * *"
   },
   "MMshort": {
