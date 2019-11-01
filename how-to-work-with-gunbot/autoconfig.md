@@ -7,6 +7,10 @@ description: >-
 
 # AutoConfig
 
+{% hint style="info" %}
+Currently there is no GUI for AutoConfig. You'll need to create your own `autoconfig.json` config file, which contains the jobs it should run.
+{% endhint %}
+
 Gunbot AutoConfig is a collection of tools you can use to dynamically manage your config files.
 
 You can create "jobs" to do something you would normally do by hand, for example scan an exchange for potential pairs to add, and schedule the job in a cron-like format.
