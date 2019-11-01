@@ -8,7 +8,9 @@ description: >-
 # AutoConfig
 
 {% hint style="info" %}
-Currently there is no GUI for AutoConfig. You'll need to create your own `autoconfig.json` config file, which contains the jobs it should run.
+Currently there is no GUI for AutoConfig. You'll need to create your own `autoconfig.json` config file, which contains the jobs it should run.  
+  
+_If you are not comfortable editing config files manually, it's probably a good idea to wait until the GUI supports AutoConfig._
 {% endhint %}
 
 Gunbot AutoConfig is a collection of tools you can use to dynamically manage your config files.
