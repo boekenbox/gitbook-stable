@@ -13,6 +13,7 @@ Gunbot v15 is a major release: it includes support for over 100 new exchanges - 
 [Download](../../setup-and-general-settings/installation/download.md) the update and unpack it to a new folder, copy the `config.js` and `gunbotgui.db` files from your previous installation into the new folder to keep your settings.
 
 * Make sure to set `TRADING_FEES` for each exchange, in the exchange section \(it changed from being a strategy setting to being an exchange setting. Either through the GUI or in `config.js`.
+* Make sure to add the AutoConfig section to `config.js`, see the example config file in the v15 release files.
 * Empty your browser cache for your Gunbot GUI \(for example with ctrl-F5\).
 * In case you used https for the GUI, also make sure to copy both the key and certificate files to the new folder.
 * If you have pairs that are in DU or RT, also copy the /json folder from your previous installation.
