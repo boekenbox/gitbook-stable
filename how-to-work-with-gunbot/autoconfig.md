@@ -341,7 +341,7 @@ You can use the following filter types for adding and removing pairs. Please not
 
 ![Data availability for certified exchanges.](../.gitbook/assets/image%20%2827%29.png)
 
-_Filters for prices use ask when adding pairs and bid when filtering for removal._
+_Filters for prices use ask when adding pairs and bid when filtering for removal or changing strategy_
 
 * `minPrice`: filter returns true when price is higher than set.
 * `maxPrice`: filter returns true when price is lower than set.
