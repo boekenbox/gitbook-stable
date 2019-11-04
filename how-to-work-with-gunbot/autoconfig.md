@@ -355,6 +355,8 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
 * `maxVolatilityPct24h`: filter returns true if 24h price percentage change is lower than set.
 * `minSpreadPct`: filter returns true if percentage difference between bid and ask is higher than set.
 * `maxSpreadPct`: filter returns true if percentage difference between bid and ask is lower than set.
+* `minSlopePctInterval`: filter returns true if the [slope](https://tulipindicators.org/linregslope) for all prices in snapshots is bigger than set.  Slope is expressed as a percentage of the last price. A slope of 1 means that, according to a simple linear regression, the next collected ticker price is likely to be 1% higher than the last one. Only executed when max snapshot sample size is reached.
+* `maxSlopePctInterval`: filter returns true if the [slope](https://tulipindicators.org/linregslope) for all prices in snapshots is smaller than set. Slope is expressed as a percentage of the last price. A slope of 1 means that, according to a simple linear regression, the next collected ticker price is likely to be 1% higher than the last one. Only executed when max snapshot sample size is reached.
 
 ### Pair state filters
 
