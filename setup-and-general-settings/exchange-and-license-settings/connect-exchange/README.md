@@ -92,7 +92,7 @@ Select your exchange and fill in all the fields for this exchange.
       <td style="text-align:left"><b>passphrase</b>
       </td>
       <td style="text-align:left">
-        <p>Your KuCoin trading passphrase. This setting is only relevant for KuCoin.</p>
+        <p>Your KuCoin API passphrase. This setting is only relevant for KuCoin.</p>
         <p>
           <br />In case you use a different trading key than your master key, make sure
           that both keys use the same passphrase.</p>
