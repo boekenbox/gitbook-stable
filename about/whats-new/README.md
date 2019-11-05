@@ -30,8 +30,9 @@ Gunbot v15 is a major release: it includes support for over 100 new exchanges - 
 
 Notable fixes:
 
-* Porting many small exchange fixes from bitRage to Gunbot
-* Fix an issue that could cause unwanted restarts on Poloniex
+* Porting many small exchange fixes from bitRage to Gunbot.
+* Fix an issue that could cause unwanted restarts on Poloniex.
+* Fix "bought already" problem that prevented trading for some users.
 * Fix a long standing bug that caused trailing to sometimes not trigger an order.
 * Fix an issue on Kraken and Bittrex that caused all pairs to wait when there was an open order for a single pair.
 * Fix an issue that could sometimes invert ROE on Bitmex.
