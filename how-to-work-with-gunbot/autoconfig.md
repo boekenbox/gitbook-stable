@@ -139,6 +139,7 @@ Filter options are described later in this article.
       "type": "addPairs",
       "strategy": "gain",
       "snapshots": 2,
+      "resume". false,
       "enabled": true
     }
   }
@@ -168,6 +169,8 @@ There is no include options for this filter type. Pairs in your config \(that ha
 
 **snapshots:** defines how many ticker snapshots are saved to perform calculations on. Relevant for filtertypes that include `Interval` in their name. For example: snapshots is set to 10, this means that the ticker data for the last 10 times the job runs are saved and some of the values in it are used for calculating average values over time. For now, snapshot data gets cleared when Gunbot restarts.
 
+**resume** \(true/false\): when true, collected ticker snapshots from before the last Gunbot restart are kept. Beware that it is a bad idea to enable this option when you've turned off your bot for a while, there will be a  long time gap between old snapshots and newly collected ones.
+
 ```text
 {
   "removeCrap": {
@@ -186,6 +189,7 @@ There is no include options for this filter type. Pairs in your config \(that ha
     "schedule": "* * * * *",
     "type": "removePairs",
     "snapshots": 10,
+    "resume". false,
     "enabled": true
   }
 }
@@ -229,6 +233,7 @@ Filter options are described later in this article.
         "type": "changeStrategy",
         "snapshots": 10,
         "strategy": "baghandler",
+        "resume". false,
         "enabled": true
     }
 }
@@ -362,6 +367,8 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
 * `minSlopePctInterval`: filter returns true if the [slope](https://tulipindicators.org/linregslope) for all prices in snapshots is bigger than set.  Slope is expressed as a percentage of the last price. A slope of 1 means that, according to a simple linear regression, the next collected ticker price is likely to be 1% higher than the last one. Only executed when max snapshot sample size is reached.
 * `maxSlopePctInterval`: filter returns true if the [slope](https://tulipindicators.org/linregslope) for all prices in snapshots is smaller than set. Slope is expressed as a percentage of the last price. A slope of 1 means that, according to a simple linear regression, the next collected ticker price is likely to be 1% higher than the last one. Only executed when max snapshot sample size is reached.
 
+_Optionally, you can add `"resume": true` to a job that analyses ticker data. This will make sure that no ticker snapshots get lost between Gunbot restarts. Take care with this option in case you've turned off Gunbot for a while, as you would then be using old ticker data to base decision on._
+
 ### Pair state filters
 
 For job types: `manageOverrides`, `changeDelay`, `removePairs2`, `changeStrategy2`
@@ -463,6 +470,7 @@ You don't want to use this ever in this form, but use it as reference for how ea
         "type": "addPairs",
         "strategy": "gain",
         "snapshots": 2,
+        "resume". false,
         "debug": "true",
         "enabled": true
     },
@@ -583,6 +591,7 @@ You don't want to use this ever in this form, but use it as reference for how ea
         "schedule": "* * * * *",
         "type": "removePairs2",
         "snapshots": 10,
+        "resume". false,
         "debug": "true",
         "enabled": true
     },
@@ -654,6 +663,7 @@ You don't want to use this ever in this form, but use it as reference for how ea
         "type": "changeStrategy",
         "snapshots": 10,
         "strategy": "baghandler",
+        "resume". false,
         "debug": "true",
         "enabled": true
     },
@@ -703,6 +713,7 @@ You don't want to use this ever in this form, but use it as reference for how ea
         "type": "changeStrategy2",
         "snapshots": 10,
         "strategy": "baghandler",
+        "resume". false,
         "debug": "true",
         "enabled": true
     },
@@ -754,6 +765,7 @@ You don't want to use this ever in this form, but use it as reference for how ea
         "clearOverrides": false,
         "schedule": "*/10 * * * *",
         "type": "manageOverrides",
+        "resume". false,
         "debug": "true",
         "enabled": true
     }
