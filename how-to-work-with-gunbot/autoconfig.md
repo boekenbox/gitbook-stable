@@ -388,6 +388,7 @@ _Formula examples use ema1 and ema2 like set in the screenshot above. Of course 
 * It's fine to schedule many jobs for the same times, but in case multiple of those jobs causes a config change, the first one to finish will write it's changes and the others jobs will need to wait for another chance.
 * The output of every job is that the `config.js` file is updated, this will always cause Gunbot to restart.
 * Each job can contain an optional "`debug": true` line, when set the job will show detailed console log output for the filters in this job. Only use this in the moment you really need it, it can slow down Gunbot performance significantly due to the large amount of data that needs to be logged to the console.
+* Things that make AutoConfig crash: run a job for an exchange for which zero pairs are set in `config.js`, change the exchange for a ticker filtering job while having `"resume": true`, using a non-existent key in a state filter, etc.
 * Data is read from either exchange tickers or the internal Gunbot memory with pair state info. To find out which pair state data to filter on is available, look in the pairs state file in the Gunbot `/json` folder.
 * Almost every key/value in pair state files can be filtered, as long as they are on the first level \(not inside additional arrays or objects\)
 
