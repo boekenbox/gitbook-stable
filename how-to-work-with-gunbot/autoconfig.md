@@ -17,7 +17,7 @@ Gunbot AutoConfig is a collection of tools you can use to dynamically manage you
 
 You can create "jobs" to do something you would normally do by hand, for example scan an exchange for potential pairs to add, and schedule the job in a cron-like format.
 
-Things you can currently do with Autoconfig:
+Things you can currently do with AutoConfig:
 
 * **Scan exchanges and automatically add pairs:** for example add pairs with volume &gt; 500 BTC and for which price is rising.
 * **Scan exchanges to remove pairs from your config**: for example remove pairs without quote balance for which volume has dropped below 100 BTC.
@@ -138,7 +138,8 @@ Filter options are described later in this article.
       "schedule": "* * * * *",
       "type": "addPairs",
       "strategy": "gain",
-      "snapshots": 2
+      "snapshots": 2,
+      "enabled": true
     }
   }
 ```
@@ -184,7 +185,8 @@ There is no include options for this filter type. Pairs in your config \(that ha
     },
     "schedule": "* * * * *",
     "type": "removePairs",
-    "snapshots": 10
+    "snapshots": 10,
+    "enabled": true
   }
 }
 ```
@@ -226,7 +228,8 @@ Filter options are described later in this article.
         "schedule": "* * * * *",
         "type": "changeStrategy",
         "snapshots": 10,
-        "strategy": "baghandler"
+        "strategy": "baghandler",
+        "enabled": true
     }
 }
 ```
@@ -312,7 +315,8 @@ Filter options are described later in this article.
         },
         "clearOverrides": true,
         "type": "manageOverrides",
-        "schedule": "* * * * *"
+        "schedule": "* * * * *",
+        "enabled": true
     }
 }
 ```
@@ -445,13 +449,22 @@ You don't want to use this ever in this form, but use it as reference for how ea
             "filter12": {
                 "type": "maxSpreadPct",
                 "max": 1
+            },
+            "filter13": {
+                "type": "minSlopePctInterval",
+                "min": 0.00001
+            },
+            "filter14": {
+                "type": "maxSlopePctInterval",
+                "max": 1
             }
         },
         "schedule": "* * * * *",
         "type": "addPairs",
         "strategy": "gain",
         "snapshots": 2,
-        "debug": "true"
+        "debug": "true",
+        "enabled": true
     },
     "removePairs-jobname": {
         "pairs": {
@@ -508,12 +521,21 @@ You don't want to use this ever in this form, but use it as reference for how ea
             "filter12": {
                 "type": "maxSpreadPct",
                 "max": 1
+            },
+            "filter13": {
+                "type": "minSlopePctInterval",
+                "min": 0.00001
+            },
+            "filter14": {
+                "type": "maxSlopePctInterval",
+                "max": 1
             }
         },
         "schedule": "* * * * *",
         "type": "removePairs",
         "snapshots": 10,
-        "debug": "true"
+        "debug": "true",
+        "enabled": true
     },
     "removePairs2-jobname": {
         "pairs": {
@@ -561,7 +583,8 @@ You don't want to use this ever in this form, but use it as reference for how ea
         "schedule": "* * * * *",
         "type": "removePairs2",
         "snapshots": 10,
-        "debug": "true"
+        "debug": "true",
+        "enabled": true
     },
     "changeStrategy-jobname": {
         "pairs": {
@@ -617,13 +640,22 @@ You don't want to use this ever in this form, but use it as reference for how ea
             "filter12": {
                 "type": "maxSpreadPct",
                 "max": 1
+            },
+            "filter13": {
+                "type": "minSlopePctInterval",
+                "min": 0.00001
+            },
+            "filter14": {
+                "type": "maxSlopePctInterval",
+                "max": 1
             }
         },
         "schedule": "* * * * *",
         "type": "changeStrategy",
         "snapshots": 10,
         "strategy": "baghandler",
-        "debug": "true"
+        "debug": "true",
+        "enabled": true
     },
     "changeStrategy2-jobname": {
         "pairs": {
@@ -671,7 +703,8 @@ You don't want to use this ever in this form, but use it as reference for how ea
         "type": "changeStrategy2",
         "snapshots": 10,
         "strategy": "baghandler",
-        "debug": "true"
+        "debug": "true",
+        "enabled": true
     },
     "manageOverrides-jobname": {
         "pairs": {
@@ -721,7 +754,8 @@ You don't want to use this ever in this form, but use it as reference for how ea
         "clearOverrides": false,
         "schedule": "*/10 * * * *",
         "type": "manageOverrides",
-        "debug": "true"
+        "debug": "true",
+        "enabled": true
     }
 }
 ```
