@@ -26,7 +26,7 @@ The only actions that requires using the GUI is updating master keys.
 
 To disable the GUI completely, make the following change in the GUI section of `config.js`:
 
-```text
+```
 "GUI": {
         "enabled": false,
 ```
@@ -37,7 +37,7 @@ To connect an exchange, add the relevant settings to the exchange section of `co
 
 It looks like this:
 
-```text
+```
 "binance": {
             "masterkey": "registered_api_key",
             "mastersecret": "secret_for_registered_api_key",
@@ -56,7 +56,7 @@ A strategy is defined by giving it a unique name and adding it to the `strategie
 
 It looks like this:
 
-```text
+```
 "custom-strategy": {
             "BUY_METHOD": "tssl",
             "BUY_ENABLED": true,
@@ -79,7 +79,7 @@ In the `pairs` section of the config file you can add one or more pairs inside a
 
 Each pair must be assigned an existing strategy, it must be specified if the pair is enabled or not.
 
-```text
+```
 "Binance": {
             "BTC-LTC": {
                 "strategy": "SMACROSS",

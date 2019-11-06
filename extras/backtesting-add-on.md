@@ -90,7 +90,7 @@ There are a few non-Gunbot variables that are also present in the scripts:
 
 PricesA / PricesB sets percentage range of candle prices that are read. You may also choose to use candle sources instead. Only this portion of the candle will register when crossing indicators or levels. There is a plot in gray on top of the candles that represents this area.
 
-```text
+```
   |   High= 100
 |   |
 |   | PricesA = 0-100

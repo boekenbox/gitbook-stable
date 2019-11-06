@@ -27,7 +27,7 @@ Things you can currently do with AutoConfig:
 
 To use AutoConfig, you must have this in your `config.js` file:
 
-```text
+```
 "AutoConfig": {
         "enabled": true
     },
@@ -76,7 +76,7 @@ Filter options are described later in this article.
 
 **strategy:** this defines the strategy that will be assigned to pairs added by this job.
 
-```text
+```
 {
     "addMoon": {
       "pairs": {
@@ -171,7 +171,7 @@ There is no include options for this filter type. Pairs in your config \(that ha
 
 **resume** \(true/false\): when true, collected ticker snapshots from before the last Gunbot restart are kept. Beware that it is a bad idea to enable this option when you've turned off your bot for a while, there will be a  long time gap between old snapshots and newly collected ones.
 
-```text
+```
 {
   "removeCrap": {
     "pairs": {
@@ -211,7 +211,7 @@ Filter options are described later in this article.
 
 **type:** must be set to `changeStrategy` \(can use ticker filters\) or `changeStrategy2` \(can use state filters\)
 
-```text
+```
 {
     "changeStrat": {
         "pairs": {
@@ -255,7 +255,7 @@ Filter options are described later in this article.
 
 **type**: must be set to `manageOverrides`
 
-```text
+```
 {
     "DynamicDU1": {
         "pairs": {
@@ -389,7 +389,11 @@ _Formula examples use ema1 and ema2 like set in the screenshot above. Of course 
 
 Each job can set one or more user defined variables, which can be used to filter on in other jobs. 
 
-This makes handling complex filter setups easier, because you don't need to repeat multiple filter conditions across multiple jobs. Instead you can have one job monitoring a specific condition \(for example the distance between price and liquidation price\) and set a variable like `"liquidationStop": true` in case its conditions happen. Other jobs that depend on this liquidation stop then only have to set one filter looking for an exact match for `"liquidationStop": true` instead of needing to repeat the same filters set in the job that monitors the the distance between price and liquidation price.
+This allows for more complex, but also easier to handle, filter setups, because:  
+- Jobs can depend on another.   
+- you don't need to repeat multiple filter conditions across multiple jobs. 
+
+You can have one job monitoring a specific condition \(for example the distance between price and liquidation price\) and set a variable like `"liquidationStop": true` in case its conditions happen. Other jobs that depend on this liquidation stop then only have to set one filter looking for an exact match for `"liquidationStop": true` instead of needing to repeat the same filters set in the job that monitors the the distance between price and liquidation price.
 
 A job sets a variable when:
 
@@ -398,7 +402,7 @@ A job sets a variable when:
 
 `setVariable` looks like this:
 
-```text
+```
 "setVariable": {
 			"userVariable1": true
 		},
@@ -412,7 +416,7 @@ All variables are written to file and are imported anytime Gunbot restarts. Plea
 
 To read a variable, use the filter type `variableExact`. It can be used in all job types.
 
-```text
+```
 "filter": {
 "type": "variableExact",
 "userVariable1": true
@@ -442,7 +446,7 @@ Variables are entirely optional. It's no problem when no `setVariable` exists in
 
 You don't want to use this ever in this form, but use it as reference for how each job can be formatted.
 
-```text
+```
 {
     "addPairs-jobname": {
         "pairs": {
