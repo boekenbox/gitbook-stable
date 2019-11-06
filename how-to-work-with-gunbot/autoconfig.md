@@ -383,6 +383,48 @@ Formula used in `differenceSmaller`:
 
 _Formula examples use ema1 and ema2 like set in the screenshot above. Of course you can compare any two keys. The position of the keys to compare in the config file do matter._
 
+\_\_
+
+### User Variables
+
+Each job can set one or more user defined variables, which can be used to filter on in other jobs. 
+
+This makes handling complex filter setups easier, because you don't need to repeat multiple filter conditions across multiple jobs. Instead you can have one job monitoring a specific condition \(for example the distance between price and liquidation price\) and set a variable like `"liquidationStop": true` in case its conditions happen. Other jobs that depend on this liquidation stop then only have to set one filter looking for an exact match for `"liquidationStop": true` instead of needing to repeat the same filters set in the job that monitors the the distance between price and liquidation price.
+
+A job sets a variable when:
+
+* At least one pair passed all filters for this job.
+* `setVariable` is defined in the jobs config.
+
+`setVariable` looks like this:
+
+```text
+"setVariable": {
+			"userVariable1": true
+		},
+```
+
+It can contain one or more variables, their value can be filtered as exact match only. Besides true/false, you could also set number values, or strings. 
+
+In case you set a variable that was previously set with a different value, the new value will overwrite the old one. Setting one variable has no effect on other possible variables that are already set.
+
+All variables are written to file and are imported anytime Gunbot restarts. Please be aware that this won't always work, file corruption can happen - for example when a write action is happening right in the moment that Gunbot is closed. It's a good idea to not fully depend on saved variables, and run the jobs that set them relatively frequent.
+
+To read a variable, use the filter type `variableExact`. It can be used in all job types.
+
+```text
+"filter": {
+"type": "variableExact",
+"userVariable1": true
+}
+```
+
+This filter type will return true when `userVariable1` has a value of `true`.
+
+{% hint style="info" %}
+Variables are entirely optional. It's no problem when no `setVariable` exists in a job.
+{% endhint %}
+
 ## Various
 
 * It's fine to schedule many jobs for the same times, but in case multiple of those jobs causes a config change, the first one to finish will write it's changes and the others jobs will need to wait for another chance.
@@ -465,7 +507,11 @@ You don't want to use this ever in this form, but use it as reference for how ea
             "filter14": {
                 "type": "maxSlopePctInterval",
                 "max": 1
-            }
+            },
+            "filter16": {
+				"type": "variableExact",
+				"userVar1": false
+			}
         },
         "schedule": "* * * * *",
         "type": "addPairs",
@@ -473,6 +519,9 @@ You don't want to use this ever in this form, but use it as reference for how ea
         "snapshots": 2,
         "resume". false,
         "debug": "true",
+        "setVariable": {
+			"userVariable1": true
+		},
         "enabled": true
     },
     "removePairs-jobname": {
@@ -538,12 +587,19 @@ You don't want to use this ever in this form, but use it as reference for how ea
             "filter14": {
                 "type": "maxSlopePctInterval",
                 "max": 1
-            }
+            },
+            "filter16": {
+				"type": "variableExact",
+				"userVar1": false
+			}
         },
         "schedule": "* * * * *",
         "type": "removePairs",
         "snapshots": 10,
         "debug": "true",
+        "setVariable": {
+			"userVariable1": true
+		},
         "enabled": true
     },
     "removePairs2-jobname": {
@@ -587,13 +643,20 @@ You don't want to use this ever in this form, but use it as reference for how ea
                 "ema1": 1,
                 "ema2": 1,
                 "delta": 10
-            }
+            },
+            "filter16": {
+				"type": "variableExact",
+				"userVar1": false
+			}
         },
         "schedule": "* * * * *",
         "type": "removePairs2",
         "snapshots": 10,
         "resume". false,
         "debug": "true",
+        "setVariable": {
+			"userVariable1": true
+		},
         "enabled": true
     },
     "changeStrategy-jobname": {
@@ -658,7 +721,11 @@ You don't want to use this ever in this form, but use it as reference for how ea
             "filter14": {
                 "type": "maxSlopePctInterval",
                 "max": 1
-            }
+            },
+            "filter16": {
+				"type": "variableExact",
+				"userVar1": false
+			}
         },
         "schedule": "* * * * *",
         "type": "changeStrategy",
@@ -666,6 +733,9 @@ You don't want to use this ever in this form, but use it as reference for how ea
         "strategy": "baghandler",
         "resume". false,
         "debug": "true",
+        "setVariable": {
+			"userVariable1": true
+		},
         "enabled": true
     },
     "changeStrategy2-jobname": {
@@ -708,13 +778,20 @@ You don't want to use this ever in this form, but use it as reference for how ea
                 "ema1": 1,
                 "ema2": 1,
                 "delta": 10
-            }
+            },
+            "filter16": {
+				"type": "variableExact",
+				"userVar1": false
+			}
         },
         "schedule": "* * * * *",
         "type": "changeStrategy2",
         "snapshots": 10,
         "strategy": "baghandler",
         "resume". false,
+        "setVariable": {
+			"userVariable1": true
+		},
         "debug": "true",
         "enabled": true
     },
@@ -758,7 +835,11 @@ You don't want to use this ever in this form, but use it as reference for how ea
                 "ema1": 1,
                 "ema2": 1,
                 "delta": 10
-            }
+            },
+            "filter16": {
+				"type": "variableExact",
+				"userVar1": false
+			}
         },
         "overrides": {
             "DU_BUYDOWN": 3
@@ -767,6 +848,9 @@ You don't want to use this ever in this form, but use it as reference for how ea
         "schedule": "*/10 * * * *",
         "type": "manageOverrides",
         "resume". false,
+        "setVariable": {
+			"userVariable1": true
+		},
         "debug": "true",
         "enabled": true
     }
