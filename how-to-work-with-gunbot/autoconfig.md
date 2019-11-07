@@ -27,7 +27,7 @@ Things you can currently do with AutoConfig:
 
 To use AutoConfig, you must have this in your `config.js` file:
 
-```
+```text
 "AutoConfig": {
         "enabled": true
     },
@@ -76,7 +76,7 @@ Filter options are described later in this article.
 
 **strategy:** this defines the strategy that will be assigned to pairs added by this job.
 
-```
+```text
 {
     "addMoon": {
       "pairs": {
@@ -171,7 +171,7 @@ There is no include options for this filter type. Pairs in your config \(that ha
 
 **resume** \(true/false\): when true, collected ticker snapshots from before the last Gunbot restart are kept. Beware that it is a bad idea to enable this option when you've turned off your bot for a while, there will be a  long time gap between old snapshots and newly collected ones.
 
-```
+```text
 {
   "removeCrap": {
     "pairs": {
@@ -211,7 +211,7 @@ Filter options are described later in this article.
 
 **type:** must be set to `changeStrategy` \(can use ticker filters\) or `changeStrategy2` \(can use state filters\)
 
-```
+```text
 {
     "changeStrat": {
         "pairs": {
@@ -255,7 +255,7 @@ Filter options are described later in this article.
 
 **type**: must be set to `manageOverrides`
 
-```
+```text
 {
     "DynamicDU1": {
         "pairs": {
@@ -366,6 +366,8 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
 * `maxSpreadPct`: filter returns true if percentage difference between bid and ask is lower than set.
 * `minSlopePctInterval`: filter returns true if the [slope](https://tulipindicators.org/linregslope) for all prices in snapshots is bigger than set.  Slope is expressed as a percentage of the last price. A slope of 1 means that, according to a simple linear regression, the next collected ticker price is likely to be 1% higher than the last one. Only executed when max snapshot sample size is reached.
 * `maxSlopePctInterval`: filter returns true if the [slope](https://tulipindicators.org/linregslope) for all prices in snapshots is smaller than set. Slope is expressed as a percentage of the last price. A slope of 1 means that, according to a simple linear regression, the next collected ticker price is likely to be 1% higher than the last one. Only executed when max snapshot sample size is reached.
+* `belowMedianVolume`: filter returns true if the base volume for a pair is lower than the median base volume for all pairs with the same base currency on the exchange.
+* `aboveMedianVolume`: filter returns true if the base volume for a pair is higher than the median base volume for all pairs with the same base currency on the exchange.
 
 _Optionally, you can add `"resume": true` to a job that analyses ticker data. This will make sure that no ticker snapshots get lost between Gunbot restarts. Take care with this option in case you've turned off Gunbot for a while, as you would then be using old ticker data to base decision on._
 
@@ -402,7 +404,7 @@ A job sets a variable when:
 
 `setVariable` looks like this:
 
-```
+```text
 "setVariable": {
 			"userVariable1": true
 		},
@@ -416,7 +418,7 @@ All variables are written to file and are imported anytime Gunbot restarts. Plea
 
 To read a variable, use the filter type `variableExact`. It can be used in all job types.
 
-```
+```text
 "filter": {
 "type": "variableExact",
 "userVariable1": true
@@ -446,7 +448,7 @@ Variables are entirely optional. It's no problem when no `setVariable` exists in
 
 You don't want to use this ever in this form, but use it as reference for how each job can be formatted.
 
-```
+```text
 {
     "addPairs-jobname": {
         "pairs": {
@@ -512,6 +514,12 @@ You don't want to use this ever in this form, but use it as reference for how ea
                 "type": "maxSlopePctInterval",
                 "max": 1
             },
+			"filter17": {
+			    "type": "belowMedianVolume"
+			},
+			"filter18": {
+			    "type": "aboveMedianVolume"
+			}
             "filter16": {
 				"type": "variableExact",
 				"userVar1": false
@@ -595,6 +603,12 @@ You don't want to use this ever in this form, but use it as reference for how ea
             "filter16": {
 				"type": "variableExact",
 				"userVar1": false
+			},
+			"filter17": {
+			    "type": "belowMedianVolume"
+			},
+			"filter18": {
+			    "type": "aboveMedianVolume"
 			}
         },
         "schedule": "* * * * *",
@@ -729,6 +743,12 @@ You don't want to use this ever in this form, but use it as reference for how ea
             "filter16": {
 				"type": "variableExact",
 				"userVar1": false
+			},
+			"filter17": {
+			    "type": "belowMedianVolume"
+			},
+			"filter18": {
+			    "type": "aboveMedianVolume"
 			}
         },
         "schedule": "* * * * *",
