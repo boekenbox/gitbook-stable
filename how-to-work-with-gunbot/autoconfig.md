@@ -933,5 +933,7 @@ To find the full list of available items to filter using state filters, open the
 "rtsoldprice": 10153.55,      // Price or last RT Sell
 "ROE": -337.622777196791,     // Current ROE for position, including leverage (bitmex)
 "countsell": 0,               // Number of sell orders since the pair was added.
+"FAST_SMA": 0.00007840000000000017,    // Current value for fast SMA
+"SLOW_SMA": 0.00007835000000000043,    // Current value for slow SMA
 ```
 
