@@ -24,6 +24,7 @@ Things you can currently do with AutoConfig:
 * **Change the strategy for pairs from your config:** for example set a bag handling strategy when the pair did buy but prices dropped a lot.
 * **Change the exchange delay**.
 * **Monitor pair state information and automatically set pair overrides:** for example set a different `DU_BUYDOWN` after the first round of DU happened.
+* **Set user variables as output for a filter job**, which can be used to filter on in other jobs.
 
 To use AutoConfig, you must have this in your `config.js` file:
 
