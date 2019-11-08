@@ -881,3 +881,57 @@ You don't want to use this ever in this form, but use it as reference for how ea
 }
 ```
 
+## Filterable parameters for state filters
+
+Below is a \(non exhaustive\) list of parameters that can be filtered with state filters. Only the most useful ones are listed. All indicator values depend on the indicator settings you've set in the strategy running the pair.
+
+To find the full list of available items to filter using state filters, open the json state file of the pair you want to perform filtering on. Always make sure to only add filters for existing parameters, some are strategy or exchange dependent.
+
+```text
+"ABP": 7814.956108919921,    // average bought price, includes trading fees
+"Ask": 9025.99,    // current best ask price
+"AskVolume": 5.183191,    // volume on ask side of the order book
+"Bid": 9025.17,    // current best bid price
+"BidVolume": 5.952429000000001,    // volume on bid side of the order book
+"CHIKOU": 9025,    // current chikou value
+"KIJUN": 9110.439999999999, // current kijun value
+"MACD": -92.56199382179693,    // current MACD value
+"MACD_HISTOGRAM": -42.404581672042966,    // current MACD historgram value
+"MACD_SIGNAL": -50.157412149753966,    // current MACD signal value
+"STOCHRSI": 0,    // current StochRSI value
+"STOCH_D": 22.795385433280803,    // current Stoch D value
+"STOCH_K": 24.829516212043245,    // current Stoch K value
+"TENKAN": 9108,    // current tenkan value
+"actualSENKOUSPANA": 9257.8625,    // current senkou span a value
+"actualSENKOUSPANB": 9295.955,     // current senkou span b value
+"adx": 53.365896826023615,    // current adx value
+"atr": 57.69181846913094,     // current atr value
+"availableMargin": 0,         // available margin (bitmex)
+"avgEntryPrice": 0,           // average entry price for current position (bitmex)
+"baseBalance": 3153.05465646, // available base balance
+"currentQty": 0,              // current quantity of a position (bitmex)
+"diminus": 41.26673671193246, // current di- value
+"diplus": 9.110903255097467,  // current di+ value
+"ducount": 0,                 // DU count, equals the number of completed DU rounds
+"dudone": false,              // Dudone indicates if max DU count is reached. Resets once a regular buy order has been filled after the DU pair sold. 
+"ema1": 9243.02363508863,     // Current EMA1 value
+"ema2": 9243.02363508863,     // Current EMA2 value
+"forecast": 9024.972507172492,    // Forecast price (using time series analysis)
+"highBB": 9405.63185580759,   // Current upper bollinger band value
+"liquidationPrice": 0,        // Liquidation price (bitmex)
+"lowBB": 9081.778944192416,   // Current lower bollinger band value 
+"mfi": 26.93273441417246,     // Current MFI value
+"ourBaginBase": 420.673099259907,    // Bag value in base currency
+"pKIJUN": 9110.439999999999,  // Previous round kijun value
+"pTENKAN": 9108,              // Previous round tenkan value
+"pastSENKOUSPANA": 9330.935,  // Previous round senkou span a value
+"pastSENKOUSPANB": 9319.82,   // Previous round senkou span b value
+"prevAsk": 9026.15,           // Previous round best ask value
+"prevBid": 9025.6,            // Previous round best bid value
+"quoteBalance": 0.04227457,   // Balance of quote holding
+"reversal": false,            // Indicates if reversal trading is active
+"rtsoldprice": 10153.55,      // Price or last RT Sell
+"ROE": -337.622777196791,     // Current ROE for position, including leverage (bitmex)
+"countsell": 0,               // Number of sell orders since the pair was added.
+```
+
