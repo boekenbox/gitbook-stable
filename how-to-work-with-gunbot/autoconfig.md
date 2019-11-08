@@ -894,10 +894,13 @@ To find the full list of available items to filter using state filters, open the
 "Bid": 9025.17,    // current best bid price
 "BidVolume": 5.952429000000001,    // volume on bid side of the order book
 "CHIKOU": 9025,    // current chikou value
+"FAST_SMA": 0.00007840000000000017,    // Current value for fast SMA
 "KIJUN": 9110.439999999999, // current kijun value
 "MACD": -92.56199382179693,    // current MACD value
 "MACD_HISTOGRAM": -42.404581672042966,    // current MACD historgram value
 "MACD_SIGNAL": -50.157412149753966,    // current MACD signal value
+"ROE": -337.622777196791,     // Current ROE for position, including leverage (bitmex)
+"SLOW_SMA": 0.00007835000000000043,    // Current value for slow SMA
 "STOCHRSI": 0,    // current StochRSI value
 "STOCH_D": 22.795385433280803,    // current Stoch D value
 "STOCH_K": 24.829516212043245,    // current Stoch K value
@@ -909,6 +912,7 @@ To find the full list of available items to filter using state filters, open the
 "availableMargin": 0,         // available margin (bitmex)
 "avgEntryPrice": 0,           // average entry price for current position (bitmex)
 "baseBalance": 3153.05465646, // available base balance
+"countsell": 0,               // Number of sell orders since the pair was added.
 "currentQty": 0,              // current quantity of a position (bitmex)
 "diminus": 41.26673671193246, // current di- value
 "diplus": 9.110903255097467,  // current di+ value
@@ -930,10 +934,7 @@ To find the full list of available items to filter using state filters, open the
 "prevBid": 9025.6,            // Previous round best bid value
 "quoteBalance": 0.04227457,   // Balance of quote holding
 "reversal": false,            // Indicates if reversal trading is active
+"rsi":39.883053922751834     // Current RSI value
 "rtsoldprice": 10153.55,      // Price or last RT Sell
-"ROE": -337.622777196791,     // Current ROE for position, including leverage (bitmex)
-"countsell": 0,               // Number of sell orders since the pair was added.
-"FAST_SMA": 0.00007840000000000017,    // Current value for fast SMA
-"SLOW_SMA": 0.00007835000000000043,    // Current value for slow SMA
 ```
 
