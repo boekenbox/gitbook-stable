@@ -268,6 +268,8 @@ Filter options are described later in this article.
 
 **exchange**: must be set to the same value as gunbot calls refers to them in the pairs section.
 
+**setITB** \(true/false\): when set to true, pairs matching filters get an additional override for `IGNORE_TRADES_BEFORE` with a timestamp of the time the job runs. You do not need to specify this override in the overrides section of the job.
+
 **type**: must be set to `manageOverrides`
 
 ```text
@@ -288,6 +290,7 @@ Filter options are described later in this article.
             "DU_BUYDOWN": 3
         },
         "clearOverrides": false,
+        "setITB": false,
         "schedule": "*/10 * * * *",
         "type": "manageOverrides"
   },
@@ -308,6 +311,7 @@ Filter options are described later in this article.
       "GAIN": 1
         },
         "clearOverrides": false,
+        "setITB": false,
         "type": "manageOverrides",
         "schedule": "1 * * * *"
   },
@@ -333,6 +337,7 @@ Filter options are described later in this article.
             "MAX_SELL": 0
         },
         "clearOverrides": true,
+        "setITB": false,
         "type": "manageOverrides",
         "schedule": "* * * * *",
         "enabled": true
@@ -883,6 +888,7 @@ You don't want to use this ever in this form, but use it as reference for how ea
             "DU_BUYDOWN": 3
         },
         "clearOverrides": false,
+        "setITB": false,
         "schedule": "*/10 * * * *",
         "type": "manageOverrides",
         "resume". false,
