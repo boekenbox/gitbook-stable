@@ -77,6 +77,20 @@ Filter options are described later in this article.
 
 **strategy:** this defines the strategy that will be assigned to pairs added by this job.
 
+**Bitrage filters:** when used for Bitrage, you can have an addPairs job replace the contents of the exchange filter settings. To do so, add the filters in the pair section of the job as shown below:
+
+```text
+"pairs": {
+			"exclude": "",
+			"include": "BTC-",
+			"maxPairs": 10,
+			"exchange": "kucoin",
+			"filteredQuote": ["DOGE"],
+      "filteredPair": ["BTC-DOGE"],
+      "filteredBase": ["BTC","ETH","USDS","TUSD","USDC","PAX","XRP","TRX","BUSD","NGN"]
+		},
+```
+
 ```text
 {
     "addMoon": {
