@@ -160,7 +160,7 @@ Filter options are described later in this article.
 
 There is no include options for this filter type. Pairs in your config \(that have already cycled\) are basically the list of includes.
 
-**noBag** \(true/false\): when true, only pairs with a balance below mvts are filtered for possible removal. When set to false, all pairs in config are filtered.
+**noBag** \(true/false\): when true, only pairs with a balance below mvts, that have no open orders and are not in reversal trading, are filtered for possible removal. When set to false, all pairs in config are filtered. 
 
 **removeDisabled** \(true/false\): when true, each time a removePairs job is ran it will remove all disabled pairs for the exchange the job runs on - regardless of filter settings. Useful, for example, when you use `COUNT_SELL`
 
