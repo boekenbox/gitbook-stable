@@ -77,6 +77,8 @@ Filter options are described later in this article.
 
 **strategy:** this defines the strategy that will be assigned to pairs added by this job.
 
+**overrides**: this job type can also add overrides when it adds new pairs. To do so, add a section with overrides to the job, just like you would in a `manageOverrides` job.
+
 **Bitrage filters:** when used for Bitrage, you can have an addPairs job replace the contents of the exchange filter settings. To do so, add the filters in the pair section of the job as shown below:
 
 ```text
