@@ -389,6 +389,8 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
 * `maxSlopePctInterval`: filter returns true if the [slope](https://tulipindicators.org/linregslope) for all prices in snapshots is smaller than set. Slope is expressed as a percentage of the last price. A slope of 1 means that, according to a simple linear regression, the next collected ticker price is likely to be 1% higher than the last one. Only executed when max snapshot sample size is reached.
 * `belowMedianVolume`: filter returns true if the base volume for a pair is lower than the median base volume for all pairs with the same base currency on the exchange.
 * `aboveMedianVolume`: filter returns true if the base volume for a pair is higher than the median base volume for all pairs with the same base currency on the exchange.
+* `minVolumeRank`: filter returns true if a pairs volume rank \(rankings are specific per base\) is higher than set. This filter is only useful if you want to exclude some of the top ranking volume pairs, for example set it to 5 to only allow pairs that have a volume rank of 6 or higher.
+* `maxVolumeRank`: filter returns true if a pairs volume rank \(rankings are specific per base\) is lower than set. Setting it to 10, for example, would only include pairs that have a top10 volume ranking.
 
 _Optionally, you can add `"resume": true` to a job that analyses ticker data. This will make sure that no ticker snapshots get lost between Gunbot restarts. Take care with this option in case you've turned off Gunbot for a while, as you would then be using old ticker data to base decision on._
 
