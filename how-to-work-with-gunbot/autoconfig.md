@@ -441,6 +441,55 @@ New history entries are saved as follows:
 * When there is no history, the oldest ticker snapshot will be added as first history entry.
 * When there is at least one history entry, a new one is added when the time difference between the oldest ticker snapshot and the latest history entry is bigger than the time defined in `historyInterval`. The oldest ticker snapshot will be added as newest history entry. In case the maximum number of history entries is reached, the oldest history entry will get deleted once a new one gets added.
 
+The config example below shows a job that filters for:
+
+* BTC pairs that currently ranks top10 for 24h volume
+* The 5 history entries have a slope of at least 1%
+* Pair must have ranked top10 24h volume in the oldest history entry
+
+```text
+If oldest snapshot is > 60 minutes older than newest history entry, 
+it gets moved to history
+
+                                                Snapshots, 1m interval 
+                                                [s]  [s]  [s]  [s]  [s]  
+History entries, 60m interval                    |  
+[0]  [1]  [2]  [3]  [4]                          |
+                         ^-----------------------*
+
+
+"addMoon": {
+		"pairs": {
+			"exclude": "",
+			"include": "BTC-",
+			"maxPairs": 10,
+			"exchange": "binance"
+		},
+		"filters": {
+			"filter1": {
+				"type": "minVolumeRankHistory",
+				"min": 10
+			},
+			"filter2": {
+				"type": "minSlopePctIntervalHistory",
+				"min": 1,
+			},
+			"filter3": {
+				"type": "minVolumeRankHistoryHistory",
+				"min": 10,
+				"historySource": 0
+			}
+		},
+		"schedule": "* * * * * *",
+		"type": "addPairs",
+		"strategy": "moon",
+		"snapshots": 5,
+		"history": 5,
+		"historyInterval": 60,
+		"resume": true
+	},
+```
+
 {% hint style="info" %}
 Both snapshots and history cause a relatively high load on I/O operations. Depending on your system, allowing for too many entries saved can negatively impact performance.
 {% endhint %}
