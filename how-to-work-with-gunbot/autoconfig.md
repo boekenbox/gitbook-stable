@@ -8,8 +8,8 @@ description: >-
 # AutoConfig
 
 {% hint style="info" %}
-Currently there is no GUI for AutoConfig. You'll need to create your own `autoconfig.json` config file, which contains the jobs it should run.  
-  
+Currently there is no GUI for AutoConfig. You'll need to create your own `autoconfig.json` config file, which contains the jobs it should run.
+
 _If you are not comfortable editing config files manually, it's probably a good idea to wait until the GUI supports AutoConfig._
 {% endhint %}
 
@@ -83,14 +83,14 @@ Filter options are described later in this article.
 
 ```text
 "pairs": {
-			"exclude": "",
-			"include": "BTC-",
-			"maxPairs": 10,
-			"exchange": "kucoin",
-			"filteredQuote": ["DOGE"],
+            "exclude": "",
+            "include": "BTC-",
+            "maxPairs": 10,
+            "exchange": "kucoin",
+            "filteredQuote": ["DOGE"],
       "filteredPair": ["BTC-DOGE"],
       "filteredBase": ["BTC","ETH","USDS","TUSD","USDC","PAX","XRP","TRX","BUSD","NGN"]
-		},
+        },
 ```
 
 ```text
@@ -176,7 +176,7 @@ Filter options are described later in this article.
 
 There is no include options for this filter type. Pairs in your config \(that have already cycled\) are basically the list of includes.
 
-**noBag** \(true/false\): when true, only pairs with a balance below mvts, that have no open orders and are not in reversal trading, are filtered for possible removal. When set to false, all pairs in config are filtered. 
+**noBag** \(true/false\): when true, only pairs with a balance below mvts, that have no open orders and are not in reversal trading, are filtered for possible removal. When set to false, all pairs in config are filtered.
 
 **removeDisabled** \(true/false\): when true, each time a removePairs job is ran it will remove all disabled pairs for the exchange the job runs on - regardless of filter settings. Useful, for example, when you use `COUNT_SELL`
 
@@ -186,7 +186,7 @@ There is no include options for this filter type. Pairs in your config \(that ha
 
 **snapshots:** defines how many ticker snapshots are saved to perform calculations on. Relevant for filtertypes that include `Interval` in their name. For example: snapshots is set to 10, this means that the ticker data for the last 10 times the job runs are saved and some of the values in it are used for calculating average values over time. For now, snapshot data gets cleared when Gunbot restarts.
 
-**resume** \(true/false\): when true, collected ticker snapshots from before the last Gunbot restart are kept. Beware that it is a bad idea to enable this option when you've turned off your bot for a while, there will be a  long time gap between old snapshots and newly collected ones.
+**resume** \(true/false\): when true, collected ticker snapshots from before the last Gunbot restart are kept. Beware that it is a bad idea to enable this option when you've turned off your bot for a while, there will be a long time gap between old snapshots and newly collected ones.
 
 ```text
 {
@@ -394,6 +394,59 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
 
 _Optionally, you can add `"resume": true` to a job that analyses ticker data. This will make sure that no ticker snapshots get lost between Gunbot restarts. Take care with this option in case you've turned off Gunbot for a while, as you would then be using old ticker data to base decision on._
 
+#### Ticker history filters
+
+Most ticker filters are also available as `*History` variant. These work in the same way as described above, but they use a different data set as input. Available history filters:
+
+* `minPriceHistory`
+* `maxPriceHistory`
+* `maxVolumeRankHistory`
+* `minVolumeRankHistory`
+* `minPricePctChangeIntervalHistory`
+* `maxPricePctChangeIntervalHistory`
+* `minVolumePctChangeIntervalHistory`
+* `maxVolumePctChangeIntervalHistory`
+* `minVolume24hHistory`
+* `maxVolume24hHistory`
+* `minVolatilityPct24hHistory`
+* `maxVolatilityPct24hHistory`
+* `minSpreadPctHistory`
+* `maxSpreadPctHistory`
+* `minSlopePctIntervalHistory`
+* `maxSlopePctIntervalHistory`
+
+History filters take one additional input, defining which history data should be used. the config for a history filter looks like:
+
+```text
+"filter": {
+				"type": "minPriceHistory",
+				"max": 10,
+				"historySource": 6
+			}
+```
+
+The `historySource` parameter in the example above means that it will use the price of the history entry with number 6.
+
+How the history is built up is defined by the following parameters in the root level:
+
+```text
+"history": 7,
+"historyInterval": 15,
+```
+
+The example above would collect 7 history entries, with a minimum interval of 15 minutes.
+
+New history entries are saved as follows:
+
+* When there is no history, the oldest ticker snapshot will be added as first history entry.
+* When there is at least one history entry, a new one is added when the time difference between the oldest ticker snapshot and the latest history entry is bigger than the time defined in `historyInterval`. The oldest ticker snapshot will be added as newest history entry. In case the maximum number of history entries is reached, the oldest history entry will get deleted once a new one gets added.
+
+{% hint style="info" %}
+Both snapshots and history cause a relatively high load on I/O operations. Depending on your system, allowing for too many entries saved can negatively impact performance.
+{% endhint %}
+
+
+
 ### Pair state filters
 
 For job types: `manageOverrides`, `changeDelay`, `removePairs2`, `changeStrategy2`
@@ -412,11 +465,12 @@ _Formula examples use ema1 and ema2 like set in the screenshot above. Of course 
 
 ### User Variables
 
-Each job can set one or more user defined variables, which can be used to filter on in other jobs. 
+Each job can set one or more user defined variables, which can be used to filter on in other jobs.
 
-This allows for more complex, but also easier to handle, filter setups, because:  
-- Jobs can depend on another.   
-- you don't need to repeat multiple filter conditions across multiple jobs. 
+This allows for more complex, but also easier to handle, filter setups, because:
+
+* Jobs can depend on another.   
+* you don't need to repeat multiple filter conditions across multiple jobs. 
 
 You can have one job monitoring a specific condition \(for example the distance between price and liquidation price\) and set a variable like `"liquidationStop": true` in case its conditions happen. Other jobs that depend on this liquidation stop then only have to set one filter looking for an exact match for `"liquidationStop": true` instead of needing to repeat the same filters set in the job that monitors the the distance between price and liquidation price.
 
@@ -429,11 +483,11 @@ A job sets a variable when:
 
 ```text
 "setVariable": {
-			"userVariable1": true
-		},
+            "userVariable1": true
+        },
 ```
 
-It can contain one or more variables, their value can be filtered as exact match only. Besides true/false, you could also set number values, or strings. 
+It can contain one or more variables, their value can be filtered as exact match only. Besides true/false, you could also set number values, or strings.
 
 In case you set a variable that was previously set with a different value, the new value will overwrite the old one. Setting one variable has no effect on other possible variables that are already set.
 
@@ -537,16 +591,16 @@ You don't want to use this ever in this form, but use it as reference for how ea
                 "type": "maxSlopePctInterval",
                 "max": 1
             },
-			"filter17": {
-			    "type": "belowMedianVolume"
-			},
-			"filter18": {
-			    "type": "aboveMedianVolume"
-			}
+            "filter17": {
+                "type": "belowMedianVolume"
+            },
+            "filter18": {
+                "type": "aboveMedianVolume"
+            }
             "filter16": {
-				"type": "variableExact",
-				"userVar1": false
-			}
+                "type": "variableExact",
+                "userVar1": false
+            }
         },
         "schedule": "* * * * *",
         "type": "addPairs",
@@ -555,8 +609,8 @@ You don't want to use this ever in this form, but use it as reference for how ea
         "resume". false,
         "debug": "true",
         "setVariable": {
-			"userVariable1": true
-		},
+            "userVariable1": true
+        },
         "enabled": true
     },
     "removePairs-jobname": {
@@ -624,23 +678,23 @@ You don't want to use this ever in this form, but use it as reference for how ea
                 "max": 1
             },
             "filter16": {
-				"type": "variableExact",
-				"userVar1": false
-			},
-			"filter17": {
-			    "type": "belowMedianVolume"
-			},
-			"filter18": {
-			    "type": "aboveMedianVolume"
-			}
+                "type": "variableExact",
+                "userVar1": false
+            },
+            "filter17": {
+                "type": "belowMedianVolume"
+            },
+            "filter18": {
+                "type": "aboveMedianVolume"
+            }
         },
         "schedule": "* * * * *",
         "type": "removePairs",
         "snapshots": 10,
         "debug": "true",
         "setVariable": {
-			"userVariable1": true
-		},
+            "userVariable1": true
+        },
         "enabled": true
     },
     "removePairs2-jobname": {
@@ -686,9 +740,9 @@ You don't want to use this ever in this form, but use it as reference for how ea
                 "delta": 10
             },
             "filter16": {
-				"type": "variableExact",
-				"userVar1": false
-			}
+                "type": "variableExact",
+                "userVar1": false
+            }
         },
         "schedule": "* * * * *",
         "type": "removePairs2",
@@ -696,8 +750,8 @@ You don't want to use this ever in this form, but use it as reference for how ea
         "resume". false,
         "debug": "true",
         "setVariable": {
-			"userVariable1": true
-		},
+            "userVariable1": true
+        },
         "enabled": true
     },
     "changeStrategy-jobname": {
@@ -764,15 +818,15 @@ You don't want to use this ever in this form, but use it as reference for how ea
                 "max": 1
             },
             "filter16": {
-				"type": "variableExact",
-				"userVar1": false
-			},
-			"filter17": {
-			    "type": "belowMedianVolume"
-			},
-			"filter18": {
-			    "type": "aboveMedianVolume"
-			}
+                "type": "variableExact",
+                "userVar1": false
+            },
+            "filter17": {
+                "type": "belowMedianVolume"
+            },
+            "filter18": {
+                "type": "aboveMedianVolume"
+            }
         },
         "schedule": "* * * * *",
         "type": "changeStrategy",
@@ -781,8 +835,8 @@ You don't want to use this ever in this form, but use it as reference for how ea
         "resume". false,
         "debug": "true",
         "setVariable": {
-			"userVariable1": true
-		},
+            "userVariable1": true
+        },
         "enabled": true
     },
     "changeStrategy2-jobname": {
@@ -827,9 +881,9 @@ You don't want to use this ever in this form, but use it as reference for how ea
                 "delta": 10
             },
             "filter16": {
-				"type": "variableExact",
-				"userVar1": false
-			}
+                "type": "variableExact",
+                "userVar1": false
+            }
         },
         "schedule": "* * * * *",
         "type": "changeStrategy2",
@@ -837,8 +891,8 @@ You don't want to use this ever in this form, but use it as reference for how ea
         "strategy": "baghandler",
         "resume". false,
         "setVariable": {
-			"userVariable1": true
-		},
+            "userVariable1": true
+        },
         "debug": "true",
         "enabled": true
     },
@@ -884,9 +938,9 @@ You don't want to use this ever in this form, but use it as reference for how ea
                 "delta": 10
             },
             "filter16": {
-				"type": "variableExact",
-				"userVar1": false
-			}
+                "type": "variableExact",
+                "userVar1": false
+            }
         },
         "overrides": {
             "DU_BUYDOWN": 3
@@ -897,8 +951,8 @@ You don't want to use this ever in this form, but use it as reference for how ea
         "type": "manageOverrides",
         "resume". false,
         "setVariable": {
-			"userVariable1": true
-		},
+            "userVariable1": true
+        },
         "debug": "true",
         "enabled": true
     }
