@@ -425,7 +425,7 @@ History filters take one additional input, defining which history data should be
 			}
 ```
 
-The `historySource` parameter in the example above means that it will use the price of the history entry with number 6.
+The `historySource` parameter in the example above means that it will use the price of the history entry with number 6. The oldest history entry has number 0.
 
 How the history is built up is defined by the following parameters in the root level:
 
