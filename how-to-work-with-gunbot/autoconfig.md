@@ -475,7 +475,7 @@ History entries, 60m interval                    |
 				"min": 1,
 			},
 			"filter3": {
-				"type": "minVolumeRankHistoryHistory",
+				"type": "minVolumeRankHistory",
 				"min": 10,
 				"historySource": 0
 			}
