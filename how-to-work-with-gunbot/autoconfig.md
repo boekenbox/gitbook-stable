@@ -8,11 +8,6 @@ description: >-
 # AutoConfig
 
 {% hint style="info" %}
-```text
-
-        "fil
-```
-
 Currently there is no GUI for AutoConfig. You'll need to create your own `autoconfig.json` config file, which contains the jobs it should run.
 
 _If you are not comfortable editing config files manually, it's probably a good idea to wait until the GUI supports AutoConfig._
@@ -59,7 +54,7 @@ Schedules are set per job in a [format similar to how cron jobs are set](https:/
 
 ## Job types \(with config examples\)
 
-Each job type has a number of obligatory parameters, these are described below. 
+Each job type has a number of obligatory parameters, these are described below for each job type.
 
 Additionally, there are [optional parameters](autoconfig.md#optional-parameters) you can use to extend the functionality of a job.
 
@@ -70,6 +65,8 @@ Additionally, there are [optional parameters](autoconfig.md#optional-parameters)
 **Type name in config:** `addPairs`
 
 This job type uses [ticker filters](autoconfig.md#ticker-filters).
+
+
 
 **Pair options:**
 
@@ -128,9 +125,11 @@ The example below shows a job that does the following:
 
 ### Removing pairs
 
-**Type name in config:** `removePairs` \(uses [ticker filters](autoconfig.md#ticker-filters)\) or `removePairs2` \(uses [state filters](autoconfig.md#pair-state-filters)\).
+**Type names in config:** `removePairs` \(uses [ticker filters](autoconfig.md#ticker-filters)\) or `removePairs2` \(uses [state filters](autoconfig.md#pair-state-filters)\).
 
 You must have at least one pair set per exchange you use this job type on.
+
+
 
 **Pair options:**
 
@@ -175,49 +174,57 @@ The example below shows a job that does the following:
 }
 ```
 
+### 
+
 ### Change strategy
 
-This job type is basically the same as how removePairs works, but this one changes a pairs strategy instead of removing the pair.
+**Type names in config:** `changeStrategy` \(uses [ticker filters](autoconfig.md#ticker-filters)\) or `changeStrategy2` \(uses [state filters](autoconfig.md#pair-state-filters)\).
+
+_This job type is basically the same as how removePairs works, but this one changes a pairs strategy instead of removing the pair._
 
 You must have at least one pair set per exchange you use this job type on.
 
-Filter options are described later in this article.
+\*\*\*\*
 
 **Pair options not already described for removePairs:**
 
-**bag** \(true/false\): when true, only pairs with a balance above mvts are filtered for possible removal. When set to false, all pairs in config are filtered.
+**bag** \(true/false\): when true, only pairs with a balance below `MIN_VOLUME_TO_SELL` that have no open orders and are not in reversal trading, are filtered for possible removal. When set to false, all pairs in config are filtered. 
+
+
 
 **strategy:** the target strategy to set for pairs matching all filters.
 
-**type:** must be set to `changeStrategy` \(can use ticker filters\) or `changeStrategy2` \(can use state filters\)
+
+
+#### Config example
+
+The example below shows a job that does the following:
+
+* Scan Binance tickers every 15 minutes
+* Change the assigned strategy for any pair that has below median trading volume, except BTC-LTC
+* Assign the strategy "baghandler" to these pairs
 
 ```javascript
 {
     "changeStrat": {
         "pairs": {
-            "exclude": "",
+            "exclude": "BNB-LTC",
             "bag": true,
             "exchange": "binance"
         },
         "filters": {
             "filter1": {
-                "type": "minSpreadPct",
-                "min": 0.000001
-            },
-            "filter2": {
-                "type": "minVolatilityPct24h",
-                "min": -10
+                "type": "belowMedianVolume"
             }
         },
-        "schedule": "* * * * *",
+        "schedule": "*/15 * * * *",
         "type": "changeStrategy",
-        "snapshots": 10,
-        "strategy": "baghandler",
-        "resume". false,
-        "enabled": true
+        "strategy": "baghandler"
     }
 }
 ```
+
+### 
 
 ### Managing overrides
 
