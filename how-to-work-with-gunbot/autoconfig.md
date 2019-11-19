@@ -66,6 +66,8 @@ Additionally, there are [optional parameters](autoconfig.md#optional-parameters)
 
 This job type uses [ticker filters](autoconfig.md#ticker-filters).
 
+**Job output:** add trading pairs to a specific exchange.
+
 
 
 **Pair options:**
@@ -129,6 +131,8 @@ The example below shows a job that does the following:
 
 You must have at least one pair set per exchange you use this job type on.
 
+**Job output:** removes trading pairs from a specific exchange.
+
 
 
 **Pair options:**
@@ -183,6 +187,8 @@ The example below shows a job that does the following:
 _This job type is basically the same as how removePairs works, but this one changes a pairs strategy instead of removing the pair._
 
 You must have at least one pair set per exchange you use this job type on.
+
+**Job output:** change assigned trading strategy for pairs on one exchange.
 
 \*\*\*\*
 
@@ -240,6 +246,8 @@ The example below shows a job that does the following:
 
 This job type uses [state filters.](autoconfig.md#pair-state-filters)
 
+**Job output:** changes overrides for pairs on a specific exchange.
+
 
 
 **Pair options:**
@@ -293,13 +301,15 @@ The example below shows a job that does the following:
 }
 ```
 
-### 
+
 
 ### Change exchange delay
 
 **Type name in config:** `changeDelay`
 
 This job type uses [state filters.](autoconfig.md#pair-state-filters)
+
+**Job output:** changes the exchange delay for a specific exchange.
 
 
 
@@ -351,21 +361,154 @@ The example below shows a job that does the following:
 
 
 
+### Hedge \(specific to bitRage\)
+
+**Type name in config:** `hedge`
+
+This job type uses [state filters.](autoconfig.md#pair-state-filters)
+
+**Job output:** initiates hedging in bitRage.
+
+
+
+**Pair options:**
+
+**include:** included pairs \(processed first\), can not be empty. Any active trading pair that matches any of the includes, will be processed**.** In case you also use the exclude option, the resulting pairs after processing the includes is the starting point for processing excludes, which will remove items from this list of pairs.
+
+Included items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be included. Input as comma separated list, does not accept spaces between items. Can not be empty.
+
+**exclude**: excluded pairs \(processed last\). Any active trading pair that matches any of the excludes, won't be processed. 
+
+Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
+
+\*\*\*\*
+
+**Other obligatory parameters:**
+
+**hedgeTo** \(USDT/BTC\): defines which currency to start hedging to.
+
+**brStrat**: defines which strategy is used for bitRage. 
+
+\*\*\*\*
+
+#### Config example
+
+The example below shows a job that does the following:
+
+* Scan for a user variable, every minutes
+* Once this variable is found, it makes the following changes in the strategy `bitrageStrat`
+* additionally \(this part is optional\), it places filteredBase, filteredQuote and filteredPair blocks as defined in the job, for kucoin.
+
+```text
+"AUTOSELL": true,
+"MAIN_BASE": "USDT",
+"BR_PANIC_SELL": true,
+```
+
+```javascript
+{
+    "Hedge_to_USDT": {
+		"pairs": {
+			"exclude": "",
+			"include": "",
+			"exchange": "kucoin",
+			"filteredBase": [
+				"TUSD",
+				"PAX",
+				"KCS",
+				"NUSD",
+				"ETH",
+				"DAI",
+				"USDC",
+				"TRX",
+				"NEO",
+				"BTC"
+			],
+			"filteredQuote": [
+				"GGC"
+			],
+			"filteredPair": [
+				"BTC-GGC",
+				"USDT-GGC",
+				"BTC-KCS",
+				"USDT-KCS",
+				"KCS-XRP",
+				"KCS-EOS",
+				"KCS-LTC",
+				"KCS-NEO",
+				"KCS-MTV",
+				"KCS-GO",
+				"KCS-CS",
+				"ETH-KCS",
+				"NEO-EOS",
+				"DAI-BTC",
+				"DAI-ETH",
+				"DAI-MKR",
+				"DAI-USDT"
+			]
+		},
+		"filters": {
+			"variable": {
+				"type": "variableExact",
+				"readyToHedge": "USDT"
+			}
+		},
+		"setVariable": {
+			"hedgingStarted": true
+		},
+		"schedule": "* * * * *",
+		"type": "hedge",
+		"hedgeTo": "USDT",
+		"brStrat": "bitrageStrat"
+	},
+}
+```
+
+### 
+
 ### Optional parameters
 
+Jobs can be extended with additional parameters, some work in all job types, some are specific to certain job types.
 
+
+
+#### Optional parameters for all job types:
+
+**enabled** \(true/false\): When false, the job is disabled and won't be executed.
+
+**debug** \(true/false\): When true, the job generates detailed logs in the console for each filter.
+
+[settings for user variables](autoconfig.md#user-variables)
+
+**brStrat**: defines which strategy is used for bitRage. Only needed if you use Autoconfig to automate hedging for bitRage.
+
+
+
+#### Optional parameters for jobs using ticker filters:
 
 **snapshots:** defines how many ticker snapshots are saved to perform calculations on. Relevant for filter types that include `Interval` in their name. 
 
 For example: snapshots is set to 10, this means that the ticker data for the last 10 times the job runs are saved and some of the values in it are used for calculating average values over time. 
 
+**history**: defines how many ticker entries should be kept in [history ](autoconfig.md#ticker-history-filters)storage.
+
+**historyInterval:** defines the minimum interval in minutes between history entries.
+
 \*\*\*\*
+
+#### **Optional parameter for `addPairs` and `manageOverrides`**
+
+**setITB** \(true/false\): When true, each pair matching all filters will get an additional `IGNORE_TRADES_BEFORE` override, the value being the timestamp for the time the job ran.
+
+
+
+#### Optional parameters for `addPairs`
 
 **overrides**: this job type can also add overrides when it adds new pairs. To do so, add a section with overrides to the job, just like you would in a `manageOverrides` job.
 
 **Bitrage filters:** when used for Bitrage, you can have an addPairs job replace the contents of the exchange filter settings. To do so, add the filters in the pair section of the job as shown below:
 
-```text
+```javascript
 "pairs": {
             "exclude": "",
             "include": "BTC-",
@@ -376,6 +519,12 @@ For example: snapshots is set to 10, this means that the ticker data for the las
       "filteredBase": ["BTC","ETH","USDS","TUSD","USDC","PAX","XRP","TRX","BUSD","NGN"]
         },
 ```
+
+
+
+#### Optional parameters for `hedge`
+
+**Bitrage filters:** when used for Bitrage, you can have an addPairs job replace the contents of the exchange filter settings. To do so, add the filters in the pair section, as shown above.
 
 ## Filter options
 
@@ -526,8 +675,6 @@ Formula used in `differenceSmaller`:
 
 _Formula examples use ema1 and ema2 like set in the screenshot above. Of course you can compare any two keys. The position of the keys to compare in the config file do matter._
 
-\_\_
-
 ### User Variables
 
 Each job can set one or more user defined variables, which can be used to filter on in other jobs.
@@ -578,7 +725,7 @@ Variables are entirely optional. It's no problem when no `setVariable` exists in
 * It's fine to schedule many jobs for the same times, but in case multiple of those jobs causes a config change, the first one to finish will write it's changes and the others jobs will need to wait for another chance.
 * The output of every job is that the `config.js` file is updated, this will always cause Gunbot to restart.
 * Each job can contain an optional "`debug": true` line, when set the job will show detailed console log output for the filters in this job. Only use this in the moment you really need it, it can slow down Gunbot performance significantly due to the large amount of data that needs to be logged to the console.
-* Things that make AutoConfig crash: run a job for an exchange for which zero pairs are set in `config.js`, change the exchange for a ticker filtering job while having `"resume": true`, using a non-existent key in a state filter, etc.
+* Things that make AutoConfig crash:  change the exchange for a ticker filtering job while having `"resume": true`, using a non-existent key in a state filter, etc.
 * Data is read from either exchange tickers or the internal Gunbot memory with pair state info. To find out which pair state data to filter on is available, look in the pairs state file in the Gunbot `/json` folder.
 * Almost every key/value in pair state files can be filtered, as long as they are on the first level \(not inside additional arrays or objects\)
 
