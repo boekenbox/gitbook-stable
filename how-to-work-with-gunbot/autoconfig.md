@@ -186,11 +186,19 @@ You must have at least one pair set per exchange you use this job type on.
 
 \*\*\*\*
 
-**Pair options not already described for removePairs:**
+**Pair options:**
+
+**exclude**: pairs that should not be scanned for possible removal. Any active pair that matches any of the excludes, won't be processed. 
+
+Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
+
+There is no include options for this filter type. Pairs in your config \(that have already cycled in Gunbot\) are basically the list of includes.
 
 **bag** \(true/false\): when true, only pairs with a balance below `MIN_VOLUME_TO_SELL` that have no open orders and are not in reversal trading, are filtered for possible removal. When set to false, all pairs in config are filtered. 
 
+\*\*\*\*
 
+**Other obligatory parameter:**
 
 **strategy:** the target strategy to set for pairs matching all filters.
 
@@ -228,21 +236,38 @@ The example below shows a job that does the following:
 
 ### Managing overrides
 
-Filter options are described later in this article.
+**Type name in config:** `manageOverrides`
 
-**exclude**: excluded pairs \(processed last\). Any active pair that matches any of the excludes, won't be processed. Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
+This job type uses [state filters.](autoconfig.md#pair-state-filters)
 
-**include:** included pairs \(processed first\). Any active pair that matches any of the includes, will be processed \(after also processing excluded\). Included items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be included. Input as comma separated list, does not accept spaces between items. Can not be empty.
+
+
+**Pair options:**
+
+**include:** included pairs \(processed first\), can not be empty. Any active trading pair that matches any of the includes, will be processed**.** In case you also use the exclude option, the resulting pairs after processing the includes is the starting point for processing excludes, which will remove items from this list of pairs.
+
+Included items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be included. Input as comma separated list, does not accept spaces between items. Can not be empty.
+
+**exclude**: excluded pairs \(processed last\). Any active trading pair that matches any of the excludes, won't be processed. 
+
+Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
+
+\*\*\*\*
+
+**Other obligatory parameters:**
 
 **overrides**: contain one or more overrides, these will be set for each pair that passes all filters when a job is executed.
 
 **clearOverrides** \(true/false\): when set to true, all existing overrides for a pair are removed before placing the new ones.
 
-**exchange**: must be set to the same value as gunbot calls refers to them in the pairs section.
+\*\*\*\*
 
-**setITB** \(true/false\): when set to true, pairs matching filters get an additional override for `IGNORE_TRADES_BEFORE` with a timestamp of the time the job runs. You do not need to specify this override in the overrides section of the job.
+#### Config example
 
-**type**: must be set to `manageOverrides`
+The example below shows a job that does the following:
+
+* Scan Binance pairs every minute, process filters on all active trading pairs that include "USDT" or "BNB" and do not include "DOGE" or "ETH" in their pair name.
+* Set a `DU_BUYDOWN` override for all pairs that have `ducount` 1
 
 ```text
 {
@@ -262,11 +287,50 @@ Filter options are described later in this article.
             "DU_BUYDOWN": 3
         },
         "clearOverrides": false,
-        "setITB": false,
-        "schedule": "*/10 * * * *",
+        "schedule": "* * * * *",
         "type": "manageOverrides"
-  },
-  "DynamicDU2": {
+  }
+}
+```
+
+### 
+
+### Change exchange delay
+
+**Type name in config:** `changeDelay`
+
+This job type uses [state filters.](autoconfig.md#pair-state-filters)
+
+
+
+**Pair options:**
+
+**include:** included pairs \(processed first\), can not be empty. Any active trading pair that matches any of the includes, will be processed**.** In case you also use the exclude option, the resulting pairs after processing the includes is the starting point for processing excludes, which will remove items from this list of pairs.
+
+Included items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be included. Input as comma separated list, does not accept spaces between items. Can not be empty.
+
+**exclude**: excluded pairs \(processed last\). Any active trading pair that matches any of the excludes, won't be processed. 
+
+Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
+
+\*\*\*\*
+
+**Other obligatory parameter:**
+
+**delay**: exchange delay in seconds, this value will be set when one or more pairs in the job pass all filters.
+
+\*\*\*\*
+
+#### Config example
+
+The example below shows a job that does the following:
+
+* Scan Binance pairs every minute, process filters on all active trading pairs that include "USDT" or "BNB" and do not include "DOGE" or "ETH" in their pair name.
+* Set a the exchange delay for Binance to 10 in case at least one pair matches the filter
+
+```text
+{
+    "DynamicDU1": {
         "pairs": {
             "exclude": "DOGE,ETH",
             "include": "USDT,BNB",
@@ -275,61 +339,15 @@ Filter options are described later in this article.
         "filters": {
             "ducount": {
                 "type": "exact",
-                "ducount": 2
+                "ducount": 1
             }
         },
-        "overrides": {
-      "DU_BUYDOWN": 8,
-      "GAIN": 1
-        },
-        "clearOverrides": false,
-        "setITB": false,
-        "type": "manageOverrides",
-        "schedule": "1 * * * *"
-  },
-  "MMshort": {
-        "pairs": {
-            "exclude": "",
-            "include": "XBT-USD",
-            "exchange": "bitmex"
-        },
-        "filters": {
-            "side": {
-                "type": "exact",
-                "state": "SHORT"
-            },
-            "liquidationDistance": {
-                "type": "differenceSmaller",
-                "liquidationPrice": 1,
-                "avgEntryPrice": 1,
-                "delta": 90
-            }
-        },
-        "overrides": {
-            "MAX_SELL": 0
-        },
-        "clearOverrides": true,
-        "setITB": false,
-        "type": "manageOverrides",
+        "delay": 10,
         "schedule": "* * * * *",
-        "enabled": true
-    }
+        "type": "manageOverrides"
+  }
 }
 ```
-
-### Change exchange delay
-
-Filter options are described later in this article. Has exactly the same filter options as `manageOverrides` jobs
-
-**exclude**: excluded pairs \(processed last\). Any active pair that matches any of the excludes, won't be processed. Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
-
-**include:** included pairs \(processed first\). Any active pair that matches any of the includes, will be processed \(after also processing excluded\). Included items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be included. Input as comma separated list, does not accept spaces between items. Can not be empty.
-
-**delay**: exchange delay in seconds, this value will be set when one or more pairs in the job pass all filters.
-
-**exchange**: must be set to the same value as gunbot calls refers to them in the pairs section.
-
-**type**: must be set to `changeDelay`   
 
 
 
