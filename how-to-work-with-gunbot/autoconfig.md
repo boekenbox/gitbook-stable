@@ -396,8 +396,8 @@ Excluded items do not need to be whole pair names, as long as part of the string
 The example below shows a job that does the following:
 
 * Scan for a user variable, every minutes
-* Once this variable is found, it makes the following changes in the strategy `bitrageStrat`
-* additionally \(this part is optional\), it places filteredBase, filteredQuote and filteredPair blocks as defined in the job, for kucoin.
+* Once this variable is found, it places filteredBase, filteredQuote and filteredPair blocks as defined in the job, for kucoin \(this part is optional\)
+* Once this variable is found, it makes the following changes in the strategy `bitrageStrat`, it sets/changes these parameter so that hedging will start.
 
 ```text
 "AUTOSELL": true,
