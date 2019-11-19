@@ -532,6 +532,8 @@ For example: snapshots is set to 10, this means that the ticker data for the las
 
 **For job types:** `addPairs`, `removePairs`, `changeStrategy`
 
+Ticker filters use data collected from the exchange tickers, at the moment the job runs.
+
 You can use the following filter types for adding and removing pairs. Please note that not every filter type works on every exchange, due to the fact that some exchanges don't offer the required data.
 
 ![Data availability for certified exchanges.](../.gitbook/assets/image%20%2827%29.png)
@@ -664,6 +666,8 @@ Both snapshots and history cause a relatively high load on I/O operations. Depen
 ### Pair state filters
 
 For job types: `manageOverrides`, `changeDelay`, `removePairs2`, `changeStrategy2`
+
+State filters use data from the internal ledger in Gunbot, which has all data for pairs that already cycled since Gunbot last \(re\)started.
 
 ![Available pair state filters](../.gitbook/assets/image%20%2856%29.png)
 
