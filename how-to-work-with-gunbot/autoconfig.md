@@ -8,6 +8,11 @@ description: >-
 # AutoConfig
 
 {% hint style="info" %}
+```text
+
+        "fil
+```
+
 Currently there is no GUI for AutoConfig. You'll need to create your own `autoconfig.json` config file, which contains the jobs it should run.
 
 _If you are not comfortable editing config files manually, it's probably a good idea to wait until the GUI supports AutoConfig._
@@ -24,6 +29,7 @@ Things you can currently do with AutoConfig:
 * **Change the strategy for pairs from your config:** for example set a bag handling strategy when the pair did buy but prices dropped a lot.
 * **Change the exchange delay**.
 * **Monitor pair state information and automatically set pair overrides:** for example set a different `DU_BUYDOWN` after the first round of DU happened.
+* **Handle hedging in bitRage**: use your own criteria to initiate hedging from BTC to USDT in bitRage \(or the other way around\).
 * **Set user variables as output for a filter job**, which can be used to filter on in other jobs.
 
 To use AutoConfig, you must have this in your `config.js` file:
@@ -38,7 +44,7 @@ Additionally, you must create a file named `autoconfig.json` which contains one 
 
 ## How it works
 
-There is a single config file for AutoConfig \(`autoconfig.json`\), which can contain one or many jobs. As soon as Gunbot starts or the config file is changed, all jobs in the config are scheduled \(any pre-existing scheduled job is removed in this process\).
+There is a single config file for AutoConfig \(`autoconfig.json`\), which can contain one or many jobs. As soon as Gunbot \(re\)starts or the `autoconfig.json` file is changed, all jobs in the config are scheduled \(any pre-existing scheduled job is removed in this process\).
 
 When a job is processed, changes to `config.js` are only made for pairs that have passed every filter.
 
@@ -49,146 +55,106 @@ When a job is processed, changes to `config.js` are only made for pairs that hav
 
 If a job successfully completes, the changes are written to `config.js` and Gunbot restarts using the new settings. If a job causes no changes, for example because it tries to place already existing overrides, it won't cause a Gunbot restart.
 
-Schedules are set in a [format similar to how cron jobs are set](https://www.npmjs.com/package/node-schedule#cron-style-scheduling). If you're not used to the format, use a website like [https://crontab-generator.org/](https://crontab-generator.org/) to generate it.
+Schedules are set per job in a [format similar to how cron jobs are set](https://www.npmjs.com/package/node-schedule#cron-style-scheduling). If you're not used to the format, use a website like [https://crontab-generator.org/](https://crontab-generator.org/) to generate it.
 
 ## Job types \(with config examples\)
 
+Each job type has a number of obligatory parameters, these are described below. 
+
+Additionally, there are [optional parameters](autoconfig.md#optional-parameters) you can use to extend the functionality of a job.
+
+
+
 ### Adding pairs
 
-Below is a config example that would scan Binance and add BTC-x pairs when they meet the filter criteria.
+**Type name in config:** `addPairs`
 
-You must have at least one pair set per exchange you use this job type on.
-
-Filter options are described later in this article.
+This job type uses [ticker filters](autoconfig.md#ticker-filters).
 
 **Pair options:**
 
-**exclude**: excluded pairs \(processed last\). Any pair on the exchange that matches any of the excludes, won't be processed. Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
+**include:** included pairs \(processed first\). Any pair on the exchange that matches any of the includes, will be processed**.** In case you also use the exclude option, the resulting pairs after processing the includes is the starting point for processing excludes, which will remove items from this list of pairs.
 
-**include:** included pairs \(processed first\). Any pair on the exchange that matches any of the includes, will be processed \(after also processing excluded\). Included items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be included. Input as comma separated list, does not accept spaces between items. Can not be empty.
+Included items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be included. Input as comma separated list, does not accept spaces between items. Can not be empty.
+
+**exclude**: excluded pairs \(processed last\). Any pair on the exchange that matches any of the excludes, won't be processed. 
+
+Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
 
 **maxPairs:** maximum number of allowed pairs. In case a filter action would result in more pairs than this setting, the config will be filled up to the max number of allowed pairs. Only enabled pairs count towards maxPairs.
 
-#### Other options:
+#### Other obligatory parameters:
 
-**type:** must be set to `addPairs`
+**strategy:** this defines the strategy that will be assigned to pairs added by this job. It must be the exact name of an existing strategy in your `config.js` file.
 
-**snapshots:** defines how many ticker snapshots are saved to perform calculations on. Relevant for filtertypes that include `Interval` in their name. For example: snapshots is set to 10, this means that the ticker data for the last 10 times the job runs are saved and some of the values in it are used for calculating average values over time. For now, snapshot data gets cleared when Gunbot restarts.
 
-**strategy:** this defines the strategy that will be assigned to pairs added by this job.
 
-**overrides**: this job type can also add overrides when it adds new pairs. To do so, add a section with overrides to the job, just like you would in a `manageOverrides` job.
+#### Config example
 
-**Bitrage filters:** when used for Bitrage, you can have an addPairs job replace the contents of the exchange filter settings. To do so, add the filters in the pair section of the job as shown below:
+The example below shows a job that does the following:
 
-```text
-"pairs": {
-            "exclude": "",
-            "include": "BTC-",
-            "maxPairs": 10,
-            "exchange": "kucoin",
-            "filteredQuote": ["DOGE"],
-      "filteredPair": ["BTC-DOGE"],
-      "filteredBase": ["BTC","ETH","USDS","TUSD","USDC","PAX","XRP","TRX","BUSD","NGN"]
-        },
-```
+* Scan Binance tickers every minute
+* Automatically add BTC-x pairs \(but not BTC-DOGE, which is excluded\) that have a top 10 volume ranking and for which the bid/ask spread is below 0.2%
+* Added pairs get the "gain" strategy assigned
+* Allows for up to 25 active trading pairs on Binance
 
-```text
+```javascript
 {
-    "addMoon": {
+    "addTopVolumePairs": {
       "pairs": {
-        "exclude": "",
+        "exclude": "DOGE",
         "include": "BTC-",
         "maxPairs": 25,
         "exchange": "binance"
       },
       "filters": {
         "filter1": {
-          "type": "minPrice",
-          "min": 0.0000001 
+          "type": "maxVolumeRank",
+          "max": 11 
         },
         "filter2": {
-          "type": "maxPrice",
-          "max": 0.0000010 
-        },
-        "filter3": {
-          "type": "minPricePctChangeInterval",
-          "min": 0.00002 
-        },
-        "filter4": {
-          "type": "maxPricePctChangeInterval",
-          "max": 1 
-        },
-        "filter5": {
-          "type": "minVolumePctChangeInterval",
-          "min": 10
-        },
-        "filter6": {
-          "type": "maxVolumePctChangeInterval",
-          "max": 50 
-        },
-        "filter7": {
-          "type": "minVolume24h",
-          "min": 500 
-        },
-        "filter8": {
-          "type": "maxVolume24h",
-          "max": 1000 
-        },
-        "filter9": {
-          "type": "minVolatilityPct24h",
-          "min": 1 
-        },
-        "filter10": {
-          "type": "maxVolatilityPct24h",
-          "max": 1 
-        },
-        "filter11": {
-          "type": "minSpreadPct",
-          "min": 0.00001
-        },
-        "filter12": {
           "type": "maxSpreadPct",
-          "max": 1 
+          "max": 0.2 
         }
       },
       "schedule": "* * * * *",
       "type": "addPairs",
-      "strategy": "gain",
-      "snapshots": 2,
-      "resume". false,
-      "enabled": true
+      "strategy": "gain"
     }
   }
 ```
 
+\*\*\*\*
+
 ### Removing pairs
 
-Below is a config example that would scan Binance and remove pairs from your config when they meet the filter criteria. Only the pairs that Gunbot already cycled in it's current session can be filtered.
+**Type name in config:** `removePairs` \(uses [ticker filters](autoconfig.md#ticker-filters)\) or `removePairs2` \(uses [state filters](autoconfig.md#pair-state-filters)\).
 
 You must have at least one pair set per exchange you use this job type on.
 
-Filter options are described later in this article.
-
 **Pair options:**
 
-**exclude**: pairs that should not be scanned for possible removal. Any active pair that matches any of the excludes, won't be processed. Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
+**exclude**: pairs that should not be scanned for possible removal. Any active pair that matches any of the excludes, won't be processed. 
 
-There is no include options for this filter type. Pairs in your config \(that have already cycled\) are basically the list of includes.
+Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
 
-**noBag** \(true/false\): when true, only pairs with a balance below mvts, that have no open orders and are not in reversal trading, are filtered for possible removal. When set to false, all pairs in config are filtered.
+There is no include options for this filter type. Pairs in your config \(that have already cycled in Gunbot\) are basically the list of includes.
 
-**removeDisabled** \(true/false\): when true, each time a removePairs job is ran it will remove all disabled pairs for the exchange the job runs on - regardless of filter settings. Useful, for example, when you use `COUNT_SELL`
+**noBag** \(true/false\): when true, only pairs with a balance below `MIN_VOLUME_TO_SELL` that have no open orders and are not in reversal trading, are filtered for possible removal. When set to false, all pairs in config are filtered.
 
-#### Other options:
+**removeDisabled** \(true/false\): when true, each time a removePairs job is ran it will remove all disabled pairs for the exchange the job runs on - regardless of filter settings. Useful, for example, when you use `COUNT_SELL`.
 
-**type:** must be set to `removePairs` \(can use ticker filters\) or `removePairs2` \(can use state filters\)
 
-**snapshots:** defines how many ticker snapshots are saved to perform calculations on. Relevant for filtertypes that include `Interval` in their name. For example: snapshots is set to 10, this means that the ticker data for the last 10 times the job runs are saved and some of the values in it are used for calculating average values over time. For now, snapshot data gets cleared when Gunbot restarts.
 
-**resume** \(true/false\): when true, collected ticker snapshots from before the last Gunbot restart are kept. Beware that it is a bad idea to enable this option when you've turned off your bot for a while, there will be a long time gap between old snapshots and newly collected ones.
+#### Config example
 
-```text
+The example below shows a job that does the following:
+
+* Scan Binance tickers every ten minutes
+* Remove any pair that has has a volume ranking below 20, besides pairs containing BNB or XVG in their name.
+* Additionally, remove all disabled pairs from the config.
+
+```javascript
 {
   "removeCrap": {
     "pairs": {
@@ -198,16 +164,13 @@ There is no include options for this filter type. Pairs in your config \(that ha
       "exchange": "binance"
     },
     "filters": {
-      "filter2": {
-        "type": "maxPrice",
-        "max": 0.00000002
+      "filter1": {
+        "type": "minVolumeRank",
+        "min": 20
       }
     },
-    "schedule": "* * * * *",
-    "type": "removePairs",
-    "snapshots": 10,
-    "resume". false,
-    "enabled": true
+    "schedule": "*/10 * * * *",
+    "type": "removePairs"
   }
 }
 ```
@@ -228,7 +191,7 @@ Filter options are described later in this article.
 
 **type:** must be set to `changeStrategy` \(can use ticker filters\) or `changeStrategy2` \(can use state filters\)
 
-```text
+```javascript
 {
     "changeStrat": {
         "pairs": {
@@ -359,7 +322,35 @@ Filter options are described later in this article. Has exactly the same filter 
 
 **exchange**: must be set to the same value as gunbot calls refers to them in the pairs section.
 
-**type**: must be set to `changeDelay`
+**type**: must be set to `changeDelay`   
+
+
+
+### Optional parameters
+
+
+
+**snapshots:** defines how many ticker snapshots are saved to perform calculations on. Relevant for filter types that include `Interval` in their name. 
+
+For example: snapshots is set to 10, this means that the ticker data for the last 10 times the job runs are saved and some of the values in it are used for calculating average values over time. 
+
+\*\*\*\*
+
+**overrides**: this job type can also add overrides when it adds new pairs. To do so, add a section with overrides to the job, just like you would in a `manageOverrides` job.
+
+**Bitrage filters:** when used for Bitrage, you can have an addPairs job replace the contents of the exchange filter settings. To do so, add the filters in the pair section of the job as shown below:
+
+```text
+"pairs": {
+            "exclude": "",
+            "include": "BTC-",
+            "maxPairs": 10,
+            "exchange": "kucoin",
+            "filteredQuote": ["DOGE"],
+      "filteredPair": ["BTC-DOGE"],
+      "filteredBase": ["BTC","ETH","USDS","TUSD","USDC","PAX","XRP","TRX","BUSD","NGN"]
+        },
+```
 
 ## Filter options
 
