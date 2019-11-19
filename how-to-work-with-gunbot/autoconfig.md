@@ -522,6 +522,12 @@ For example: snapshots is set to 10, this means that the ticker data for the las
 
 
 
+#### Optional parameters for `removePairs`
+
+**removeBase**: can be used to remove all pairs from a specified base currency that use the bitRage strategy specified in `brStrat`. This is useful to clean out pairs from a specific base after hedging.
+
+
+
 #### Optional parameters for `hedge`
 
 **Bitrage filters:** when used for Bitrage, you can have an addPairs job replace the contents of the exchange filter settings. To do so, add the filters in the pair section, as shown above.
