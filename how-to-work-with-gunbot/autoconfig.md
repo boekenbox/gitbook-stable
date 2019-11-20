@@ -593,7 +593,7 @@ History filters take one additional input, defining which history data should be
 ```text
 "filter": {
 				"type": "minPriceHistory",
-				"max": 10,
+				"min": 10,
 				"historySource": 6
 			}
 ```
