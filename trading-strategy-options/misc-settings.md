@@ -359,9 +359,8 @@ When set to true, strategy sell/short orders will be placed as market order.
 {% tab title="Order types" %}
 | Affects | Does not affect |
 | :--- | :--- |
-| Strategy sell | Stop limit |
-|  | RT buy |
-|  | RT buyback |
+| Strategy sell | RT buy |
+| Stop limit | RT buyback |
 |  | RT sell |
 |  | Close |
 |  | DCA buy |
