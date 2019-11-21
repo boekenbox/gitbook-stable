@@ -34,6 +34,10 @@ This is how to create a bot:
 3. Enable Telegram notifications for Gunbot, and enter the token and ID you've just gathered. Use the ID for both the user and admin ID fields, this makes sure that only you can interact with the Telegram bot. _Alternatively, you can set a comma separated list for Admin ID, specifying multiple IDs who may interact with the bot._
 4. Start a chat with the username you've picked for your bot, and hit the start button. If you don't see a start button, write "/start" and click on it afterwards.
 
+{% hint style="warning" %}
+Currently the Telegram functionality is not available on ARM platforms.
+{% endhint %}
+
 ## Settings descriptions
 
 Below you'll find detailed descriptions of all available parameters for Telegram notifications.
