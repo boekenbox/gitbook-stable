@@ -557,7 +557,7 @@ Jobs can be extended with additional parameters, some work in all job types, som
 
 Ticker filters use data collected from the exchange tickers, at the moment the job runs.
 
-You can use the following filter types for adding and removing pairs. Please note that not every filter type works on every exchange, due to the fact that some exchanges don't offer the required data.
+You can use the following filter types for adding and removing pairs. Please note that not every filter type works on every exchange, due to the fact that some exchanges don't offer the required data. On Huobi AutoConfig uses "last" price instead of bid/ask for all filters that work with prices.
 
 ![Data availability for certified exchanges.](../.gitbook/assets/image%20%2827%29.png)
 
