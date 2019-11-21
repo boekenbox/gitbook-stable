@@ -86,6 +86,10 @@ Excluded items do not need to be whole pair names, as long as part of the string
 
 **strategy:** this defines the strategy that will be assigned to pairs added by this job. It must be the exact name of an existing strategy in your `config.js` file.
 
+**snapshots:** defines how many ticker snapshots are saved to perform calculations on. Relevant for filter types that include `Interval` in their name. 
+
+For example: snapshots is set to 10, this means that the ticker data for the last 10 times the job runs are saved and some of the values in it are used for calculating average values over time. 
+
 
 
 #### Config example
@@ -117,6 +121,7 @@ The example below shows a job that does the following:
         }
       },
       "schedule": "* * * * *",
+      "snapshots": 1,
       "type": "addPairs",
       "strategy": "gain"
     }
@@ -149,6 +154,14 @@ There is no include options for this filter type. Pairs in your config \(that ha
 
 
 
+#### Other obligatory parameters:
+
+**snapshots:** defines how many ticker snapshots are saved to perform calculations on. Relevant for filter types that include `Interval` in their name. 
+
+For example: snapshots is set to 10, this means that the ticker data for the last 10 times the job runs are saved and some of the values in it are used for calculating average values over time. 
+
+
+
 #### Config example
 
 The example below shows a job that does the following:
@@ -173,6 +186,7 @@ The example below shows a job that does the following:
       }
     },
     "schedule": "*/10 * * * *",
+    "snapshots": 1,
     "type": "removePairs"
   }
 }
@@ -208,6 +222,10 @@ There is no include options for this filter type. Pairs in your config \(that ha
 
 **strategy:** the target strategy to set for pairs matching all filters.
 
+**snapshots:** defines how many ticker snapshots are saved to perform calculations on. Relevant for filter types that include `Interval` in their name. 
+
+For example: snapshots is set to 10, this means that the ticker data for the last 10 times the job runs are saved and some of the values in it are used for calculating average values over time. 
+
 
 
 #### Config example
@@ -232,6 +250,7 @@ The example below shows a job that does the following:
             }
         },
         "schedule": "*/15 * * * *",
+        "snapshots": 1,
         "type": "changeStrategy",
         "strategy": "baghandler"
     }
@@ -486,9 +505,7 @@ Jobs can be extended with additional parameters, some work in all job types, som
 
 #### Optional parameters for jobs using ticker filters:
 
-**snapshots:** defines how many ticker snapshots are saved to perform calculations on. Relevant for filter types that include `Interval` in their name. 
-
-For example: snapshots is set to 10, this means that the ticker data for the last 10 times the job runs are saved and some of the values in it are used for calculating average values over time. 
+**resume** \(true/false\): when true, saved ticker snapshots are loaded from file after Gunbot restarts. When false, history needs to be built up again after restarting.
 
 **history**: defines how many ticker entries should be kept in [history ](autoconfig.md#ticker-history-filters)storage.
 
