@@ -661,12 +661,13 @@ History entries, 60m interval                    |
 		},
 		"filters": {
 			"filter1": {
-				"type": "minVolumeRankHistory",
+				"type": "minVolumeRank",
 				"min": 10
 			},
 			"filter2": {
 				"type": "minSlopePctIntervalHistory",
 				"min": 1,
+				"historySource": 4
 			},
 			"filter3": {
 				"type": "minVolumeRankHistory",
