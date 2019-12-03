@@ -543,6 +543,8 @@ Jobs can be extended with additional parameters, some work in all job types, som
 
 **removeBase**: can be used to remove all pairs from a specified base currency that use the bitRage strategy specified in `brStrat`. This is useful to clean out pairs from a specific base after hedging.
 
+**notRemoveBefore** \(in pairs section\): value in minutes. Don't remove pairs from config if it's not in the config longer than specified.
+
 
 
 #### Optional parameters for `hedge`
@@ -751,6 +753,49 @@ This filter type will return true when `userVariable1` has a value of `true`.
 {% hint style="info" %}
 Variables are entirely optional. It's no problem when no `setVariable` exists in a job.
 {% endhint %}
+
+
+
+### Multiple filter sets
+
+Instead of using a single set of filters, you can also add multiple sets of filters in a job.
+
+Use this when you want to monitor for different conditions in a single job, if a pair passes all filters in any of the filter sets, changes are made.
+
+Besides the obligatory first set of filters, you can add up to 9 more sets. named `filters2` to `filters10`
+
+**Config example:**
+
+```text
+{
+	"example": {
+		"pairs": {
+			"exclude": "",
+			"include": "",
+			"maxPairs": 500,
+			"noBag": false,
+			"exchange": "binance"
+		},
+		"filters": {
+			"price": {
+				"type": "minPrice",
+				"min": 0.0000001
+			}
+		},
+		"filters2": {
+			"minVolume24h": {
+				"type": "minVolume24h",
+				"min": 100
+			}
+		},
+		"schedule": "*/30 * * * * *",
+		"type": "removePairs",
+		"enabled": true
+	}
+}
+```
+
+
 
 ## Various
 
