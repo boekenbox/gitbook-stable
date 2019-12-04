@@ -19,7 +19,7 @@ You can create "jobs" to do something you would normally do by hand, for example
 
 Things you can currently do with AutoConfig:
 
-* **Scan exchanges and automatically add pairs:** for example add pairs with volume &gt; 500 BTC and for which price is rising.
+* **Scan exchanges and automatically add pairs:** for example add pairs with volume &gt; 500 BTC and for which price is rising. You can even filter on buy trailing stops for all pairs on an exchange.
 * **Scan exchanges to remove pairs from your config**: for example remove pairs without quote balance for which volume has dropped below 100 BTC.
 * **Change the strategy for pairs from your config:** for example set a bag handling strategy when the pair did buy but prices dropped a lot.
 * **Change the exchange delay**.
