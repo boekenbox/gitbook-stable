@@ -588,6 +588,48 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
 
 _Optionally, you can add `"resume": true` to a job that analyses ticker data. This will make sure that no ticker snapshots get lost between Gunbot restarts. Take care with this option in case you've turned off Gunbot for a while, as you would then be using old ticker data to base decision on._
 
+\_\_
+
+#### Buy trailing filter
+
+The filter type `buyTrailing` is a ticker filter that trails down prices very [similar](basic-workings/trailing.md#buy-trailing) to a regular Gunbot strategy with buy trailing, you can use it to add pairs to your config only after they have hit their trailing stop. Useful for trailing massive numbers of pairs without the downsides of long cycling times.
+
+_This filter type can only be used in `addPairs` jobs on exchanges that provide ask prices in tickers, only works when used in the first filter set of a job._
+
+The example below will:
+
+* Collect up to 60 ticker snapshots, adds a new snapshot every time the job runs \(every minute\)
+* Uses the 60 collected bid prices for a pair to calculate an EMA
+* Continuously trail down all pairs, using a `trailingRange` of 1% of the ask price
+* The filter passes when the ask prices crosses over the trailing stop, while being below `buyLevel` \(which is a percentage below the EMA calculated by this filter\)
+
+```javascript
+{
+	"trailingExample": {
+		"pairs": {
+			"exclude": "",
+			"include": "BTC-,USDT-",
+			"maxPairs": 10,
+			"exchange": "binance"
+		},
+		"filters": {
+			"trailing": {
+				"type": "buyTrailing",
+				"buyLevel": 0.5,
+				"trailingRange": 1
+			}
+		},
+		"schedule": "* * * * *",
+		"type": "addPairs",
+		"strategy": "instantBuy",
+		"enabled": true,
+		"resume": true,
+		"snapshots": 60
+	},
+```
+
+\_\_
+
 #### Ticker history filters
 
 Most ticker filters are also available as `*History` variant. These work in the same way as described above, but they use a different data set as input. Available history filters:
