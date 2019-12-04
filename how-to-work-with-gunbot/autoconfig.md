@@ -597,6 +597,8 @@ The filter type `buyTrailing` is a ticker filter that trails down prices very [s
 
 _This filter type can only be used in `addPairs` jobs on exchanges that provide ask prices in tickers, only works when used in the first filter set of a job._
 
+**Config example**
+
 The example below will:
 
 * Collect up to 60 ticker snapshots, adds a new snapshot every time the job runs \(every minute\)
