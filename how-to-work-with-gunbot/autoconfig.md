@@ -563,31 +563,209 @@ You can use the following filter types for adding and removing pairs. Please not
 
 ![Data availability for certified spot exchanges.](../.gitbook/assets/image%20%2827%29.png)
 
-_Filters for prices use ask when adding pairs and bid when filtering for removal or changing strategy_
+_Filters for prices use ask when adding pairs and bid when filtering for removal or changing strategy._
 
-* `minPrice`: filter returns true when price is higher than set.
-* `maxPrice`: filter returns true when price is lower than set.
-* `minPricePctChangeInterval`: filter returns true if the current price is at least x% higher than the average price of all snapshots. Only executed when max snapshot sample size is reached.
-* `maxPricePctChangeInterval`: filter returns true if the current price is at least x% lower than the average price of all snapshots. Only executed when max snapshot sample size is reached.
-* `minVolumePctChangeInterval`: filter returns true if the current 24h volume is at least x% higher than the average 24h volume of all snapshots. Only executed when max snapshot sample size is reached.
-* `maxVolumePctChangeInterval`: filter returns true if the current 24h volume is at least x% lower than the average 24h volume of all snapshots. Only executed when max snapshot sample size is reached.
-* `minVolume24h`: filter returns true if 24h volume is higher than set, volume in base.
-* `maxVolume24h`: filter returns true if 24h volume is lower than set, volume in base.
-* `minVolatilityPct24h`: filter returns true if 24h price percentage change is higher than set.
-* `maxVolatilityPct24h`: filter returns true if 24h price percentage change is lower than set.
-* `minSpreadPct`: filter returns true if percentage difference between bid and ask is higher than set.
-* `maxSpreadPct`: filter returns true if percentage difference between bid and ask is lower than set.
-* `minSlopePctInterval`: filter returns true if the [slope](https://tulipindicators.org/linregslope) for all prices in snapshots is bigger than set.  Slope is expressed as a percentage of the last price. A slope of 1 means that, according to a simple linear regression, the next collected ticker price is likely to be 1% higher than the last one. Only executed when max snapshot sample size is reached.
-* `maxSlopePctInterval`: filter returns true if the [slope](https://tulipindicators.org/linregslope) for all prices in snapshots is smaller than set. Slope is expressed as a percentage of the last price. A slope of 1 means that, according to a simple linear regression, the next collected ticker price is likely to be 1% higher than the last one. Only executed when max snapshot sample size is reached.
-* `minStandardDevPctInterval`: filter returns true if the [Standard Deviation](https://tulipindicators.org/stddev) for all prices in snapshots is bigger than set. Standard Deviation is expressed as a percentage of the last price. Only executed when max snapshot sample size is reached.
-* `maxStandardDevPctInterval`: filter returns true if the [Standard Deviation](https://tulipindicators.org/stddev) for all prices in snapshots is smaller than set. Standard Deviation is expressed as a percentage of the last price. Only executed when max snapshot sample size is reached.
-* `belowMedianVolume`: filter returns true if the base volume for a pair is lower than the median base volume for all pairs with the same base currency on the exchange.
-* `aboveMedianVolume`: filter returns true if the base volume for a pair is higher than the median base volume for all pairs with the same base currency on the exchange.
-* `minVolumeRank`: filter returns true if a pairs 24h volume rank \(rankings are specific per base\) is higher than set. This filter is only useful if you want to exclude some of the top ranking volume pairs, for example set it to 5 to only allow pairs that have a volume rank of 6 or higher.
-* `maxVolumeRank`: filter returns true if a pairs 24h volume rank \(rankings are specific per base\) is lower than set. Setting it to 10, for example, would only include pairs that have a top10 volume ranking.
-* `buyTrailing`: [see details](autoconfig.md#buy-trailing-filter)
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"><em>Type</em>
+      </th>
+      <th style="text-align:left">Description</th>
+      <th style="text-align:left">Extras</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><code>minPrice</code>
+      </td>
+      <td style="text-align:left">Filter returns true when price is higher than set.</td>
+      <td style="text-align:left">n/a</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>maxPrice</code>
+      </td>
+      <td style="text-align:left">Filter returns true when price is lower than set.</td>
+      <td style="text-align:left">n/a</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>minPricePctChangeInterval</code>
+      </td>
+      <td style="text-align:left">Filter returns true if the current price is at least x% higher than the
+        average price of all snapshots.</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>maxPricePctChangeInterval</code>
+      </td>
+      <td style="text-align:left">Filter returns true if the current price is at least x% lower than the
+        average price of all snapshots.</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>minVolumePctChangeInterval</code>
+      </td>
+      <td style="text-align:left">Filter returns true if the current 24h volume is at least x% higher than
+        the average 24h volume of all snapshots.</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>maxVolumePctChangeInterval</code>
+      </td>
+      <td style="text-align:left">Filter returns true if the current 24h volume is at least x% lower than
+        the average 24h volume of all snapshots.</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>minVolume24h</code>
+      </td>
+      <td style="text-align:left">Filter returns true if 24h volume is higher than set, volume in base.</td>
+      <td
+      style="text-align:left">n/a</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>maxVolume24h</code>
+      </td>
+      <td style="text-align:left">Filter returns true if 24h volume is lower than set, volume in base.</td>
+      <td
+      style="text-align:left">n/a</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>minVolatilityPct24h</code>
+      </td>
+      <td style="text-align:left">Filter returns true if 24h price percentage change is higher than set.</td>
+      <td
+      style="text-align:left">n/a</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>maxVolatilityPct24h</code>
+      </td>
+      <td style="text-align:left">Filter returns true if 24h price percentage change is lower than set.</td>
+      <td
+      style="text-align:left">n/a</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>minSpreadPct</code>
+      </td>
+      <td style="text-align:left">Filter returns true if percentage difference between bid and ask is higher
+        than set.</td>
+      <td style="text-align:left">n/a</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>maxSpreadPct</code>
+      </td>
+      <td style="text-align:left">Filter returns true if percentage difference between bid and ask is lower
+        than set.</td>
+      <td style="text-align:left">n/a</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>minSlopePctInterval</code>
+      </td>
+      <td style="text-align:left">
+        <p>Filter returns true if the <a href="https://tulipindicators.org/linregslope">slope</a> for
+          all prices in snapshots is bigger than set.</p>
+        <p></p>
+        <p>Slope is expressed as a percentage of the last price. A slope of 1 means
+          that, according to a simple linear regression, the next collected ticker
+          price is likely to be 1% higher than the last one.</p>
+      </td>
+      <td style="text-align:left">n/a</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>maxSlopePctInterval</code>
+      </td>
+      <td style="text-align:left">
+        <p>Filter returns true if the <a href="https://tulipindicators.org/linregslope">slope</a> for
+          all prices in snapshots is smaller than set.</p>
+        <p></p>
+        <p>Slope is expressed as a percentage of the last price. A slope of 1 means
+          that, according to a simple linear regression, the next collected ticker
+          price is likely to be 1% higher than the last one.</p>
+        <p></p>
+        <p>Only executed when max snapshot sample size is reached.</p>
+      </td>
+      <td style="text-align:left">n/a</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>minStandardDevPctInterval</code>
+      </td>
+      <td style="text-align:left">
+        <p>Filter returns true if the <a href="https://tulipindicators.org/stddev">Standard Deviation</a> for
+          all prices in snapshots is bigger than set.</p>
+        <p></p>
+        <p>Standard Deviation is expressed as a percentage of the last price.</p>
+        <p></p>
+        <p>Only executed when max snapshot sample size is reached.</p>
+      </td>
+      <td style="text-align:left">n/a</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p></p>
+        <p><code>maxStandardDevPctInterval</code>
+        </p>
+      </td>
+      <td style="text-align:left">
+        <p>Filter returns true if the <a href="https://tulipindicators.org/stddev">Standard Deviation</a> for
+          all prices in snapshots is smaller than set.</p>
+        <p></p>
+        <p>Standard Deviation is expressed as a percentage of the last price.</p>
+        <p></p>
+        <p>Only executed when max snapshot sample size is reached.</p>
+      </td>
+      <td style="text-align:left">n/a</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>belowMedianVolume</code>
+      </td>
+      <td style="text-align:left">Filter returns true if the base volume for a pair is lower than the median
+        base volume for all pairs with the same base currency on the exchange.</td>
+      <td
+      style="text-align:left">n/a</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>aboveMedianVolume</code>
+      </td>
+      <td style="text-align:left">Filter returns true if the base volume for a pair is higher than the median
+        base volume for all pairs with the same base currency on the exchange.</td>
+      <td
+      style="text-align:left">n/a</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>minVolumeRank</code>
+      </td>
+      <td style="text-align:left">
+        <p>Filter returns true if a pairs 24h volume rank (rankings are specific
+          per base) is higher than set.</p>
+        <p></p>
+        <p>This filter is only useful if you want to exclude some of the top ranking
+          volume pairs, for example set it to 5 to only allow pairs that have a volume
+          rank of 6 or higher.</p>
+      </td>
+      <td style="text-align:left">n/a</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>maxVolumeRank</code>
+      </td>
+      <td style="text-align:left">
+        <p>Filter returns true if a pairs 24h volume rank (rankings are specific
+          per base) is lower than set.</p>
+        <p></p>
+        <p>Setting it to 10, for example, would only include pairs that have a top10
+          volume ranking.</p>
+      </td>
+      <td style="text-align:left">n/a</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>buyTrailing</code>
+      </td>
+      <td style="text-align:left"><a href="autoconfig.md#buy-trailing-filter">see details</a>
+      </td>
+      <td style="text-align:left"></td>
+    </tr>
+  </tbody>
+</table>\_\_
 
-_Optionally, you can add `"resume": true` to a job that analyses ticker data. This will make sure that no ticker snapshots get lost between Gunbot restarts. Take care with this option in case you've turned off Gunbot for a while, as you would then be using old ticker data to base decision on._
+_Optionally, you can add `"resume": true` to a job that analyses ticker data. This will make sure that no ticker snapshots get lost between Gunbot restarts. Take care with this option in case you've turned off Gunbot for a while, as you would then be using \(partly\) old ticker data to base decision on._
 
 \_\_
 
