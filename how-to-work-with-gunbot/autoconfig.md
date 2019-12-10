@@ -591,13 +591,13 @@ _Optionally, you can add `"resume": true` to a job that analyses ticker data. Th
 
 \_\_
 
-#### Buy trailing filter
+#### Trailing filters
 
-The filter type `buyTrailing` is a ticker filter that trails down prices very [similar](basic-workings/trailing.md#buy-trailing) to a regular Gunbot strategy with buy trailing, you can use it to add pairs to your config only after they have hit their trailing stop. Useful for trailing massive numbers of pairs without the downsides of long cycling times.
+The filter types `buyTrailing`  and `volumeTrailing` are ticker filters that trails down prices or volume very [similar](basic-workings/trailing.md#buy-trailing) to a regular Gunbot strategy with buy trailing, you can use it to add pairs to your config only after they have hit their trailing stop. Useful for trailing massive numbers of pairs without the downsides of long cycling times.
 
-_This filter type can only be used in `addPairs` jobs on exchanges that provide ask prices in tickers, only works when used in the first filter set of a job._
+_These filter types can only be used in `addPairs` jobs on exchanges that provide ask prices or volume in tickers, only works when used in the first filter set of a job._
 
-**Config example**
+**Config example for buy trailing**
 
 The example below will:
 
@@ -605,6 +605,8 @@ The example below will:
 * Uses the 60 collected bid prices for a pair to calculate an EMA
 * Continuously trail down all pairs, using a `trailingRange` of 1% of the ask price
 * The filter passes when the ask prices crosses over the trailing stop, while being below `buyLevel` \(which is a percentage below the EMA calculated by this filter\)
+
+Volume trailing works exactly as above, the only difference is that base volume is used where prices are used in buy trailing.
 
 ```javascript
 {
