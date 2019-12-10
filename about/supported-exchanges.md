@@ -32,7 +32,6 @@ These exchanges have been supported in Gunbot for a long time, you can expect hi
 | **Cobinhood** | `cobinhood` | Regular | Regular |
 | **Coinbase Pro** | `gdax` | Regular | Regular |
 | **Huobi Global** | `huobi` | Regular | Regular & Margin |
-| **Idax** | `idax` | Regular | Regular |
 | **Kraken** | `kraken` | Regular | Regular & Margin |
 | **KuCoin** | `kucoin` | Regular | Regular |
 | **Poloniex** | `poloniex` | Regular | Regular & Margin |
