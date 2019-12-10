@@ -561,9 +561,11 @@ Ticker filters use data collected from the exchange tickers, at the moment the j
 
 You can use the following filter types for adding and removing pairs. Please note that not every filter type works on every exchange, due to the fact that some exchanges don't offer the required data. On Huobi AutoConfig uses "last" price instead of bid/ask for all filters that work with prices.
 
-![Data availability for certified spot exchanges.](../.gitbook/assets/image%20%2827%29.png)
+![Data availability for certified spot exchanges. Ticker filters are not available for Bitmex.](../.gitbook/assets/image%20%2827%29.png)
 
 _Filters for prices use ask when adding pairs and bid when filtering for removal or changing strategy._
+
+\_\_
 
 <table>
   <thead>
@@ -592,28 +594,32 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
       </td>
       <td style="text-align:left">Filter returns true if the current price is at least x% higher than the
         average price of all snapshots.</td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left"><code>lastSnapshots</code>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left"><code>maxPricePctChangeInterval</code>
       </td>
       <td style="text-align:left">Filter returns true if the current price is at least x% lower than the
         average price of all snapshots.</td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left"><code>lastSnapshots</code>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left"><code>minVolumePctChangeInterval</code>
       </td>
       <td style="text-align:left">Filter returns true if the current 24h volume is at least x% higher than
         the average 24h volume of all snapshots.</td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left"><code>lastSnapshots</code>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left"><code>maxVolumePctChangeInterval</code>
       </td>
       <td style="text-align:left">Filter returns true if the current 24h volume is at least x% lower than
         the average 24h volume of all snapshots.</td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left"><code>lastSnapshots</code>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left"><code>minVolume24h</code>
@@ -668,7 +674,8 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
           that, according to a simple linear regression, the next collected ticker
           price is likely to be 1% higher than the last one.</p>
       </td>
-      <td style="text-align:left">n/a</td>
+      <td style="text-align:left"><code>lastSnapshots</code>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left"><code>maxSlopePctInterval</code>
@@ -683,7 +690,8 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
         <p></p>
         <p>Only executed when max snapshot sample size is reached.</p>
       </td>
-      <td style="text-align:left">n/a</td>
+      <td style="text-align:left"><code>lastSnapshots</code>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left"><code>minStandardDevPctInterval</code>
@@ -696,7 +704,8 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
         <p></p>
         <p>Only executed when max snapshot sample size is reached.</p>
       </td>
-      <td style="text-align:left">n/a</td>
+      <td style="text-align:left"><code>lastSnapshots</code>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">
@@ -712,7 +721,8 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
         <p></p>
         <p>Only executed when max snapshot sample size is reached.</p>
       </td>
-      <td style="text-align:left">n/a</td>
+      <td style="text-align:left"><code>lastSnapshots</code>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left"><code>belowMedianVolume</code>
@@ -758,14 +768,33 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
     <tr>
       <td style="text-align:left"><code>buyTrailing</code>
       </td>
-      <td style="text-align:left"><a href="autoconfig.md#buy-trailing-filter">see details</a>
+      <td style="text-align:left"><a href="https://wiki.gunthy.org/how-to-work-with-gunbot/autoconfig#trailing-filters">See details</a>
       </td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">n/a</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>volumeTrailing</code>
+      </td>
+      <td style="text-align:left"><a href="https://wiki.gunthy.org/how-to-work-with-gunbot/autoconfig#trailing-filters">See details</a>
+      </td>
+      <td style="text-align:left">n/a</td>
     </tr>
   </tbody>
 </table>\_\_
 
-_Optionally, you can add `"resume": true` to a job that analyses ticker data. This will make sure that no ticker snapshots get lost between Gunbot restarts. Take care with this option in case you've turned off Gunbot for a while, as you would then be using \(partly\) old ticker data to base decision on._
+The extra input called `lastSnapshots` lets you use only the last x snapshots to calculate the filter. 
+
+If for example your job collects 100 snapshots but you want a specific filter to only use the last 10 snapshots to calculate slope, you can do that.
+
+**Usage example:**
+
+```javascript
+"maxStandardDevPctInterval": {
+  "type": "minVolumePctChangeInterval",
+   "max": 1,
+   "lastSnapshots": 3
+}
+```
 
 \_\_
 
