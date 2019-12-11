@@ -30,6 +30,7 @@ Gunbot v15 is a major release: it includes support for over 100 new exchanges - 
 
 Notable fixes:
 
+* Bring back Telegram integration for the ARM edition.
 * Porting many small exchange fixes from bitRage to Gunbot.
 * Fix an issue that could cause unwanted restarts on Poloniex.
 * Fix "bought already" problem that prevented trading for some users.
