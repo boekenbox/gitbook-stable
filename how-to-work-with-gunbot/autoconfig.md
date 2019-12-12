@@ -7,6 +7,10 @@ description: >-
 
 # AutoConfig
 
+{% hint style="success" %}
+Available for Gunbot Standard and higher.
+{% endhint %}
+
 {% hint style="info" %}
 Currently there is no GUI for AutoConfig. You'll need to create your own `autoconfig.json` config file, which contains the jobs it should run.
 
