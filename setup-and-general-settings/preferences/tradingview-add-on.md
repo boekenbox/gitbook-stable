@@ -79,7 +79,7 @@ Open the settings by going to **Settings** &gt; **TradingView.**
 
 Trading limits for buy orders are set in the configuration settings, optionally you can override these by specifying the trading limit in the alert message contents.
 
-Orders placed by the TradingView add-on are placed as market orders to ensure they will get filled.
+Orders placed by the TradingView add-on are placed by default as market orders to ensure they will get filled. Optionally, you can let it send limit orders as well. 
 
 {% hint style="info" %}
 Be sure to add one pair for any exchange you want to execute alerts on.
@@ -108,6 +108,26 @@ When TradingView sell alerts are sent that would have a lower gain than this val
 
 {% tab title="Name" %}
 Parameter name in `config.js`: `TV_GAIN`
+{% endtab %}
+{% endtabs %}
+
+### Market orders
+
+{% tabs %}
+{% tab title="Description" %}
+By default, orders are sent as market orders.
+
+When you want to send limit orders instead, disable this option. Buy orders are then sent at a limit price of the best bid order in the order book, sell orders are placed at the rate of the best ask price.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** true or false
+
+**Default value:** true
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `TV_MARKET_ORDERS`
 {% endtab %}
 {% endtabs %}
 
