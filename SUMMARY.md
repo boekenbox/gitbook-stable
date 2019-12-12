@@ -34,7 +34,7 @@
   * [GUI notifications](setup-and-general-settings/preferences/gui-notifications.md)
   * [Websockets](setup-and-general-settings/preferences/websockets.md)
   * [Telegram notifications](setup-and-general-settings/preferences/telegram-notifications.md)
-  * [TradingView](setup-and-general-settings/preferences/tradingview-add-on.md)
+  * [TradingView \(add-on\)](setup-and-general-settings/preferences/tradingview-add-on.md)
   * [IMAP listener](setup-and-general-settings/preferences/imap-listener.md)
 * [Exchange & license settings](setup-and-general-settings/exchange-and-license-settings/README.md)
   * [GUNTHY wallet](setup-and-general-settings/exchange-and-license-settings/gunthy-wallet/README.md)

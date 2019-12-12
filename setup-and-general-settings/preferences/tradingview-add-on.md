@@ -2,11 +2,13 @@
 description: Learn how to use Gunbot to execute trades based on incoming email alerts.
 ---
 
-# TradingView
+# TradingView \(add-on\)
 
 TradingView is the most active social network for traders and investors. TradingView allows users to create and share technical analysis and advanced trading strategies on their interactive charts.
 
 With the Gunbot TradingView add-on you can trade on alerts sent from custom strategies at Tradingview, completely managing your strategy at TradingView. Gunbot receives trade signals by e-mail and trades accordingly.
+
+This add-on can also be used for executing trades from arbitrary email alerts, TradingView is not strictly required.
 
 {% hint style="info" %}
 This is a paid add-on, availability depends on your license type.
