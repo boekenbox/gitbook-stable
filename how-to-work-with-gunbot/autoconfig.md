@@ -1072,437 +1072,437 @@ Besides the obligatory first set of filters, you can add up to 9 more sets. name
 
 You don't want to use this ever in this form, but use it as reference for how each job can be formatted.
 
-```text
+```javascript
 {
-    "addPairs-jobname": {
-        "pairs": {
-            "exclude": "DOGE,XLM,PAX",
-            "include": "BTC,USDT",
-            "maxPairs": 25,
-            "exchange": "binance"
-        },
-        "filters": {
-            "filter1": {
-                "type": "minPrice",
-                "min": 0.0000001
-            },
-            "filter2": {
-                "type": "maxPrice",
-                "max": 0.0000010
-            },
-            "filter3": {
-                "type": "minPricePctChangeInterval",
-                "min": 0.00002
-            },
-            "filter4": {
-                "type": "maxPricePctChangeInterval",
-                "max": 1
-            },
-            "filter5": {
-                "type": "minVolumePctChangeInterval",
-                "min": 10
-            },
-            "filter6": {
-                "type": "maxVolumePctChangeInterval",
-                "max": 50
-            },
-            "filter7": {
-                "type": "minVolume24h",
-                "min": 500
-            },
-            "filter8": {
-                "type": "maxVolume24h",
-                "max": 1000
-            },
-            "filter9": {
-                "type": "minVolatilityPct24h",
-                "min": 1
-            },
-            "filter10": {
-                "type": "maxVolatilityPct24h",
-                "max": 1
-            },
-            "filter11": {
-                "type": "minSpreadPct",
-                "min": 0.00001
-            },
-            "filter12": {
-                "type": "maxSpreadPct",
-                "max": 1
-            },
-            "filter13": {
-                "type": "minSlopePctInterval",
-                "min": 0.00001
-            },
-            "filter14": {
-                "type": "maxSlopePctInterval",
-                "max": 1
-            },
-            "filter17": {
-                "type": "belowMedianVolume"
-            },
-            "filter18": {
-                "type": "aboveMedianVolume"
-            }
-            "filter16": {
-                "type": "variableExact",
-                "userVar1": false
-            }
-        },
-        "schedule": "* * * * *",
-        "type": "addPairs",
-        "strategy": "gain",
-        "snapshots": 2,
-        "resume". false,
-        "debug": "true",
-        "setVariable": {
-            "userVariable1": true
-        },
-        "enabled": true
-    },
-    "removePairs-jobname": {
-        "pairs": {
-            "exclude": "BNB,XVG",
-            "noBag": false,
-            "removeDisabled": true,
-            "exchange": "binance"
-        },
-        "filters": {
-            "filter1": {
-                "type": "minPrice",
-                "min": 0.0000001
-            },
-            "filter2": {
-                "type": "maxPrice",
-                "max": 0.0000010
-            },
-            "filter3": {
-                "type": "minPricePctChangeInterval",
-                "min": 0.00002
-            },
-            "filter4": {
-                "type": "maxPricePctChangeInterval",
-                "max": 1
-            },
-            "filter5": {
-                "type": "minVolumePctChangeInterval",
-                "min": 10
-            },
-            "filter6": {
-                "type": "maxVolumePctChangeInterval",
-                "max": 50
-            },
-            "filter7": {
-                "type": "minVolume24h",
-                "min": 500
-            },
-            "filter8": {
-                "type": "maxVolume24h",
-                "max": 1000
-            },
-            "filter9": {
-                "type": "minVolatilityPct24h",
-                "min": 1
-            },
-            "filter10": {
-                "type": "maxVolatilityPct24h",
-                "max": 1
-            },
-            "filter11": {
-                "type": "minSpreadPct",
-                "min": 0.00001
-            },
-            "filter12": {
-                "type": "maxSpreadPct",
-                "max": 1
-            },
-            "filter13": {
-                "type": "minSlopePctInterval",
-                "min": 0.00001
-            },
-            "filter14": {
-                "type": "maxSlopePctInterval",
-                "max": 1
-            },
-            "filter16": {
-                "type": "variableExact",
-                "userVar1": false
-            },
-            "filter17": {
-                "type": "belowMedianVolume"
-            },
-            "filter18": {
-                "type": "aboveMedianVolume"
-            }
-        },
-        "schedule": "* * * * *",
-        "type": "removePairs",
-        "snapshots": 10,
-        "debug": "true",
-        "setVariable": {
-            "userVariable1": true
-        },
-        "enabled": true
-    },
-    "removePairs2-jobname": {
-        "pairs": {
-            "exclude": "BNB,XVG",
-            "noBag": false,
-            "removeDisabled": true,
-            "exchange": "binance"
-        },
-        "filters": {
-            "filter1": {
-                "type": "exact",
-                "ducount": 1
-            },
-            "filter2": {
-                "type": "biggerThan",
-                "ducount": 1
-            },
-            "filter3": {
-                "type": "smallerThan",
-                "ducount": 1
-            },
-            "filter4": {
-                "type": "compareBigger",
-                "ema1": 1,
-                "ema2": 1
-            },
-            "filter5": {
-                "type": "compareSmaller",
-                "ema1": 1,
-                "ema2": 1
-            },
-            "filter6": {
-                "type": "differenceBigger",
-                "ema1": 1,
-                "ema2": 1,
-                "delta": 10
-            },
-            "filter7": {
-                "type": "differenceSmaller",
-                "ema1": 1,
-                "ema2": 1,
-                "delta": 10
-            },
-            "filter16": {
-                "type": "variableExact",
-                "userVar1": false
-            }
-        },
-        "schedule": "* * * * *",
-        "type": "removePairs2",
-        "snapshots": 10,
-        "resume". false,
-        "debug": "true",
-        "setVariable": {
-            "userVariable1": true
-        },
-        "enabled": true
-    },
-    "changeStrategy-jobname": {
-        "pairs": {
-            "exclude": "",
-            "bag": true,
-            "exchange": "binance"
-        },
-        "filters": {
-            "filter1": {
-                "type": "minPrice",
-                "min": 0.0000001
-            },
-            "filter2": {
-                "type": "maxPrice",
-                "max": 0.0000010
-            },
-            "filter3": {
-                "type": "minPricePctChangeInterval",
-                "min": 0.00002
-            },
-            "filter4": {
-                "type": "maxPricePctChangeInterval",
-                "max": 1
-            },
-            "filter5": {
-                "type": "minVolumePctChangeInterval",
-                "min": 10
-            },
-            "filter6": {
-                "type": "maxVolumePctChangeInterval",
-                "max": 50
-            },
-            "filter7": {
-                "type": "minVolume24h",
-                "min": 500
-            },
-            "filter8": {
-                "type": "maxVolume24h",
-                "max": 1000
-            },
-            "filter9": {
-                "type": "minVolatilityPct24h",
-                "min": 1
-            },
-            "filter10": {
-                "type": "maxVolatilityPct24h",
-                "max": 1
-            },
-            "filter11": {
-                "type": "minSpreadPct",
-                "min": 0.00001
-            },
-            "filter12": {
-                "type": "maxSpreadPct",
-                "max": 1
-            },
-            "filter13": {
-                "type": "minSlopePctInterval",
-                "min": 0.00001
-            },
-            "filter14": {
-                "type": "maxSlopePctInterval",
-                "max": 1
-            },
-            "filter16": {
-                "type": "variableExact",
-                "userVar1": false
-            },
-            "filter17": {
-                "type": "belowMedianVolume"
-            },
-            "filter18": {
-                "type": "aboveMedianVolume"
-            }
-        },
-        "schedule": "* * * * *",
-        "type": "changeStrategy",
-        "snapshots": 10,
-        "strategy": "baghandler",
-        "resume". false,
-        "debug": "true",
-        "setVariable": {
-            "userVariable1": true
-        },
-        "enabled": true
-    },
-    "changeStrategy2-jobname": {
-        "pairs": {
-            "exclude": "",
-            "bag": true,
-            "exchange": "binance"
-        },
-        "filters": {
-            "filter1": {
-                "type": "exact",
-                "ducount": 1
-            },
-            "filter2": {
-                "type": "biggerThan",
-                "ducount": 1
-            },
-            "filter3": {
-                "type": "smallerThan",
-                "ducount": 1
-            },
-            "filter4": {
-                "type": "compareBigger",
-                "ema1": 1,
-                "ema2": 1
-            },
-            "filter5": {
-                "type": "compareSmaller",
-                "ema1": 1,
-                "ema2": 1
-            },
-            "filter6": {
-                "type": "differenceBigger",
-                "ema1": 1,
-                "ema2": 1,
-                "delta": 10
-            },
-            "filter7": {
-                "type": "differenceSmaller",
-                "ema1": 1,
-                "ema2": 1,
-                "delta": 10
-            },
-            "filter16": {
-                "type": "variableExact",
-                "userVar1": false
-            }
-        },
-        "schedule": "* * * * *",
-        "type": "changeStrategy2",
-        "snapshots": 10,
-        "strategy": "baghandler",
-        "resume". false,
-        "setVariable": {
-            "userVariable1": true
-        },
-        "debug": "true",
-        "enabled": true
-    },
-    "manageOverrides-jobname": {
-        "pairs": {
-            "exclude": "DOGE,ETH",
-            "include": "USDT,BNB",
-            "exchange": "binance"
-        },
-        "filters": {
-            "filter1": {
-                "type": "exact",
-                "ducount": 1
-            },
-            "filter2": {
-                "type": "biggerThan",
-                "ducount": 1
-            },
-            "filter3": {
-                "type": "smallerThan",
-                "ducount": 1
-            },
-            "filter4": {
-                "type": "compareBigger",
-                "ema1": 1,
-                "ema2": 1
-            },
-            "filter5": {
-                "type": "compareSmaller",
-                "ema1": 1,
-                "ema2": 1
-            },
-            "filter6": {
-                "type": "differenceBigger",
-                "ema1": 1,
-                "ema2": 1,
-                "delta": 10
-            },
-            "filter7": {
-                "type": "differenceSmaller",
-                "ema1": 1,
-                "ema2": 1,
-                "delta": 10
-            },
-            "filter16": {
-                "type": "variableExact",
-                "userVar1": false
-            }
-        },
-        "overrides": {
-            "DU_BUYDOWN": 3
-        },
-        "clearOverrides": false,
-        "setITB": false,
-        "schedule": "*/10 * * * *",
-        "type": "manageOverrides",
-        "resume". false,
-        "setVariable": {
-            "userVariable1": true
-        },
-        "debug": "true",
-        "enabled": true
-    }
+	"addPairs-jobname": {
+		"pairs": {
+			"exclude": "DOGE,XLM,PAX",
+			"include": "BTC,USDT",
+			"maxPairs": 25,
+			"exchange": "binance"
+		},
+		"filters": {
+			"filter1": {
+				"type": "minPrice",
+				"min": 0.0000001
+			},
+			"filter2": {
+				"type": "maxPrice",
+				"max": 0.0000010
+			},
+			"filter3": {
+				"type": "minPricePctChangeInterval",
+				"min": 0.00002
+			},
+			"filter4": {
+				"type": "maxPricePctChangeInterval",
+				"max": 1
+			},
+			"filter5": {
+				"type": "minVolumePctChangeInterval",
+				"min": 10
+			},
+			"filter6": {
+				"type": "maxVolumePctChangeInterval",
+				"max": 50
+			},
+			"filter7": {
+				"type": "minVolume24h",
+				"min": 500
+			},
+			"filter8": {
+				"type": "maxVolume24h",
+				"max": 1000
+			},
+			"filter9": {
+				"type": "minVolatilityPct24h",
+				"min": 1
+			},
+			"filter10": {
+				"type": "maxVolatilityPct24h",
+				"max": 1
+			},
+			"filter11": {
+				"type": "minSpreadPct",
+				"min": 0.00001
+			},
+			"filter12": {
+				"type": "maxSpreadPct",
+				"max": 1
+			},
+			"filter13": {
+				"type": "minSlopePctInterval",
+				"min": 0.00001
+			},
+			"filter14": {
+				"type": "maxSlopePctInterval",
+				"max": 1
+			},
+			"filter17": {
+				"type": "belowMedianVolume"
+			},
+			"filter18": {
+				"type": "aboveMedianVolume"
+			},
+			"filter16": {
+				"type": "variableExact",
+				"userVar1": false
+			}
+		},
+		"schedule": "* * * * *",
+		"type": "addPairs",
+		"strategy": "gain",
+		"snapshots": 2,
+		"resume": false,
+		"debug": "true",
+		"setVariable": {
+			"userVariable1": true
+		},
+		"enabled": true
+	},
+	"removePairs-jobname": {
+		"pairs": {
+			"exclude": "BNB,XVG",
+			"noBag": false,
+			"removeDisabled": true,
+			"exchange": "binance"
+		},
+		"filters": {
+			"filter1": {
+				"type": "minPrice",
+				"min": 0.0000001
+			},
+			"filter2": {
+				"type": "maxPrice",
+				"max": 0.0000010
+			},
+			"filter3": {
+				"type": "minPricePctChangeInterval",
+				"min": 0.00002
+			},
+			"filter4": {
+				"type": "maxPricePctChangeInterval",
+				"max": 1
+			},
+			"filter5": {
+				"type": "minVolumePctChangeInterval",
+				"min": 10
+			},
+			"filter6": {
+				"type": "maxVolumePctChangeInterval",
+				"max": 50
+			},
+			"filter7": {
+				"type": "minVolume24h",
+				"min": 500
+			},
+			"filter8": {
+				"type": "maxVolume24h",
+				"max": 1000
+			},
+			"filter9": {
+				"type": "minVolatilityPct24h",
+				"min": 1
+			},
+			"filter10": {
+				"type": "maxVolatilityPct24h",
+				"max": 1
+			},
+			"filter11": {
+				"type": "minSpreadPct",
+				"min": 0.00001
+			},
+			"filter12": {
+				"type": "maxSpreadPct",
+				"max": 1
+			},
+			"filter13": {
+				"type": "minSlopePctInterval",
+				"min": 0.00001
+			},
+			"filter14": {
+				"type": "maxSlopePctInterval",
+				"max": 1
+			},
+			"filter16": {
+				"type": "variableExact",
+				"userVar1": false
+			},
+			"filter17": {
+				"type": "belowMedianVolume"
+			},
+			"filter18": {
+				"type": "aboveMedianVolume"
+			}
+		},
+		"schedule": "* * * * *",
+		"type": "removePairs",
+		"snapshots": 10,
+		"debug": "true",
+		"setVariable": {
+			"userVariable1": true
+		},
+		"enabled": true
+	},
+	"removePairs2-jobname": {
+		"pairs": {
+			"exclude": "BNB,XVG",
+			"noBag": false,
+			"removeDisabled": true,
+			"exchange": "binance"
+		},
+		"filters": {
+			"filter1": {
+				"type": "exact",
+				"ducount": 1
+			},
+			"filter2": {
+				"type": "biggerThan",
+				"ducount": 1
+			},
+			"filter3": {
+				"type": "smallerThan",
+				"ducount": 1
+			},
+			"filter4": {
+				"type": "compareBigger",
+				"ema1": 1,
+				"ema2": 1
+			},
+			"filter5": {
+				"type": "compareSmaller",
+				"ema1": 1,
+				"ema2": 1
+			},
+			"filter6": {
+				"type": "differenceBigger",
+				"ema1": 1,
+				"ema2": 1,
+				"delta": 10
+			},
+			"filter7": {
+				"type": "differenceSmaller",
+				"ema1": 1,
+				"ema2": 1,
+				"delta": 10
+			},
+			"filter16": {
+				"type": "variableExact",
+				"userVar1": false
+			}
+		},
+		"schedule": "* * * * *",
+		"type": "removePairs2",
+		"snapshots": 10,
+		"resume": false,
+		"debug": "true",
+		"setVariable": {
+			"userVariable1": true
+		},
+		"enabled": true
+	},
+	"changeStrategy-jobname": {
+		"pairs": {
+			"exclude": "",
+			"bag": true,
+			"exchange": "binance"
+		},
+		"filters": {
+			"filter1": {
+				"type": "minPrice",
+				"min": 0.0000001
+			},
+			"filter2": {
+				"type": "maxPrice",
+				"max": 0.0000010
+			},
+			"filter3": {
+				"type": "minPricePctChangeInterval",
+				"min": 0.00002
+			},
+			"filter4": {
+				"type": "maxPricePctChangeInterval",
+				"max": 1
+			},
+			"filter5": {
+				"type": "minVolumePctChangeInterval",
+				"min": 10
+			},
+			"filter6": {
+				"type": "maxVolumePctChangeInterval",
+				"max": 50
+			},
+			"filter7": {
+				"type": "minVolume24h",
+				"min": 500
+			},
+			"filter8": {
+				"type": "maxVolume24h",
+				"max": 1000
+			},
+			"filter9": {
+				"type": "minVolatilityPct24h",
+				"min": 1
+			},
+			"filter10": {
+				"type": "maxVolatilityPct24h",
+				"max": 1
+			},
+			"filter11": {
+				"type": "minSpreadPct",
+				"min": 0.00001
+			},
+			"filter12": {
+				"type": "maxSpreadPct",
+				"max": 1
+			},
+			"filter13": {
+				"type": "minSlopePctInterval",
+				"min": 0.00001
+			},
+			"filter14": {
+				"type": "maxSlopePctInterval",
+				"max": 1
+			},
+			"filter16": {
+				"type": "variableExact",
+				"userVar1": false
+			},
+			"filter17": {
+				"type": "belowMedianVolume"
+			},
+			"filter18": {
+				"type": "aboveMedianVolume"
+			}
+		},
+		"schedule": "* * * * *",
+		"type": "changeStrategy",
+		"snapshots": 10,
+		"strategy": "baghandler",
+		"resume": false,
+		"debug": "true",
+		"setVariable": {
+			"userVariable1": true
+		},
+		"enabled": true
+	},
+	"changeStrategy2-jobname": {
+		"pairs": {
+			"exclude": "",
+			"bag": true,
+			"exchange": "binance"
+		},
+		"filters": {
+			"filter1": {
+				"type": "exact",
+				"ducount": 1
+			},
+			"filter2": {
+				"type": "biggerThan",
+				"ducount": 1
+			},
+			"filter3": {
+				"type": "smallerThan",
+				"ducount": 1
+			},
+			"filter4": {
+				"type": "compareBigger",
+				"ema1": 1,
+				"ema2": 1
+			},
+			"filter5": {
+				"type": "compareSmaller",
+				"ema1": 1,
+				"ema2": 1
+			},
+			"filter6": {
+				"type": "differenceBigger",
+				"ema1": 1,
+				"ema2": 1,
+				"delta": 10
+			},
+			"filter7": {
+				"type": "differenceSmaller",
+				"ema1": 1,
+				"ema2": 1,
+				"delta": 10
+			},
+			"filter16": {
+				"type": "variableExact",
+				"userVar1": false
+			}
+		},
+		"schedule": "* * * * *",
+		"type": "changeStrategy2",
+		"snapshots": 10,
+		"strategy": "baghandler",
+		"resume": false,
+		"setVariable": {
+			"userVariable1": true
+		},
+		"debug": "true",
+		"enabled": true
+	},
+	"manageOverrides-jobname": {
+		"pairs": {
+			"exclude": "DOGE,ETH",
+			"include": "USDT,BNB",
+			"exchange": "binance"
+		},
+		"filters": {
+			"filter1": {
+				"type": "exact",
+				"ducount": 1
+			},
+			"filter2": {
+				"type": "biggerThan",
+				"ducount": 1
+			},
+			"filter3": {
+				"type": "smallerThan",
+				"ducount": 1
+			},
+			"filter4": {
+				"type": "compareBigger",
+				"ema1": 1,
+				"ema2": 1
+			},
+			"filter5": {
+				"type": "compareSmaller",
+				"ema1": 1,
+				"ema2": 1
+			},
+			"filter6": {
+				"type": "differenceBigger",
+				"ema1": 1,
+				"ema2": 1,
+				"delta": 10
+			},
+			"filter7": {
+				"type": "differenceSmaller",
+				"ema1": 1,
+				"ema2": 1,
+				"delta": 10
+			},
+			"filter16": {
+				"type": "variableExact",
+				"userVar1": false
+			}
+		},
+		"overrides": {
+			"DU_BUYDOWN": 3
+		},
+		"clearOverrides": false,
+		"setITB": false,
+		"schedule": "*/10 * * * *",
+		"type": "manageOverrides",
+		"resume": false,
+		"setVariable": {
+			"userVariable1": true
+		},
+		"debug": "true",
+		"enabled": true
+	}
 }
 ```
 
