@@ -39,27 +39,101 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
 
 #### For all spot exchanges
 
-| Alert message | Action |
-| :--- | :--- |
-| BUY\_EXCHANGE\_BTC-ETH | Buy ETH using BTC |
-| BUY\_EXCHANGE\_BTC-ETH\_0.1 | Buy ETH using BTC with a trading limit of 0.1 BTC |
-| SELL\_EXCHANGE\_USDT-BTC | Sell BTC for USDT |
-| STOPLOSS\_EXCHANGE\_BTC-ETH | Sell ETH for BTC if stoploss is triggered |
-
-
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Alert message</th>
+      <th style="text-align:left">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">BUY_EXCHANGE_BTC-ETH</td>
+      <td style="text-align:left">Buy ETH using BTC</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">BUY_EXCHANGE_BTC-ETH_0.1</td>
+      <td style="text-align:left">Buy ETH using BTC with a trading limit of 0.1 BTC</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">SELL_EXCHANGE_USDT-BTC</td>
+      <td style="text-align:left">Sell BTC for USDT</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">STOPLOSS_EXCHANGE_BTC-ETH</td>
+      <td style="text-align:left">Sell ETH for BTC if stoploss is triggered</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">BUY_EXCHANGE_USDT-BTC_amount_rate</td>
+      <td style="text-align:left">
+        <p>Buy BTC using USDT for a specified amount</p>
+        <p>in USDT at a specified rate.</p>
+        <p>Requires TV market orders to be disabled</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">BUY_EXCHANGE_BTC-ETH_0_rate</td>
+      <td style="text-align:left">
+        <p>Buy BTC using USDT for &quot;TV trading limit buy&quot;,</p>
+        <p>at a specified rate.</p>
+        <p>Requires TV market orders to be disabled.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 #### Alerts for margin trading
 
-| Alert message | Action |
-| :--- | :--- |
-| SHORT\_EXCHANGE\_XBT-USD | Short order for XBT-USD |
-| LONG\_EXCHANGE\_XBT-USD | Long order for XBT-USD |
-| SHORT\_EXCHANGE\_XBT-USD\_amount | Short order for XBT-USD with a specified trading limit |
-| LONG\_EXCHANGE\_XBT-USD\_amount | Long order for XBT-USD with a specified trading limit |
-| CLOSELONG\_EXCHANGE\_XBT-USD | Closes a long position for XBT-USD |
-| CLOSESHORT\_EXCHANGE\_XBT-USD | Closes a short position for XBT-USD |
-
-{% hint style="info" %}
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Alert message</th>
+      <th style="text-align:left">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">SHORT_EXCHANGE_XBT-USD</td>
+      <td style="text-align:left">Short order for XBT-USD</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">LONG_EXCHANGE_XBT-USD</td>
+      <td style="text-align:left">Long order for XBT-USD</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">SHORT_EXCHANGE_XBT-USD_amount</td>
+      <td style="text-align:left">Short order for XBT-USD with a specified trading limit</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">LONG_EXCHANGE_XBT-USD_amount</td>
+      <td style="text-align:left">Long order for XBT-USD with a specified trading limit</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">LONG_EXCHANGE_XBT-USD_amount_rate</td>
+      <td style="text-align:left">
+        <p>Long order for XBT-USD with a specified</p>
+        <p>trading limit and rate.</p>
+        <p>Requires TV market orders to be disabled.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">SHORT_EXCHANGE_XBT-USD_0_rate</td>
+      <td style="text-align:left">
+        <p>Short order for XBT-USD without a specified</p>
+        <p>trading limit and with a specified rate.</p>
+        <p>Requires TV market orders to be disabled.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">CLOSELONG_EXCHANGE_XBT-USD</td>
+      <td style="text-align:left">Closes a long position for XBT-USD</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">CLOSESHORT_EXCHANGE_XBT-USD</td>
+      <td style="text-align:left">Closes a short position for XBT-USD</td>
+    </tr>
+  </tbody>
+</table>{% hint style="info" %}
 **Note about trading limits**
 
 On **Bitmex**, every setting related to trading limits for margin trading must be specified in contracts.   

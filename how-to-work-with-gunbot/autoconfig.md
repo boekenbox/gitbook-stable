@@ -24,6 +24,7 @@ You can create "jobs" to do something you would normally do by hand, for example
 Things you can currently do with AutoConfig:
 
 * **Scan exchanges and automatically add pairs:** for example add pairs with volume &gt; 500 BTC and for which price is rising. You can even filter on buy trailing stops for all pairs on an exchange.
+* **Simulate your filter settings for adding pairs:** you can collect your own data for backtesting and simulate all possible filters.
 * **Scan exchanges to remove pairs from your config**: for example remove pairs without quote balance for which volume has dropped below 100 BTC.
 * **Change the strategy for pairs from your config:** for example set a bag handling strategy when the pair did buy but prices dropped a lot.
 * **Change the exchange delay**.
@@ -300,7 +301,7 @@ The example below shows a job that does the following:
 * Scan Binance pairs every minute, process filters on all active trading pairs that include "USDT" or "BNB" and do not include "DOGE" or "ETH" in their pair name.
 * Set a `DU_BUYDOWN` override for all pairs that have `ducount` 1
 
-```text
+```javascript
 {
     "DynamicDU1": {
         "pairs": {
@@ -361,7 +362,7 @@ The example below shows a job that does the following:
 * Scan Binance pairs every minute, process filters on all active trading pairs that include "USDT" or "BNB" and do not include "DOGE" or "ETH" in their pair name.
 * Set a the exchange delay for Binance to 10 in case at least one pair matches the filter
 
-```text
+```javascript
 {
     "DynamicDU1": {
         "pairs": {
@@ -770,6 +771,25 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
       <td style="text-align:left">n/a</td>
     </tr>
     <tr>
+      <td style="text-align:left"><code>bullishStandardDeviationChannel</code>
+      </td>
+      <td style="text-align:left">
+        <p>It works similar to described here: <a href="http://www.forexpromos.com/what-is-standard-deviation-channel">http://www.forexpromos.com/what-is-standard-deviation-channel</a>
+        </p>
+        <p></p>
+        <p>The filter passes when:</p>
+        <ul>
+          <li>slopePct is positive</li>
+          <li>max snapshot count is reached</li>
+          <li>price is within a defined range from the lower band</li>
+        </ul>
+        <p>Range 0 = same price as lower band</p>
+        <p>Range 100 = same price as upper band</p>
+      </td>
+      <td style="text-align:left"><code>lastSnapshots</code>
+      </td>
+    </tr>
+    <tr>
       <td style="text-align:left"><code>buyTrailing</code>
       </td>
       <td style="text-align:left"><a href="https://wiki.gunthy.org/how-to-work-with-gunbot/autoconfig#trailing-filters">See details</a>
@@ -778,6 +798,13 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
     </tr>
     <tr>
       <td style="text-align:left"><code>volumeTrailing</code>
+      </td>
+      <td style="text-align:left"><a href="https://wiki.gunthy.org/how-to-work-with-gunbot/autoconfig#trailing-filters">See details</a>
+      </td>
+      <td style="text-align:left">n/a</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>slopeTrailing</code>
       </td>
       <td style="text-align:left"><a href="https://wiki.gunthy.org/how-to-work-with-gunbot/autoconfig#trailing-filters">See details</a>
       </td>
@@ -804,7 +831,7 @@ If for example your job collects 100 snapshots but you want a specific filter to
 
 #### Trailing filters
 
-The filter types `buyTrailing`  and `volumeTrailing` are ticker filters that trails down prices or volume very [similar](basic-workings/trailing.md#buy-trailing) to a regular Gunbot strategy with buy trailing, you can use it to add pairs to your config only after they have hit their trailing stop. Useful for trailing massive numbers of pairs without the downsides of long cycling times.
+The filter types `buyTrailing` , `volumeTrailing` and `slopeTrailing` are ticker filters that trails down prices or volume very [similar](basic-workings/trailing.md#buy-trailing) to a regular Gunbot strategy with buy trailing, you can use it to add pairs to your config only after they have hit their trailing stop. Useful for trailing massive numbers of pairs without the downsides of long cycling times.
 
 _These filter types can only be used in `addPairs` jobs on exchanges that provide ask prices or volume in tickers, only works when used in the first filter set of a job._
 
@@ -818,6 +845,8 @@ The example below will:
 * The filter passes when the ask prices crosses over the trailing stop, while being below `buyLevel` \(which is a percentage below the EMA calculated by this filter\)
 
 Volume trailing works exactly as above, the only difference is that base volume is used where prices are used in buy trailing.
+
+Slope trailing works just like buy trailing, the only difference is that the slope percentage of a pair is trailed. Buy level is based on the same EMA as it is for buy trailing.
 
 ```javascript
 {
@@ -1054,6 +1083,81 @@ Besides the obligatory first set of filters, you can add up to 9 more sets. name
 ```
 
 
+
+## Backtesting for addPairs jobs
+
+Results for addPairs jobs can be simulated using ticker data you've collected yourself. Self-collection is needed because the type of historic data AutoConfig uses is not publicly available.
+
+Before you can backtest, you need to collect a dataset with a "collectData" job. This is a simple autoconfig job that collects and saves ticker data according to the job schedule and exchange.
+
+```text
+"30-secs": { 
+    "pairs": { 
+        "exchange": "binance" 
+    }, 
+    "schedule": "/30 * * * * *", 
+    "type": "collectData", 
+    "snapshots": 1000,
+    "enabled": true, 
+    "debug": false 
+}
+```
+
+The schedule in this job should be the same as the schedule you'd use in an `addPairs` job. It will collect up to 5 ticker snapshots and removes older snapshots in case they exist. 
+
+You can use any number of snapshots in this job type. If you omit the snapshots parameter, it will collect ticker snapshots for as long as your system has free disk space.
+
+Ticker data for this collection job is saved in /30-secs-tickers \(\#jobname\#-tickers\). Do make sure you never save any other files in this folder.
+
+As long as the `collectData` job runs, it keeps collecting tickers. It is not recommended to permanently collect tickers while also running other autoconfig jobs that use tickers: API usage weight is relatively high, and it will slow down Gunbot performance slightly.
+
+To backtest using the collected data, run a job with type `backtesting`. Do this while you have Gunbot core and other autoconfig jobs disabled, because it's very cpu intensive and you don't want other jobs to interrupt.
+
+A backtesting job is basically the same as an addPairs job, you can use all available filter / filterset options. Collected ticker data is replayed as if it were live data, the results should 100% match the results from a regular addPairs job. Results are logged the same way as regular jobs, the debug option for jobs is also available.
+
+Results are saved to a .csv file that lists when pairs would have been added, and what the ask price was at that moment.
+
+Backtesting jobs also use the autoconfig scheduler, although it's kind of pointless. It's recommended to set a silly schedule that will almost never execute and use the `"onStart": true` option so that the job runs as soon as it gets enabled.
+
+Backtesting does not take `maxPairs` into consideration \(and will not in the future\), results are purely based on the filters you use.
+
+Job example for backtesting:
+
+```javascript
+"30-secs": {
+		"pairs": {
+			"exclude": "",
+			"include": "BTC-",
+			"exchange": "binance"
+		},
+		"filters": {
+			"slope": {
+				"type": "minSlopePctInterval",
+				"min": 0.02
+			},
+			"volume": {
+				"type": "minVolume24h",
+				"min": 75
+			},
+			"pricehistory0": {
+				"type": "maxPricePctChangeIntervalHistory",
+				"max": 5,
+				"historySource": 9
+			}
+		},
+		"schedule": "1 1 1 1 1",
+		"type": "backtesting",
+		"tickersFolder": "30-secs-tickers",
+		"enabled": true,
+		"onStart": true,
+		"history": 10,
+		"historyInterval": 2,
+		"debug": false,
+		"snapshots": 10
+	}
+```
+
+The data source for backtesting is set with the `"tickersFolder"` parameter. Set it to the exact folder name where your collected ticker files are. i
 
 ## Various
 

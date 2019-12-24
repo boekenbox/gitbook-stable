@@ -5,6 +5,7 @@
 ## About
 
 * [What's new?](about/whats-new/README.md)
+  * [New in v15](about/whats-new/new-in-v15.md)
   * [New in v13 / v14](about/whats-new/new-in-v13-v14.md)
   * [New in v12](about/whats-new/new-in-v12.md)
   * [New in v11](about/whats-new/new-in-v11.md)
