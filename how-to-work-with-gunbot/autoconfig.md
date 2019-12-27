@@ -1024,7 +1024,7 @@ It can contain one or more variables, their value can be filtered as exact match
 
 In case you set a variable that was previously set with a different value, the new value will overwrite the old one. Setting one variable has no effect on other possible variables that are already set.
 
-All variables are written to file and are imported anytime Gunbot restarts. Please be aware that this won't always work, file corruption can happen - for example when a write action is happening right in the moment that Gunbot is closed. It's a good idea to not fully depend on saved variables, and run the jobs that set them relatively frequent.
+All variables are written to file and are imported anytime Gunbot restarts. Please be aware that this won't always work, file corruption can happen - for example when a write action is happening right in the moment that Gunbot is closed. It's a good idea to not fully depend on saved variables, and run the jobs that set them relatively frequently.
 
 To read a variable, use the filter type `variableExact`. It can be used in all job types.
 
@@ -1040,6 +1040,18 @@ This filter type will return true when `userVariable1` has a value of `true`.
 {% hint style="info" %}
 Variables are entirely optional. It's no problem when no `setVariable` exists in a job.
 {% endhint %}
+
+The same job that sets a variable, can also **reset** them in case no pairs passed all filters. This option is called `resetVariable`.
+
+`resetVariable` looks like this:
+
+```text
+"resetVariable": {
+            "userVariable1": true
+},
+```
+
+It can contain one or more variables, their value can be filtered as exact match only. Besides true/false, you could also set number values, or strings.
 
 
 

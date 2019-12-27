@@ -1,18 +1,14 @@
 ---
 description: >-
   Here's a quick overview of the most important changes introduced with Gunbot
-  v16.
+  v15.
 ---
 
 # What's new?
 
-Gunbot v16 adds several new features and fixes known issues. 
+Gunbot v15 is a major release: it includes support for over 100 new exchanges - including Binance US and HitBTC - and a pre release of AutoConfig. 
 
 ## **Upgrading**
-
-**There are no config changes for v16. In case you are upgrading from v15, replacing only the executable file** \(gunthy-win.exe / gunthy-linux / gunthy-macos / gunthy-arm\) **is all that's needed to upgrade.**
-
-In case you are upgrading from v14, use the instructions below.
 
 [Download](../../setup-and-general-settings/installation/download.md) the update and unpack it to a new folder, copy the `config.js` and `gunbotgui.db` files from your previous installation into the new folder to keep your settings.
 
@@ -24,24 +20,25 @@ In case you are upgrading from v14, use the instructions below.
 * When you use email alerts, make sure the [syntax of your alerts](../../setup-and-general-settings/preferences/tradingview-add-on.md#alert-message-contents) is correct.
 * If you also want to migrate your settings for the Telegram bot, copy the `tgconfig.json` file to your new folder as well.
 
-## New features / changes in v16
+## New features / changes in v15
 
-* **Support for specifying order rates for trades using TV add-on:** Limit orders can now be placed at a rate [specified in your alert](../../setup-and-general-settings/preferences/tradingview-add-on.md#alert-message-contents). 
-* **More filter types for AutoConfig:** several [new ticker filters](../../how-to-work-with-gunbot/autoconfig.md#ticker-filters) for adding pairs with AutoConfig.
-* **Backtesting option for Autoconfig:** simulate your filter settings for adding on historic ticker data.
-
-\*\*\*\*
+* **Over 100 new supported exchanges:** Gunbot now [supports](../supported-exchanges.md) spot trading on all exchanges supported by the [ccxt library](https://github.com/ccxt/ccxt/wiki/Exchange-Markets)! This includes support for email alerts through the TradingView add-on.
+* **Trading fees setting moves to exchange section:** for easier strategy handling, the TRADING\_FEES setting is now configurable per exchange. It's no longer a strategy setting.
+* **Limit orders for TradingView add-on:** optionally you can now let the TradingView add-on place limit orders instead of market orders.
+* **Pre-release of AutoConfig:** with [AutoConfig ](../../how-to-work-with-gunbot/autoconfig.md)you can automate all kinds of things you previously could only do by hand. For example you can use it automatically add high volume trading pairs, assign a bag handling strategy for pairs that are not performing well, or automatically update pair overrides. It's called a pre-release because there no GUI for it yet, it's fully functional though.
 
 ## **Gunbot core bugfixes**
 
 Notable fixes:
 
-* Fix several cases where a sell trailing range would no longer update. 
-* Fixes for amounts for trades using the TradingView add-on
-* Fix support for Yobit \(and likely many other exchanges with a similar issue\).
-* Fixes for Kumex: prices, ROE trailing and UTA on \(MM only\).
-* Use AUD-BTC as BTC-MFI pair on btcmarkets.
-* Add support for M20 futures on Bitmex.
+* Bring back Telegram integration for the ARM edition.
+* Porting many small exchange fixes from bitRage to Gunbot.
+* Fix an issue that could cause unwanted restarts on Poloniex.
+* Fix "bought already" problem that prevented trading for some users.
+* Fix two long standing bugs that caused trailing to sometimes not trigger an order.
+* Fix an issue on Kraken and Bittrex that caused all pairs to wait when there was an open order for a single pair.
+* Fix an issue that could sometimes invert ROE on Bitmex.
+* Fix for TV stoploss alerts.
 
 
 

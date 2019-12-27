@@ -1,6 +1,6 @@
 ---
 description: >-
-  This wiki is written for the latest stable Gunbot release: v16. Includes
+  This wiki is written for the latest stable Gunbot release: v15. Includes
   support for over 100 exchanges!
 ---
 
