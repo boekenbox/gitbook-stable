@@ -16,7 +16,7 @@
   * [New in v6](about/whats-new/new-in-v6.md)
 * [Supported exchanges](about/supported-exchanges.md)
 * [System requirements](about/system-requirements.md)
-* [Purchasing Gunbot](https://gunthy.org/forum/index.php?topic=1241.0)
+* [Purchasing Gunbot](https://gunthy.org/resellers)
 
 ## Setup & general settings
 
