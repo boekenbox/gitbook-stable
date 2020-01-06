@@ -378,7 +378,7 @@ The example below shows a job that does the following:
         },
         "delay": 10,
         "schedule": "* * * * *",
-        "type": "manageOverrides"
+        "type": "changeDelay"
   }
 }
 ```
