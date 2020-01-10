@@ -32,10 +32,6 @@ This page shows the minimum required settings per exchange to create a working A
 
 ![](https://user-images.githubusercontent.com/2372008/41608794-a3136f1a-73e9-11e8-9785-40bc7b28c4cc.png)
 
-## Cryptopia
-
-![](https://user-images.githubusercontent.com/2372008/41608795-a3382698-73e9-11e8-8b42-a8e6974f6631.png)
-
 ## Coinbase Pro
 
 ![](https://user-images.githubusercontent.com/2372008/43724347-063e0ed0-999a-11e8-9370-6bbf43fbdce7.png)
