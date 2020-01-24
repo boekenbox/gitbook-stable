@@ -986,7 +986,7 @@ For job types: `manageOverrides`, `changeDelay`, `removePairs2`, `changeStrategy
 
 State filters use data from the internal ledger in Gunbot, which has all data for pairs that already cycled since Gunbot last \(re\)started.
 
-![Available pair state filters](../.gitbook/assets/image%20%2856%29.png)
+![Available pair state filters](../.gitbook/assets/image%20%2857%29.png)
 
 Formula used in `differenceBigger`:  
 `100 * ((ema2 - ema1) / ema1) > delta`
@@ -1180,7 +1180,7 @@ The data source for backtesting is set with the `"tickersFolder"` parameter. Set
 * Data is read from either exchange tickers or the internal Gunbot memory with pair state info. To find out which pair state data to filter on is available, look in the pairs state file in the Gunbot `/json` folder.
 * Almost every key/value in pair state files can be filtered, as long as they are on the first level \(not inside additional arrays or objects\)
 
-![First level elements like these can be used for filtering.](../.gitbook/assets/image%20%2859%29.png)
+![First level elements like these can be used for filtering.](../.gitbook/assets/image%20%2860%29.png)
 
 ![Elements like these cannot be used for filtering.](../.gitbook/assets/image%20%288%29.png)
 
