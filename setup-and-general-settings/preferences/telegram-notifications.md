@@ -132,7 +132,7 @@ Parameter name in `config.js`: `chat_id`
 {% endtab %}
 {% endtabs %}
 
-### Admin ID
+### Admin ID / User ID
 
 {% tabs %}
 {% tab title="Description" %}
@@ -150,7 +150,7 @@ Multiple IDs can be entered as a comma separated list.
 {% endtab %}
 
 {% tab title="Name" %}
-Parameter name in `config.js`: `admin_id`
+Parameter name in `config.js`: `user_id`
 {% endtab %}
 {% endtabs %}
 
