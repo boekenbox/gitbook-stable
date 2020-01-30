@@ -192,7 +192,7 @@ This parameter is irrelevant for trading at Bitmex.
 {% endtab %}
 
 {% tab title="Name" %}
-Parameter name in `config.js`: `MIN_VOLUME_TO_SELL`
+Parameter name in `config.js`: `MIN_VOLUME_TO_BUY`
 {% endtab %}
 {% endtabs %}
 
@@ -230,7 +230,7 @@ This parameter is irrelevant for trading at Bitmex.
 {% endtab %}
 
 {% tab title="Name" %}
-Parameter name in `config.js`: `MIN_VOLUME_TO_BUY`
+Parameter name in `config.js`: `MIN_VOLUME_TO_SELL`
 {% endtab %}
 {% endtabs %}
 
