@@ -60,6 +60,10 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
       <td style="text-align:left">Sell BTC for USDT</td>
     </tr>
     <tr>
+      <td style="text-align:left">SELL_EXCHANGE_USDT-BTC_0.1</td>
+      <td style="text-align:left">Sell USDT for BTC with a trading limit of 0.1 BTC</td>
+    </tr>
+    <tr>
       <td style="text-align:left">STOPLOSS_EXCHANGE_BTC-ETH</td>
       <td style="text-align:left">Sell ETH for BTC if stoploss is triggered</td>
     </tr>
