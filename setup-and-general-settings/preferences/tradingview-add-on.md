@@ -140,7 +140,7 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
 </table>{% hint style="info" %}
 **Note about trading limits**
 
-On **Bitmex**, every setting related to trading limits for margin trading must be specified in contracts.   
+On **futures exchanges** every setting related to trading limits for margin trading must be specified in contracts.   
   
 On **all other supported margin exchanges**, every setting related to margin trading limits must be specified in amounts of quote currency.
 {% endhint %}
@@ -340,7 +340,7 @@ Parameter name in `config.js`: `TV_PROTECTION`
 When enabled, an entire position will be closed upon receiving a close command - even if the position is bigger than the set trading limits.
 
 {% hint style="warning" %}
-**Only works for Bitmex.**
+**Only works for margin trading.**
 {% endhint %}
 {% endtab %}
 

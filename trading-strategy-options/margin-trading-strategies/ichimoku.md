@@ -1,6 +1,6 @@
 # Ichimoku
 
-This page describes how margin trading on Bitmex works with the [ichimoku](https://github.com/GuntharDeNiro/BTCT/wiki/Ichimoku) strategy. The triggers for trades are slightly different than in the same strategy for regular trading.
+This page describes how margin trading works with the [ichimoku](https://github.com/GuntharDeNiro/BTCT/wiki/Ichimoku) strategy. The triggers for trades are slightly different than in the same strategy for regular trading.
 
 ## How to work with this strategy
 

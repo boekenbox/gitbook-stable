@@ -21,7 +21,7 @@ When you set this to 0.1 and trade BTC-x pairs, Gunbot will place a buy order wo
 When trading a fiat pair like USD-x, set a whole number like 100 as trading limit.
 
 {% hint style="info" %}
-Bitmex: enter the desired number of contracts.
+Margin: enter the desired number of contracts.
 {% endhint %}
 {% endtab %}
 
@@ -57,7 +57,7 @@ Alternative method for setting the investment per buy order as a percentage of t
 Any value above 0 makes Gunbot ignore `TRADING_LIMIT` and uses the set percentage instead. For example: when set to 10, trading BTC-ALT and you have 1 BTC available at the time Gunbot places a buy order, an order of 0.1 BTC is placed.
 
 {% hint style="info" %}
-This parameter is irrelevant for trading at Bitmex.
+This parameter is irrelevant for margin trading.
 {% endhint %}
 {% endtab %}
 
@@ -125,7 +125,7 @@ For example: when `KEEP_QUOTE` is set to 10 for trading BTC-BNB, then Gunbot wil
 To make sure trading continues after a sell order where an amount of quote is kept, make sure to set `MIN_VOLUME_TO_SELL` at least higher than the assumed value of the kept quote \(expressed in base currency\). When you do not do this, and set `MIN_VOLUME_TO_SELL` lower than the value of quote kept, Gunbot will attempt to sell again after the initial sell order \(as balance is higher than `MIN_VOLUME_TO_SELL`\) - which won't succeed since you only own the amount specified in `KEEP_QUOTE`.
 
 {% hint style="info" %}
-This parameter is irrelevant for trading at Bitmex.
+This parameter is irrelevant for margin trading.
 {% endhint %}
 {% endtab %}
 
@@ -147,6 +147,10 @@ Parameter name in `config.js`: `KEEP_QUOTE`
 Sets an amount of base currency that will not be traded. For a BTC-x pair, funds in BTC would be reserved according to this setting. For ETH- pairs ETH would be reserved, etc. It is recommended to use the same value for all pairs of the same base currency you run.
 
 For example: when funds reserve is set to 0.5 for trading BTC-x pairs then 0.5 BTC will not be used by Gunbot.
+
+{% hint style="info" %}
+This parameter is irrelevant for margin trading.
+{% endhint %}
 {% endtab %}
 
 {% tab title="Values" %}
@@ -192,7 +196,7 @@ This parameter is irrelevant for trading at Bitmex.
 {% endtab %}
 
 {% tab title="Name" %}
-Parameter name in `config.js`: `MIN_VOLUME_TO_SELL`
+Parameter name in `config.js`: `MIN_VOLUME_TO_BUY`
 {% endtab %}
 {% endtabs %}
 
@@ -230,7 +234,7 @@ This parameter is irrelevant for trading at Bitmex.
 {% endtab %}
 
 {% tab title="Name" %}
-Parameter name in `config.js`: `MIN_VOLUME_TO_BUY`
+Parameter name in `config.js`: `MIN_VOLUME_TO_SELL`
 {% endtab %}
 {% endtabs %}
 

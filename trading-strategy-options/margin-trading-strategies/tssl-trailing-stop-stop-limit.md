@@ -1,6 +1,6 @@
 # Tssl \(trailing stop / stop limit\)
 
-This page describes how margin trading on Bitmex works with the TSSL strategy. The triggers for trades are slightly different than in the same strategy for regular trading.
+This page describes how margin trading works with the TSSL strategy. The triggers for trades are slightly different than in the same strategy for regular trading.
 
 ## How to work with this strategy
 

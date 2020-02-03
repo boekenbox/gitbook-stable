@@ -223,7 +223,7 @@ There is no include options for this filter type. Pairs in your config \(that ha
 
 \*\*\*\*
 
-**Other obligatory parameter:**
+**Other obligatory parameters:**
 
 **strategy:** the target strategy to set for pairs matching all filters.
 
@@ -349,7 +349,7 @@ Excluded items do not need to be whole pair names, as long as part of the string
 
 \*\*\*\*
 
-**Other obligatory parameter:**
+**Other obligatory parameters:**
 
 **delay**: exchange delay in seconds, this value will be set when one or more pairs in the job pass all filters.
 
@@ -385,7 +385,159 @@ The example below shows a job that does the following:
 
 
 
-### Hedge \(specific to bitRage\)
+### Manage bot settings
+
+**Type names in config:** `manageBotSettings` \(uses [state filters](autoconfig.md#pair-state-filters)\).
+
+_This job type is basically the same as how changeStrategy works, but this type is able to change the global bot settings._
+
+You must have at least one pair set per exchange you use this job type on. 
+
+**Job output:** change assigned parameters in the bot section. Happens when at least one pair passes all filters
+
+\*\*\*\*
+
+**Pair options:**
+
+**exclude**: pairs that should not be filtered. Any active pair that matches any of the excludes, won't be processed. 
+
+Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
+
+There is no include options for this filter type. Pairs in your config \(that have already cycled in Gunbot\) are basically the list of includes.
+
+\*\*\*\*
+
+**Other obligatory parameters:**
+
+**bot:** the target bot settings.
+
+\*\*\*\*
+
+#### Config example
+
+```javascript
+{
+"botsettings": {
+"pairs": {
+"exclude": "",
+"include": "BTC-",
+"exchange": "binance"
+},
+"filters": {
+"price": {
+"type": "biggerThan",
+"Ask": 0.00000001
+}
+},
+"bot": {
+"BOT_DELAY": 20,
+"BOT_CCLEAN": 9991
+},
+"schedule": "*   * *",
+"type": "manageBotSettings"
+}
+}
+```
+
+
+
+### Hedge \(for Gunbot\)
+
+**Type names in config:** `hedgeGB` \(uses [ticker filters](autoconfig.md#ticker-filters)\) or `hedgeGB2` \(uses [state filters](autoconfig.md#pair-state-filters)\).
+
+You must have at least one pair set per exchange you use this job type on.
+
+
+
+**Job output:** 
+
+You can define a "hedge pair" like USDT-BTC, between which Gunbot should hedge when the market conditions are right for it. If you prefer hedging between completely other currrencies, like BTC-ETH - you can do that too.
+
+It works with two autoconfig jobs, in which you define when it should hedge and to which currency it should hedge.
+
+* When a pair can be hedged without intermediate pair, autoconfig will change a pair like BTC-ETH to USDT-ETH and panic sell directly to ETH.
+* When an intermediate pair is needed, the pair will be panic sold first and then traded on the defined hedge pair.
+
+\*\*\*\*
+
+**Pair options:**
+
+Pair filtering is hardcoded to the defined hedge pair.
+
+**exclude**: used as placeholder
+
+**bag:** used as placeholder
+
+**baseFrom:** base currency to hedge away from
+
+**baseTo:** base currency to hedge to
+
+**hedgePair:** pair used for hedging, like USDT-BTC
+
+\*\*\*\*
+
+**Other obligatory parameters:**
+
+**setVariable:** hedging will only work when both hedging jobs set a variable with the currency it last hedged to, this makes sure that the direction can be tracked for the next hedging action.
+
+
+
+#### Config example
+
+You'll need two jobs to do this, one for each hedging direction:
+
+```javascript
+{
+"hedging": {
+"pairs": {
+"exclude": "",
+"exchange": "binance",
+"bag": false,
+"baseFrom": "BTC",
+"baseTo": "USDT",
+"hedgePair": "USDT-BTC"
+},
+"filters": {
+"filter1": {
+"type": "yourTickerFilter",
+"min": "0.0000000001"
+},
+"filter2": {
+"type": "variableNotExist",
+"hegdedTo": "BTC"
+}
+},
+"filters2": {
+"filter1": {
+"type": "yourTickerFilter",
+"min": "0.0000000001"
+},
+"filter2": {
+"type": "variableExact",
+"hegdedTo": "BTC"
+}
+},
+"setVariable": {
+"hegdedTo": "USDT"
+},
+"strategy": "gain",
+"schedule": "1 /4  * *",
+"type": "hedgeGB",
+"debug": false
+}
+}
+```
+
+The second job would be a mirror job, with all hedge currencies reversed.
+
+Two important notes:
+
+* keep the hedge pair in your config at all times, prefably with buy/sell disabled to avoid crossover between base/quote.
+* set the filter for "type": "variableNotExist", ONLY in the job that will take care of the next hedging action. For example, when you start out with BTC-x pairs only, add this filter to the job that hedges to USDT.
+
+### 
+
+### Hedge \(for bitRage\)
 
 **Type name in config:** `hedge`
 
@@ -490,6 +642,58 @@ The example below shows a job that does the following:
 
 ### 
 
+### Filtered quote \(for bitRage\)
+
+**Type name in config:** filteredQuote
+
+This job type uses [ticker filters](autoconfig.md#ticker-filters).
+
+**Job output:** It adds the quote of each pair passing all filters to the filteredQuote list. Each time the job runs, the list gets completely replaced with the new results.
+
+
+
+**Pair options:**
+
+**include:** included pairs \(processed first\). Any pair on the exchange that matches any of the includes, will be processed**.** In case you also use the exclude option, the resulting pairs after processing the includes is the starting point for processing excludes, which will remove items from this list of pairs.
+
+Included items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be included. Input as comma separated list, does not accept spaces between items. Can not be empty.
+
+**exclude**: excluded pairs \(processed last\). Any pair on the exchange that matches any of the excludes, won't be processed. 
+
+Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
+
+
+
+#### Config example
+
+The example below would do the following:
+
+* scan all binance BTC-x pairs
+* find pairs with a bid/ask spread higher than 0.7%
+* save the quote coins from these pairs in the filteredQuote list.
+
+```javascript
+{
+"filteredQuote": {
+"pairs": {
+"include": "BTC-",
+"exclude": "",
+"exchange": "binance"
+},
+"filters": {
+"spread": {
+"type": "minSpreadPct",
+"min": 0.7
+},
+"schedule": "* * * * *",
+"type": "filteredQuote",
+"debug": false
+}
+}
+```
+
+\*\*\*\*
+
 ### Optional parameters
 
 Jobs can be extended with additional parameters, some work in all job types, some are specific to certain job types.
@@ -522,6 +726,8 @@ Jobs can be extended with additional parameters, some work in all job types, som
 
 **setITB** \(true/false\): When true, each pair matching all filters will get an additional `IGNORE_TRADES_BEFORE` override, the value being the timestamp for the time the job ran.
 
+**delay** \(time in seconds\): When set, the exchange delay gets adjusted to the specified value when at least one pair passes all filters. For manageOverrides only.
+
 
 
 #### Optional parameters for `addPairs`
@@ -529,6 +735,8 @@ Jobs can be extended with additional parameters, some work in all job types, som
 **overrides**: this job type can also add overrides when it adds new pairs. To do so, add a section with overrides to the job, just like you would in a `manageOverrides` job.
 
 **Bitrage filters:** when used for Bitrage, you can have an addPairs job replace the contents of the exchange filter settings. To do so, add the filters in the pair section of the job as shown below:
+
+**noCrossOver** \(true/false\): needs to be put in the pairs section. When set, Autoconfig will never add two pairs with different Base but the same Quote currency.
 
 ```javascript
 "pairs": {
@@ -783,11 +991,41 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
           <li>max snapshot count is reached</li>
           <li>price is within a defined range from the lower band</li>
         </ul>
+        <p>(it would detect a downwards breakout from an upwards channel)</p>
+        <p></p>
         <p>Range 0 = same price as lower band</p>
         <p>Range 100 = same price as upper band</p>
       </td>
       <td style="text-align:left"><code>lastSnapshots</code>
       </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>bearishStandardDeviationChannel</code>
+      </td>
+      <td style="text-align:left">
+        <p>It works similar to described here: <a href="http://www.forexpromos.com/what-is-standard-deviation-channel">http://www.forexpromos.com/what-is-standard-deviation-channel</a>
+        </p>
+        <p></p>
+        <p>The filter passes when:</p>
+        <ul>
+          <li>slopePct is negative</li>
+          <li>max snapshot count is reached</li>
+          <li>price is within a defined range from the upper band</li>
+        </ul>
+        <p>(it would detect an upwards breakout from a downwards channel)</p>
+        <p></p>
+        <p>Range 0 = same price as upper band</p>
+        <p>Range 100 = same price as lower band</p>
+      </td>
+      <td style="text-align:left"><code>lastSnapshots</code>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>allowsHedging</code>
+      </td>
+      <td style="text-align:left">Filter returns true if a pair can be hedged to another base currency without
+        using an intermediate pair.</td>
+      <td style="text-align:left">n/a</td>
     </tr>
     <tr>
       <td style="text-align:left"><code>buyTrailing</code>
@@ -817,13 +1055,18 @@ The extra input called `lastSnapshots` lets you use only the last x snapshots to
 
 If for example your job collects 100 snapshots but you want a specific filter to only use the last 10 snapshots to calculate slope, you can do that.
 
-**Usage example:**
+**Usage examples:**
 
 ```javascript
 "maxStandardDevPctInterval": {
   "type": "minVolumePctChangeInterval",
    "max": 1,
    "lastSnapshots": 3
+}
+
+"hedge": {
+"type": "allowsHedging",
+"BTC": "USDT"
 }
 ```
 
@@ -897,6 +1140,8 @@ Most ticker filters are also available as `*History` variant. These work in the 
 * `maxSlopePctIntervalHistory`
 * `minStandardDevPctIntervalHistory`
 * `maxStandardDevPctIntervalHistory`
+* `bearishStandardDeviationChannelHistory`
+* `bullishStandardDeviationChannelHistory`
 
 History filters take one additional input, defining which history data should be used. the config for a history filter looks like:
 
@@ -996,9 +1241,86 @@ Formula used in `differenceSmaller`:
 
 _Formula examples use ema1 and ema2 like set in the screenshot above. Of course you can compare any two keys. The position of the keys to compare in the config file do matter._
 
+\_\_
+
+### Generic filters
+
+Generic filters can be used in any job type, regardless if they primarily use ticker or state filters.
+
+| _Type_ | Description |
+| :--- | :--- |
+| `variableExact` | Filter returns true when variable value is exactly as defined. |
+| `variableNotExist` | Filter returns true when variable key does not \(yet\) exist. |
+| `pairVariableExact` | Filter returns true when pair specifc variable is exactly as defined. |
+| `strategyName` | Filter returns true when strategy of an enabled pair is like defined. |
+| `minTimeInConfig` | Filter returns true when pair is longer in config than a set value in minutes. |
+| `maxTimeInConfig` | Filter returns true when pair is not longer in config than a set value in minutes. |
+| `maxSameOrder` | Filter returns true when last x orders for different pairs do NOT have the same defined type |
+| `minTimeSinceOrder` | Filter returns true when at least x minutes have passed since a defined order type, for the same pair. |
+| `maxTimeSinceOrder` | Filter returns true when at most x minutes have passed since a defined order type, for the same pair. |
+
+Config building blocks for generic filters:
+
+```text
+"timeSince": {
+"type": "maxTimeSinceOrder",
+"min": 30,
+"trigger": "StopLimit"
+}
+
+Usage:
+"change": {
+"type": "minPricePctChangeLastOrder",
+"delta": 1,
+"trigger": "StrategyBuy"
+}
+
+"time": {
+"type": "minTimeInConfig",
+"min": 60
+},
+
+"time": {
+"type": "maxTimeInConfig",
+"max": 90
+} 
+
+"var": {
+"type": "variableNotExist",
+"hedge": "BTC"
+}
+
+"strat": {
+"type": "strategyName",
+"name": "moon"
+}
+
+"sameOrders": {
+"type": "maxSameOrder",
+"lastOrders": 4,
+"trigger": "StrategyBuy"
+}
+```
+
+ **Available trigger types for filters using triggers.** 
+
+Note: only the most recent order for each pair is available for analysis, the orders must be placed by a Gunbot strategy. Data is kept between restarts, also for pairs that are no longer actively traded with Gunbot.
+
+* StrategyBuy
+* StrategySell
+* StopLimit
+* Close
+* RTSell
+* RTBuy
+* RTBuyback
+* DCA
+* Cancelled
+
 ### User Variables
 
 Each job can set one or more user defined variables, which can be used to filter on in other jobs.
+
+You can use both global variables, and pair specific variables.
 
 This allows for more complex, but also easier to handle, filter setups, because:
 
@@ -1022,6 +1344,15 @@ A job sets a variable when:
 
 It can contain one or more variables, their value can be filtered as exact match only. Besides true/false, you could also set number values, or strings.
 
+To use pair specific variables, use a block like this:
+
+```text
+"setPairVariable": {
+"awesomeVariable": true,
+"evenBetter": true
+},
+```
+
 In case you set a variable that was previously set with a different value, the new value will overwrite the old one. Setting one variable has no effect on other possible variables that are already set.
 
 All variables are written to file and are imported anytime Gunbot restarts. Please be aware that this won't always work, file corruption can happen - for example when a write action is happening right in the moment that Gunbot is closed. It's a good idea to not fully depend on saved variables, and run the jobs that set them relatively frequently.
@@ -1036,6 +1367,15 @@ To read a variable, use the filter type `variableExact`. It can be used in all j
 ```
 
 This filter type will return true when `userVariable1` has a value of `true`.
+
+Pair variables can be read with a filter like this:
+
+```text
+"pairVar": {
+"type": "pairVariableExact",
+"awesomeVariable": true
+}
+```
 
 {% hint style="info" %}
 Variables are entirely optional. It's no problem when no `setVariable` exists in a job.
@@ -1053,7 +1393,14 @@ The same job that sets a variable, can also **reset** them in case no pairs pass
 
 It can contain one or more variables, their value can be filtered as exact match only. Besides true/false, you could also set number values, or strings.
 
+To reset pair specific variables, use a block like this:
 
+```text
+"resetPairVariable": {
+"awesomeVariable": false,
+"evenBetter": false
+},
+```
 
 ### Multiple filter sets
 
@@ -1178,13 +1525,14 @@ The data source for backtesting is set with the `"tickersFolder"` parameter. Set
 * Each job can contain an optional "`debug": true` line, when set the job will show detailed console log output for the filters in this job. Only use this in the moment you really need it, it can slow down Gunbot performance significantly due to the large amount of data that needs to be logged to the console.
 * Things that make AutoConfig crash:  change the exchange for a ticker filtering job while having `"resume": true`, using a non-existent key in a state filter, etc.
 * Data is read from either exchange tickers or the internal Gunbot memory with pair state info. To find out which pair state data to filter on is available, look in the pairs state file in the Gunbot `/json` folder.
+* You can disable telegram notifications per job, just include this line in your job: `"muteTG": true`
 * Almost every key/value in pair state files can be filtered, as long as they are on the first level \(not inside additional arrays or objects\)
 
 ![First level elements like these can be used for filtering.](../.gitbook/assets/image%20%2860%29.png)
 
 ![Elements like these cannot be used for filtering.](../.gitbook/assets/image%20%288%29.png)
 
-## Example config with all possible job types and filters
+## Example config with many job types and filters
 
 You don't want to use this ever in this form, but use it as reference for how each job can be formatted.
 

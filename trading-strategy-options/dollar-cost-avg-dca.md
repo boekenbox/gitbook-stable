@@ -57,7 +57,7 @@ Be careful about the set ratio and frequency, make sure you have enough free fun
 
 ## Relevant settings
 
-Following settings options are available Double Up.
+Following settings options are available Double Up. None of them are relevant in margin strategies.
 
 ### Double Up
 

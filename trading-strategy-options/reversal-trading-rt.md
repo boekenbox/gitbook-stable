@@ -59,7 +59,7 @@ _This flowchart shows the basic steps for reversal trading, not considering addi
 
 ## Relevant settings
 
-Following settings options are available for reversal trading.
+Following settings options are available for reversal trading. None of them are relevant in margin strategies.
 
 ### RT Enabled
 

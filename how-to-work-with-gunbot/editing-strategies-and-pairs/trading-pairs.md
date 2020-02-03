@@ -40,6 +40,32 @@ The format is: **BASECOIN-QUOTECOIN**, where the base coin is the one used to bu
 
 To start trading on a new pair, just enter the pair name, pick the exchange and strategy and hit the **Add** button. When you want to temporarily stop trading a pair, use the **Enabled** toggle to disable the pair.
 
+
+
+### Pair naming conventions 
+
+Gunbot normalizes pair notation, where possible it uses this notation: BASECOIN-QUOTECOIN 
+
+All pairs with BTC as base currency are written like: BTC-ETH, BTC-OK, BTC-XLM 
+
+All pairs with USDT as base currency are written like: USDT-BTC, USDT-ETH, USDT-XMR 
+
+### Exceptions 
+
+For a few coins on **Bitfinex**, the API display name is required. These are: IOTA = IOT, DASH = DSH, QTUM = QTM, DATA = DAT, QASH = QSH 
+
+**Kraken** calls Bitcoin XBT, use BTC instead. 
+
+Pairs on **Bitmex** use almost the same symbols as on Bitmex itself, but with a hyphen-minus between the two asset names. Example: XBT-USD 
+
+Pairs on **Kraken Futures** follow the following conventions:
+
+* Perpetual contracts: XBT-USD, ETH-USD, LTC-USD, etc.
+* Monthly futures: XBT-MONTH, ETH-MONTH, LTC-MONTH, etc
+* Quarterly futures: XBT-QUART, ETH-QUART, LTC-QUART, etc
+
+
+
 {% hint style="info" %}
 **Pair naming conventions**
 
@@ -58,6 +84,8 @@ IOTA = IOT, DASH = DSH, QTUM = QTM, DATA = DAT, QASH = QSH
 Kraken calls Bitcoin XBT, use BTC instead.
 
 Pairs on Bitmex use almost the same symbols as on Bitmex itself, but with a hyphen-minus between the two asset names. Example: XBT-USD
+
+Pairs on Kraken Futures follow the following conventions
 {% endhint %}
 
 ## Override settings

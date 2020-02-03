@@ -19,7 +19,7 @@ After a stop limit sell order has been placed, the bot will go into buying mode 
 Setting a stop limit at 60 would make sure that all holdings for a coin are sold when 60% value is lost, compared to the averaged bought price. E.g. average bought price is 100, stop limit is executed at 40 and all assets are sold.
 
 {% hint style="info" %}
-On Bitmex, the stop limit is set as a ROE value. Setting it to 1 will lead to the stop limit triggering when ROE reaches -1. Use a value that includes your leverage.
+With margin trading, the stop limit is set as a ROE value. Setting it to 1 will lead to the stop limit triggering when ROE reaches -1. Use a value that includes your leverage.
 
 It's recommended to use STOP\_BUY / STOP\_SELL instead, when possible.These are placed at the same time as the position is opened.
 {% endhint %}
@@ -187,7 +187,7 @@ Sets a maximum number of sell orders before automatically disabling a pair.
 Setting this to 5 disables the pair after 5 strategy sell orders took place \(not including RT\). No further trades will happen until you re-enable the pair. The `COUNT_SELL` counter gets reset after a pair is re-enabled.
 
 {% hint style="info" %}
-This parameter is irrelevant for trading at Bitmex.
+This parameter is irrelevant for margin trading.
 {% endhint %}
 {% endtab %}
 
@@ -279,7 +279,7 @@ This parameter should only be used as an override.
 The override is only valid when no bought price can be retrieved from the exchange. In case you want to forcefully override an available bought price, you can apply `IGNORE_TRADES_BEFORE` and remove the pairs state json file after doing so.
 
 {% hint style="info" %}
-This parameter is irrelevant for trading at Bitmex.
+This parameter is irrelevant for margin trading
 {% endhint %}
 {% endtab %}
 
