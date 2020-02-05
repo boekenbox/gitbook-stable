@@ -7,16 +7,12 @@ description: >-
 
 # AutoConfig
 
-
-
 {% hint style="success" %}
 Available for Gunbot Standard and higher.
 {% endhint %}
 
 {% hint style="info" %}
 Currently there is no GUI for AutoConfig. You'll need to create your own `autoconfig.json` config file, which contains the jobs it should run.
-
-The [config marketplace](https://marketplace.gunthy.io/) has a growing number of free AutoConfig examples.
 
 _If you are not comfortable editing config files manually, it's probably a good idea to wait until the GUI supports AutoConfig._
 {% endhint %}
@@ -1073,30 +1069,6 @@ If for example your job collects 100 snapshots but you want a specific filter to
 "BTC": "USDT"
 }
 ```
-
-
-
-Config building blocks for ticker filters:
-
-```text
-"strat": {
-    "type": "minSpreadPct",
-    "min": 0.5
-},
-"volume": {
-    "type": "belowMedianVolume"
-},
-"stdev": {
-    "type": "maxStandardDevPctInterval",
-    "max": 0.3
-},
-"channel": {
-		"type": "bullishStandardDeviationChannel",
-		"range": -10
-}
-```
-
-\_\_
 
 \_\_
 
