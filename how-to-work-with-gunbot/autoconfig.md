@@ -7,12 +7,16 @@ description: >-
 
 # AutoConfig
 
+
+
 {% hint style="success" %}
 Available for Gunbot Standard and higher.
 {% endhint %}
 
 {% hint style="info" %}
 Currently there is no GUI for AutoConfig. You'll need to create your own `autoconfig.json` config file, which contains the jobs it should run.
+
+The [config marketplace](https://marketplace.gunthy.io/) has a growing number of free AutoConfig examples.
 
 _If you are not comfortable editing config files manually, it's probably a good idea to wait until the GUI supports AutoConfig._
 {% endhint %}
