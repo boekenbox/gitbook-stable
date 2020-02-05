@@ -1070,6 +1070,30 @@ If for example your job collects 100 snapshots but you want a specific filter to
 }
 ```
 
+
+
+Config building blocks for ticker filters:
+
+```text
+"strat": {
+    "type": "minSpreadPct",
+    "min": 0.5
+},
+"volume": {
+    "type": "belowMedianVolume"
+},
+"stdev": {
+    "type": "maxStandardDevPctInterval",
+    "max": 0.3
+},
+"channel": {
+		"type": "bullishStandardDeviationChannel",
+		"range": -10
+}
+```
+
+\_\_
+
 \_\_
 
 #### Trailing filters
