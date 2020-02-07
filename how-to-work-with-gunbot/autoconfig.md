@@ -7,12 +7,16 @@ description: >-
 
 # AutoConfig
 
+
+
 {% hint style="success" %}
 Available for Gunbot Standard and higher.
 {% endhint %}
 
 {% hint style="info" %}
 Currently there is no GUI for AutoConfig. You'll need to create your own `autoconfig.json` config file, which contains the jobs it should run.
+
+The [config marketplace](https://marketplace.gunthy.io/) has a growing number of free AutoConfig examples.
 
 _If you are not comfortable editing config files manually, it's probably a good idea to wait until the GUI supports AutoConfig._
 {% endhint %}
@@ -1070,6 +1074,30 @@ If for example your job collects 100 snapshots but you want a specific filter to
 }
 ```
 
+
+
+Config building blocks for ticker filters:
+
+```text
+"strat": {
+    "type": "minSpreadPct",
+    "min": 0.5
+},
+"volume": {
+    "type": "belowMedianVolume"
+},
+"stdev": {
+    "type": "maxStandardDevPctInterval",
+    "max": 0.3
+},
+"channel": {
+		"type": "bullishStandardDeviationChannel",
+		"range": -10
+}
+```
+
+\_\_
+
 \_\_
 
 #### Trailing filters
@@ -1231,7 +1259,7 @@ For job types: `manageOverrides`, `changeDelay`, `removePairs2`, `changeStrategy
 
 State filters use data from the internal ledger in Gunbot, which has all data for pairs that already cycled since Gunbot last \(re\)started.
 
-![Available pair state filters](../.gitbook/assets/image%20%2857%29.png)
+![Available pair state filters](../.gitbook/assets/image%20%2858%29.png)
 
 Formula used in `differenceBigger`:  
 `100 * ((ema2 - ema1) / ema1) > delta`
@@ -1528,7 +1556,7 @@ The data source for backtesting is set with the `"tickersFolder"` parameter. Set
 * You can disable telegram notifications per job, just include this line in your job: `"muteTG": true`
 * Almost every key/value in pair state files can be filtered, as long as they are on the first level \(not inside additional arrays or objects\)
 
-![First level elements like these can be used for filtering.](../.gitbook/assets/image%20%2860%29.png)
+![First level elements like these can be used for filtering.](../.gitbook/assets/image%20%2861%29.png)
 
 ![Elements like these cannot be used for filtering.](../.gitbook/assets/image%20%288%29.png)
 
