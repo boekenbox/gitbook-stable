@@ -92,7 +92,7 @@
   * [Time series analysis](strategii-dlya-treidinga/untitled-7/time-series-analysis.md)
 * [Настройки баланса](strategii-dlya-treidinga/untitled-6.md)
 * [Настройки Индикаторов](strategii-dlya-treidinga/untitled-5.md)
-* [Dollar Cost Avg \(DCA\) - Средняя стоимость доллара](strategii-dlya-treidinga/untitled-4.md)
+* [Dollar Cost Avg \(DCA\) - Усреднение](strategii-dlya-treidinga/untitled-4.md)
 * [Reversal trading \(RT\) - Разворотная торговля](strategii-dlya-treidinga/untitled-3.md)
 * [TrailMe](strategii-dlya-treidinga/untitled-2.md)
 * [Misc settings - Разные настройки](strategii-dlya-treidinga/untitled-1.md)
