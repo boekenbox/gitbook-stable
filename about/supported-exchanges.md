@@ -15,6 +15,7 @@ These exchanges are official Gunbot partners. We are in direct contact with thei
 | **HitBTC** | `hitbtc2` | Regular | Regular |
 | **Kraken Futures** | `krakenFutures` | Margin | Margin |
 | **KuCoin** | `kucoin` | Regular | Regular |
+| **OKEx** | `okex` | Regular & margin | Regular & margin |
 
 ## Certified exchanges
 
@@ -33,7 +34,6 @@ These exchanges have been supported in Gunbot for a long time, you can expect hi
 | **Coinbase Pro** | `gdax` | Regular | Regular |
 | **Huobi Global** | `huobi` | Regular | Regular & Margin |
 | **Kraken** | `kraken` | Regular | Regular & Margin |
-| **KuCoin** | `kucoin` | Regular | Regular |
 | **Poloniex** | `poloniex` | Regular | Regular & Margin |
 
 
