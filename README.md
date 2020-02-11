@@ -1,59 +1,55 @@
 ---
 description: >-
-  This wiki is written for the latest stable Gunbot release: v16. Includes
-  support for over 100 exchanges!
+  Эта вики написана для последней стабильной версии Gunbot: v16. Включает
+  поддержку более 100 бирж!
 ---
 
-# Welcome to the Gunbot wiki
+# Добро пожаловать в Вики Gunbot
 
-**Gunbot is an easy to use, advanced crypto trading bot. You define your trading strategy and watch Gunbot do the trading for you. Enabling you to get up to hundreds of profitable trades per day, 24/7.**
+**Gunbot - это простой в использовании, продвинутый бот для крипто-трейдинга. Вы определяете свою торговую стратегию и смотрите, как** **Gunbot делает торговлю за вас. Позволяет вам получать до сотни прибыльных сделок в день, 24/7.**
 
-For security reasons, Gunbot runs on your local computer or your server only. This way your trading API secret stays private, and nobody can influence or monitor your trading.
+Из соображений безопасности Gunbot работает только на вашем локальном компьютере или на вашем сервере. Таким образом, секрет вашего торгового API остается закрытым, и никто не может влиять или контролировать вашу торговлю.
 
-No need for a subscription, a one time fee gets you lifetime support and software updates.
+Нет необходимости в подписке, единовременная плата дает вам пожизненную поддержку и обновления программного обеспечения.
 
-> _We aim to build the perfect money machine._
+> _Мы стремимся построить идеальный денежный автомат._
 
-### Gunbot is used by thousands of users and has an awesome community ❤️
+## **Gunbot используется тысячами пользователей и имеет потрясающее сообщество ``**❤️
 
-![](.gitbook/assets/image%20%2826%29.png)
+![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-L_Rejuz9K0BDQxSQvUH%2F-LaLXYX6ARQBY_FcuN64%2F-LaLXZXfYroIE4dKfkQ8%2Fimage.png?alt=media&token=087e9428-ff0a-4412-adc6-7ded14e01ef6)
 
-{% page-ref page="setup-and-general-settings/installation/" %}
+{% page-ref page="installation-and-startup/" %}
 
-{% page-ref page="about/supported-exchanges.md" %}
+{% page-ref page="about-1/supported-exchanges.md" %}
 
-{% page-ref page="how-to-work-with-gunbot/basic-workings/" %}
+{% page-ref page="kak-rabotat-s-gunbot/untitled/" %}
 
-{% page-ref page="how-to-work-with-gunbot/editing-strategies-and-pairs/" %}
+{% page-ref page="kak-rabotat-s-gunbot/untitled-1/" %}
 
-### 
+## Ярлыки к описаниям стратегий
 
-### Shortcuts to strategy descriptions
-
-| Strategy | Link to regular trading description | Link to margin trading description |
+| _Стратегия_ | Ссылка на описание обычной торговли | Ссылка на описание маржинальной торговли |
 | :--- | :--- | :--- |
-| `ADX` | [Regular](trading-strategy-options/regular-strategies-spot-trading/adx.md) | [Margin](trading-strategy-options/margin-trading-strategies/adx.md) |
-| `ATRTS` | [Regular](trading-strategy-options/regular-strategies-spot-trading/atrts.md) | [Margin](trading-strategy-options/margin-trading-strategies/atrts.md) |
-| `bb` | [Regular](trading-strategy-options/regular-strategies-spot-trading/bollinger-bands.md) | [Margin](trading-strategy-options/margin-trading-strategies/bollinger-bands.md) |
-| `BBTA` | [Regular](trading-strategy-options/regular-strategies-spot-trading/bollinger-bands-ta.md) | [Margin](trading-strategy-options/margin-trading-strategies/bollinger-bands-ta.md) |
-| `EMASPREAD` | [Regular](trading-strategy-options/regular-strategies-spot-trading/ema-spread.md) | [Margin](trading-strategy-options/margin-trading-strategies/ema-spread.md) |
-| `emotionless` | [Regular](trading-strategy-options/regular-strategies-spot-trading/emotionless.md) | N/A |
-| `gain` | [Regular](trading-strategy-options/regular-strategies-spot-trading/gain.md) | [Margin](trading-strategy-options/margin-trading-strategies/gain.md) |
-| `ichimoku` | [Regular](trading-strategy-options/regular-strategies-spot-trading/ichimoku.md) | [Margin](trading-strategy-options/margin-trading-strategies/ichimoku.md) |
-| `MACD` | [Regular](trading-strategy-options/regular-strategies-spot-trading/macd.md) | [Margin](trading-strategy-options/margin-trading-strategies/macd.md) |
-| `MACDH` | [Regular](trading-strategy-options/regular-strategies-spot-trading/macdh.md) | [Margin](trading-strategy-options/margin-trading-strategies/macdh.md) |
-| `pp` | [Regular](trading-strategy-options/regular-strategies-spot-trading/pingpong.md) | [Margin](trading-strategy-options/margin-trading-strategies/pingpong.md) |
-| `stepgain` | [Regular](trading-strategy-options/regular-strategies-spot-trading/stepgain.md) | [Margin](trading-strategy-options/margin-trading-strategies/stepgain.md) |
-| `SMACROSS` | [Regular](trading-strategy-options/regular-strategies-spot-trading/sma-cross.md) | [Margin](trading-strategy-options/margin-trading-strategies/sma-cross.md) |
-| `tsa` | [Regular](trading-strategy-options/regular-strategies-spot-trading/time-series-analysis.md) | [Margin](trading-strategy-options/margin-trading-strategies/time-series-analysis.md) |
-| `tssl` | [Regular](trading-strategy-options/regular-strategies-spot-trading/tssl-trailing-stop-stop-limit.md) | [Margin](trading-strategy-options/margin-trading-strategies/tssl-trailing-stop-stop-limit.md) |
+| `ADX` | [Regular](strategii-dlya-treidinga/untitled-8/adx.md) | [Margin](strategii-dlya-treidinga/untitled-7/adx.md) |
+| `ATRTS` | [Regular](strategii-dlya-treidinga/untitled-8/atrts.md) | [Margin](strategii-dlya-treidinga/untitled-7/atrts.md) |
+| `bb` | [Regular](strategii-dlya-treidinga/untitled-8/bollinger-bands.md) | [Margin](strategii-dlya-treidinga/untitled-7/bollinger-bands.md) |
+| `BBTA` | [Regular](strategii-dlya-treidinga/untitled-8/bollinger-bands-ta.md) | [Margin](strategii-dlya-treidinga/untitled-7/bollinger-bands-ta.md) |
+| `EMASPREAD` | [Regular](strategii-dlya-treidinga/untitled-8/ema-spread.md) | [Margin](strategii-dlya-treidinga/untitled-7/ema-spread.md) |
+| `emotionless` | [Regular](strategii-dlya-treidinga/untitled-8/emotionless.md) | N/A |
+| `gain` | [Regular](strategii-dlya-treidinga/untitled-8/gain.md) | [Margin](strategii-dlya-treidinga/untitled-7/gain.md) |
+| `ichimoku` | [Regular](strategii-dlya-treidinga/untitled-8/untitled-1.md) | [Margin](strategii-dlya-treidinga/untitled-7/ichimoku.md) |
+| `MACD` | [Regular](strategii-dlya-treidinga/untitled-8/macd.md) | [Margin](strategii-dlya-treidinga/untitled-7/macd.md) |
+| `MACDH` | [Regular](strategii-dlya-treidinga/untitled-8/macdh.md) | [Margin](strategii-dlya-treidinga/untitled-7/macdh.md) |
+| `pp` | [Regular](strategii-dlya-treidinga/untitled-8/pingpong.md) | [Margin](strategii-dlya-treidinga/untitled-7/pingpong.md) |
+| `stepgain` | [Regular](strategii-dlya-treidinga/untitled-8/untitled.md) | [Margin](strategii-dlya-treidinga/untitled-7/stepgain.md) |
+| `SMACROSS` | [Regular](strategii-dlya-treidinga/untitled-8/sma-cross.md) | [Margin](strategii-dlya-treidinga/untitled-7/sma-cross.md) |
+| `tsa` | [Regular](strategii-dlya-treidinga/untitled-8/time-series-analysis.md) | [Margin](strategii-dlya-treidinga/untitled-7/time-series-analysis.md) |
+| `tssl` | [Regular](strategii-dlya-treidinga/untitled-8/tssl-trailing-stop-stop-limit.md) | [Margin](strategii-dlya-treidinga/untitled-7/tssl-trailing-stop-stop-limit.md) |
 
 {% hint style="warning" %}
-## Disclaimer
+## _**Отказ от ответственности**_
 
-The information provided on this wiki does not constitute investment advice, financial advice, trading advice, or any other sort of advice, and you should not treat any of the wiki's content as such. Gunbot does not recommend that any asset should be bought, sold, or held by you. Nothing on this website should be taken as an offer to buy, sell or hold a cryptocurrency. 
-
-Do conduct your own due diligence and consult your financial advisory before making any investment decision. Gunbot will not be held responsible for the investment decisions you make based on the information published on this wiki.
+Информация, представленная в этой вики, не является инвестиционным советом, финансовым советом, советами по торговле или любым другим видом совета, и вы не должны относиться к какому-либо контенту вики как таковому. Gunbot не рекомендует покупать, продавать или хранить какие-либо активы. Ничто на этом сайте не должно восприниматься как предложение купить, продать или держать криптовалюту. Проведите собственную экспертизу и проконсультируйтесь с финансовым консультантом, прежде чем принимать какое-либо инвестиционное решение. Gunbot не будет нести ответственность за инвестиционные решения, которые вы принимаете на основе информации, опубликованной в этой вики.
 {% endhint %}
 
 **Project origin:** [BitcoinTalk thread](https://bitcointalk.org/index.php?topic=1715214.0).
