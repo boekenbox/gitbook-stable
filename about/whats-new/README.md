@@ -8,13 +8,13 @@ description: >-
 
 Gunbot v16**.**5 adds several new features and fixes known issues. 
 
-\*\*\*\*
-
 ## **Upgrading**
 
 **There are no config changes for v16.5 In case you are upgrading from v16, replacing only the executable file** \(gunthy-win.exe / gunthy-linux / gunthy-macos / gunthy-arm\) **is all that's needed to upgrade.**
 
 In case you are upgrading from an older version, refer to the changelogs of previous versions for instructions, or start with a fresh installation.
+
+\*\*\*\*[**Download v16.5**](../../setup-and-general-settings/installation/download.md)\*\*\*\*
 
 ## New features / changes in v16.5
 
