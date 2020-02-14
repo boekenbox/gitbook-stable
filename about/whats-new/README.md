@@ -1,22 +1,22 @@
 ---
 description: >-
   Here's a quick overview of the most important changes introduced with Gunbot
-  v16.5
+  v16.7
 ---
 
 # What's new?
 
-Gunbot v16**.**5 adds several new features and fixes known issues. 
+Gunbot v16**.**7 adds several new features and fixes known issues. 
 
 ## **Upgrading**
 
-**There are no config changes for v16.5 In case you are upgrading from v16, replacing only the executable file** \(gunthy-win.exe / gunthy-linux / gunthy-macos / gunthy-arm\) **is all that's needed to upgrade.**
+**There are no config changes for v16.7 In case you are upgrading from v16, replacing only the executable file** \(gunthy-win.exe / gunthy-linux / gunthy-macos / gunthy-arm\) **is all that's needed to upgrade.**
 
 In case you are upgrading from an older version, refer to the changelogs of previous versions for instructions, or start with a fresh installation.
 
-\*\*\*\*[**Download v16.5**](../../setup-and-general-settings/installation/download.md)\*\*\*\*
+\*\*\*\*[**Download v16.7**](../../setup-and-general-settings/installation/download.md)\*\*\*\*
 
-## New features / changes in v16.5
+## New features / changes in v16.7
 
 * **New partner exchange:** Kraken Futures partnered with Gunbot and is now fully supported in Gunbot.
 * **Many new Autoconfig features:** 
@@ -28,8 +28,7 @@ In case you are upgrading from an older version, refer to the changelogs of prev
     * filters based on last order type for specific pairs
     * strategy name filter
     * variableNotExist: to check if a variable is not set
-    * allowsHedging: only add pairs that allow for direct hedging between a specified hedge pair.
-    * 
+    * allowsHedging: only add pairs that allow for direct hedging between a specified hedge pair
   * Per pair user variables, allowing you to create pair specific interactions between jobs.
   * Option to disable Telegram notifications per job.
   * Option to change exchange delay with a manageOverrides job.
