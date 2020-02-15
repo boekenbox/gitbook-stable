@@ -1998,6 +1998,625 @@ You don't want to use this ever in this form, but use it as reference for how ea
 }
 ```
 
+## Config format definitions
+
+Templates for all available job types and filters.
+
+```javascript
+// config templates for different job types
+// each job is a "userString", {} element, number of jobs is not limited
+// the "type" parameter defines the job type. different job types have (slightly) different config parameters
+{
+    "addPairs": { // all job names are a user string
+        // can use ticker and generic filters
+        "pairs": {
+            "exclude": "", // must be used, can be empty
+            "include": "", // must be used
+            "maxPairs": 25, // must be used
+            "noCrossOver": false, // must be used
+            "exchange": "binance", // must be used
+            "filteredQuote": [], // can be used, only relevant in BR context. leave out when not used
+            "filteredPair": [], // can be used, only relevant in BR context. leave out when not used
+            "filteredBase": [] // can be used, only relevant in BR context. leave out when not used
+        },
+        "filters": {}, // must be used and contain at least 1 filter
+        "filters2": {}, // can be used, then must contain at least 1 filter. leave out when not used. filters2 to filters9 can be used in the same way
+        "setVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "resetVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "overrides": {}, // can be used, can be empty when used
+        "brStrat": "br", // can be used, only relevant in BR context when using AC for hedging. leave out when not used
+        "schedule": "* * * * *", // must be used
+        "type": "addPairs", // must be used
+        "strategy": "gain", // must be used
+        "snapshots": 20, // must be used, lowest value: 1
+        "history": 10, // can be used, leave out when not used. only used together with "historyInterval"
+        "historyInterval": 5, // can be used, leave out when not used. only used together with "history"
+        "setITB": true, // must be used
+        "resume": true, // must be used
+        "debug": false, // must be used
+        "enabled": true // must be used
+    },
+    "removePairs": {
+        // can use ticker and generic filters
+        "pairs": {
+            "exclude": "", // must be used, can be empty
+            "noBag": false, // must be used
+            "removeDisabled": false, // must be used
+            "notRemoveBefore": 60, // can be used. leave out when not used
+            "removeBase": "USDT", // can be used, only relevant in BR context. leave out when not used
+            "exchange": "binance" // must be used
+        },
+        "filters": {}, // must be used and contain at least 1 filter
+        "filters2": {}, // can be used, then must contain at least 1 filter. leave out when not used. filters2 to filters9 can be used in the same way
+        "setVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "resetVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "brStrat": "br", // can be used, only relevant in BR context when using AC for hedging. leave out when not used
+        "schedule": "* * * * *", // must be used
+        "type": "removePairs", // must be used
+        "snapshots": 20, // must be used, lowest value: 1
+        "history": 10, // can be used, leave out when not used. only used together with "historyInterval"
+        "historyInterval": 5, // can be used, leave out when not used. only used together with "history"
+        "resume": true, // must be used
+        "debug": false, // must be used
+        "enabled": true // must be used
+    },
+    "removePairs2": {
+        // can use state and generic filters
+        "pairs": {
+            "exclude": "", // must be used, can be empty
+            "noBag": false, // must be used
+            "removeDisabled": false, // must be used
+            "notRemoveBefore": 60, // can be used. leave out when not used
+            "removeBase": "USDT", // can be used, only relevant in BR context. leave out when not used
+            "exchange": "binance" // must be used
+        },
+        "filters": {}, // must be used and contain at least 1 filter
+        "filters2": {}, // can be used, then must contain at least 1 filter. leave out when not used. filters2 to filters9 can be used in the same way
+        "setVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "resetVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "brStrat": "br", // can be used, only relevant in BR context when using AC for hedging. leave out when not used
+        "schedule": "* * * * *", // must be used
+        "type": "removePairs2", // must be used
+        "debug": false, // must be used
+        "enabled": true // must be used
+    },
+    "changeStrategy": {
+        // can use ticker and generic filters
+        "pairs": {
+            "exclude": "", // must be used, can be empty
+            "bag": false, // must be used
+            "exchange": "binance" // must be used
+        },
+        "filters": {}, // must be used and contain at least 1 filter
+        "filters2": {}, // can be used, then must contain at least 1 filter. leave out when not used. filters2 to filters9 can be used in the same way
+        "setVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "resetVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "schedule": "* * * * *", // must be used
+        "type": "changeStrategy", // must be used
+        "snapshots": 20, // must be used, lowest value: 1
+        "history": 10, // can be used, leave out when not used. only used together with "historyInterval"
+        "historyInterval": 5, // can be used, leave out when not used. only used together with "history"
+        "resume": true, // must be used
+        "debug": false, // must be used
+        "enabled": true // must be used
+    },
+    "changeStrategy2": {
+        // can use state and generic filters
+        "pairs": {
+            "exclude": "", // must be used, can be empty
+            "bag": false, // must be used
+            "exchange": "binance" // must be used
+        },
+        "filters": {}, // must be used and contain at least 1 filter
+        "filters2": {}, // can be used, then must contain at least 1 filter. leave out when not used. filters2 to filters9 can be used in the same way
+        "setVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "resetVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "schedule": "* * * * *", // must be used
+        "type": "changeStrategy2", // must be used
+        "debug": false, // must be used
+        "enabled": true // must be used
+    },
+    "manageOverrides": {
+        // can use state and generic filters
+        "pairs": {
+            "exclude": "", // must be used, can be empty
+            "include": "", // must be used
+            "exchange": "binance" // must be used
+        },
+        "filters": {}, // must be used and contain at least 1 filter
+        "filters2": {}, // can be used, then must contain at least 1 filter. leave out when not used. filters2 to filters9 can be used in the same way
+        "setVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "resetVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "overrides": {}, // can be used, can be empty when used
+        "clearOverrides": false, // must be used
+        "brStrat": "br", // can be used, only relevant in BR context when using AC for hedging. leave out when not used
+        "schedule": "* * * * *", // must be used
+        "type": "manageOverrides", // must be used
+        "setITB": true, // must be used
+        "delay": 10, // can be used, leave out when not used
+        "debug": false, // must be used
+        "enabled": true // must be used
+    },
+    "changeDelay": {
+        // can use state and generic filters
+        "pairs": {
+            "exclude": "", // must be used, can be empty
+            "include": "", // must be used
+            "exchange": "binance" // must be used
+        },
+        "filters": {}, // must be used and contain at least 1 filter
+        "filters2": {}, // can be used, then must contain at least 1 filter. leave out when not used. filters2 to filters9 can be used in the same way
+        "setVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "resetVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "schedule": "* * * * *", // must be used
+        "type": "changeDelay", // must be used
+        "delay": 10, // can be used, leave out when not used
+        "debug": false, // must be used
+        "enabled": true // must be used
+    },
+    "manageBotSettings": {
+        // can use state and generic filters
+        "pairs": {
+            "exclude": "", // must be used, can be empty
+            "bag": false, // must be used
+            "exchange": "binance" // must be used
+        },
+        "filters": {}, // must be used and contain at least 1 filter
+        "filters2": {}, // can be used, then must contain at least 1 filter. leave out when not used. filters2 to filters9 can be used in the same way
+        "setVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "resetVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "bot": {}, // must be used
+        "schedule": "* * * * *", // must be used
+        "type": "changeStrategy2", // must be used
+        "debug": false, // must be used
+        "enabled": true // must be used
+    },
+    "hedgeGB": {
+        // can use ticker and generic filters
+        "pairs": {
+            "exclude": "", // must be used, can be empty
+            "bag": false, // must be used
+            "baseFrom": "USDT", // must be used
+            "baseTo": "BTC", // must be used
+            "hedgePair": "USDT-BTC", // must be used
+            "exchange": "binance" // must be used
+        },
+        "filters": {}, // must be used and contain at least 1 filter
+        "filters2": {}, // can be used, then must contain at least 1 filter. leave out when not used. filters2 to filters9 can be used in the same way
+        "setVariable": {
+            "userKeys": "userValues"
+        }, // must be used
+        "resetVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "schedule": "* * * * *", // must be used
+        "type": "hedgeGB", // must be used
+        "snapshots": 20, // must be used, lowest value: 1
+        "history": 10, // can be used, leave out when not used. only used together with "historyInterval"
+        "historyInterval": 5, // can be used, leave out when not used. only used together with "history"
+        "resume": true, // must be used
+        "debug": false, // must be used
+        "enabled": true // must be used
+    },
+    "hedgeGB2": {
+        // can use state and generic filters
+        "pairs": {
+            "exclude": "", // must be used, can be empty
+            "bag": false, // must be used
+            "baseFrom": "USDT", // must be used
+            "baseTo": "BTC", // must be used
+            "hedgePair": "USDT-BTC", // must be used
+            "exchange": "binance" // must be used
+        },
+        "filters": {}, // must be used and contain at least 1 filter
+        "filters2": {}, // can be used, then must contain at least 1 filter. leave out when not used. filters2 to filters9 can be used in the same way
+        "setVariable": {
+            "userKeys": "userValues"
+        }, // must be used
+        "resetVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "schedule": "* * * * *", // must be used
+        "type": "hedgeGB2", // must be used
+        "debug": false, // must be used
+        "enabled": true // must be used
+    },
+    "hedge": {
+        // can use state and generic filters
+        "pairs": {
+            "exclude": "", // must be used, can be empty
+            "include": "", // must be used
+            "exchange": "binance", // must be used
+            "filteredQuote": [], // can be used, only relevant in BR context. leave out when not used
+            "filteredPair": [], // can be used, only relevant in BR context. leave out when not used
+            "filteredBase": [] // can be used, only relevant in BR context. leave out when not used
+        },
+        "filters": {}, // must be used and contain at least 1 filter
+        "filters2": {}, // can be used, then must contain at least 1 filter. leave out when not used. filters2 to filters9 can be used in the same way
+        "setVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "resetVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "brStrat": "br", // can be used, only relevant in BR context when using AC for hedging. leave out when not used
+        "schedule": "* * * * *", // must be used
+        "type": "hedge", // must be used
+        "hedgeTo": "USDT", // must be used
+        "snapshots": 20, // must be used, lowest value: 1
+        "history": 10, // can be used, leave out when not used. only used together with "historyInterval"
+        "historyInterval": 5, // can be used, leave out when not used. only used together with "history"
+        "resume": true, // must be used
+        "debug": false, // must be used
+        "enabled": true // must be used
+    },
+    "filteredQuote": {
+        // can use ticker and generic filters
+        "pairs": {
+            "exclude": "", // must be used, can be empty
+            "include": "", // must be used
+            "exchange": "binance" // must be used
+        },
+        "filters": {}, // must be used and contain at least 1 filter
+        "filters2": {}, // can be used, then must contain at least 1 filter. leave out when not used. filters2 to filters9 can be used in the same way
+        "setVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "resetVariable": {
+            "userKeys": "userValues"
+        }, // can be used, can be empty when used. leave out when not used
+        "schedule": "* * * * *", // must be used
+        "type": "filteredQuote", // must be used
+        "snapshots": 20, // must be used, lowest value: 1
+        "history": 10, // can be used, leave out when not used. only used together with "historyInterval"
+        "historyInterval": 5, // can be used, leave out when not used. only used together with "history"
+        "resume": true, // must be used
+        "debug": false, // must be used
+        "enabled": true // must be used
+    },
+    // list of all ticker filters
+    "tickerFilters": {
+        // ticker filters work by collecting tickers for all pairs on ccxt supported exchanges
+        // a filter set can have an "unlimited" number of filters
+        // the sequence of elements matters within filters
+        "filters": {
+            "filter1": { // filter name is a user string
+                "type": "minPrice",
+                "min": 0.5
+            },
+            "filter2": {
+                "type": "maxPrice",
+                "max": 0.5
+            },
+            "filter3": {
+                "type": "minPricePctChangeInterval",
+                "min": 0.5,
+                "lastSnapshots": 3 // can be used, leave out when not used, value must be lower than job snaphot count
+            },
+            "filter4": {
+                "type": "maxPricePctChangeInterval",
+                "max": 0.5,
+                "lastSnapshots": 3 // can be used, leave out when not used, value must be lower than job snaphot count
+            },
+            "filter5": {
+                "type": "minVolumePctChangeInterval",
+                "min": 0.5,
+                "lastSnapshots": 3 // can be used, leave out when not used, value must be lower than job snaphot count
+            },
+            "filter6": {
+                "type": "maxVolumePctChangeInterval",
+                "max": 0.5,
+                "lastSnapshots": 3 // can be used, leave out when not used, value must be lower than job snaphot count
+            },
+            "filter7": {
+                "type": "minVolume24h",
+                "min": 0.5
+            },
+            "filter8": {
+                "type": "maxVolume24h",
+                "max": 0.5
+            },
+            "filter9": {
+                "type": "minVolatilityPct24h",
+                "min": 0.5
+            },
+            "filter10": {
+                "type": "maxVolatilityPct24h",
+                "max": 0.5
+            },
+            "filter11": {
+                "type": "minSpreadPct",
+                "min": 0.5
+            },
+            "filter12": {
+                "type": "maxSpreadPct",
+                "max": 0.5
+            },
+            "filter13": {
+                "type": "minSlopePctInterval",
+                "min": 0.5,
+                "lastSnapshots": 3 // can be used, leave out when not used, value must be lower than job snaphot count
+            },
+            "filter14": {
+                "type": "maxSlopePctInterval",
+                "max": 0.5,
+                "lastSnapshots": 3 // can be used, leave out when not used, value must be lower than job snaphot count
+            },
+            "filter15": {
+                "type": "minStandardDevPctInterval",
+                "min": 0.5,
+                "lastSnapshots": 3 // can be used, leave out when not used, value must be lower than job snaphot count
+            },
+            "filter16": {
+                "type": "maxStandardDevPctInterval",
+                "max": 0.5,
+                "lastSnapshots": 3 // can be used, leave out when not used, value must be lower than job snaphot count
+            },
+            "filter17": {
+                "type": "belowMedianVolume"
+            },
+            "filter18": {
+                "type": "aboveMedianVolume"
+            },
+            "filter19": {
+                "type": "minVolumeRank",
+                "min": 0.5
+            },
+            "filter20": {
+                "type": "maxVolumeRank",
+                "max": 0.5
+            },
+            "filter21": {
+                "type": "bullishStandardDeviationChannel",
+                "range": 0.5,
+                "lastSnapshots": 3 // can be used, leave out when not used, value must be lower than job snaphot count
+            },
+            "filter22": {
+                "type": "bearishStandardDeviationChannel",
+                "range": 0.5,
+                "lastSnapshots": 3 // can be used, leave out when not used, value must be lower than job snaphot count
+            },
+            "filter23": {
+                "type": "allowsHedging",
+                "BTC": "USDT" // any two user defined base currencies
+            },
+            "filter24": {
+                "type": "volumeTrailing",
+                "buyLevel": 50,
+                "trailingRange": 8
+            },
+            "filter25": {
+                "type": "buyTrailing",
+                "buyLevel": 50,
+                "trailingRange": 8
+            },
+            "filter26": {
+                "type": "slopeTrailing",
+                "buyLevel": 50,
+                "trailingRange": 8
+            },
+            "filter27": {
+                "type": "linearRegressionChannel",
+                "range": 0
+            }
+        }
+    },
+    // list of all ticker history filters, can be used in any job that allows ticker filters
+    "tickerHistoryFilters": {
+        // ticker filters work by collecting tickers for all pairs on ccxt supported exchanges
+        // a filter set can have an "unlimited" number of filters
+        // the sequence of elements matters within filters
+        "filters": {
+            "filter1": { // filter name is a user string
+                "type": "minPriceHistory",
+                "min": 0.5, 
+                "historySource": 6 // value must be lower than job history value
+            },
+            "filter2": {
+                "type": "maxPriceHistory",
+                "max": 0.5,
+                "historySource": 6 // value must be lower than job history value
+            },
+            "filter3": {
+                "type": "minPricePctChangeIntervalHistory",
+                "min": 0.5,
+                "historySource": 6 // value must be lower than job history value
+            },
+            "filter4": {
+                "type": "maxPricePctChangeIntervalHistory",
+                "max": 0.5,
+                "historySource": 6 // value must be lower than job history value
+            },
+            "filter5": {
+                "type": "minVolumePctChangeIntervalHistory",
+                "min": 0.5,
+                "historySource": 6 // value must be lower than job history value
+            },
+            "filter6": {
+                "type": "maxVolumePctChangeIntervalHistory",
+                "max": 0.5,
+                "historySource": 6 // value must be lower than job history value
+            },
+            "filter7": {
+                "type": "minVolume24hHistory",
+                "min": 0.5,
+                "historySource": 6 // value must be lower than job history value
+            },
+            "filter8": {
+                "type": "maxVolume24hHistory",
+                "max": 0.5,
+                "historySource": 6 // value must be lower than job history value
+            },
+            "filter9": {
+                "type": "minVolatilityPct24hHistory",
+                "min": 0.5,
+                "historySource": 6 // value must be lower than job history value            
+            },
+            "filter10": {
+                "type": "maxVolatilityPct24hHistory",
+                "max": 0.5,
+                "historySource": 6 // value must be lower than job history value
+            },
+            "filter11": {
+                "type": "minSpreadPctHistory",
+                "min": 0.5,
+                "historySource": 6 // value must be lower than job history value
+            },
+            "filter12": {
+                "type": "maxSpreadPctHistory",
+                "max": 0.5,
+                "historySource": 6 // value must be lower than job history value
+            },
+            "filter13": {
+                "type": "minSlopePctIntervalHistory",
+                "min": 0.5,
+                "historySource": 6 // value must be lower than job history value
+            },
+            "filter14": {
+                "type": "maxSlopePctIntervalHistory",
+                "max": 0.5,
+                "historySource": 6 // value must be lower than job history value
+            },
+            "filter15": {
+                "type": "minStandardDevPctIntervalHistory",
+                "min": 0.5,
+                "historySource": 6 // value must be lower than job history value
+            },
+            "filter16": {
+                "type": "maxStandardDevPctIntervalHistory",
+                "max": 0.5,
+                "historySource": 6 // value must be lower than job history value
+            },
+            "filter17": {
+                "type": "bearishStandardDeviationChannelHistory",
+                "range": 0.5,
+                "historySource": 6 // value must be lower than job history value
+            },
+            "filter18": {
+                "type": "bullishStandardDeviationChannelHistory",
+                "range": 0.5,
+                "historySource": 6 // value must be lower than job history value
+            }
+        }
+    },
+    // list of all pair state filters
+    "stateFilters": {
+        // state filters read data from the gunbot ledger data, for pairs that are actively cycling
+        // a filter set can have an "unlimited" number of filters
+        // the sequence of elements matters within filters
+        "filters": {
+            "filter1": {
+                "type": "exact",
+                "ducount1": 1 // key is a user string
+            },
+            "filter2": {
+                "type": "biggerThan",
+                "ema1": 1 // key is a user string
+            },
+            "filter3": {
+                "type": "smallerThan",
+                "ema1": 1 // key is a user string
+            },
+            "filter4": {
+                "type": "compareBigger",
+                "ema1": 1, // key is a user string, value is irrelevant but must be set
+                "ema2": 1 // key is a user string, value is irrelevant but must be set
+            },
+            "filter5": {
+                "type": "compareSmaller",
+                "ema1": 1, // key is a user string, value is irrelevant but must be set
+                "ema2": 1 // key is a user string, value is irrelevant but must be set
+            },
+            "filter6": {
+                "type": "differenceBigger",
+                "ema1": 1, // key is a user string, value is irrelevant but must be set
+                "ema2": 1, // key is a user string, value is irrelevant but must be set
+                "delta": 10
+            }
+        }
+    },
+    // list of all generic filters
+    "genericFilters": {
+        // generic filters can be used in all job types. some generic filters depend on a pair actively cycling
+        // a filter set can have an "unlimited" number of filters
+        // the sequence of elements matters within filters
+        "filters": {
+            "filter1": {
+                "type": "variableExact",
+                "key": "value" // key and value are user strings/numbers
+            },
+            "filter2": {
+                "type": "variableNotExist",
+                "key": "value" // key is a user string/number, value is irrelevant but must be set
+            },
+            "filter3": {
+                "type": "pairVariableExact",
+                "key": "value" // key and value are user strings/numbers
+            },
+            "filter4": {
+                "type": "strategyName",
+                "strategy": "value" // value is user string
+            },
+            "filter5": {
+                "type": "minTimeInConfig",
+                "min": 1
+            },
+            "filter6": {
+                "type": "maxTimeInConfig",
+                "max": 1
+            },
+            "filter7": {
+                "type": "maxSameOrder",
+                "lastOrders": 4,
+                "trigger": "StrategyBuy" // possible string values: StrategyBuy, StrategySell,  StopLimit ,Close, RTSell, RTBuy, RTBuyback, DCA, Cancelled
+            },
+            "filter8": {
+                "type": "minTimeSinceOrder",
+                "min": 60,
+                "trigger": "StrategyBuy" // possible string values: StrategyBuy, StrategySell,  StopLimit ,Close, RTSell, RTBuy, RTBuyback, DCA, Cancelled
+            },
+            "filter9": {
+                "type": "maxTimeSinceOrder",
+                "max": 60,
+                "trigger": "StrategyBuy" // possible string values: StrategyBuy, StrategySell,  StopLimit ,Close, RTSell, RTBuy, RTBuyback, DCA, Cancelled
+            }
+        }
+    }
+}
+```
+
 ## Filterable parameters for state filters
 
 Below is a \(non exhaustive\) list of parameters that can be filtered with state filters. Only the most useful ones are listed. All indicator values depend on the indicator settings you've set in the strategy running the pair.
