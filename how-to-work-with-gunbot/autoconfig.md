@@ -1025,6 +1025,24 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
       </td>
     </tr>
     <tr>
+      <td style="text-align:left"><code>linearRegressionChannel</code>
+      </td>
+      <td style="text-align:left">
+        <p>Same as &quot;Linear regression&quot; indicator on TradingView. Standard
+          deviation is hardcoded to 2.</p>
+        <p></p>
+        <p>The filter passes when:</p>
+        <ul>
+          <li>max snapshot count is reached</li>
+          <li>price is within a defined range from the lower band</li>
+        </ul>
+        <p>Range 0 = same price as lower band</p>
+        <p>Range 100 = same price as upper band</p>
+      </td>
+      <td style="text-align:left"><code>lastSnapshots</code>
+      </td>
+    </tr>
+    <tr>
       <td style="text-align:left"><code>allowsHedging</code>
       </td>
       <td style="text-align:left">Filter returns true if a pair can be hedged to another base currency without
