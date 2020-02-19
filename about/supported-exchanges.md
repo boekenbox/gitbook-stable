@@ -12,6 +12,7 @@ These exchanges are official Gunbot partners. We are in direct contact with thei
 
 | Exchange | Name in config | Native strategies | TradingView alerts |
 | :--- | :--- | :--- | :--- |
+| **Gunthy** | `gunthy` | Regular | Regular |
 | **HitBTC** | `hitbtc2` | Regular | Regular |
 | **Kraken Futures** | `krakenFutures` | Margin | Margin |
 | **KuCoin** | `kucoin` | Regular | Regular |
