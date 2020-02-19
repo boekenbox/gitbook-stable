@@ -35,13 +35,13 @@ description: >-
 
 ## Поддерживаемые биржи
 
-Следующие обмены поддерживаются через библиотеку [ccxt](https://github.com/ccxt/ccxt/wiki/Exchange-Markets). Возможно, они еще не были полностью испытаны и испытаны в Gunbot. 
+Следующие обмены поддерживаются через библиотеку [ccxt](https://github.com/ccxt/ccxt/wiki/Exchange-Markets). Возможно, они еще не были полностью испытаны и испытаны в Gunbot.
 
-Эти биржи поддерживают только спотовую торговлю, маржинальная поддержка еще не подключена в Gunbot. 
+Эти биржи поддерживают только спотовую торговлю, маржинальная поддержка еще не подключена в Gunbot.
 
 Вы можете использовать любой из этих бирж для оповещения о спот-трейдинге с помощью дополнения TradingView.
 
-|         | Имя в config | Ссылка на биржу |
+|  | Имя в config | Ссылка на биржу |
 | :--- | :--- | :--- |
 | [![\_1btcxe](https://user-images.githubusercontent.com/1294454/27766049-2b294408-5ecc-11e7-85cc-adaff013dc1a.jpg)](https://1btcxe.com) | `_1btcxe` | [1BTCXE](https://1btcxe.com) |
 | [![acx](https://user-images.githubusercontent.com/1294454/30247614-1fe61c74-9621-11e7-9e8c-f1a627afa279.jpg)](https://acx.io) | `acx` | [ACX](https://acx.io) |

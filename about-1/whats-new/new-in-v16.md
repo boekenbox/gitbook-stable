@@ -47,5 +47,5 @@ Gunbot v16 добавляет несколько новых функций и и
 
 ### Изменения в графическом интерфейсе <a id="izmeneniya-v-graficheskom-interfeise"></a>
 
-{% page-ref page="../../installation-and-startup/download-software.md" %}
+{% page-ref page="../../ustanovka-i-generalnye-nastroiki/installation-and-startup/download-software.md" %}
 

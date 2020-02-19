@@ -14,7 +14,3 @@ description: Последние места загрузки для Gunbot.
 
 **Gunbot Starter edition:** [https://github.com/GuntharDeNiro/Gunthy/releases/](https://github.com/GuntharDeNiro/Gunthy/releases/)​
 
-
-
-
-

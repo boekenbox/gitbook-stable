@@ -15,29 +15,29 @@
 
 ## Установка и Генеральные Настройки
 
-* [Установка и запуск](installation-and-startup/README.md)
-  * [Загрузка программного обеспечения](installation-and-startup/download-software.md)
-  * [Установка в Windows](installation-and-startup/windows-installation.md)
-  * [Установка macOS](installation-and-startup/macos-installation.md)
-  * [Установка Linux](installation-and-startup/linux-installation.md)
-  * [ARM installation](installation-and-startup/arm-installation.md)
-  * [Как включить SSL / TLS](installation-and-startup/kak-vklyuchit-ssl-tls.md)
-  * [Запуск нескольких экземпляров](installation-and-startup/instrukciya-po-zapusku-neskolkikh-ustanovok-gunbot-na-odnoi-mashine..md)
-  * [Безбашенный режим \(Без GUI\)](installation-and-startup/bezgolovyi-rezhim.md)
-* [Preferences - Основные Настройки Бота](globalnye-nastroiki-bota/README.md)
-  * [Bot settings - Настройки бота](globalnye-nastroiki-bota/bot-settings-nastroiki-bota.md)
-  * [Аутентификация](globalnye-nastroiki-bota/autentifikaciya.md)
-  * [GUI notifications - GUI уведомления](globalnye-nastroiki-bota/gui-notifications-gui-uvedomleniya.md)
-  * [Websockets](globalnye-nastroiki-bota/websockets.md)
-  * [Telegram уведомления](globalnye-nastroiki-bota/telegram-notifications.md)
-  * [TradingView \(дополнение\)](globalnye-nastroiki-bota/untitled-1.md)
-  * [IMAP прослушиватель](globalnye-nastroiki-bota/imap-listener.md)
-* [Настройки биржи и ключи API](untitled/README.md)
-  * [Подключение к бирже](untitled/connect-exchange/README.md)
-    * [Создание ключей API](untitled/connect-exchange/creating-api-keys.md)
-    * [Обмен свопами](untitled/connect-exchange/swap-exchanges.md)
-  * [GUNTHY кошелек](untitled/gunthy-wallet/README.md)
-    * [Как создать кошелек](untitled/gunthy-wallet/how-to-create-a-wallet.md)
+* [Установка и запуск](ustanovka-i-generalnye-nastroiki/installation-and-startup/README.md)
+  * [Загрузка программного обеспечения](ustanovka-i-generalnye-nastroiki/installation-and-startup/download-software.md)
+  * [Установка в Windows](ustanovka-i-generalnye-nastroiki/installation-and-startup/windows-installation.md)
+  * [Установка macOS](ustanovka-i-generalnye-nastroiki/installation-and-startup/macos-installation.md)
+  * [Установка Linux](ustanovka-i-generalnye-nastroiki/installation-and-startup/linux-installation.md)
+  * [ARM installation](ustanovka-i-generalnye-nastroiki/installation-and-startup/arm-installation.md)
+  * [Как включить SSL / TLS](ustanovka-i-generalnye-nastroiki/installation-and-startup/kak-vklyuchit-ssl-tls.md)
+  * [Запуск нескольких экземпляров](ustanovka-i-generalnye-nastroiki/installation-and-startup/instrukciya-po-zapusku-neskolkikh-ustanovok-gunbot-na-odnoi-mashine..md)
+  * [Безбашенный режим \(Без GUI\)](ustanovka-i-generalnye-nastroiki/installation-and-startup/bezgolovyi-rezhim.md)
+* [Preferences - Основные Настройки Бота](ustanovka-i-generalnye-nastroiki/globalnye-nastroiki-bota/README.md)
+  * [Bot settings - Настройки бота](ustanovka-i-generalnye-nastroiki/globalnye-nastroiki-bota/bot-settings-nastroiki-bota.md)
+  * [Аутентификация](ustanovka-i-generalnye-nastroiki/globalnye-nastroiki-bota/autentifikaciya.md)
+  * [GUI notifications - GUI уведомления](ustanovka-i-generalnye-nastroiki/globalnye-nastroiki-bota/gui-notifications-gui-uvedomleniya.md)
+  * [Websockets](ustanovka-i-generalnye-nastroiki/globalnye-nastroiki-bota/websockets.md)
+  * [Telegram уведомления](ustanovka-i-generalnye-nastroiki/globalnye-nastroiki-bota/telegram-notifications.md)
+  * [TradingView \(дополнение\)](ustanovka-i-generalnye-nastroiki/globalnye-nastroiki-bota/untitled-1.md)
+  * [IMAP прослушиватель](ustanovka-i-generalnye-nastroiki/globalnye-nastroiki-bota/imap-listener.md)
+* [Настройки биржи и ключи API](ustanovka-i-generalnye-nastroiki/untitled/README.md)
+  * [Подключение к бирже](ustanovka-i-generalnye-nastroiki/untitled/connect-exchange/README.md)
+    * [Создание ключей API](ustanovka-i-generalnye-nastroiki/untitled/connect-exchange/creating-api-keys.md)
+    * [Обмен свопами](ustanovka-i-generalnye-nastroiki/untitled/connect-exchange/swap-exchanges.md)
+  * [GUNTHY кошелек](ustanovka-i-generalnye-nastroiki/untitled/gunthy-wallet/README.md)
+    * [Как создать кошелек](ustanovka-i-generalnye-nastroiki/untitled/gunthy-wallet/how-to-create-a-wallet.md)
 
 ## КАК РАБОТАТЬ С GUNBOT
 
@@ -112,7 +112,7 @@
 
 ## ИСПРАВЛЕНИЕ ПРОБЛЕМ
 
-* [Critical errors - Критические ошибки](critical-errors.md)
-* [Если бот не торгует](bot-does-not-trade.md)
-* [Сброс пароля / 2FA](reset-password-2fa.md)
+* [Critical errors - Критические ошибки](ispravlenie-problem/critical-errors.md)
+* [Если бот не торгует](ispravlenie-problem/bot-does-not-trade.md)
+* [Сброс пароля / 2FA](ispravlenie-problem/reset-password-2fa.md)
 
