@@ -10,7 +10,7 @@ Gunbot supports different values for `PERIOD` for each exchange.
 
 Currently the following periods are supported:
 
-![Supported period values for partner- and certified exchanges](../../.gitbook/assets/image%20%2850%29.png)
+![Supported period settings for certified exchanges](../../.gitbook/assets/image%20%2851%29.png)
 
 ## Choosing the right period
 
