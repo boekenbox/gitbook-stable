@@ -13,6 +13,7 @@ These exchanges are official Gunbot partners. We are in direct contact with thei
 | Exchange | Name in config | Native strategies | TradingView alerts |
 | :--- | :--- | :--- | :--- |
 | **Gunthy** | `gunthy` | Regular | Regular |
+| **Binance** | `binance` / `binanceus` | Regular | Regular |
 | **HitBTC** | `hitbtc2` | Regular | Regular |
 | **Kraken Futures** | `krakenFutures` | Margin | Margin |
 | **KuCoin** | `kucoin` | Regular | Regular |
@@ -26,7 +27,6 @@ These exchanges have been supported in Gunbot for a long time, you can expect hi
 
 | Exchange | Name in config | Native strategies | TradingView alerts |
 | :--- | :--- | :--- | :--- |
-| **Binance** | `binance` | Regular | Regular |
 | **Bittrex** | `bittrex` | Regular | Regular |
 | **Bitfinex** | `bitfinex` | Regular | Regular & Margin |
 | **Bitmex** | `bitmex` | Margin | Margin |
