@@ -1297,7 +1297,7 @@ Generic filters can be used in any job type, regardless if they primarily use ti
 | :--- | :--- |
 | `variableExact` | Filter returns true when variable value is exactly as defined. |
 | `variableNotExist` | Filter returns true when variable key does not \(yet\) exist. |
-| `pairVariableExact` | Filter returns true when pair specifc variable is exactly as defined. |
+| `pairVariableExact` | Filter returns true when pair specific variable is exactly as defined. Can use an extra "exchange" input to check pair variables for another exchange. |
 | `strategyName` | Filter returns true when strategy of an enabled pair is like defined. |
 | `minTimeInConfig` | Filter returns true when pair is longer in config than a set value in minutes. |
 | `maxTimeInConfig` | Filter returns true when pair is not longer in config than a set value in minutes. |
@@ -2602,6 +2602,7 @@ Templates for all available job types and filters.
             "filter3": {
                 "type": "pairVariableExact",
                 "key": "value" // key and value are user strings/numbers
+                "exchange": "value" // can be used, leave out when not used. value is a user string
             },
             "filter4": {
                 "type": "strategyName",
