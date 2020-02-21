@@ -552,7 +552,7 @@ It will only buy when quote volume is worth less than your setting for `MIN_VOLU
 
 ### Sell conditions
 
-![](../../.gitbook/assets/image%20%2844%29.png)
+![](../../.gitbook/assets/image%20%2845%29.png)
 
 A sell order should be placed when the bid price is equal to or higher than exit point.
 

@@ -1,20 +1,33 @@
 ---
 description: >-
   Here's a quick overview of the most important changes introduced with Gunbot
-  v16.7
+  v16.9
 ---
 
 # What's new?
 
-Gunbot v16**.**7 adds several new features and fixes known issues. 
+Gunbot v16**.**9 adds several new features and fixes known issues. 
 
 ## **Upgrading**
 
-**There are no config changes for v16.7 In case you are upgrading from v16, replacing only the executable file** \(gunthy-win.exe / gunthy-linux / gunthy-macos / gunthy-arm\) **is all that's needed to upgrade.**
+**There are no config changes for v16.9 In case you are upgrading from v16, replacing only the executable file** \(gunthy-win.exe / gunthy-linux / gunthy-macos / gunthy-arm\) **is all that's needed to upgrade.**
 
 In case you are upgrading from an older version, refer to the changelogs of previous versions for instructions, or start with a fresh installation.
 
-\*\*\*\*[**Download v16.7**](../../setup-and-general-settings/installation/download.md)\*\*\*\*
+\*\*\*\*[**Download release**](../../setup-and-general-settings/installation/download.md)\*\*\*\*
+
+
+
+## New features / changes in v16.9
+
+* **Support for our exchange:** [**Gunthy**](https://exchange.gunhty.org)\*\*\*\*
+* **New partner exchange:** Binance
+* **New Autoconfig features:** 
+  * New filter: linear regression channel
+  * Option to filter on pair variables from another exchange
+* **Support for Bittrex credits:** automatically used when enabled at Bittrex and there is a balance for BTXCRD
+
+
 
 ## New features / changes in v16.7
 
@@ -48,6 +61,7 @@ Notable fixes:
 * Fix many profit calculations in CryptoSight, fix admin rights issue.
 * Add support for ALGO and USDC pairs on Kraken.
 * Fix TV being stuck after an incoming close alert when there is no position to close.
+* Better handling of DU count.
 * Fix an issue with TakeProfit that sometimes made it falsely trigger when prices moved up.
 * Autoconfig fixes: 
   * Fix backtesting for jobs using \*History filters.
@@ -56,6 +70,7 @@ Notable fixes:
   * Fix parsing of markdown elements in telegram alerts.
   * Automatically purge old history data when history value in config gets reduced.
   * Also look for mvts value in pair overrides.
+* Various fixes to improve performance on Kraken Futures
 
 ## \*\*\*\*
 
