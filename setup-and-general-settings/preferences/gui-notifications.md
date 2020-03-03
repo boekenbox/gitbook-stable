@@ -10,7 +10,7 @@ The GUI Notifications menu lets you change which notifications are shown.
 
 To change them, go to **Settings** &gt; **GUI Notifications**.
 
-![](../../.gitbook/assets/image%20%2814%29.png)
+![](../../.gitbook/assets/image%20%2815%29.png)
 
 ## Settings descriptions
 
