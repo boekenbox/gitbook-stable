@@ -22,7 +22,7 @@ The examples below show how the basic triggers for `tssl` work. Additionally, yo
 
 ### Long
 
-![](../../.gitbook/assets/image%20%2856%29.png)
+![](../../.gitbook/assets/image%20%2859%29.png)
 
 * A long position is opened when buy trailing finishes below `LONG_LEVEL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `ROE`: 1.
@@ -120,8 +120,8 @@ This sets the target for closing a position.
 
 ROE is the Return On Equity for a position, the percentage profit and loss on your invested margin. This value is calculated in a similar way to how Bitmex calculates it, it does include leverage and does not include fees.
 
-**Examples:**  
-  
+**Examples:**
+
 Long position, 1x leverage.  
 When price moves 1% above the average entry price, 1% ROE is reached.
 

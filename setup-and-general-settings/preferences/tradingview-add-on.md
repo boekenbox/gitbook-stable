@@ -84,64 +84,65 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
       </td>
     </tr>
   </tbody>
-</table>
+</table>#### Alerts for margin trading
 
-#### Alerts for margin trading
+| Alert message | Action |
+| :--- | :--- |
+
+
+| SHORT\_EXCHANGE\_XBT-USD | Short order for XBT-USD |
+| :--- | :--- |
+
+
+| LONG\_EXCHANGE\_XBT-USD | Long order for XBT-USD |
+| :--- | :--- |
+
+
+| SHORT\_EXCHANGE\_XBT-USD\_amount | Short order for XBT-USD with a specified trading limit |
+| :--- | :--- |
+
+
+| LONG\_EXCHANGE\_XBT-USD\_amount | Long order for XBT-USD with a specified trading limit |
+| :--- | :--- |
+
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Alert message</th>
-      <th style="text-align:left">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">SHORT_EXCHANGE_XBT-USD</td>
-      <td style="text-align:left">Short order for XBT-USD</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">LONG_EXCHANGE_XBT-USD</td>
-      <td style="text-align:left">Long order for XBT-USD</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">SHORT_EXCHANGE_XBT-USD_amount</td>
-      <td style="text-align:left">Short order for XBT-USD with a specified trading limit</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">LONG_EXCHANGE_XBT-USD_amount</td>
-      <td style="text-align:left">Long order for XBT-USD with a specified trading limit</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">LONG_EXCHANGE_XBT-USD_amount_rate</td>
-      <td style="text-align:left">
+      <th style="text-align:left">LONG_EXCHANGE_XBT-USD_amount_rate</th>
+      <th style="text-align:left">
         <p>Long order for XBT-USD with a specified</p>
         <p>trading limit and rate.</p>
         <p>Requires TV market orders to be disabled.</p>
-      </td>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left">SHORT_EXCHANGE_XBT-USD_0_rate</td>
-      <td style="text-align:left">
+      <th style="text-align:left">SHORT_EXCHANGE_XBT-USD_0_rate</th>
+      <th style="text-align:left">
         <p>Short order for XBT-USD without a specified</p>
         <p>trading limit and with a specified rate.</p>
         <p>Requires TV market orders to be disabled.</p>
-      </td>
+      </th>
     </tr>
-    <tr>
-      <td style="text-align:left">CLOSELONG_EXCHANGE_XBT-USD</td>
-      <td style="text-align:left">Closes a long position for XBT-USD</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">CLOSESHORT_EXCHANGE_XBT-USD</td>
-      <td style="text-align:left">Closes a short position for XBT-USD</td>
-    </tr>
-  </tbody>
-</table>{% hint style="info" %}
+  </thead>
+  <tbody></tbody>
+</table>| CLOSELONG\_EXCHANGE\_XBT-USD | Closes a long position for XBT-USD |
+| :--- | :--- |
+
+
+| CLOSESHORT\_EXCHANGE\_XBT-USD | Closes a short position for XBT-USD |
+| :--- | :--- |
+
+
+{% hint style="info" %}
 **Note about trading limits**
 
-On **futures exchanges** every setting related to trading limits for margin trading must be specified in contracts.   
-  
+On **futures exchanges** every setting related to trading limits for margin trading must be specified in contracts.
+
 On **all other supported margin exchanges**, every setting related to margin trading limits must be specified in amounts of quote currency.
 {% endhint %}
 
@@ -155,11 +156,11 @@ To run Gunbot with the TradingView add-on, the following are the only relevant s
 
 Open the settings by going to **Settings** &gt; **TradingView.**
 
-![Settings options for the TradingView add-on](../../.gitbook/assets/image%20%2855%29.png)
+![Settings options for the TradingView add-on](../../.gitbook/assets/image%20%2858%29.png)
 
 Trading limits for buy orders are set in the configuration settings, optionally you can override these by specifying the trading limit in the alert message contents.
 
-Orders placed by the TradingView add-on are placed by default as market orders to ensure they will get filled. Optionally, you can let it send limit orders as well. 
+Orders placed by the TradingView add-on are placed by default as market orders to ensure they will get filled. Optionally, you can let it send limit orders as well.
 
 {% hint style="info" %}
 Be sure to add one pair for any exchange you want to execute alerts on.
@@ -475,8 +476,8 @@ Parameter name in `config.js`: `TV_GB`
 
 {% tabs %}
 {% tab title="Description" %}
-For margin trading only. Sets the leverage for opening any position. Setting 0 places the order with cross margin, if your exchange supports cross leverage.  
-  
+For margin trading only. Sets the leverage for opening any position. Setting 0 places the order with cross margin, if your exchange supports cross leverage.
+
 Only use values supported by your exchange.
 {% endtab %}
 
@@ -495,7 +496,7 @@ Parameter name in `config.js`: `TV_LEVERAGE`
 
 {% tabs %}
 {% tab title="Description" %}
-Sets the maximum acceptable lending rate when opening a position. 
+Sets the maximum acceptable lending rate when opening a position.
 
 The default setting of 0.02 stands for 2% interest per day.
 
@@ -505,7 +506,7 @@ The default setting of 0.02 stands for 2% interest per day.
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** numerical 
+**Values:** numerical
 
 **Default value:** 0.02
 {% endtab %}
@@ -514,6 +515,4 @@ The default setting of 0.02 stands for 2% interest per day.
 Parameter name in `config.js`: `TV_LENDING`
 {% endtab %}
 {% endtabs %}
-
-
 

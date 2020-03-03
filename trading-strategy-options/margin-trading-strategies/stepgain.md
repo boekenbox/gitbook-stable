@@ -118,8 +118,8 @@ This sets the target for closing a position.
 
 ROE is the Return On Equity for a position, the percentage profit and loss on your invested margin. This value is calculated in a similar way to how Bitmex calculates it, it does include leverage and does not include fees.
 
-**Examples:**  
-  
+**Examples:**
+
 Long position, 1x leverage.  
 When price moves 1% above the average entry price, 1% ROE is reached.
 

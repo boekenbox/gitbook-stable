@@ -12,8 +12,6 @@ Gunbot will open one position, either long or short, and close this position whe
 Please don't manually add to or reduce positions opened by Gunbot, unless you stop running Gunbot on this trading pair until you've closed this position.
 {% endhint %}
 
-
-
 ### Long / Buy
 
 A long position is opened when MACD crosses up the signal line.
@@ -50,8 +48,8 @@ This sets the target for closing a position.
 
 ROE is the Return On Equity for a position, the percentage profit and loss on your invested margin. This value is calculated in a similar way to how Bitmex calculates it, it does include leverage and does not include fees.
 
-**Examples:**  
-  
+**Examples:**
+
 Long position, 1x leverage.  
 When price moves 1% above the average entry price, 1% ROE is reached.
 

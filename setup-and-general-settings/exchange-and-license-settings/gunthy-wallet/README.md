@@ -51,8 +51,6 @@ If your wallet software asks about the number of decimals to use for GUNTHY, ent
 
 Read more about the [steps to create a GUNTHY wallet](how-to-create-a-wallet.md).
 
-
-
 **Step 2. Send required data to reseller**
 
 To make sure everything gets correctly registered, send the following information to your reseller and request to be updated to the new license system:
@@ -62,13 +60,11 @@ To make sure everything gets correctly registered, send the following informatio
 
 After everything is registered, you'll receive the required number of tokens and you're ready to run Gunbot on the new license system.
 
-
-
-**Step 3. Enter your GUNTHY wallet address** 
+**Step 3. Enter your GUNTHY wallet address**
 
 Enter your GUNTHY wallet address on **Settings &gt; Prefences &gt; Gunthy Wallet**.
 
-![](../../../.gitbook/assets/image%20%2851%29.png)
+![](../../../.gitbook/assets/image%20%2853%29.png)
 
 Make sure that all of your master keys are set on the [Swap Exchanges](../connect-exchange/api-slots.md) page. Anytime you need to update a key, you can do it yourself using this page.
 

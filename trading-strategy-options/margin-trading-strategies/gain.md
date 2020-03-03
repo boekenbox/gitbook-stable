@@ -12,13 +12,11 @@ Gunbot will open one position, either long or short, and close this position whe
 Please don't manually add to or reduce positions opened by Gunbot, unless you stop running Gunbot on this trading pair until you've closed this position.
 {% endhint %}
 
-
-
 The examples below show how the basic triggers for `gain` work. Additionally, you can use confirming indicators and settings like ROE trailing.
 
 ### Long \(regular: trend following\)
 
-![](../../.gitbook/assets/image%20%2812%29.png)
+![](../../.gitbook/assets/image%20%2813%29.png)
 
 * A long position is opened when the ask price is equal to or above `LONG_LEVEL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `ROE`: 1.
@@ -26,7 +24,7 @@ The examples below show how the basic triggers for `gain` work. Additionally, yo
 
 ### Short \(regular: trend following\)
 
-![](../../.gitbook/assets/image%20%2830%29.png)
+![](../../.gitbook/assets/image%20%2831%29.png)
 
 * A short position is opened when the bid price is equal to or below `SHORT_LEVEL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `ROE`: 1.
@@ -46,7 +44,7 @@ In `MEAN_REVERSION` mode the behavior for `LONG_LEVEL` and `SHORT_LEVEL` is reve
 
 In `MEAN_REVERSION` mode the behavior for `LONG_LEVEL` and `SHORT_LEVEL` is reversed in this strategy.
 
-![](../../.gitbook/assets/image%20%2833%29.png)
+![](../../.gitbook/assets/image%20%2834%29.png)
 
 * A short position is opened when the bid price is equal to or above `SHORT_LEVEL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `ROE`: 1.
@@ -136,8 +134,8 @@ This sets the target for closing a position.
 
 ROE is the Return On Equity for a position, the percentage profit and loss on your invested margin. This value is calculated in a similar way to how Bitmex calculates it, it does include leverage and does not include fees.
 
-**Examples:**  
-  
+**Examples:**
+
 Long position, 1x leverage.  
 When price moves 1% above the average entry price, 1% ROE is reached.
 

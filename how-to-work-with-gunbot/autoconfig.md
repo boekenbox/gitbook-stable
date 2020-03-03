@@ -7,8 +7,6 @@ description: >-
 
 # AutoConfig
 
-
-
 {% hint style="success" %}
 Available for Gunbot Standard and higher.
 {% endhint %}
@@ -67,8 +65,6 @@ Each job type has a number of obligatory parameters, these are described below f
 
 Additionally, there are [optional parameters](autoconfig.md#optional-parameters) you can use to extend the functionality of a job.
 
-
-
 ### Adding pairs
 
 **Type name in config:** `addPairs`
@@ -77,15 +73,13 @@ This job type uses [ticker filters](autoconfig.md#ticker-filters).
 
 **Job output:** add trading pairs to a specific exchange.
 
-
-
 **Pair options:**
 
 **include:** included pairs \(processed first\). Any pair on the exchange that matches any of the includes, will be processed**.** In case you also use the exclude option, the resulting pairs after processing the includes is the starting point for processing excludes, which will remove items from this list of pairs.
 
 Included items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be included. Input as comma separated list, does not accept spaces between items. Can not be empty.
 
-**exclude**: excluded pairs \(processed last\). Any pair on the exchange that matches any of the excludes, won't be processed. 
+**exclude**: excluded pairs \(processed last\). Any pair on the exchange that matches any of the excludes, won't be processed.
 
 Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
 
@@ -95,11 +89,9 @@ Excluded items do not need to be whole pair names, as long as part of the string
 
 **strategy:** this defines the strategy that will be assigned to pairs added by this job. It must be the exact name of an existing strategy in your `config.js` file.
 
-**snapshots:** defines how many ticker snapshots are saved to perform calculations on. Relevant for filter types that include `Interval` in their name. 
+**snapshots:** defines how many ticker snapshots are saved to perform calculations on. Relevant for filter types that include `Interval` in their name.
 
-For example: snapshots is set to 10, this means that the ticker data for the last 10 times the job runs are saved and some of the values in it are used for calculating average values over time. 
-
-
+For example: snapshots is set to 10, this means that the ticker data for the last 10 times the job runs are saved and some of the values in it are used for calculating average values over time.
 
 #### Config example
 
@@ -147,11 +139,9 @@ You must have at least one pair set per exchange you use this job type on.
 
 **Job output:** removes trading pairs from a specific exchange.
 
-
-
 **Pair options:**
 
-**exclude**: pairs that should not be scanned for possible removal. Any active pair that matches any of the excludes, won't be processed. 
+**exclude**: pairs that should not be scanned for possible removal. Any active pair that matches any of the excludes, won't be processed.
 
 Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
 
@@ -161,15 +151,11 @@ There is no include options for this filter type. Pairs in your config \(that ha
 
 **removeDisabled** \(true/false\): when true, each time a removePairs job is ran it will remove all disabled pairs for the exchange the job runs on - regardless of filter settings. Useful, for example, when you use `COUNT_SELL`.
 
-
-
 #### Other obligatory parameters:
 
-**snapshots:** defines how many ticker snapshots are saved to perform calculations on. Relevant for filter types that include `Interval` in their name. 
+**snapshots:** defines how many ticker snapshots are saved to perform calculations on. Relevant for filter types that include `Interval` in their name.
 
-For example: snapshots is set to 10, this means that the ticker data for the last 10 times the job runs are saved and some of the values in it are used for calculating average values over time. 
-
-
+For example: snapshots is set to 10, this means that the ticker data for the last 10 times the job runs are saved and some of the values in it are used for calculating average values over time.
 
 #### Config example
 
@@ -201,8 +187,6 @@ The example below shows a job that does the following:
 }
 ```
 
-### 
-
 ### Change strategy
 
 **Type names in config:** `changeStrategy` \(uses [ticker filters](autoconfig.md#ticker-filters)\) or `changeStrategy2` \(uses [state filters](autoconfig.md#pair-state-filters)\).
@@ -217,13 +201,13 @@ You must have at least one pair set per exchange you use this job type on.
 
 **Pair options:**
 
-**exclude**: pairs that should not be scanned for possible removal. Any active pair that matches any of the excludes, won't be processed. 
+**exclude**: pairs that should not be scanned for possible removal. Any active pair that matches any of the excludes, won't be processed.
 
 Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
 
 There is no include options for this filter type. Pairs in your config \(that have already cycled in Gunbot\) are basically the list of includes.
 
-**bag** \(true/false\): when true, only pairs with a balance below `MIN_VOLUME_TO_SELL` that have no open orders and are not in reversal trading, are filtered for possible removal. When set to false, all pairs in config are filtered. 
+**bag** \(true/false\): when true, only pairs with a balance below `MIN_VOLUME_TO_SELL` that have no open orders and are not in reversal trading, are filtered for possible removal. When set to false, all pairs in config are filtered.
 
 \*\*\*\*
 
@@ -231,11 +215,9 @@ There is no include options for this filter type. Pairs in your config \(that ha
 
 **strategy:** the target strategy to set for pairs matching all filters.
 
-**snapshots:** defines how many ticker snapshots are saved to perform calculations on. Relevant for filter types that include `Interval` in their name. 
+**snapshots:** defines how many ticker snapshots are saved to perform calculations on. Relevant for filter types that include `Interval` in their name.
 
-For example: snapshots is set to 10, this means that the ticker data for the last 10 times the job runs are saved and some of the values in it are used for calculating average values over time. 
-
-
+For example: snapshots is set to 10, this means that the ticker data for the last 10 times the job runs are saved and some of the values in it are used for calculating average values over time.
 
 #### Config example
 
@@ -266,8 +248,6 @@ The example below shows a job that does the following:
 }
 ```
 
-### 
-
 ### Managing overrides
 
 **Type name in config:** `manageOverrides`
@@ -276,15 +256,13 @@ This job type uses [state filters.](autoconfig.md#pair-state-filters)
 
 **Job output:** changes overrides for pairs on a specific exchange.
 
-
-
 **Pair options:**
 
 **include:** included pairs \(processed first\), can not be empty. Any active trading pair that matches any of the includes, will be processed**.** In case you also use the exclude option, the resulting pairs after processing the includes is the starting point for processing excludes, which will remove items from this list of pairs.
 
 Included items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be included. Input as comma separated list, does not accept spaces between items. Can not be empty.
 
-**exclude**: excluded pairs \(processed last\). Any active trading pair that matches any of the excludes, won't be processed. 
+**exclude**: excluded pairs \(processed last\). Any active trading pair that matches any of the excludes, won't be processed.
 
 Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
 
@@ -329,8 +307,6 @@ The example below shows a job that does the following:
 }
 ```
 
-
-
 ### Change exchange delay
 
 **Type name in config:** `changeDelay`
@@ -339,15 +315,13 @@ This job type uses [state filters.](autoconfig.md#pair-state-filters)
 
 **Job output:** changes the exchange delay for a specific exchange.
 
-
-
 **Pair options:**
 
 **include:** included pairs \(processed first\), can not be empty. Any active trading pair that matches any of the includes, will be processed**.** In case you also use the exclude option, the resulting pairs after processing the includes is the starting point for processing excludes, which will remove items from this list of pairs.
 
 Included items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be included. Input as comma separated list, does not accept spaces between items. Can not be empty.
 
-**exclude**: excluded pairs \(processed last\). Any active trading pair that matches any of the excludes, won't be processed. 
+**exclude**: excluded pairs \(processed last\). Any active trading pair that matches any of the excludes, won't be processed.
 
 Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
 
@@ -387,15 +361,13 @@ The example below shows a job that does the following:
 }
 ```
 
-
-
 ### Manage bot settings
 
 **Type names in config:** `manageBotSettings` \(uses [state filters](autoconfig.md#pair-state-filters)\).
 
 _This job type is basically the same as how changeStrategy works, but this type is able to change the global bot settings._
 
-You must have at least one pair set per exchange you use this job type on. 
+You must have at least one pair set per exchange you use this job type on.
 
 **Job output:** change assigned parameters in the bot section. Happens when at least one pair passes all filters
 
@@ -403,7 +375,7 @@ You must have at least one pair set per exchange you use this job type on.
 
 **Pair options:**
 
-**exclude**: pairs that should not be filtered. Any active pair that matches any of the excludes, won't be processed. 
+**exclude**: pairs that should not be filtered. Any active pair that matches any of the excludes, won't be processed.
 
 Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
 
@@ -443,17 +415,13 @@ There is no include options for this filter type. Pairs in your config \(that ha
 }
 ```
 
-
-
 ### Hedge \(for Gunbot\)
 
 **Type names in config:** `hedgeGB` \(uses [ticker filters](autoconfig.md#ticker-filters)\) or `hedgeGB2` \(uses [state filters](autoconfig.md#pair-state-filters)\).
 
 You must have at least one pair set per exchange you use this job type on.
 
-
-
-**Job output:** 
+**Job output:**
 
 You can define a "hedge pair" like USDT-BTC, between which Gunbot should hedge when the market conditions are right for it. If you prefer hedging between completely other currrencies, like BTC-ETH - you can do that too.
 
@@ -483,8 +451,6 @@ Pair filtering is hardcoded to the defined hedge pair.
 **Other obligatory parameters:**
 
 **setVariable:** hedging will only work when both hedging jobs set a variable with the currency it last hedged to, this makes sure that the direction can be tracked for the next hedging action.
-
-
 
 #### Config example
 
@@ -539,8 +505,6 @@ Two important notes:
 * keep the hedge pair in your config at all times, prefably with buy/sell disabled to avoid crossover between base/quote.
 * set the filter for "type": "variableNotExist", ONLY in the job that will take care of the next hedging action. For example, when you start out with BTC-x pairs only, add this filter to the job that hedges to USDT.
 
-### 
-
 ### Hedge \(for bitRage\)
 
 **Type name in config:** `hedge`
@@ -549,15 +513,13 @@ This job type uses [state filters.](autoconfig.md#pair-state-filters)
 
 **Job output:** initiates hedging in bitRage.
 
-
-
 **Pair options:**
 
 **include:** included pairs \(processed first\), can not be empty. Any active trading pair that matches any of the includes, will be processed**.** In case you also use the exclude option, the resulting pairs after processing the includes is the starting point for processing excludes, which will remove items from this list of pairs.
 
 Included items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be included. Input as comma separated list, does not accept spaces between items. Can not be empty.
 
-**exclude**: excluded pairs \(processed last\). Any active trading pair that matches any of the excludes, won't be processed. 
+**exclude**: excluded pairs \(processed last\). Any active trading pair that matches any of the excludes, won't be processed.
 
 Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
 
@@ -567,7 +529,7 @@ Excluded items do not need to be whole pair names, as long as part of the string
 
 **hedgeTo** \(USDT/BTC\): defines which currency to start hedging to.
 
-**brStrat**: defines which strategy is used for bitRage. 
+**brStrat**: defines which strategy is used for bitRage.
 
 \*\*\*\*
 
@@ -588,63 +550,61 @@ The example below shows a job that does the following:
 ```javascript
 {
     "Hedge_to_USDT": {
-		"pairs": {
-			"exclude": "",
-			"include": "",
-			"exchange": "kucoin",
-			"filteredBase": [
-				"TUSD",
-				"PAX",
-				"KCS",
-				"NUSD",
-				"ETH",
-				"DAI",
-				"USDC",
-				"TRX",
-				"NEO",
-				"BTC"
-			],
-			"filteredQuote": [
-				"GGC"
-			],
-			"filteredPair": [
-				"BTC-GGC",
-				"USDT-GGC",
-				"BTC-KCS",
-				"USDT-KCS",
-				"KCS-XRP",
-				"KCS-EOS",
-				"KCS-LTC",
-				"KCS-NEO",
-				"KCS-MTV",
-				"KCS-GO",
-				"KCS-CS",
-				"ETH-KCS",
-				"NEO-EOS",
-				"DAI-BTC",
-				"DAI-ETH",
-				"DAI-MKR",
-				"DAI-USDT"
-			]
-		},
-		"filters": {
-			"variable": {
-				"type": "variableExact",
-				"readyToHedge": "USDT"
-			}
-		},
-		"setVariable": {
-			"hedgingStarted": true
-		},
-		"schedule": "* * * * *",
-		"type": "hedge",
-		"hedgeTo": "USDT",
-		"brStrat": "bitrageStrat"
-	},
+        "pairs": {
+            "exclude": "",
+            "include": "",
+            "exchange": "kucoin",
+            "filteredBase": [
+                "TUSD",
+                "PAX",
+                "KCS",
+                "NUSD",
+                "ETH",
+                "DAI",
+                "USDC",
+                "TRX",
+                "NEO",
+                "BTC"
+            ],
+            "filteredQuote": [
+                "GGC"
+            ],
+            "filteredPair": [
+                "BTC-GGC",
+                "USDT-GGC",
+                "BTC-KCS",
+                "USDT-KCS",
+                "KCS-XRP",
+                "KCS-EOS",
+                "KCS-LTC",
+                "KCS-NEO",
+                "KCS-MTV",
+                "KCS-GO",
+                "KCS-CS",
+                "ETH-KCS",
+                "NEO-EOS",
+                "DAI-BTC",
+                "DAI-ETH",
+                "DAI-MKR",
+                "DAI-USDT"
+            ]
+        },
+        "filters": {
+            "variable": {
+                "type": "variableExact",
+                "readyToHedge": "USDT"
+            }
+        },
+        "setVariable": {
+            "hedgingStarted": true
+        },
+        "schedule": "* * * * *",
+        "type": "hedge",
+        "hedgeTo": "USDT",
+        "brStrat": "bitrageStrat"
+    },
 }
 ```
-
-### 
 
 ### Filtered quote \(for bitRage\)
 
@@ -654,19 +614,15 @@ This job type uses [ticker filters](autoconfig.md#ticker-filters).
 
 **Job output:** It adds the quote of each pair passing all filters to the filteredQuote list. Each time the job runs, the list gets completely replaced with the new results.
 
-
-
 **Pair options:**
 
 **include:** included pairs \(processed first\). Any pair on the exchange that matches any of the includes, will be processed**.** In case you also use the exclude option, the resulting pairs after processing the includes is the starting point for processing excludes, which will remove items from this list of pairs.
 
 Included items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be included. Input as comma separated list, does not accept spaces between items. Can not be empty.
 
-**exclude**: excluded pairs \(processed last\). Any pair on the exchange that matches any of the excludes, won't be processed. 
+**exclude**: excluded pairs \(processed last\). Any pair on the exchange that matches any of the excludes, won't be processed.
 
 Excluded items do not need to be whole pair names, as long as part of the string matches an actual pair, it will be excluded. Input as comma separated list, does not accept spaces between items. Can be empty.
-
-
 
 #### Config example
 
@@ -702,8 +658,6 @@ The example below would do the following:
 
 Jobs can be extended with additional parameters, some work in all job types, some are specific to certain job types.
 
-
-
 #### Optional parameters for all job types:
 
 **enabled** \(true/false\): When false, the job is disabled and won't be executed.
@@ -713,8 +667,6 @@ Jobs can be extended with additional parameters, some work in all job types, som
 [settings for user variables](autoconfig.md#user-variables)
 
 **brStrat**: defines which strategy is used for bitRage. Only needed if you use Autoconfig to automate hedging for bitRage.
-
-
 
 #### Optional parameters for jobs using ticker filters:
 
@@ -731,8 +683,6 @@ Jobs can be extended with additional parameters, some work in all job types, som
 **setITB** \(true/false\): When true, each pair matching all filters will get an additional `IGNORE_TRADES_BEFORE` override, the value being the timestamp for the time the job ran.
 
 **delay** \(time in seconds\): When set, the exchange delay gets adjusted to the specified value when at least one pair passes all filters. For manageOverrides only.
-
-
 
 #### Optional parameters for `addPairs`
 
@@ -754,15 +704,11 @@ Jobs can be extended with additional parameters, some work in all job types, som
         },
 ```
 
-
-
 #### Optional parameters for `removePairs`
 
 **removeBase**: can be used to remove all pairs from a specified base currency that use the bitRage strategy specified in `brStrat`. This is useful to clean out pairs from a specific base after hedging.
 
 **notRemoveBefore** \(in pairs section\): value in minutes. Don't remove pairs from config if it's not in the config longer than specified.
-
-
 
 #### Optional parameters for `hedge`
 
@@ -778,217 +724,178 @@ Ticker filters use data collected from the exchange tickers, at the moment the j
 
 You can use the following filter types for adding and removing pairs. Please note that not every filter type works on every exchange, due to the fact that some exchanges don't offer the required data. On Huobi AutoConfig uses "last" price instead of bid/ask for all filters that work with prices.
 
-![Data availability for certified spot exchanges. Ticker filters are not available for Bitmex.](../.gitbook/assets/image%20%2829%29.png)
+![Data availability for certified spot exchanges. Ticker filters are not available for Bitmex.](../.gitbook/assets/image%20%2830%29.png)
 
 _Filters for prices use ask when adding pairs and bid when filtering for removal or changing strategy._
 
 \_\_
 
+| _Type_ | Description | Extras |
+| :--- | :--- | :--- |
+
+
+| `minPrice` | Filter returns true when price is higher than set. | n/a |
+| :--- | :--- | :--- |
+
+
+| `maxPrice` | Filter returns true when price is lower than set. | n/a |
+| :--- | :--- | :--- |
+
+
+| `minPricePctChangeInterval` | Filter returns true if the current price is at least x% higher than the average price of all snapshots. | `lastSnapshots` |
+| :--- | :--- | :--- |
+
+
+| `maxPricePctChangeInterval` | Filter returns true if the current price is at least x% lower than the average price of all snapshots. | `lastSnapshots` |
+| :--- | :--- | :--- |
+
+
+| `minVolumePctChangeInterval` | Filter returns true if the current 24h volume is at least x% higher than the average 24h volume of all snapshots. | `lastSnapshots` |
+| :--- | :--- | :--- |
+
+
+| `maxVolumePctChangeInterval` | Filter returns true if the current 24h volume is at least x% lower than the average 24h volume of all snapshots. | `lastSnapshots` |
+| :--- | :--- | :--- |
+
+
+| `minVolume24h` | Filter returns true if 24h volume is higher than set, volume in base. | n/a |
+| :--- | :--- | :--- |
+
+
+| `maxVolume24h` | Filter returns true if 24h volume is lower than set, volume in base. | n/a |
+| :--- | :--- | :--- |
+
+
+| `minVolatilityPct24h` | Filter returns true if 24h price percentage change is higher than set. | n/a |
+| :--- | :--- | :--- |
+
+
+| `maxVolatilityPct24h` | Filter returns true if 24h price percentage change is lower than set. | n/a |
+| :--- | :--- | :--- |
+
+
+| `minSpreadPct` | Filter returns true if percentage difference between bid and ask is higher than set. | n/a |
+| :--- | :--- | :--- |
+
+
+| `maxSpreadPct` | Filter returns true if percentage difference between bid and ask is lower than set. | n/a |
+| :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><em>Type</em>
+      <th style="text-align:left"><code>minSlopePctInterval</code>
       </th>
-      <th style="text-align:left">Description</th>
-      <th style="text-align:left">Extras</th>
+      <th style="text-align:left">
+        <p>Filter returns true if the <a href="https://tulipindicators.org/linregslope">slope</a> for
+          all prices in snapshots is bigger than set.</p>
+        <p>Slope is expressed as a percentage of the last price. A slope of 1 means
+          that, according to a simple linear regression, the next collected ticker
+          price is likely to be 1% higher than the last one.</p>
+      </th>
+      <th style="text-align:left"><code>lastSnapshots</code>
+      </th>
     </tr>
   </thead>
-  <tbody>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left"><code>minPrice</code>
-      </td>
-      <td style="text-align:left">Filter returns true when price is higher than set.</td>
-      <td style="text-align:left">n/a</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>maxPrice</code>
-      </td>
-      <td style="text-align:left">Filter returns true when price is lower than set.</td>
-      <td style="text-align:left">n/a</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>minPricePctChangeInterval</code>
-      </td>
-      <td style="text-align:left">Filter returns true if the current price is at least x% higher than the
-        average price of all snapshots.</td>
-      <td style="text-align:left"><code>lastSnapshots</code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>maxPricePctChangeInterval</code>
-      </td>
-      <td style="text-align:left">Filter returns true if the current price is at least x% lower than the
-        average price of all snapshots.</td>
-      <td style="text-align:left"><code>lastSnapshots</code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>minVolumePctChangeInterval</code>
-      </td>
-      <td style="text-align:left">Filter returns true if the current 24h volume is at least x% higher than
-        the average 24h volume of all snapshots.</td>
-      <td style="text-align:left"><code>lastSnapshots</code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>maxVolumePctChangeInterval</code>
-      </td>
-      <td style="text-align:left">Filter returns true if the current 24h volume is at least x% lower than
-        the average 24h volume of all snapshots.</td>
-      <td style="text-align:left"><code>lastSnapshots</code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>minVolume24h</code>
-      </td>
-      <td style="text-align:left">Filter returns true if 24h volume is higher than set, volume in base.</td>
-      <td
-      style="text-align:left">n/a</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>maxVolume24h</code>
-      </td>
-      <td style="text-align:left">Filter returns true if 24h volume is lower than set, volume in base.</td>
-      <td
-      style="text-align:left">n/a</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>minVolatilityPct24h</code>
-      </td>
-      <td style="text-align:left">Filter returns true if 24h price percentage change is higher than set.</td>
-      <td
-      style="text-align:left">n/a</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>maxVolatilityPct24h</code>
-      </td>
-      <td style="text-align:left">Filter returns true if 24h price percentage change is lower than set.</td>
-      <td
-      style="text-align:left">n/a</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>minSpreadPct</code>
-      </td>
-      <td style="text-align:left">Filter returns true if percentage difference between bid and ask is higher
-        than set.</td>
-      <td style="text-align:left">n/a</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>maxSpreadPct</code>
-      </td>
-      <td style="text-align:left">Filter returns true if percentage difference between bid and ask is lower
-        than set.</td>
-      <td style="text-align:left">n/a</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>minSlopePctInterval</code>
-      </td>
-      <td style="text-align:left">
+      <th style="text-align:left"><code>maxSlopePctInterval</code>
+      </th>
+      <th style="text-align:left">
         <p>Filter returns true if the <a href="https://tulipindicators.org/linregslope">slope</a> for
-          all prices in snapshots is bigger than set.</p>
-        <p></p>
+          all prices in snapshots is smaller than set.</p>
         <p>Slope is expressed as a percentage of the last price. A slope of 1 means
           that, according to a simple linear regression, the next collected ticker
           price is likely to be 1% higher than the last one.</p>
-      </td>
-      <td style="text-align:left"><code>lastSnapshots</code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>maxSlopePctInterval</code>
-      </td>
-      <td style="text-align:left">
-        <p>Filter returns true if the <a href="https://tulipindicators.org/linregslope">slope</a> for
-          all prices in snapshots is smaller than set.</p>
-        <p></p>
-        <p>Slope is expressed as a percentage of the last price. A slope of 1 means
-          that, according to a simple linear regression, the next collected ticker
-          price is likely to be 1% higher than the last one.</p>
-        <p></p>
         <p>Only executed when max snapshot sample size is reached.</p>
-      </td>
-      <td style="text-align:left"><code>lastSnapshots</code>
-      </td>
+      </th>
+      <th style="text-align:left"><code>lastSnapshots</code>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left"><code>minStandardDevPctInterval</code>
-      </td>
-      <td style="text-align:left">
+      <th style="text-align:left"><code>minStandardDevPctInterval</code>
+      </th>
+      <th style="text-align:left">
         <p>Filter returns true if the <a href="https://tulipindicators.org/stddev">Standard Deviation</a> for
           all prices in snapshots is bigger than set.</p>
-        <p></p>
         <p>Standard Deviation is expressed as a percentage of the last price.</p>
-        <p></p>
         <p>Only executed when max snapshot sample size is reached.</p>
-      </td>
-      <td style="text-align:left"><code>lastSnapshots</code>
-      </td>
+      </th>
+      <th style="text-align:left"><code>lastSnapshots</code>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left">
-        <p></p>
-        <p><code>maxStandardDevPctInterval</code>
-        </p>
-      </td>
-      <td style="text-align:left">
+      <th style="text-align:left"><code>maxStandardDevPctInterval</code>
+      </th>
+      <th style="text-align:left">
         <p>Filter returns true if the <a href="https://tulipindicators.org/stddev">Standard Deviation</a> for
           all prices in snapshots is smaller than set.</p>
-        <p></p>
         <p>Standard Deviation is expressed as a percentage of the last price.</p>
-        <p></p>
         <p>Only executed when max snapshot sample size is reached.</p>
-      </td>
-      <td style="text-align:left"><code>lastSnapshots</code>
-      </td>
+      </th>
+      <th style="text-align:left"><code>lastSnapshots</code>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table>| `belowMedianVolume` | Filter returns true if the base volume for a pair is lower than the median base volume for all pairs with the same base currency on the exchange. | n/a |
+| :--- | :--- | :--- |
+
+
+| `aboveMedianVolume` | Filter returns true if the base volume for a pair is higher than the median base volume for all pairs with the same base currency on the exchange. | n/a |
+| :--- | :--- | :--- |
+
+
+<table>
+  <thead>
     <tr>
-      <td style="text-align:left"><code>belowMedianVolume</code>
-      </td>
-      <td style="text-align:left">Filter returns true if the base volume for a pair is lower than the median
-        base volume for all pairs with the same base currency on the exchange.</td>
-      <td
-      style="text-align:left">n/a</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>aboveMedianVolume</code>
-      </td>
-      <td style="text-align:left">Filter returns true if the base volume for a pair is higher than the median
-        base volume for all pairs with the same base currency on the exchange.</td>
-      <td
-      style="text-align:left">n/a</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>minVolumeRank</code>
-      </td>
-      <td style="text-align:left">
+      <th style="text-align:left"><code>minVolumeRank</code>
+      </th>
+      <th style="text-align:left">
         <p>Filter returns true if a pairs 24h volume rank (rankings are specific
           per base) is higher than set.</p>
-        <p></p>
         <p>This filter is only useful if you want to exclude some of the top ranking
           volume pairs, for example set it to 5 to only allow pairs that have a volume
           rank of 6 or higher.</p>
-      </td>
-      <td style="text-align:left">n/a</td>
+      </th>
+      <th style="text-align:left">n/a</th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left"><code>maxVolumeRank</code>
-      </td>
-      <td style="text-align:left">
+      <th style="text-align:left"><code>maxVolumeRank</code>
+      </th>
+      <th style="text-align:left">
         <p>Filter returns true if a pairs 24h volume rank (rankings are specific
           per base) is lower than set.</p>
-        <p></p>
         <p>Setting it to 10, for example, would only include pairs that have a top10
           volume ranking.</p>
-      </td>
-      <td style="text-align:left">n/a</td>
+      </th>
+      <th style="text-align:left">n/a</th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left"><code>bullishStandardDeviationChannel</code>
-      </td>
-      <td style="text-align:left">
+      <th style="text-align:left"><code>bullishStandardDeviationChannel</code>
+      </th>
+      <th style="text-align:left">
         <p>It works similar to described here: <a href="http://www.forexpromos.com/what-is-standard-deviation-channel">http://www.forexpromos.com/what-is-standard-deviation-channel</a>
         </p>
-        <p></p>
         <p>The filter passes when:</p>
         <ul>
           <li>slopePct is positive</li>
@@ -996,20 +903,22 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
           <li>price is within a defined range from the lower band</li>
         </ul>
         <p>(it would detect a downwards breakout from an upwards channel)</p>
-        <p></p>
         <p>Range 0 = same price as lower band</p>
         <p>Range 100 = same price as upper band</p>
-      </td>
-      <td style="text-align:left"><code>lastSnapshots</code>
-      </td>
+      </th>
+      <th style="text-align:left"><code>lastSnapshots</code>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left"><code>bearishStandardDeviationChannel</code>
-      </td>
-      <td style="text-align:left">
+      <th style="text-align:left"><code>bearishStandardDeviationChannel</code>
+      </th>
+      <th style="text-align:left">
         <p>It works similar to described here: <a href="http://www.forexpromos.com/what-is-standard-deviation-channel">http://www.forexpromos.com/what-is-standard-deviation-channel</a>
         </p>
-        <p></p>
         <p>The filter passes when:</p>
         <ul>
           <li>slopePct is negative</li>
@@ -1017,20 +926,22 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
           <li>price is within a defined range from the upper band</li>
         </ul>
         <p>(it would detect an upwards breakout from a downwards channel)</p>
-        <p></p>
         <p>Range 0 = same price as upper band</p>
         <p>Range 100 = same price as lower band</p>
-      </td>
-      <td style="text-align:left"><code>lastSnapshots</code>
-      </td>
+      </th>
+      <th style="text-align:left"><code>lastSnapshots</code>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left"><code>linearRegressionChannel</code>
-      </td>
-      <td style="text-align:left">
+      <th style="text-align:left"><code>linearRegressionChannel</code>
+      </th>
+      <th style="text-align:left">
         <p>Same as &quot;Linear regression&quot; indicator on TradingView. Standard
           deviation is hardcoded to 2.</p>
-        <p></p>
         <p>The filter passes when:</p>
         <ul>
           <li>max snapshot count is reached</li>
@@ -1038,42 +949,29 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
         </ul>
         <p>Range 0 = same price as lower band</p>
         <p>Range 100 = same price as upper band</p>
-      </td>
-      <td style="text-align:left"><code>lastSnapshots</code>
-      </td>
+      </th>
+      <th style="text-align:left"><code>lastSnapshots</code>
+      </th>
     </tr>
-    <tr>
-      <td style="text-align:left"><code>allowsHedging</code>
-      </td>
-      <td style="text-align:left">Filter returns true if a pair can be hedged to another base currency without
-        using an intermediate pair.</td>
-      <td style="text-align:left">n/a</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>buyTrailing</code>
-      </td>
-      <td style="text-align:left"><a href="https://wiki.gunthy.org/how-to-work-with-gunbot/autoconfig#trailing-filters">See details</a>
-      </td>
-      <td style="text-align:left">n/a</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>volumeTrailing</code>
-      </td>
-      <td style="text-align:left"><a href="https://wiki.gunthy.org/how-to-work-with-gunbot/autoconfig#trailing-filters">See details</a>
-      </td>
-      <td style="text-align:left">n/a</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>slopeTrailing</code>
-      </td>
-      <td style="text-align:left"><a href="https://wiki.gunthy.org/how-to-work-with-gunbot/autoconfig#trailing-filters">See details</a>
-      </td>
-      <td style="text-align:left">n/a</td>
-    </tr>
-  </tbody>
-</table>\_\_
+  </thead>
+  <tbody></tbody>
+</table>| `allowsHedging` | Filter returns true if a pair can be hedged to another base currency without using an intermediate pair. | n/a |
+| :--- | :--- | :--- |
 
-The extra input called `lastSnapshots` lets you use only the last x snapshots to calculate the filter. 
+
+| `buyTrailing` | [See details](https://wiki.gunthy.org/how-to-work-with-gunbot/autoconfig#trailing-filters) | n/a |
+| :--- | :--- | :--- |
+
+
+| `volumeTrailing` | [See details](https://wiki.gunthy.org/how-to-work-with-gunbot/autoconfig#trailing-filters) | n/a |
+| :--- | :--- | :--- |
+
+
+| `slopeTrailing` | [See details](https://wiki.gunthy.org/how-to-work-with-gunbot/autoconfig#trailing-filters) | n/a |
+| :--- | :--- | :--- |
+
+
+The extra input called `lastSnapshots` lets you use only the last x snapshots to calculate the filter.
 
 If for example your job collects 100 snapshots but you want a specific filter to only use the last 10 snapshots to calculate slope, you can do that.
 
@@ -1092,8 +990,6 @@ If for example your job collects 100 snapshots but you want a specific filter to
 }
 ```
 
-
-
 Config building blocks for ticker filters:
 
 ```text
@@ -1109,8 +1005,8 @@ Config building blocks for ticker filters:
     "max": 0.3
 },
 "channel": {
-		"type": "bullishStandardDeviationChannel",
-		"range": -10
+        "type": "bullishStandardDeviationChannel",
+        "range": -10
 }
 ```
 
@@ -1139,27 +1035,27 @@ Slope trailing works just like buy trailing, the only difference is that the slo
 
 ```javascript
 {
-	"trailingExample": {
-		"pairs": {
-			"exclude": "",
-			"include": "BTC-,USDT-",
-			"maxPairs": 10,
-			"exchange": "binance"
-		},
-		"filters": {
-			"trailing": {
-				"type": "buyTrailing",
-				"buyLevel": 0.5,
-				"trailingRange": 1
-			}
-		},
-		"schedule": "* * * * *",
-		"type": "addPairs",
-		"strategy": "instantBuy",
-		"enabled": true,
-		"resume": true,
-		"snapshots": 60
-	},
+    "trailingExample": {
+        "pairs": {
+            "exclude": "",
+            "include": "BTC-,USDT-",
+            "maxPairs": 10,
+            "exchange": "binance"
+        },
+        "filters": {
+            "trailing": {
+                "type": "buyTrailing",
+                "buyLevel": 0.5,
+                "trailingRange": 1
+            }
+        },
+        "schedule": "* * * * *",
+        "type": "addPairs",
+        "strategy": "instantBuy",
+        "enabled": true,
+        "resume": true,
+        "snapshots": 60
+    },
 ```
 
 \_\_
@@ -1193,10 +1089,10 @@ History filters take one additional input, defining which history data should be
 
 ```text
 "filter": {
-				"type": "minPriceHistory",
-				"min": 10,
-				"historySource": 6
-			}
+                "type": "minPriceHistory",
+                "min": 10,
+                "historySource": 6
+            }
 ```
 
 The `historySource` parameter in the example above means that it will use the price of the history entry with number 6. The oldest history entry has number 0.
@@ -1233,43 +1129,41 @@ History entries, 60m interval                    |
 
 
 "addMoon": {
-		"pairs": {
-			"exclude": "",
-			"include": "BTC-",
-			"maxPairs": 10,
-			"exchange": "binance"
-		},
-		"filters": {
-			"filter1": {
-				"type": "maxVolumeRank",
-				"max": 10
-			},
-			"filter2": {
-				"type": "minSlopePctIntervalHistory",
-				"min": 1,
-				"historySource": 4
-			},
-			"filter3": {
-				"type": "maxVolumeRankHistory",
-				"max": 10,
-				"historySource": 0
-			}
-		},
-		"schedule": "* * * * * *",
-		"type": "addPairs",
-		"strategy": "moon",
-		"snapshots": 5,
-		"history": 5,
-		"historyInterval": 60,
-		"resume": true
-	},
+        "pairs": {
+            "exclude": "",
+            "include": "BTC-",
+            "maxPairs": 10,
+            "exchange": "binance"
+        },
+        "filters": {
+            "filter1": {
+                "type": "maxVolumeRank",
+                "max": 10
+            },
+            "filter2": {
+                "type": "minSlopePctIntervalHistory",
+                "min": 1,
+                "historySource": 4
+            },
+            "filter3": {
+                "type": "maxVolumeRankHistory",
+                "max": 10,
+                "historySource": 0
+            }
+        },
+        "schedule": "* * * * * *",
+        "type": "addPairs",
+        "strategy": "moon",
+        "snapshots": 5,
+        "history": 5,
+        "historyInterval": 60,
+        "resume": true
+    },
 ```
 
 {% hint style="info" %}
 Both snapshots and history cause a relatively high load on I/O operations. Depending on your system, allowing for too many entries saved can negatively impact performance.
 {% endhint %}
-
-
 
 ### Pair state filters
 
@@ -1277,7 +1171,7 @@ For job types: `manageOverrides`, `changeDelay`, `removePairs2`, `changeStrategy
 
 State filters use data from the internal ledger in Gunbot, which has all data for pairs that already cycled since Gunbot last \(re\)started.
 
-![Available pair state filters](../.gitbook/assets/image%20%2862%29.png)
+![Available pair state filters](../.gitbook/assets/image%20%2865%29.png)
 
 Formula used in `differenceBigger`:  
 `100 * ((ema2 - ema1) / ema1) > delta`
@@ -1348,7 +1242,7 @@ Usage:
 }
 ```
 
- **Available trigger types for filters using triggers.** 
+**Available trigger types for filters using triggers.**
 
 Note: only the most recent order for each pair is available for analysis, the orders must be placed by a Gunbot strategy. Data is kept between restarts, also for pairs that are no longer actively traded with Gunbot.
 
@@ -1460,34 +1354,32 @@ Besides the obligatory first set of filters, you can add up to 9 more sets. name
 
 ```text
 {
-	"example": {
-		"pairs": {
-			"exclude": "",
-			"include": "",
-			"maxPairs": 500,
-			"noBag": false,
-			"exchange": "binance"
-		},
-		"filters": {
-			"price": {
-				"type": "minPrice",
-				"min": 0.0000001
-			}
-		},
-		"filters2": {
-			"minVolume24h": {
-				"type": "minVolume24h",
-				"min": 100
-			}
-		},
-		"schedule": "*/30 * * * * *",
-		"type": "removePairs",
-		"enabled": true
-	}
+    "example": {
+        "pairs": {
+            "exclude": "",
+            "include": "",
+            "maxPairs": 500,
+            "noBag": false,
+            "exchange": "binance"
+        },
+        "filters": {
+            "price": {
+                "type": "minPrice",
+                "min": 0.0000001
+            }
+        },
+        "filters2": {
+            "minVolume24h": {
+                "type": "minVolume24h",
+                "min": 100
+            }
+        },
+        "schedule": "*/30 * * * * *",
+        "type": "removePairs",
+        "enabled": true
+    }
 }
 ```
-
-
 
 ## Backtesting for addPairs jobs
 
@@ -1508,7 +1400,7 @@ Before you can backtest, you need to collect a dataset with a "collectData" job.
 }
 ```
 
-The schedule in this job should be the same as the schedule you'd use in an `addPairs` job. It will collect up to 5 ticker snapshots and removes older snapshots in case they exist. 
+The schedule in this job should be the same as the schedule you'd use in an `addPairs` job. It will collect up to 5 ticker snapshots and removes older snapshots in case they exist.
 
 You can use any number of snapshots in this job type. If you omit the snapshots parameter, it will collect ticker snapshots for as long as your system has free disk space.
 
@@ -1530,36 +1422,36 @@ Job example for backtesting:
 
 ```javascript
 "30-secs": {
-		"pairs": {
-			"exclude": "",
-			"include": "BTC-",
-			"exchange": "binance"
-		},
-		"filters": {
-			"slope": {
-				"type": "minSlopePctInterval",
-				"min": 0.02
-			},
-			"volume": {
-				"type": "minVolume24h",
-				"min": 75
-			},
-			"pricehistory0": {
-				"type": "maxPricePctChangeIntervalHistory",
-				"max": 5,
-				"historySource": 9
-			}
-		},
-		"schedule": "1 1 1 1 1",
-		"type": "backtesting",
-		"tickersFolder": "30-secs-tickers",
-		"enabled": true,
-		"onStart": true,
-		"history": 10,
-		"historyInterval": 2,
-		"debug": false,
-		"snapshots": 10
-	}
+        "pairs": {
+            "exclude": "",
+            "include": "BTC-",
+            "exchange": "binance"
+        },
+        "filters": {
+            "slope": {
+                "type": "minSlopePctInterval",
+                "min": 0.02
+            },
+            "volume": {
+                "type": "minVolume24h",
+                "min": 75
+            },
+            "pricehistory0": {
+                "type": "maxPricePctChangeIntervalHistory",
+                "max": 5,
+                "historySource": 9
+            }
+        },
+        "schedule": "1 1 1 1 1",
+        "type": "backtesting",
+        "tickersFolder": "30-secs-tickers",
+        "enabled": true,
+        "onStart": true,
+        "history": 10,
+        "historyInterval": 2,
+        "debug": false,
+        "snapshots": 10
+    }
 ```
 
 The data source for backtesting is set with the `"tickersFolder"` parameter. Set it to the exact folder name where your collected ticker files are. i
@@ -1574,7 +1466,7 @@ The data source for backtesting is set with the `"tickersFolder"` parameter. Set
 * You can disable telegram notifications per job, just include this line in your job: `"muteTG": true`
 * Almost every key/value in pair state files can be filtered, as long as they are on the first level \(not inside additional arrays or objects\)
 
-![First level elements like these can be used for filtering.](../.gitbook/assets/image%20%2865%29.png)
+![First level elements like these can be used for filtering.](../.gitbook/assets/image%20%2868%29.png)
 
 ![Elements like these cannot be used for filtering.](../.gitbook/assets/image%20%288%29.png)
 
@@ -1584,435 +1476,435 @@ You don't want to use this ever in this form, but use it as reference for how ea
 
 ```javascript
 {
-	"addPairs-jobname": {
-		"pairs": {
-			"exclude": "DOGE,XLM,PAX",
-			"include": "BTC,USDT",
-			"maxPairs": 25,
-			"exchange": "binance"
-		},
-		"filters": {
-			"filter1": {
-				"type": "minPrice",
-				"min": 0.0000001
-			},
-			"filter2": {
-				"type": "maxPrice",
-				"max": 0.0000010
-			},
-			"filter3": {
-				"type": "minPricePctChangeInterval",
-				"min": 0.00002
-			},
-			"filter4": {
-				"type": "maxPricePctChangeInterval",
-				"max": 1
-			},
-			"filter5": {
-				"type": "minVolumePctChangeInterval",
-				"min": 10
-			},
-			"filter6": {
-				"type": "maxVolumePctChangeInterval",
-				"max": 50
-			},
-			"filter7": {
-				"type": "minVolume24h",
-				"min": 500
-			},
-			"filter8": {
-				"type": "maxVolume24h",
-				"max": 1000
-			},
-			"filter9": {
-				"type": "minVolatilityPct24h",
-				"min": 1
-			},
-			"filter10": {
-				"type": "maxVolatilityPct24h",
-				"max": 1
-			},
-			"filter11": {
-				"type": "minSpreadPct",
-				"min": 0.00001
-			},
-			"filter12": {
-				"type": "maxSpreadPct",
-				"max": 1
-			},
-			"filter13": {
-				"type": "minSlopePctInterval",
-				"min": 0.00001
-			},
-			"filter14": {
-				"type": "maxSlopePctInterval",
-				"max": 1
-			},
-			"filter17": {
-				"type": "belowMedianVolume"
-			},
-			"filter18": {
-				"type": "aboveMedianVolume"
-			},
-			"filter16": {
-				"type": "variableExact",
-				"userVar1": false
-			}
-		},
-		"schedule": "* * * * *",
-		"type": "addPairs",
-		"strategy": "gain",
-		"snapshots": 2,
-		"resume": false,
-		"debug": "true",
-		"setVariable": {
-			"userVariable1": true
-		},
-		"enabled": true
-	},
-	"removePairs-jobname": {
-		"pairs": {
-			"exclude": "BNB,XVG",
-			"noBag": false,
-			"removeDisabled": true,
-			"exchange": "binance"
-		},
-		"filters": {
-			"filter1": {
-				"type": "minPrice",
-				"min": 0.0000001
-			},
-			"filter2": {
-				"type": "maxPrice",
-				"max": 0.0000010
-			},
-			"filter3": {
-				"type": "minPricePctChangeInterval",
-				"min": 0.00002
-			},
-			"filter4": {
-				"type": "maxPricePctChangeInterval",
-				"max": 1
-			},
-			"filter5": {
-				"type": "minVolumePctChangeInterval",
-				"min": 10
-			},
-			"filter6": {
-				"type": "maxVolumePctChangeInterval",
-				"max": 50
-			},
-			"filter7": {
-				"type": "minVolume24h",
-				"min": 500
-			},
-			"filter8": {
-				"type": "maxVolume24h",
-				"max": 1000
-			},
-			"filter9": {
-				"type": "minVolatilityPct24h",
-				"min": 1
-			},
-			"filter10": {
-				"type": "maxVolatilityPct24h",
-				"max": 1
-			},
-			"filter11": {
-				"type": "minSpreadPct",
-				"min": 0.00001
-			},
-			"filter12": {
-				"type": "maxSpreadPct",
-				"max": 1
-			},
-			"filter13": {
-				"type": "minSlopePctInterval",
-				"min": 0.00001
-			},
-			"filter14": {
-				"type": "maxSlopePctInterval",
-				"max": 1
-			},
-			"filter16": {
-				"type": "variableExact",
-				"userVar1": false
-			},
-			"filter17": {
-				"type": "belowMedianVolume"
-			},
-			"filter18": {
-				"type": "aboveMedianVolume"
-			}
-		},
-		"schedule": "* * * * *",
-		"type": "removePairs",
-		"snapshots": 10,
-		"debug": "true",
-		"setVariable": {
-			"userVariable1": true
-		},
-		"enabled": true
-	},
-	"removePairs2-jobname": {
-		"pairs": {
-			"exclude": "BNB,XVG",
-			"noBag": false,
-			"removeDisabled": true,
-			"exchange": "binance"
-		},
-		"filters": {
-			"filter1": {
-				"type": "exact",
-				"ducount": 1
-			},
-			"filter2": {
-				"type": "biggerThan",
-				"ducount": 1
-			},
-			"filter3": {
-				"type": "smallerThan",
-				"ducount": 1
-			},
-			"filter4": {
-				"type": "compareBigger",
-				"ema1": 1,
-				"ema2": 1
-			},
-			"filter5": {
-				"type": "compareSmaller",
-				"ema1": 1,
-				"ema2": 1
-			},
-			"filter6": {
-				"type": "differenceBigger",
-				"ema1": 1,
-				"ema2": 1,
-				"delta": 10
-			},
-			"filter7": {
-				"type": "differenceSmaller",
-				"ema1": 1,
-				"ema2": 1,
-				"delta": 10
-			},
-			"filter16": {
-				"type": "variableExact",
-				"userVar1": false
-			}
-		},
-		"schedule": "* * * * *",
-		"type": "removePairs2",
-		"snapshots": 10,
-		"resume": false,
-		"debug": "true",
-		"setVariable": {
-			"userVariable1": true
-		},
-		"enabled": true
-	},
-	"changeStrategy-jobname": {
-		"pairs": {
-			"exclude": "",
-			"bag": true,
-			"exchange": "binance"
-		},
-		"filters": {
-			"filter1": {
-				"type": "minPrice",
-				"min": 0.0000001
-			},
-			"filter2": {
-				"type": "maxPrice",
-				"max": 0.0000010
-			},
-			"filter3": {
-				"type": "minPricePctChangeInterval",
-				"min": 0.00002
-			},
-			"filter4": {
-				"type": "maxPricePctChangeInterval",
-				"max": 1
-			},
-			"filter5": {
-				"type": "minVolumePctChangeInterval",
-				"min": 10
-			},
-			"filter6": {
-				"type": "maxVolumePctChangeInterval",
-				"max": 50
-			},
-			"filter7": {
-				"type": "minVolume24h",
-				"min": 500
-			},
-			"filter8": {
-				"type": "maxVolume24h",
-				"max": 1000
-			},
-			"filter9": {
-				"type": "minVolatilityPct24h",
-				"min": 1
-			},
-			"filter10": {
-				"type": "maxVolatilityPct24h",
-				"max": 1
-			},
-			"filter11": {
-				"type": "minSpreadPct",
-				"min": 0.00001
-			},
-			"filter12": {
-				"type": "maxSpreadPct",
-				"max": 1
-			},
-			"filter13": {
-				"type": "minSlopePctInterval",
-				"min": 0.00001
-			},
-			"filter14": {
-				"type": "maxSlopePctInterval",
-				"max": 1
-			},
-			"filter16": {
-				"type": "variableExact",
-				"userVar1": false
-			},
-			"filter17": {
-				"type": "belowMedianVolume"
-			},
-			"filter18": {
-				"type": "aboveMedianVolume"
-			}
-		},
-		"schedule": "* * * * *",
-		"type": "changeStrategy",
-		"snapshots": 10,
-		"strategy": "baghandler",
-		"resume": false,
-		"debug": "true",
-		"setVariable": {
-			"userVariable1": true
-		},
-		"enabled": true
-	},
-	"changeStrategy2-jobname": {
-		"pairs": {
-			"exclude": "",
-			"bag": true,
-			"exchange": "binance"
-		},
-		"filters": {
-			"filter1": {
-				"type": "exact",
-				"ducount": 1
-			},
-			"filter2": {
-				"type": "biggerThan",
-				"ducount": 1
-			},
-			"filter3": {
-				"type": "smallerThan",
-				"ducount": 1
-			},
-			"filter4": {
-				"type": "compareBigger",
-				"ema1": 1,
-				"ema2": 1
-			},
-			"filter5": {
-				"type": "compareSmaller",
-				"ema1": 1,
-				"ema2": 1
-			},
-			"filter6": {
-				"type": "differenceBigger",
-				"ema1": 1,
-				"ema2": 1,
-				"delta": 10
-			},
-			"filter7": {
-				"type": "differenceSmaller",
-				"ema1": 1,
-				"ema2": 1,
-				"delta": 10
-			},
-			"filter16": {
-				"type": "variableExact",
-				"userVar1": false
-			}
-		},
-		"schedule": "* * * * *",
-		"type": "changeStrategy2",
-		"snapshots": 10,
-		"strategy": "baghandler",
-		"resume": false,
-		"setVariable": {
-			"userVariable1": true
-		},
-		"debug": "true",
-		"enabled": true
-	},
-	"manageOverrides-jobname": {
-		"pairs": {
-			"exclude": "DOGE,ETH",
-			"include": "USDT,BNB",
-			"exchange": "binance"
-		},
-		"filters": {
-			"filter1": {
-				"type": "exact",
-				"ducount": 1
-			},
-			"filter2": {
-				"type": "biggerThan",
-				"ducount": 1
-			},
-			"filter3": {
-				"type": "smallerThan",
-				"ducount": 1
-			},
-			"filter4": {
-				"type": "compareBigger",
-				"ema1": 1,
-				"ema2": 1
-			},
-			"filter5": {
-				"type": "compareSmaller",
-				"ema1": 1,
-				"ema2": 1
-			},
-			"filter6": {
-				"type": "differenceBigger",
-				"ema1": 1,
-				"ema2": 1,
-				"delta": 10
-			},
-			"filter7": {
-				"type": "differenceSmaller",
-				"ema1": 1,
-				"ema2": 1,
-				"delta": 10
-			},
-			"filter16": {
-				"type": "variableExact",
-				"userVar1": false
-			}
-		},
-		"overrides": {
-			"DU_BUYDOWN": 3
-		},
-		"clearOverrides": false,
-		"setITB": false,
-		"schedule": "*/10 * * * *",
-		"type": "manageOverrides",
-		"resume": false,
-		"setVariable": {
-			"userVariable1": true
-		},
-		"debug": "true",
-		"enabled": true
-	}
+    "addPairs-jobname": {
+        "pairs": {
+            "exclude": "DOGE,XLM,PAX",
+            "include": "BTC,USDT",
+            "maxPairs": 25,
+            "exchange": "binance"
+        },
+        "filters": {
+            "filter1": {
+                "type": "minPrice",
+                "min": 0.0000001
+            },
+            "filter2": {
+                "type": "maxPrice",
+                "max": 0.0000010
+            },
+            "filter3": {
+                "type": "minPricePctChangeInterval",
+                "min": 0.00002
+            },
+            "filter4": {
+                "type": "maxPricePctChangeInterval",
+                "max": 1
+            },
+            "filter5": {
+                "type": "minVolumePctChangeInterval",
+                "min": 10
+            },
+            "filter6": {
+                "type": "maxVolumePctChangeInterval",
+                "max": 50
+            },
+            "filter7": {
+                "type": "minVolume24h",
+                "min": 500
+            },
+            "filter8": {
+                "type": "maxVolume24h",
+                "max": 1000
+            },
+            "filter9": {
+                "type": "minVolatilityPct24h",
+                "min": 1
+            },
+            "filter10": {
+                "type": "maxVolatilityPct24h",
+                "max": 1
+            },
+            "filter11": {
+                "type": "minSpreadPct",
+                "min": 0.00001
+            },
+            "filter12": {
+                "type": "maxSpreadPct",
+                "max": 1
+            },
+            "filter13": {
+                "type": "minSlopePctInterval",
+                "min": 0.00001
+            },
+            "filter14": {
+                "type": "maxSlopePctInterval",
+                "max": 1
+            },
+            "filter17": {
+                "type": "belowMedianVolume"
+            },
+            "filter18": {
+                "type": "aboveMedianVolume"
+            },
+            "filter16": {
+                "type": "variableExact",
+                "userVar1": false
+            }
+        },
+        "schedule": "* * * * *",
+        "type": "addPairs",
+        "strategy": "gain",
+        "snapshots": 2,
+        "resume": false,
+        "debug": "true",
+        "setVariable": {
+            "userVariable1": true
+        },
+        "enabled": true
+    },
+    "removePairs-jobname": {
+        "pairs": {
+            "exclude": "BNB,XVG",
+            "noBag": false,
+            "removeDisabled": true,
+            "exchange": "binance"
+        },
+        "filters": {
+            "filter1": {
+                "type": "minPrice",
+                "min": 0.0000001
+            },
+            "filter2": {
+                "type": "maxPrice",
+                "max": 0.0000010
+            },
+            "filter3": {
+                "type": "minPricePctChangeInterval",
+                "min": 0.00002
+            },
+            "filter4": {
+                "type": "maxPricePctChangeInterval",
+                "max": 1
+            },
+            "filter5": {
+                "type": "minVolumePctChangeInterval",
+                "min": 10
+            },
+            "filter6": {
+                "type": "maxVolumePctChangeInterval",
+                "max": 50
+            },
+            "filter7": {
+                "type": "minVolume24h",
+                "min": 500
+            },
+            "filter8": {
+                "type": "maxVolume24h",
+                "max": 1000
+            },
+            "filter9": {
+                "type": "minVolatilityPct24h",
+                "min": 1
+            },
+            "filter10": {
+                "type": "maxVolatilityPct24h",
+                "max": 1
+            },
+            "filter11": {
+                "type": "minSpreadPct",
+                "min": 0.00001
+            },
+            "filter12": {
+                "type": "maxSpreadPct",
+                "max": 1
+            },
+            "filter13": {
+                "type": "minSlopePctInterval",
+                "min": 0.00001
+            },
+            "filter14": {
+                "type": "maxSlopePctInterval",
+                "max": 1
+            },
+            "filter16": {
+                "type": "variableExact",
+                "userVar1": false
+            },
+            "filter17": {
+                "type": "belowMedianVolume"
+            },
+            "filter18": {
+                "type": "aboveMedianVolume"
+            }
+        },
+        "schedule": "* * * * *",
+        "type": "removePairs",
+        "snapshots": 10,
+        "debug": "true",
+        "setVariable": {
+            "userVariable1": true
+        },
+        "enabled": true
+    },
+    "removePairs2-jobname": {
+        "pairs": {
+            "exclude": "BNB,XVG",
+            "noBag": false,
+            "removeDisabled": true,
+            "exchange": "binance"
+        },
+        "filters": {
+            "filter1": {
+                "type": "exact",
+                "ducount": 1
+            },
+            "filter2": {
+                "type": "biggerThan",
+                "ducount": 1
+            },
+            "filter3": {
+                "type": "smallerThan",
+                "ducount": 1
+            },
+            "filter4": {
+                "type": "compareBigger",
+                "ema1": 1,
+                "ema2": 1
+            },
+            "filter5": {
+                "type": "compareSmaller",
+                "ema1": 1,
+                "ema2": 1
+            },
+            "filter6": {
+                "type": "differenceBigger",
+                "ema1": 1,
+                "ema2": 1,
+                "delta": 10
+            },
+            "filter7": {
+                "type": "differenceSmaller",
+                "ema1": 1,
+                "ema2": 1,
+                "delta": 10
+            },
+            "filter16": {
+                "type": "variableExact",
+                "userVar1": false
+            }
+        },
+        "schedule": "* * * * *",
+        "type": "removePairs2",
+        "snapshots": 10,
+        "resume": false,
+        "debug": "true",
+        "setVariable": {
+            "userVariable1": true
+        },
+        "enabled": true
+    },
+    "changeStrategy-jobname": {
+        "pairs": {
+            "exclude": "",
+            "bag": true,
+            "exchange": "binance"
+        },
+        "filters": {
+            "filter1": {
+                "type": "minPrice",
+                "min": 0.0000001
+            },
+            "filter2": {
+                "type": "maxPrice",
+                "max": 0.0000010
+            },
+            "filter3": {
+                "type": "minPricePctChangeInterval",
+                "min": 0.00002
+            },
+            "filter4": {
+                "type": "maxPricePctChangeInterval",
+                "max": 1
+            },
+            "filter5": {
+                "type": "minVolumePctChangeInterval",
+                "min": 10
+            },
+            "filter6": {
+                "type": "maxVolumePctChangeInterval",
+                "max": 50
+            },
+            "filter7": {
+                "type": "minVolume24h",
+                "min": 500
+            },
+            "filter8": {
+                "type": "maxVolume24h",
+                "max": 1000
+            },
+            "filter9": {
+                "type": "minVolatilityPct24h",
+                "min": 1
+            },
+            "filter10": {
+                "type": "maxVolatilityPct24h",
+                "max": 1
+            },
+            "filter11": {
+                "type": "minSpreadPct",
+                "min": 0.00001
+            },
+            "filter12": {
+                "type": "maxSpreadPct",
+                "max": 1
+            },
+            "filter13": {
+                "type": "minSlopePctInterval",
+                "min": 0.00001
+            },
+            "filter14": {
+                "type": "maxSlopePctInterval",
+                "max": 1
+            },
+            "filter16": {
+                "type": "variableExact",
+                "userVar1": false
+            },
+            "filter17": {
+                "type": "belowMedianVolume"
+            },
+            "filter18": {
+                "type": "aboveMedianVolume"
+            }
+        },
+        "schedule": "* * * * *",
+        "type": "changeStrategy",
+        "snapshots": 10,
+        "strategy": "baghandler",
+        "resume": false,
+        "debug": "true",
+        "setVariable": {
+            "userVariable1": true
+        },
+        "enabled": true
+    },
+    "changeStrategy2-jobname": {
+        "pairs": {
+            "exclude": "",
+            "bag": true,
+            "exchange": "binance"
+        },
+        "filters": {
+            "filter1": {
+                "type": "exact",
+                "ducount": 1
+            },
+            "filter2": {
+                "type": "biggerThan",
+                "ducount": 1
+            },
+            "filter3": {
+                "type": "smallerThan",
+                "ducount": 1
+            },
+            "filter4": {
+                "type": "compareBigger",
+                "ema1": 1,
+                "ema2": 1
+            },
+            "filter5": {
+                "type": "compareSmaller",
+                "ema1": 1,
+                "ema2": 1
+            },
+            "filter6": {
+                "type": "differenceBigger",
+                "ema1": 1,
+                "ema2": 1,
+                "delta": 10
+            },
+            "filter7": {
+                "type": "differenceSmaller",
+                "ema1": 1,
+                "ema2": 1,
+                "delta": 10
+            },
+            "filter16": {
+                "type": "variableExact",
+                "userVar1": false
+            }
+        },
+        "schedule": "* * * * *",
+        "type": "changeStrategy2",
+        "snapshots": 10,
+        "strategy": "baghandler",
+        "resume": false,
+        "setVariable": {
+            "userVariable1": true
+        },
+        "debug": "true",
+        "enabled": true
+    },
+    "manageOverrides-jobname": {
+        "pairs": {
+            "exclude": "DOGE,ETH",
+            "include": "USDT,BNB",
+            "exchange": "binance"
+        },
+        "filters": {
+            "filter1": {
+                "type": "exact",
+                "ducount": 1
+            },
+            "filter2": {
+                "type": "biggerThan",
+                "ducount": 1
+            },
+            "filter3": {
+                "type": "smallerThan",
+                "ducount": 1
+            },
+            "filter4": {
+                "type": "compareBigger",
+                "ema1": 1,
+                "ema2": 1
+            },
+            "filter5": {
+                "type": "compareSmaller",
+                "ema1": 1,
+                "ema2": 1
+            },
+            "filter6": {
+                "type": "differenceBigger",
+                "ema1": 1,
+                "ema2": 1,
+                "delta": 10
+            },
+            "filter7": {
+                "type": "differenceSmaller",
+                "ema1": 1,
+                "ema2": 1,
+                "delta": 10
+            },
+            "filter16": {
+                "type": "variableExact",
+                "userVar1": false
+            }
+        },
+        "overrides": {
+            "DU_BUYDOWN": 3
+        },
+        "clearOverrides": false,
+        "setITB": false,
+        "schedule": "*/10 * * * *",
+        "type": "manageOverrides",
+        "resume": false,
+        "setVariable": {
+            "userVariable1": true
+        },
+        "debug": "true",
+        "enabled": true
+    }
 }
 ```
 
