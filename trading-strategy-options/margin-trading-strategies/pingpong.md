@@ -18,7 +18,7 @@ The examples below show how the basic triggers for `pp` work. Additionally, you 
 
 ### Long \(regular: trend following\)
 
-![](../../.gitbook/assets/image%20%2815%29.png)
+![](../../.gitbook/assets/image%20%2816%29.png)
 
 * A long position is opened when the ask price is equal to or above `PP_BUY`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `ROE`: 1.
@@ -26,7 +26,7 @@ The examples below show how the basic triggers for `pp` work. Additionally, you 
 
 ### Short \(regular: trend following\)
 
-![](../../.gitbook/assets/image%20%2855%29.png)
+![](../../.gitbook/assets/image%20%2856%29.png)
 
 * A short position is opened when the bid price is equal to or below `PP_SELL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `ROE`: 1.
@@ -46,7 +46,7 @@ In `MEAN_REVERSION` mode the behavior for `PP_BUY` and `PP_SELL` is reversed in 
 
 In `MEAN_REVERSION` mode the behavior for `PP_BUY` and `PP_SELL` is reversed in this strategy.
 
-![](../../.gitbook/assets/image%20%2817%29.png)
+![](../../.gitbook/assets/image%20%2818%29.png)
 
 * A short position is opened when the bid price is equal to or above `PP_SELL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `ROE`: 1.
@@ -145,6 +145,10 @@ Parameter name in `config.js`: `LEVERAGE`
 Places a market stop order for a long position, at the same time as the position is opened.
 
 When set to 1 and a long order is opened at a price of 100, a stop market order will be placed at 99.
+
+{% hint style="info" %}
+This setting is exclusive to Bitmex
+{% endhint %}
 {% endtab %}
 
 {% tab title="Values" %}
@@ -178,6 +182,10 @@ Parameter name in `config.js`: `STOP_BUY`
 Places a market stop order for a short position, at the same time as the position is opened.
 
 When set to 1 and a short order is opened at a price of 100, a stop market order will be placed at 101.
+
+{% hint style="info" %}
+This setting is exclusive to Bitmex
+{% endhint %}
 {% endtab %}
 
 {% tab title="Values" %}

@@ -8,7 +8,7 @@ To be able to trade, you need to enter the exchange [API key](creating-api-keys.
 
 To enter these, go to **Settings &gt; Trading &gt; Exchanges**.
 
-![](../../../.gitbook/assets/image%20%2824%29.png)
+![](../../../.gitbook/assets/image%20%2825%29.png)
 
 Select your exchange and fill in all the fields for this exchange.
 

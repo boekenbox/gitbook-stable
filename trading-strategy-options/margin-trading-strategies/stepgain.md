@@ -191,6 +191,10 @@ Parameter name in `config.js`: `LEVERAGE`
 Places a market stop order for a long position, at the same time as the position is opened.
 
 When set to 1 and a long order is opened at a price of 100, a stop market order will be placed at 99.
+
+{% hint style="info" %}
+This setting is exclusive to Bitmex
+{% endhint %}
 {% endtab %}
 
 {% tab title="Values" %}
@@ -224,6 +228,10 @@ Parameter name in `config.js`: `STOP_BUY`
 Places a market stop order for a short position, at the same time as the position is opened.
 
 When set to 1 and a short order is opened at a price of 100, a stop market order will be placed at 101.
+
+{% hint style="info" %}
+This setting is exclusive to Bitmex
+{% endhint %}
 {% endtab %}
 
 {% tab title="Values" %}
