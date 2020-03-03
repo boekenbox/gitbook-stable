@@ -14,7 +14,7 @@ This page shows the minimum required settings per exchange to create a working A
 
 ## Binance
 
-![](../../../.gitbook/assets/image%20%2837%29.png)
+![](../../../.gitbook/assets/image%20%2838%29.png)
 
 ## Bitfinex
 
