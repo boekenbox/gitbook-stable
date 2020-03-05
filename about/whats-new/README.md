@@ -20,7 +20,7 @@ In case you are upgrading from an older version, refer to the changelogs of prev
 
 ## New features / changes in v16.9
 
-* **Support for our exchange:** [**Gunthy**](https://exchange.gunhty.org)\*\*\*\*
+* **Support for our exchange:** [**Gunthy**](https://exchange.gunthy.org)\*\*\*\*
 * **New partner exchange:** Binance
 * **New Autoconfig features:** 
   * New filter: linear regression channel
