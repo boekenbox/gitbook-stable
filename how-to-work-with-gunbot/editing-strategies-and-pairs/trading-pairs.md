@@ -32,7 +32,7 @@ Every exchange will individually cycle through enabled pairs like described abov
 
 ## Add trading pairs
 
-![](../../.gitbook/assets/image%20%2847%29.png)
+![](../../.gitbook/assets/image%20%2849%29.png)
 
 Gunbot uses a standardized format for entering trading pairs, this allows you to use the same syntax for all exchanges you might use.
 
@@ -88,7 +88,7 @@ Pairs on Kraken Futures follow the following conventions
 
 Overrides are pair specific settings, overruling the assigned strategy. Every strategy parameter can be used as an override.
 
-![](../../.gitbook/assets/image%20%2829%29.png)
+![](../../.gitbook/assets/image%20%2830%29.png)
 
 You can use this, for example, to set a different `TRADING_LIMIT` for a specific pair.
 
