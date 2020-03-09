@@ -724,7 +724,7 @@ Ticker filters use data collected from the exchange tickers, at the moment the j
 
 You can use the following filter types for adding and removing pairs. Please note that not every filter type works on every exchange, due to the fact that some exchanges don't offer the required data. On Huobi AutoConfig uses "last" price instead of bid/ask for all filters that work with prices.
 
-![Data availability for certified spot exchanges. Ticker filters are not available for Bitmex.](../.gitbook/assets/image%20%2832%29.png)
+![](../.gitbook/assets/image%20%2833%29.png)
 
 _Filters for prices use ask when adding pairs and bid when filtering for removal or changing strategy._
 
@@ -1171,7 +1171,7 @@ For job types: `manageOverrides`, `changeDelay`, `removePairs2`, `changeStrategy
 
 State filters use data from the internal ledger in Gunbot, which has all data for pairs that already cycled since Gunbot last \(re\)started.
 
-![](../.gitbook/assets/image%20%2838%29.png)
+![](../.gitbook/assets/image%20%2839%29.png)
 
 Formula used in `differenceBigger`:  
 `100 * ((ema2 - ema1) / ema1) > delta`
@@ -1466,7 +1466,7 @@ The data source for backtesting is set with the `"tickersFolder"` parameter. Set
 * You can disable telegram notifications per job, just include this line in your job: `"muteTG": true`
 * Almost every key/value in pair state files can be filtered, as long as they are on the first level \(not inside additional arrays or objects\)
 
-![First level elements like these can be used for filtering.](../.gitbook/assets/image%20%2875%29.png)
+![First level elements like these can be used for filtering.](../.gitbook/assets/image%20%2876%29.png)
 
 ![Elements like these cannot be used for filtering.](../.gitbook/assets/image%20%288%29.png)
 

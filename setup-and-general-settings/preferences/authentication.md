@@ -14,5 +14,5 @@ Gunbot supports two factor authentication, using Google Authenticator, Authy or 
 
 To enable 2FA, go to **Settings** &gt; **Authentication**.
 
-![Don&apos;t scan the QR code in this screenshot. Use the one generated in your own installation.](../../.gitbook/assets/image%20%2848%29.png)
+![Don&apos;t scan the QR code in this screenshot. Use the one generated in your own installation.](../../.gitbook/assets/image%20%2849%29.png)
 
