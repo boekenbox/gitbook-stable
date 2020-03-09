@@ -32,7 +32,7 @@ Every exchange will individually cycle through enabled pairs like described abov
 
 ## Add trading pairs
 
-![](../../.gitbook/assets/image%20%2849%29.png)
+![](../../.gitbook/assets/image%20%2850%29.png)
 
 Gunbot uses a standardized format for entering trading pairs, this allows you to use the same syntax for all exchanges you might use.
 
