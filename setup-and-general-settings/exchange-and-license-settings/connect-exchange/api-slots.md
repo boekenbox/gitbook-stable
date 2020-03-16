@@ -20,7 +20,7 @@ To register a new key, follow these steps:
 
 After registering a key, you can use it as Master Key in your exchange settings.
 
-![](../../../.gitbook/assets/image%20%2811%29.png)
+![](../../../.gitbook/assets/image%20%2812%29.png)
 
 {% hint style="info" %}
 If you regularly switch between exchange accounts, it's easiest to leave your exchange API details in the exchange section for every exchange you plan to use.
