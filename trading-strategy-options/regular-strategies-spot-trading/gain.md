@@ -544,7 +544,7 @@ Assuming no confirming indicators or additional trailing is used, this is how to
 
 ### Buy conditions
 
-![](../../.gitbook/assets/image%20%2829%29.png)
+![](../../.gitbook/assets/image%20%2830%29.png)
 
 This strategy should buy when the ask price is equal to or below the entry point. The entry point price is derived from your setting for `BUY_LEVEL`.
 
@@ -552,7 +552,7 @@ It will only buy when quote volume is worth less than your setting for `MIN_VOLU
 
 ### Sell conditions
 
-![](../../.gitbook/assets/image%20%2858%29.png)
+![](../../.gitbook/assets/image%20%2859%29.png)
 
 A sell order should be placed when the bid price is equal to or higher than exit point.
 
