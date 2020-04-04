@@ -83,21 +83,7 @@ Select your exchange and fill in all the fields for this exchange.
       <th style="text-align:left"><b>passphrase</b>
       </th>
       <th style="text-align:left">
-        <p>Your GDAX API passphrase. Only relevant for GDAX.</p>
-        <p>
-          <br />In case you use a different trading key than your master key, make sure
-          that both keys use the same passphrase.</p>
-      </th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table><table>
-  <thead>
-    <tr>
-      <th style="text-align:left"><b>passphrase</b>
-      </th>
-      <th style="text-align:left">
-        <p>Your KuCoin API passphrase. This setting is only relevant for KuCoin.</p>
+        <p>Your API passphrase. Only relevant for gdax, kucoin and okex</p>
         <p>
           <br />In case you use a different trading key than your master key, make sure
           that both keys use the same passphrase.</p>
