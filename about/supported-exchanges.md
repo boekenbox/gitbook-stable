@@ -17,7 +17,7 @@ These exchanges are official Gunbot partners. We are in direct contact with thei
 | **HitBTC** | `hitbtc2` | Regular | Regular |
 | **Kraken Futures** | `krakenFutures` | Margin | Margin |
 | **KuCoin** | `kucoin` | Regular | Regular |
-| **OKEx** | `okex` | Regular & margin | Regular & margin |
+| **OKEx** | `okex3` | Regular & margin | Regular & margin |
 
 ## Certified exchanges
 
@@ -144,7 +144,6 @@ You can use any of these exchanges for spot trading alerts using the TradingView
 | [![oceanex](https://user-images.githubusercontent.com/1294454/58385970-794e2d80-8001-11e9-889c-0567cd79b78e.jpg)](https://oceanex.pro/signup?referral=VE24QX) | `oceanex` | [OceanEx](https://oceanex.pro/signup?referral=VE24QX) |
 | [![okcoincny](https://user-images.githubusercontent.com/1294454/27766792-8be9157a-5ee5-11e7-926c-6d69b8d3378d.jpg)](https://www.okcoin.cn) | `okcoincny` | [OKCoin CNY](https://www.okcoin.cn) |
 | [![okcoinusd](https://user-images.githubusercontent.com/1294454/27766791-89ffb502-5ee5-11e7-8a5b-c5950b68ac65.jpg)](https://www.okcoin.com/account/register?flag=activity&channelId=600001513) | `okcoinusd` | [OKCoin USD](https://www.okcoin.com/account/register?flag=activity&channelId=600001513) |
-| [![okex](https://user-images.githubusercontent.com/1294454/32552768-0d6dd3c6-c4a6-11e7-90f8-c043b64756a7.jpg)](https://www.okex.com) | `okex` | [OKEX](https://www.okex.com) |
 | [![okex3](https://user-images.githubusercontent.com/1294454/32552768-0d6dd3c6-c4a6-11e7-90f8-c043b64756a7.jpg)](https://www.okex.com) | `okex3` | [OKEX](https://www.okex.com) |
 | [![paymium](https://user-images.githubusercontent.com/1294454/27790564-a945a9d4-5ff9-11e7-9d2d-b635763f2f24.jpg)](https://www.paymium.com) | `paymium` | [Paymium](https://www.paymium.com) |
 | [![rightbtc](https://user-images.githubusercontent.com/1294454/42633917-7d20757e-85ea-11e8-9f53-fffe9fbb7695.jpg)](https://www.rightbtc.com) | `rightbtc` | [RightBTC](https://www.rightbtc.com) |
