@@ -21,7 +21,7 @@ After setting it up, type `/start` to your bot to open the menu.
 
 To set this up, go to **Settings** &gt; **Telegram**.
 
-![](../../.gitbook/assets/image%20%2828%29.png)
+![](../../.gitbook/assets/image%20%2829%29.png)
 
 ## Steps to create a Telegram bot
 

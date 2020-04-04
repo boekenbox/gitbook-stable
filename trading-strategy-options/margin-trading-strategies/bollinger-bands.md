@@ -22,7 +22,7 @@ The examples below show how the basic triggers for `bb` work. Additionally, you 
 
 ### Long
 
-![](../../.gitbook/assets/image%20%2863%29.png)
+![](../../.gitbook/assets/image%20%2859%29.png)
 
 * A long position is opened when the ask price is below `LOW_BB` and `LONG_LEVEL`. In the example above `LOW_BB` would be set to 0, which represents the actual lower Bollinger Band. With different values you could set a target above \(positive value\) or below \(negative value\) the lower band.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `ROE`: 1.
