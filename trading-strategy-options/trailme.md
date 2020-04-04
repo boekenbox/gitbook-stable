@@ -1,5 +1,5 @@
 ---
-description: Price trailing for various types of orders.
+description: Price trailing for various types of spot trading orders
 ---
 
 # TrailMe
