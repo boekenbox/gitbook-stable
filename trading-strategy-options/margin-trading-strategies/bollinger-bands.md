@@ -767,11 +767,7 @@ RT is not intented to be used for margin trading.
 
 ## TrailMe settings
 
-With margin trading, additional trailing only works when MEAN\_REVERSION is enabled.
-
-Parameters to configure additional trailing for various types of orders. Trailing works just like it does for the TSSL strategy, the difference being the starting point of trailing.
-
-Orders resulting from trailing are only placed when the main strategy criteria are met, and confirming indicators \(if any\) allow the order. All these conditions must occur in the same cycle.
+TrailMe is not intented to be used for margin trading.
 
 {% page-ref page="../trailme.md" %}
 
