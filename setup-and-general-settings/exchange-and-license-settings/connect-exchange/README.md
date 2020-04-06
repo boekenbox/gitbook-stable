@@ -90,7 +90,14 @@ Select your exchange and fill in all the fields for this exchange.
       </th>
     </tr>
   </thead>
-  <tbody></tbody>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><b>market</b>
+      </td>
+      <td style="text-align:left">For Okex: use <code>spot</code> as value for spot trading and futures for
+        futures trading.</td>
+    </tr>
+  </tbody>
 </table>{% tabs %}
 {% tab title="Description" %}
 This sets the trading fees paid to the exchange. Gunbot uses this data to calculate the break-even point.

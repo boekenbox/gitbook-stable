@@ -18,7 +18,7 @@ In case you are upgrading from an older version, refer to the changelogs of prev
 
 ## Changes in v18.8.5
 
-* **Support for websockets for major exchanges**: this allows for much lower delays
+* **Support for websockets for major exchanges**: this allows for much lower delays on [supported exchanges](../supported-exchanges/websockets-support.md)
 * **Full Binance Futures support:** Native margin strategies, TradingView alerts and Market Maker all work on Binance Futures
 * **Support for Kraken forex trading pairs**
 * **Implement Okex Futures:** Native margin strategies and TradingView alerts supported

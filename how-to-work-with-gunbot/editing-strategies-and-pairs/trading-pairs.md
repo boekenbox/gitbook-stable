@@ -62,6 +62,8 @@ Pairs on **Kraken Futures** follow the following conventions:
 * Monthly futures: XBT-MONTH, ETH-MONTH, LTC-MONTH, etc
 * Quarterly futures: XBT-QUART, ETH-QUART, LTC-QUART, etc
 
+Pairs on **Okex Futures** use the same notation as on their site, with hyphens in between the different parts of the pair. Example: USD-BTC-200417
+
 {% hint style="info" %}
 **Pair naming conventions**
 
@@ -70,18 +72,6 @@ Gunbot normalizes pair notation, all pairs for all exchanges except Bitmex follo
 All pairs with BTC as base currency are written like: BTC-ETH, BTC-OK, BTC-XLM
 
 All pairs with USDT as base currency are written like: USDT-BTC, USDT-ETH, USDT-XMR
-
-**Exceptions**
-
-For a few coins on Bitfinex, the API display name is required. These are:
-
-IOTA = IOT, DASH = DSH, QTUM = QTM, DATA = DAT, QASH = QSH
-
-Kraken calls Bitcoin XBT, use BTC instead.
-
-Pairs on Bitmex use almost the same symbols as on Bitmex itself, but with a hyphen-minus between the two asset names. Example: XBT-USD
-
-Pairs on Kraken Futures follow the following conventions
 {% endhint %}
 
 ## Override settings
