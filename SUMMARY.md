@@ -5,6 +5,7 @@
 ## About
 
 * [What's new?](about/whats-new/README.md)
+  * [New in v18](about/whats-new/new-in-v18.md)
   * [New in v16.7+](about/whats-new/new-in-v16.7+.md)
   * [New in v16](about/whats-new/new-in-v16.md)
   * [New in v15](about/whats-new/new-in-v15.md)
@@ -16,7 +17,8 @@
   * [New in v8](about/whats-new/new-in-v8.md)
   * [New in v7](about/whats-new/new-in-v7.md)
   * [New in v6](about/whats-new/new-in-v6.md)
-* [Supported exchanges](about/supported-exchanges.md)
+* [Supported exchanges](about/supported-exchanges/README.md)
+  * [Websockets support](about/supported-exchanges/websockets-support.md)
 * [System requirements](about/system-requirements.md)
 * [Purchasing Gunbot](https://gunthy.org/resellers)
 

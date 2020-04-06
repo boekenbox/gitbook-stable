@@ -20,7 +20,7 @@ No need for a subscription, a one time fee gets you lifetime support and softwar
 
 {% page-ref page="setup-and-general-settings/installation/" %}
 
-{% page-ref page="about/supported-exchanges.md" %}
+{% page-ref page="about/supported-exchanges/" %}
 
 {% page-ref page="how-to-work-with-gunbot/basic-workings/" %}
 

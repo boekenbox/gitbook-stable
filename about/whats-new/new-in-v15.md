@@ -22,7 +22,7 @@ Gunbot v15 is a major release: it includes support for over 100 new exchanges - 
 
 ## New features / changes in v15
 
-* **Over 100 new supported exchanges:** Gunbot now [supports](../supported-exchanges.md) spot trading on all exchanges supported by the [ccxt library](https://github.com/ccxt/ccxt/wiki/Exchange-Markets)! This includes support for email alerts through the TradingView add-on.
+* **Over 100 new supported exchanges:** Gunbot now [supports](../supported-exchanges/) spot trading on all exchanges supported by the [ccxt library](https://github.com/ccxt/ccxt/wiki/Exchange-Markets)! This includes support for email alerts through the TradingView add-on.
 * **Trading fees setting moves to exchange section:** for easier strategy handling, the TRADING\_FEES setting is now configurable per exchange. It's no longer a strategy setting.
 * **Limit orders for TradingView add-on:** optionally you can now let the TradingView add-on place limit orders instead of market orders.
 * **Pre-release of AutoConfig:** with [AutoConfig ](../../how-to-work-with-gunbot/autoconfig.md)you can automate all kinds of things you previously could only do by hand. For example you can use it automatically add high volume trading pairs, assign a bag handling strategy for pairs that are not performing well, or automatically update pair overrides. It's called a pre-release because there no GUI for it yet, it's fully functional though.
