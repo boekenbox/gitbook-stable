@@ -116,9 +116,11 @@ _**"-12345"**_
 
 A negative integer, to send messages to a group chat.
 
-The easiest way to obtain a groups id, is to open [https://web.telegram.org](https://web.telegram.org) login, and navigate to the group. Now pay attention to the URL, you should see something like [https://web.telegram.org/\#/im?p=g12345](https://web.telegram.org/#/im?p=g12345) - the number after the p=g part is the group id.
+Pull the group id from this link: [https://api.telegram.org/bot\[tokenhere\]/getUpdates](https://api.telegram.org/bot[tokenhere]/getUpdates)
 
-This must be listed in chat\_id with a - symbol in front, in this case "-12345"
+replace \[tokenhere\] \(no brackets\)
+
+look for `"chat":{"id":-[groupchatidnumber],"title":"Group Name","type":"supergroup"}`
 {% endtab %}
 
 {% tab title="Values" %}
