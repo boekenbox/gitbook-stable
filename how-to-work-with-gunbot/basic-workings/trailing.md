@@ -65,5 +65,5 @@ The example above shows that price was on its way reaching the primary buy trigg
 
 Similar to Take Buy, Take Profit acts as a secondary sell layer in your strategy. It trails between the break-even point and the target for Gain. In case prices do move over your Gain target, trailing stops and the normal strategy conditions apply.
 
-![](../../.gitbook/assets/image%20%2873%29.png)
+![](../../.gitbook/assets/image%20%2874%29.png)
 

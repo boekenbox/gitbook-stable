@@ -106,7 +106,7 @@ Default range settings of 50 / 50 is equal to source settings of HL2 / HL2 for P
 
 TradingView scripts trade on the OPEN price of the NEXT candle AFTER conditions have been met. The green "LONG!" or "CLOSE SHORT!" and red "SHORT!" or "CLOSE LONG!" indicate the candle where the decision to trade was made, the blue, red, and purple markers indicate where the trade was made.
 
-![](../.gitbook/assets/image%20%2880%29.png)
+![](../.gitbook/assets/image%20%2881%29.png)
 
 When using the "Gunbot Deluxe Tuners BE \[Alerts\]" script the green "LONG!" or "CLOSE SHORT!" and red "SHORT!" or "CLOSE LONG!" indicate on screen where the alerts will trigger and send to Gunbot's TradingView add-on.
 
@@ -114,7 +114,7 @@ When using the "Gunbot Deluxe Tuners BE \[Alerts\]" script the green "LONG!" or 
 
 ![](../.gitbook/assets/image%20%2842%29.png)
 
-![](../.gitbook/assets/image%20%2881%29.png)
+![](../.gitbook/assets/image%20%2882%29.png)
 
 ![](../.gitbook/assets/image%20%289%29.png)
 

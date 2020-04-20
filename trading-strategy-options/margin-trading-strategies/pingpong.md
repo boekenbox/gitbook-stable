@@ -24,7 +24,7 @@ The examples below show how the basic triggers for `pp` work. Additionally, you 
 
 ### Short \(regular: trend following\)
 
-![](../../.gitbook/assets/image%20%2887%29.png)
+![](../../.gitbook/assets/image%20%2888%29.png)
 
 * A short position is opened when the bid price is equal to or below `PP_SELL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 

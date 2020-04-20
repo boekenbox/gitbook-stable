@@ -1466,7 +1466,7 @@ The data source for backtesting is set with the `"tickersFolder"` parameter. Set
 * You can disable telegram notifications per job, just include this line in your job: `"muteTG": true`
 * Almost every key/value in pair state files can be filtered, as long as they are on the first level \(not inside additional arrays or objects\)
 
-![First level elements like these can be used for filtering.](../.gitbook/assets/image%20%2890%29.png)
+![First level elements like these can be used for filtering.](../.gitbook/assets/image%20%2891%29.png)
 
 ![Elements like these cannot be used for filtering.](../.gitbook/assets/image%20%2810%29.png)
 

@@ -14,7 +14,7 @@ This page shows the minimum required settings per exchange to create a working A
 
 ## Binance
 
-![](../../../.gitbook/assets/image%20%2875%29.png)
+![](../../../.gitbook/assets/image%20%2876%29.png)
 
 ## Binance Futures
 
