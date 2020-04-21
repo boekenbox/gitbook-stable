@@ -10,7 +10,7 @@ Gunbot supports different values for `PERIOD` for each exchange.
 
 Currently the following periods are supported:
 
-![](../../.gitbook/assets/image%20%2813%29.png)
+![](../../.gitbook/assets/image%20%2817%29.png)
 
 ## Choosing the right period
 

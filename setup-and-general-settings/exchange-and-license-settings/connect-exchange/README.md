@@ -8,7 +8,7 @@ To be able to trade, you need to enter the exchange [API key](creating-api-keys.
 
 To enter these, go to **Settings &gt; Trading &gt; Exchanges**.
 
-![](../../../.gitbook/assets/image%20%2854%29.png)
+![](../../../.gitbook/assets/image%20%2872%29.png)
 
 Select your exchange and fill in all the fields for this exchange.
 
@@ -35,11 +35,7 @@ Select your exchange and fill in all the fields for this exchange.
     </tr>
   </thead>
   <tbody></tbody>
-</table>| **Master Secret** | The API secret for the Master Key. |
-| :--- | :--- |
-
-
-<table>
+</table><table>
   <thead>
     <tr>
       <th style="text-align:left"><b>Key</b>
@@ -51,11 +47,7 @@ Select your exchange and fill in all the fields for this exchange.
     </tr>
   </thead>
   <tbody></tbody>
-</table>| **Secret** | The API secret for the Key. |
-| :--- | :--- |
-
-
-<table>
+</table><table>
   <thead>
     <tr>
       <th style="text-align:left"><b>Delay</b>
@@ -69,11 +61,7 @@ Select your exchange and fill in all the fields for this exchange.
     </tr>
   </thead>
   <tbody></tbody>
-</table>| Field | Description |
-| :--- | :--- |
-
-
-| **clientId** | Your CEX client ID. Only relevant for CEX. |
+</table>| **clientId** | Your CEX client ID. Only relevant for CEX. |
 | :--- | :--- |
 
 
@@ -90,15 +78,12 @@ Select your exchange and fill in all the fields for this exchange.
       </th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><b>market</b>
-      </td>
-      <td style="text-align:left">For Okex: use <code>spot</code> as value for spot trading and futures for
-        futures trading.</td>
-    </tr>
-  </tbody>
-</table>{% tabs %}
+  <tbody></tbody>
+</table>| **market** | For Okex: use `spot` as value for spot trading and futures for futures trading. |
+| :--- | :--- |
+
+
+{% tabs %}
 {% tab title="Description" %}
 This sets the trading fees paid to the exchange. Gunbot uses this data to calculate the break-even point.
 

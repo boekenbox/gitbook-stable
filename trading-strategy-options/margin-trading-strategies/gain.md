@@ -16,7 +16,7 @@ The examples below show how the basic triggers for `gain` work. Additionally, yo
 
 ### Long \(regular: trend following\)
 
-![](../../.gitbook/assets/image%20%2855%29.png)
+![](../../.gitbook/assets/image%20%2870%29.png)
 
 * A long position is opened when the ask price is equal to or above `LONG_LEVEL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
@@ -24,7 +24,7 @@ The examples below show how the basic triggers for `gain` work. Additionally, yo
 
 ### Short \(regular: trend following\)
 
-![](../../.gitbook/assets/image%20%2816%29.png)
+![](../../.gitbook/assets/image%20%2821%29.png)
 
 * A short position is opened when the bid price is equal to or below `SHORT_LEVEL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
@@ -34,7 +34,7 @@ The examples below show how the basic triggers for `gain` work. Additionally, yo
 
 In `MEAN_REVERSION` mode the behavior for `LONG_LEVEL` and `SHORT_LEVEL` is reversed in this strategy.
 
-![](../../.gitbook/assets/image%20%2812%29.png)
+![](../../.gitbook/assets/image%20%2816%29.png)
 
 * A long position is opened when the ask price is equal to or below `LONG_LEVEL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
@@ -44,7 +44,7 @@ In `MEAN_REVERSION` mode the behavior for `LONG_LEVEL` and `SHORT_LEVEL` is reve
 
 In `MEAN_REVERSION` mode the behavior for `LONG_LEVEL` and `SHORT_LEVEL` is reversed in this strategy.
 
-![](../../.gitbook/assets/image%20%2869%29.png)
+![](../../.gitbook/assets/image%20%2890%29.png)
 
 * A short position is opened when the bid price is equal to or above `SHORT_LEVEL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 

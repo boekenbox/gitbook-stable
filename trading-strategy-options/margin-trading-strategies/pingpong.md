@@ -16,7 +16,7 @@ The examples below show how the basic triggers for `pp` work. Additionally, you 
 
 ### Long \(regular: trend following\)
 
-![](../../.gitbook/assets/image%20%2822%29.png)
+![](../../.gitbook/assets/image%20%2827%29.png)
 
 * A long position is opened when the ask price is equal to or above `PP_BUY`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
@@ -24,7 +24,7 @@ The examples below show how the basic triggers for `pp` work. Additionally, you 
 
 ### Short \(regular: trend following\)
 
-![](../../.gitbook/assets/image%20%2888%29.png)
+![](https://github.com/boekenbox/gitbook-stable/tree/08541f128eac4ac228233ba2630eef52e7a2cc9c/.gitbook/assets/image%20%2887%29.png)
 
 * A short position is opened when the bid price is equal to or below `PP_SELL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
@@ -34,7 +34,7 @@ The examples below show how the basic triggers for `pp` work. Additionally, you 
 
 In `MEAN_REVERSION` mode the behavior for `PP_BUY` and `PP_SELL` is reversed in this strategy.
 
-![](../../.gitbook/assets/image%20%283%29.png)
+![](../../.gitbook/assets/image%20%285%29.png)
 
 * A long position is opened when the ask price is equal to or below `PP_BUY`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
@@ -44,7 +44,7 @@ In `MEAN_REVERSION` mode the behavior for `PP_BUY` and `PP_SELL` is reversed in 
 
 In `MEAN_REVERSION` mode the behavior for `PP_BUY` and `PP_SELL` is reversed in this strategy.
 
-![](../../.gitbook/assets/image%20%2827%29.png)
+![](../../.gitbook/assets/image%20%2830%29.png)
 
 * A short position is opened when the bid price is equal to or above `PP_SELL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 

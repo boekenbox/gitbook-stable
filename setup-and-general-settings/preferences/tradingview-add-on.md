@@ -39,54 +39,55 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
 
 #### For all spot exchanges
 
+| Alert message | Action |
+| :--- | :--- |
+
+
+| BUY\_EXCHANGE\_BTC-ETH | Buy ETH using BTC |
+| :--- | :--- |
+
+
+| BUY\_EXCHANGE\_BTC-ETH\_0.1 | Buy ETH using BTC with a trading limit of 0.1 BTC |
+| :--- | :--- |
+
+
+| SELL\_EXCHANGE\_USDT-BTC | Sell BTC for USDT |
+| :--- | :--- |
+
+
+| SELL\_EXCHANGE\_USDT-BTC\_0.1 | Sell USDT for BTC with a trading limit of 0.1 BTC |
+| :--- | :--- |
+
+
+| STOPLOSS\_EXCHANGE\_BTC-ETH | Sell ETH for BTC if stoploss is triggered |
+| :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Alert message</th>
-      <th style="text-align:left">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">BUY_EXCHANGE_BTC-ETH</td>
-      <td style="text-align:left">Buy ETH using BTC</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">BUY_EXCHANGE_BTC-ETH_0.1</td>
-      <td style="text-align:left">Buy ETH using BTC with a trading limit of 0.1 BTC</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">SELL_EXCHANGE_USDT-BTC</td>
-      <td style="text-align:left">Sell BTC for USDT</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">SELL_EXCHANGE_USDT-BTC_0.1</td>
-      <td style="text-align:left">Sell USDT for BTC with a trading limit of 0.1 BTC</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">STOPLOSS_EXCHANGE_BTC-ETH</td>
-      <td style="text-align:left">Sell ETH for BTC if stoploss is triggered</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">BUY_EXCHANGE_USDT-BTC_amount_rate</td>
-      <td style="text-align:left">
+      <th style="text-align:left">BUY_EXCHANGE_USDT-BTC_amount_rate</th>
+      <th style="text-align:left">
         <p>Buy BTC using USDT for a specified amount</p>
         <p>in USDT at a specified rate.</p>
         <p>Requires TV market orders to be disabled</p>
-      </td>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left">BUY_EXCHANGE_BTC-ETH_0_rate</td>
-      <td style="text-align:left">
+      <th style="text-align:left">BUY_EXCHANGE_BTC-ETH_0_rate</th>
+      <th style="text-align:left">
         <p>Buy BTC using USDT for &quot;TV trading limit buy&quot;,</p>
         <p>at a specified rate.</p>
         <p>Requires TV market orders to be disabled.</p>
-      </td>
+      </th>
     </tr>
-  </tbody>
-</table>#### Alerts for margin trading
-
-| Alert message | Action |
+  </thead>
+  <tbody></tbody>
+</table>| Alert message | Action |
 | :--- | :--- |
 
 
@@ -130,11 +131,7 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
     </tr>
   </thead>
   <tbody></tbody>
-</table>| CLOSELONG\_EXCHANGE\_XBT-USD | Closes a long position for XBT-USD |
-| :--- | :--- |
-
-
-| CLOSESHORT\_EXCHANGE\_XBT-USD | Closes a short position for XBT-USD |
+</table>| CLOSESHORT\_EXCHANGE\_XBT-USD | Closes a short position for XBT-USD |
 | :--- | :--- |
 
 
@@ -156,7 +153,7 @@ To run Gunbot with the TradingView add-on, the following are the only relevant s
 
 Open the settings by going to **Settings** &gt; **TradingView.**
 
-![Settings options for the TradingView add-on](../../.gitbook/assets/image%20%2878%29.png)
+![Settings options for the TradingView add-on](https://github.com/boekenbox/gitbook-stable/tree/08541f128eac4ac228233ba2630eef52e7a2cc9c/.gitbook/assets/image%20%2877%29.png)
 
 Trading limits for buy orders are set in the configuration settings, optionally you can override these by specifying the trading limit in the alert message contents.
 

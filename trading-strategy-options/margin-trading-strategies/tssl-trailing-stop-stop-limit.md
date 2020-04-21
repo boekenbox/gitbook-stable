@@ -22,7 +22,7 @@ The examples below show how the basic triggers for `tssl` work. Additionally, yo
 
 ### Long
 
-![](../../.gitbook/assets/image%20%2879%29.png)
+![](https://github.com/boekenbox/gitbook-stable/tree/08541f128eac4ac228233ba2630eef52e7a2cc9c/.gitbook/assets/image%20%2878%29.png)
 
 * A long position is opened when buy trailing finishes below `LONG_LEVEL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
@@ -30,7 +30,7 @@ The examples below show how the basic triggers for `tssl` work. Additionally, yo
 
 ### Short
 
-![](../../.gitbook/assets/image%20%285%29.png)
+![](../../.gitbook/assets/image%20%287%29.png)
 
 * A short position is opened when sell trailing finishes above `SHORT_LEVEL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 

@@ -724,7 +724,7 @@ Ticker filters use data collected from the exchange tickers, at the moment the j
 
 You can use the following filter types for adding and removing pairs. Please note that not every filter type works on every exchange, due to the fact that some exchanges don't offer the required data. On Huobi AutoConfig uses "last" price instead of bid/ask for all filters that work with prices.
 
-![](../.gitbook/assets/image%20%2840%29.png)
+![](../.gitbook/assets/image%20%2853%29.png)
 
 _Filters for prices use ask when adding pairs and bid when filtering for removal or changing strategy._
 
@@ -849,11 +849,7 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
     </tr>
   </thead>
   <tbody></tbody>
-</table>| `belowMedianVolume` | Filter returns true if the base volume for a pair is lower than the median base volume for all pairs with the same base currency on the exchange. | n/a |
-| :--- | :--- | :--- |
-
-
-| `aboveMedianVolume` | Filter returns true if the base volume for a pair is higher than the median base volume for all pairs with the same base currency on the exchange. | n/a |
+</table>| `aboveMedianVolume` | Filter returns true if the base volume for a pair is higher than the median base volume for all pairs with the same base currency on the exchange. | n/a |
 | :--- | :--- | :--- |
 
 
@@ -955,11 +951,7 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
     </tr>
   </thead>
   <tbody></tbody>
-</table>| `allowsHedging` | Filter returns true if a pair can be hedged to another base currency without using an intermediate pair. | n/a |
-| :--- | :--- | :--- |
-
-
-| `buyTrailing` | [See details](https://wiki.gunthy.org/how-to-work-with-gunbot/autoconfig#trailing-filters) | n/a |
+</table>| `buyTrailing` | [See details](https://wiki.gunthy.org/how-to-work-with-gunbot/autoconfig#trailing-filters) | n/a |
 | :--- | :--- | :--- |
 
 
@@ -1171,7 +1163,7 @@ For job types: `manageOverrides`, `changeDelay`, `removePairs2`, `changeStrategy
 
 State filters use data from the internal ledger in Gunbot, which has all data for pairs that already cycled since Gunbot last \(re\)started.
 
-![](../.gitbook/assets/image%20%2847%29.png)
+![](../.gitbook/assets/image%20%2852%29.png)
 
 Formula used in `differenceBigger`:  
 `100 * ((ema2 - ema1) / ema1) > delta`
@@ -1466,9 +1458,9 @@ The data source for backtesting is set with the `"tickersFolder"` parameter. Set
 * You can disable telegram notifications per job, just include this line in your job: `"muteTG": true`
 * Almost every key/value in pair state files can be filtered, as long as they are on the first level \(not inside additional arrays or objects\)
 
-![First level elements like these can be used for filtering.](../.gitbook/assets/image%20%2891%29.png)
+![First level elements like these can be used for filtering.](https://github.com/boekenbox/gitbook-stable/tree/08541f128eac4ac228233ba2630eef52e7a2cc9c/.gitbook/assets/image%20%2890%29.png)
 
-![Elements like these cannot be used for filtering.](../.gitbook/assets/image%20%2810%29.png)
+![Elements like these cannot be used for filtering.](../.gitbook/assets/image%20%2811%29.png)
 
 ## Example config with many job types and filters
 
