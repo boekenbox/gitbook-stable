@@ -161,6 +161,10 @@ Parameter name in `config.js`: `ROE`
 {% tabs %}
 {% tab title="Description" %}
 Sets the leverage for opening any position. Setting 0 places the order with cross margin.
+
+{% hint style="warning" %}
+On Binance Futures you must set leverage per pair on the exchange itself.
+{% endhint %}
 {% endtab %}
 
 {% tab title="Values" %}
