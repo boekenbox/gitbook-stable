@@ -8,7 +8,9 @@ description: Up to date download locations for Gunbot.
 **Tip:** Bookmark the download link for your Gunbot edition, this is where you get updates.
 {% endhint %}
 
-**Gunbot Standard edition and higher:** [https://github.com/GuntharDeNiro/BTCT/releases](https://github.com/GuntharDeNiro/BTCT/releases)
+**Stable versions are always posted on github:** [https://github.com/GuntharDeNiro/BTCT/releases](https://github.com/GuntharDeNiro/BTCT/releases)
 
-**Gunbot Starter edition:** [https://github.com/GuntharDeNiro/Gunthy/releases/](https://github.com/GuntharDeNiro/Gunthy/releases/)
+Beta and nightly builds are available in the Gunbot announcement channel on Telegram.
+
+\*\*\*\*
 
