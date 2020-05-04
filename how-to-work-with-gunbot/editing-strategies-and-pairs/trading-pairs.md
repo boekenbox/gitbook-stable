@@ -50,6 +50,8 @@ All pairs with USDT as base currency are written like: USDT-BTC, USDT-ETH, USDT-
 
 ### Exceptions
 
+On **Binance**, use YOYOW instead of YOYO.
+
 For a few coins on **Bitfinex**, the API display name is required. These are: IOTA = IOT, DASH = DSH, QTUM = QTM, DATA = DAT, QASH = QSH
 
 **Kraken** calls Bitcoin XBT, use BTC instead.
