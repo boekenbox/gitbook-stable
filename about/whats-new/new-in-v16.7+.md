@@ -72,5 +72,5 @@ Notable fixes:
   * Fix parsing of markdown elements in telegram alerts.
   * Automatically purge old history data when history value in config gets reduced.
   * Also look for mvts value in pair overrides.
-* Various fixes to improve performance on Kraken Futures
+* Various fixes that improve performance on Kraken Futures
 
