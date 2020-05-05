@@ -33,5 +33,5 @@ In case you are upgrading from an older version, refer to the changelogs of prev
 * Fix Kraken pairs not getting balances
 * Fix kumex grid for Market Maker
 * Autoconfig, fix non-existing check for pair passed filters for changing delay with manageOverrides job
-* Fix Autoconfig to ARM
+* Fix Autoconfig support for ARM
 
