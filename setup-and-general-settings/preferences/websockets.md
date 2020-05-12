@@ -8,7 +8,7 @@ Gunbot emits certain data through websockets. Limited documentation for this fea
 
 To change websocket settings, go to **Settings** &gt; **Websocket**.
 
-![](https://github.com/boekenbox/gitbook-stable/tree/3a92dec7b38c6c68006e24cacd6dea5b58bd2152/.gitbook/assets/image%20%2891%29.png)
+![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/image%20%2852%29.png)
 
 ## Settings descriptions
 

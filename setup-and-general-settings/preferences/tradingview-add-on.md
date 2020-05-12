@@ -153,7 +153,7 @@ To run Gunbot with the TradingView add-on, the following are the only relevant s
 
 Open the settings by going to **Settings** &gt; **TradingView.**
 
-![Settings options for the TradingView add-on](https://github.com/boekenbox/gitbook-stable/tree/08541f128eac4ac228233ba2630eef52e7a2cc9c/.gitbook/assets/image%20%2877%29.png)
+![Settings options for the TradingView add-on](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/image-1.png)
 
 Trading limits for buy orders are set in the configuration settings, optionally you can override these by specifying the trading limit in the alert message contents.
 

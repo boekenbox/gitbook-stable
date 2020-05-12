@@ -8,7 +8,7 @@ The bot settings menu lets you change global settings that affect all trading pa
 
 To change them, go to **Settings** &gt; **Bot Settings**.
 
-![Global bot settings](https://gblobscdn.gitbook.com/assets%2F-L_Rejuz9K0BDQxSQvUH%2F-M-pZS0pojIYvg7tzVzC%2F-M-pZWXjp8dGvucCl5xb%2Fassets_-l_rejuz9k0bdqxsqvuh_-lmxoqo1bz7zqcqvhbve_-lmxorov6_87omewq1_p_image.png?alt=media)
+![Global bot settings](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/image%20%2867%29.png)
 
 ## Settings descriptions
 
