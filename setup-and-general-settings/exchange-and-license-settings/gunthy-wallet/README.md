@@ -64,7 +64,7 @@ After everything is registered, you'll receive the required number of tokens and
 
 Enter your GUNTHY wallet address on **Settings &gt; Prefences &gt; Gunthy Wallet**.
 
-![](https://github.com/boekenbox/gitbook-stable/tree/08541f128eac4ac228233ba2630eef52e7a2cc9c/.gitbook/assets/image%20%2889%29.png)
+![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/image%20%2853%29.png)
 
 Make sure that all of your master keys are set on the [Swap Exchanges](../connect-exchange/api-slots.md) page. Anytime you need to update a key, you can do it yourself using this page.
 

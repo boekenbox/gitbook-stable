@@ -724,7 +724,7 @@ Ticker filters use data collected from the exchange tickers, at the moment the j
 
 You can use the following filter types for adding and removing pairs. Please note that not every filter type works on every exchange, due to the fact that some exchanges don't offer the required data. On Huobi AutoConfig uses "last" price instead of bid/ask for all filters that work with prices.
 
-![](../.gitbook/assets/image%20%2854%29.png)
+![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/image%20%2866%29.png)
 
 _Filters for prices use ask when adding pairs and bid when filtering for removal or changing strategy._
 

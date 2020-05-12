@@ -8,7 +8,7 @@ To be able to trade, you need to enter the exchange [API key](creating-api-keys.
 
 To enter these, go to **Settings &gt; Trading &gt; Exchanges**.
 
-![](https://github.com/boekenbox/gitbook-stable/tree/3a92dec7b38c6c68006e24cacd6dea5b58bd2152/.gitbook/assets/image%20%2872%29.png)
+![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/image-15.png)
 
 Select your exchange and fill in all the fields for this exchange.
 

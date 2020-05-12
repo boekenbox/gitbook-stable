@@ -32,7 +32,7 @@ Every exchange will individually cycle through enabled pairs like described abov
 
 ## Add trading pairs
 
-![](../../.gitbook/assets/image%20%2815%29.png)
+![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/image%20%2846%29.png)
 
 Gunbot uses a standardized format for entering trading pairs, this allows you to use the same syntax for all exchanges you might use.
 
@@ -80,7 +80,7 @@ All pairs with USDT as base currency are written like: USDT-BTC, USDT-ETH, USDT-
 
 Overrides are pair specific settings, overruling the assigned strategy. Every strategy parameter can be used as an override.
 
-![](../../.gitbook/assets/image%20%2850%29.png)
+![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/image%20%2845%29.png)
 
 You can use this, for example, to set a different `TRADING_LIMIT` for a specific pair.
 
