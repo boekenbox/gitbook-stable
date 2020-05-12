@@ -16,39 +16,39 @@ The examples below show how the basic triggers for `gain` work. Additionally, yo
 
 ### Long \(regular: trend following\)
 
-![](../../.gitbook/assets/image%20%2871%29.png)
+![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/margin-gain-1.png)
 
 * A long position is opened when the ask price is equal to or above `LONG_LEVEL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
-* A position is closed at loss when `STOP_BUY` is reached. This is a percentage from the entry point in the opposite direction of your profit target, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `STOP_BUY`: 1.
+* A position is closed at loss when a stop is hit.
 
 ### Short \(regular: trend following\)
 
-![](../../.gitbook/assets/image%20%2821%29.png)
+![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/margin-gain-2.png)
 
 * A short position is opened when the bid price is equal to or below `SHORT_LEVEL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
-* A position is closed at loss when `STOP_SELL` is reached. This is a percentage from the entry point in the opposite direction of your profit target, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `STOP_SELL`: 1.
+* A position is closed at loss when a stop is hit.
 
 ### Long \(mean reversion mode\)
 
 In `MEAN_REVERSION` mode the behavior for `LONG_LEVEL` and `SHORT_LEVEL` is reversed in this strategy.
 
-![](../../.gitbook/assets/image%20%2816%29.png)
+![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/margin-gain-3.png)
 
 * A long position is opened when the ask price is equal to or below `LONG_LEVEL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
-* A position is closed at loss when `STOP_BUY` is reached. This is a percentage from the entry point in the opposite direction of your profit target, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `STOP_BUY`: 1.
+* A position is closed at loss when a stop is hit.
 
 ### Short \(mean reversion mode\)
 
 In `MEAN_REVERSION` mode the behavior for `LONG_LEVEL` and `SHORT_LEVEL` is reversed in this strategy.
 
-![](https://github.com/boekenbox/gitbook-stable/tree/3a92dec7b38c6c68006e24cacd6dea5b58bd2152/.gitbook/assets/image%20%2890%29.png)
+![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/margin-gain-4.png)
 
 * A short position is opened when the bid price is equal to or above `SHORT_LEVEL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
-* A position is closed at loss when `STOP_SELL` is reached. This is a percentage from the entry point in the opposite direction of your profit target, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `STOP_SELL`: 1.
+* A position is closed at loss when a stop is hit.
 
 ## Strategy parameters
 

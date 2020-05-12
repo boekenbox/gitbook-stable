@@ -16,39 +16,39 @@ The examples below show how the basic triggers for `pp` work. Additionally, you 
 
 ### Long \(regular: trend following\)
 
-![](../../.gitbook/assets/image%20%2828%29.png)
+![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/margin-pp-1.png)
 
 * A long position is opened when the ask price is equal to or above `PP_BUY`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
-* A position is closed at loss when `STOP_BUY` is reached. This is a percentage from the entry point in the opposite direction of your profit target, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `STOP_BUY`: 1.
+* A position is closed at loss when a stop is hit.
 
 ### Short \(regular: trend following\)
 
-![](https://github.com/boekenbox/gitbook-stable/tree/08541f128eac4ac228233ba2630eef52e7a2cc9c/.gitbook/assets/image%20%2887%29.png)
+![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/margin-pp-2.png)
 
 * A short position is opened when the bid price is equal to or below `PP_SELL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
-* A position is closed at loss when `STOP_SELL` is reached. This is a percentage from the entry point in the opposite direction of your profit target, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `STOP_SELL`: 1.
+* A position is closed at loss when a stop is hit.
 
 ### Long \(mean reversion mode\)
 
 In `MEAN_REVERSION` mode the behavior for `PP_BUY` and `PP_SELL` is reversed in this strategy.
 
-![](../../.gitbook/assets/image%20%285%29.png)
+![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/margin-pp-3.png)
 
 * A long position is opened when the ask price is equal to or below `PP_BUY`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
-* A position is closed at loss when `STOP_BUY` is reached. This is a percentage from the entry point in the opposite direction of your profit target, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `STOP_BUY`: 1.
+* A position is closed at loss when a stop is hit.
 
 ### Short \(mean reversion mode\)
 
 In `MEAN_REVERSION` mode the behavior for `PP_BUY` and `PP_SELL` is reversed in this strategy.
 
-![](../../.gitbook/assets/image%20%2831%29.png)
+![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/margin-pp-4.png)
 
 * A short position is opened when the bid price is equal to or above `PP_SELL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
-* A position is closed at loss when `STOP_SELL` is reached. This is a percentage from the entry point in the opposite direction of your profit target, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `STOP_SELL`: 1.
+* A position is closed at loss when a stop is hit.
 
 ## Strategy parameters
 

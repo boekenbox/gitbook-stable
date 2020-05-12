@@ -16,19 +16,19 @@ The examples below show how the basic triggers for `BBTA` work. Additionally, yo
 
 ### Long
 
-![](https://github.com/boekenbox/gitbook-stable/tree/3a92dec7b38c6c68006e24cacd6dea5b58bd2152/.gitbook/assets/image%20%2889%29.png)
+![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/margin-bbta-1.png)
 
 * A long position is opened when the ask price crosses over `LOW_BB`. In the example above `LOW_BB` would be set to 0, which represents the actual lower Bollinger Band. With different values you could set a target above \(positive value\) or below \(negative value\) the lower band.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
-* A position is closed at loss when `STOP_BUY` is reached. This is a percentage from the entry point in the opposite direction of your profit target, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `STOP_BUY`: 1.
+* A position is closed at loss when a stop is hit.
 
 ### Short
 
-![](../../.gitbook/assets/image%20%2832%29.png)
+![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/margin-bbta-2.png)
 
 * A short position is opened when the bid price crosses below `HIGH_BB`. In the example above `HIGH_BB` would be set to 0, which represents the actual upper Bollinger Band. With different values you could set a target below \(positive value\) or above \(negative value\) the upper band.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
-* A position is closed at loss when `STOP_SELL` is reached. This is a percentage from the entry point in the opposite direction of your profit target, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `STOP_SELL`: 1.
+* A position is closed at loss when a stop is hit.
 
 ## Strategy parameters
 

@@ -22,19 +22,19 @@ The examples below show how the basic triggers for `tssl` work. Additionally, yo
 
 ### Long
 
-![](https://github.com/boekenbox/gitbook-stable/tree/08541f128eac4ac228233ba2630eef52e7a2cc9c/.gitbook/assets/image%20%2878%29.png)
+![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/margin-tssl-1.png)
 
 * A long position is opened when buy trailing finishes below `LONG_LEVEL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
-* A position is closed at loss when `STOP_BUY` is reached. This is a percentage from the entry point in the opposite direction of your profit target, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `STOP_BUY`: 1.
+* A position is closed at loss when a stop is hit.
 
 ### Short
 
-![](../../.gitbook/assets/image%20%287%29.png)
+![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/margin-tssl-2.png)
 
 * A short position is opened when sell trailing finishes above `SHORT_LEVEL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 
-* A position is closed at loss when `STOP_SELL` is reached. This is a percentage from the entry point in the opposite direction of your profit target, not taking leverage into consideration. Regardless what leverage is used, 1% price difference from your entry equals `STOP_SELL`: 1.
+* A position is closed at loss when a stop is hit.
 
 ## Strategy parameters
 
