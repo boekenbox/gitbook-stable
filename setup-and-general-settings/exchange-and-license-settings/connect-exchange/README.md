@@ -8,7 +8,7 @@ To be able to trade, you need to enter the exchange [API key](creating-api-keys.
 
 To enter these, go to **Settings &gt; Trading &gt; Exchanges**.
 
-![](../../../.gitbook/assets/image%20%2872%29.png)
+![](https://github.com/boekenbox/gitbook-stable/tree/3a92dec7b38c6c68006e24cacd6dea5b58bd2152/.gitbook/assets/image%20%2872%29.png)
 
 Select your exchange and fill in all the fields for this exchange.
 
@@ -61,11 +61,7 @@ Select your exchange and fill in all the fields for this exchange.
     </tr>
   </thead>
   <tbody></tbody>
-</table>| **clientId** | Your CEX client ID. Only relevant for CEX. |
-| :--- | :--- |
-
-
-<table>
+</table><table>
   <thead>
     <tr>
       <th style="text-align:left"><b>passphrase</b>
@@ -79,11 +75,7 @@ Select your exchange and fill in all the fields for this exchange.
     </tr>
   </thead>
   <tbody></tbody>
-</table>| **market** | For Okex: use `spot` as value for spot trading and futures for futures trading. |
-| :--- | :--- |
-
-
-{% tabs %}
+</table>{% tabs %}
 {% tab title="Description" %}
 This sets the trading fees paid to the exchange. Gunbot uses this data to calculate the break-even point.
 
