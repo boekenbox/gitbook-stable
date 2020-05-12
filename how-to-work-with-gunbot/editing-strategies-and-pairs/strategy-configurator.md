@@ -28,5 +28,5 @@ You can create an unlimited number of strategies.
 
 Click on a strategy nickname to edit its settings.
 
-![](../../.gitbook/assets/image%20%2877%29.png)
+![](../../.gitbook/assets/image%20%2876%29.png)
 

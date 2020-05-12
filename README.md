@@ -1,6 +1,6 @@
 ---
 description: >-
-  This wiki is written for the latest stable Gunbot release: v18. Includes
+  This wiki is written for the latest stable Gunbot release: v16. Includes
   support for over 100 exchanges!
 ---
 
@@ -16,7 +16,7 @@ No need for a subscription, a one time fee gets you lifetime support and softwar
 
 ### Gunbot is used by thousands of users and has an awesome community ❤️
 
-![](.gitbook/assets/image%20%2830%29.png)
+![](.gitbook/assets/image%20%2813%29.png)
 
 {% page-ref page="setup-and-general-settings/installation/" %}
 

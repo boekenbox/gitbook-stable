@@ -6,6 +6,8 @@ description: >-
 
 # New in v18
 
+
+
 Gunbot v18 is primarily a bugfix release, patching known issues.
 
 ## **Upgrading**
@@ -15,6 +17,8 @@ Gunbot v18 is primarily a bugfix release, patching known issues.
 In case you are upgrading from an older version, refer to the changelogs of previous versions for instructions, or start with a fresh installation.
 
 \*\*\*\*[**Download release**](../../setup-and-general-settings/installation/download.md)\*\*\*\*
+
+
 
 ## Changes in v18
 

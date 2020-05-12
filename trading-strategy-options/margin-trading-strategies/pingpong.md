@@ -44,7 +44,7 @@ In `MEAN_REVERSION` mode the behavior for `PP_BUY` and `PP_SELL` is reversed in 
 
 In `MEAN_REVERSION` mode the behavior for `PP_BUY` and `PP_SELL` is reversed in this strategy.
 
-![](../../.gitbook/assets/image%20%2831%29.png)
+![](../../.gitbook/assets/image%20%2830%29.png)
 
 * A short position is opened when the bid price is equal to or above `PP_SELL`.
 * Position is closed when the desired `ROE` \(return on equity\) is reached. This is a percentage from the entry point, taking leverage into consideration. 

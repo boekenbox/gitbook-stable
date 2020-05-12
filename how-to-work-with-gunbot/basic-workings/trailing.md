@@ -57,7 +57,7 @@ Buy trailing with Take Buy is a bit different, because it acts as a second buy l
 
 The idea is that sometimes prices will come close to your target, but not close enough for your main strategy to catch a buy. In this case you can use Take Buy as an extra threshold above your regular entry point.
 
-![](../../.gitbook/assets/image%20%2878%29.png)
+![](../../.gitbook/assets/image%20%2877%29.png)
 
 The example above shows that price was on its way reaching the primary buy trigger Buy Level, but didn't quite make it. Instead, Take Buy took the order when prices started moving upwards again.
 

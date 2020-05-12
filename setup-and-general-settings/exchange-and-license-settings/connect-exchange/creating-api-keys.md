@@ -18,7 +18,7 @@ This page shows the minimum required settings per exchange to create a working A
 
 ## Binance Futures
 
-![](../../../.gitbook/assets/image%20%2893%29.png)
+![](../../../.gitbook/assets/image%20%2892%29.png)
 
 ## Bitfinex
 
@@ -46,15 +46,15 @@ This page shows the minimum required settings per exchange to create a working A
 
 ## Kraken
 
-![](../../../.gitbook/assets/image%20%2869%29.png)
+![](../../../.gitbook/assets/image%20%2868%29.png)
 
 ## Kucoin
 
 ![](../../../.gitbook/assets/image%20%283%29.png)
 
-![](../../../.gitbook/assets/image%20%2886%29.png)
+![](../../../.gitbook/assets/image%20%2885%29.png)
 
-![](../../../.gitbook/assets/image%20%2861%29.png)
+![](../../../.gitbook/assets/image%20%2860%29.png)
 
 ## Poloniex
 
