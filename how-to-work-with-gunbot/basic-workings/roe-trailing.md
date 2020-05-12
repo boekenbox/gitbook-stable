@@ -12,7 +12,7 @@ The basic concepts are exactly the same as regular buy and sell [trailing](trail
 * Instead of trailing prices, changes in unrealized ROE are trailed.
 * The only dependency for ROE trailing is that it starts when the minimum ROE target is reached. Other factors like confirming indicators play no role.
 
-![](../../.gitbook/assets/image%20%2833%29.png)
+![](../../.gitbook/assets/image%20%2834%29.png)
 
 {% hint style="info" %}
 Because trailing is completely based on ROE, and not on price, you must use larger trailing limits than with other types of trailing.

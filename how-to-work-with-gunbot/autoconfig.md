@@ -724,7 +724,7 @@ Ticker filters use data collected from the exchange tickers, at the moment the j
 
 You can use the following filter types for adding and removing pairs. Please note that not every filter type works on every exchange, due to the fact that some exchanges don't offer the required data. On Huobi AutoConfig uses "last" price instead of bid/ask for all filters that work with prices.
 
-![](../.gitbook/assets/image%20%2853%29.png)
+![](../.gitbook/assets/image%20%2854%29.png)
 
 _Filters for prices use ask when adding pairs and bid when filtering for removal or changing strategy._
 
@@ -1163,7 +1163,7 @@ For job types: `manageOverrides`, `changeDelay`, `removePairs2`, `changeStrategy
 
 State filters use data from the internal ledger in Gunbot, which has all data for pairs that already cycled since Gunbot last \(re\)started.
 
-![](../.gitbook/assets/image%20%2852%29.png)
+![](../.gitbook/assets/image%20%2853%29.png)
 
 Formula used in `differenceBigger`:  
 `100 * ((ema2 - ema1) / ema1) > delta`
