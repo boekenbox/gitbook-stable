@@ -43,7 +43,7 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
 | :--- | :--- |
 
 
-| BUY\_EXCHANGE\_BTC-ETH | Buy ETH using BTC |
+| BUY\_EXCHANGE\_BTC-ETH | **Buy ETH using BTC** |
 | :--- | :--- |
 
 
@@ -55,7 +55,7 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
 | :--- | :--- |
 
 
-| SELL\_EXCHANGE\_USDT-BTC\_0.1 | Sell USDT for BTC with a trading limit of 0.1 BTC |
+| SELL\_EXCHANGE\_USDT-BTC\_100 | Sell USDT for BTC with a trading limit of 100 USDT |
 | :--- | :--- |
 
 
@@ -87,11 +87,7 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
     </tr>
   </thead>
   <tbody></tbody>
-</table>| Alert message | Action |
-| :--- | :--- |
-
-
-| SHORT\_EXCHANGE\_XBT-USD | Short order for XBT-USD |
+</table>| SHORT\_EXCHANGE\_XBT-USD | Short order for XBT-USD |
 | :--- | :--- |
 
 
@@ -131,11 +127,7 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
     </tr>
   </thead>
   <tbody></tbody>
-</table>| CLOSESHORT\_EXCHANGE\_XBT-USD | Closes a short position for XBT-USD |
-| :--- | :--- |
-
-
-{% hint style="info" %}
+</table>{% hint style="info" %}
 **Note about trading limits**
 
 On **futures exchanges** every setting related to trading limits for margin trading must be specified in contracts.

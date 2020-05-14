@@ -52,7 +52,6 @@ This page shows the minimum required settings for often used exchanges to create
 
 ![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/kucoin.png)
 
-
 ## Poloniex
 
 ![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/poloniex.png)

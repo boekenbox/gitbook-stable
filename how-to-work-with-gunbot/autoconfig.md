@@ -947,11 +947,7 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
     </tr>
   </thead>
   <tbody></tbody>
-</table>| `volumeTrailing` | [See details](https://wiki.gunthy.org/how-to-work-with-gunbot/autoconfig#trailing-filters) | n/a |
-| :--- | :--- | :--- |
-
-
-| `slopeTrailing` | [See details](https://wiki.gunthy.org/how-to-work-with-gunbot/autoconfig#trailing-filters) | n/a |
+</table>| `slopeTrailing` | [See details](https://wiki.gunthy.org/how-to-work-with-gunbot/autoconfig#trailing-filters) | n/a |
 | :--- | :--- | :--- |
 
 
