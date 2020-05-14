@@ -55,7 +55,7 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
 | :--- | :--- |
 
 
-| SELL\_EXCHANGE\_USDT-BTC\_100 | Sell USDT for BTC with a trading limit of 100 USDT |
+| SELL\_EXCHANGE\_USDT-BTC\_100 | Sell BTC for USDT with a trading limit of 100 USDT |
 | :--- | :--- |
 
 
