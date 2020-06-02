@@ -84,7 +84,9 @@ _Замените_ `EXCHANGE`_на имя вашей биржи._
     </tr>
   </thead>
   <tbody></tbody>
-</table><table>
+</table>
+
+<table>
   <thead>
     <tr>
       <th style="text-align:left">SHORT_EXCHANGE_XBT-USD_0_rate</th>
@@ -96,7 +98,9 @@ _Замените_ `EXCHANGE`_на имя вашей биржи._
     </tr>
   </thead>
   <tbody></tbody>
-</table>| CLOSELONG\_EXCHANGE\_XBT-USD | Closes a long position for XBT-USD |
+</table>
+
+| CLOSELONG\_EXCHANGE\_XBT-USD | Closes a long position for XBT-USD |
 | :--- | :--- |
 
 

@@ -9,7 +9,7 @@
 ## About <a id="about-1"></a>
 
 * [Что нового?](about-1/whats-new/README.md)
-  * [New in v16](about-1/whats-new/new-in-v16.md)
+  * [Новое в версии 16](about-1/whats-new/new-in-v16.md)
 * [Поддерживаемые биржи](about-1/supported-exchanges.md)
 * [Системные Требования](about-1/system-requirements.md)
 
