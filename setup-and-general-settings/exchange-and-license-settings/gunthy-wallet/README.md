@@ -6,7 +6,7 @@ description: 'To use Gunbot, an ERC-20 compatible wallet is required.'
 
 Gunbot uses a blockchain based license validation system. It uses our own ERC-20 utility token called "GUNTHY". Using this system, you can manage your own API keys and change them anytime, or even sell your license to a third party.
 
-**Your wallet address, combined with an airdropped amount of tokens, is your Gunbot license key.**
+**Your wallet address, combined with an amount of tokens, is your Gunbot license key.**
 
 {% hint style="warning" %}
 **You are responsible for your own API keys and GUNTHY wallet.**
