@@ -799,7 +799,9 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
     </tr>
   </thead>
   <tbody></tbody>
-</table><table>
+</table>
+
+<table>
   <thead>
     <tr>
       <th style="text-align:left"><code>maxSlopePctInterval</code>
@@ -817,7 +819,9 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
     </tr>
   </thead>
   <tbody></tbody>
-</table><table>
+</table>
+
+<table>
   <thead>
     <tr>
       <th style="text-align:left"><code>minStandardDevPctInterval</code>
@@ -833,7 +837,9 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
     </tr>
   </thead>
   <tbody></tbody>
-</table><table>
+</table>
+
+<table>
   <thead>
     <tr>
       <th style="text-align:left"><code>maxStandardDevPctInterval</code>
@@ -849,7 +855,9 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
     </tr>
   </thead>
   <tbody></tbody>
-</table><table>
+</table>
+
+<table>
   <thead>
     <tr>
       <th style="text-align:left"><code>minVolumeRank</code>
@@ -865,7 +873,9 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
     </tr>
   </thead>
   <tbody></tbody>
-</table><table>
+</table>
+
+<table>
   <thead>
     <tr>
       <th style="text-align:left"><code>maxVolumeRank</code>
@@ -880,7 +890,9 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
     </tr>
   </thead>
   <tbody></tbody>
-</table><table>
+</table>
+
+<table>
   <thead>
     <tr>
       <th style="text-align:left"><code>bullishStandardDeviationChannel</code>
@@ -903,7 +915,9 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
     </tr>
   </thead>
   <tbody></tbody>
-</table><table>
+</table>
+
+<table>
   <thead>
     <tr>
       <th style="text-align:left"><code>bearishStandardDeviationChannel</code>
@@ -926,7 +940,9 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
     </tr>
   </thead>
   <tbody></tbody>
-</table><table>
+</table>
+
+<table>
   <thead>
     <tr>
       <th style="text-align:left"><code>linearRegressionChannel</code>
@@ -947,7 +963,9 @@ _Filters for prices use ask when adding pairs and bid when filtering for removal
     </tr>
   </thead>
   <tbody></tbody>
-</table>| `slopeTrailing` | [See details](https://wiki.gunthy.org/how-to-work-with-gunbot/autoconfig#trailing-filters) | n/a |
+</table>
+
+| `slopeTrailing` | [See details](https://wiki.gunthy.org/how-to-work-with-gunbot/autoconfig#trailing-filters) | n/a |
 | :--- | :--- | :--- |
 
 

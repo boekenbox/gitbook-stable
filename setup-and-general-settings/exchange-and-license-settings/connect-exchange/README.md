@@ -35,7 +35,9 @@ Select your exchange and fill in all the fields for this exchange.
     </tr>
   </thead>
   <tbody></tbody>
-</table><table>
+</table>
+
+<table>
   <thead>
     <tr>
       <th style="text-align:left"><b>Key</b>
@@ -47,7 +49,9 @@ Select your exchange and fill in all the fields for this exchange.
     </tr>
   </thead>
   <tbody></tbody>
-</table><table>
+</table>
+
+<table>
   <thead>
     <tr>
       <th style="text-align:left"><b>Delay</b>
@@ -61,7 +65,9 @@ Select your exchange and fill in all the fields for this exchange.
     </tr>
   </thead>
   <tbody></tbody>
-</table><table>
+</table>
+
+<table>
   <thead>
     <tr>
       <th style="text-align:left"><b>passphrase</b>
@@ -75,7 +81,9 @@ Select your exchange and fill in all the fields for this exchange.
     </tr>
   </thead>
   <tbody></tbody>
-</table>{% tabs %}
+</table>
+
+{% tabs %}
 {% tab title="Description" %}
 This sets the trading fees paid to the exchange. Gunbot uses this data to calculate the break-even point.
 

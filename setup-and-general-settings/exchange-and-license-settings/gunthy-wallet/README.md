@@ -25,7 +25,7 @@ These are the required amounts per license:
 * **Pro**: 1500 GUNTHY
 * **Ultimate**: 2500 GUNTHY
 
-Tokens are generally airdropped within 24 hours after registering the wallet address.
+Tokens for new users are generally airdropped within 24 hours after registering the wallet address.
 
 In periods when there are discounts available for Gunbot, it's possible that different token requirements apply for users with a discounted license.
 
@@ -58,7 +58,7 @@ To make sure everything gets correctly registered, send the following informatio
 * Your GUNTHY wallet address
 * A list of your currently registered API keys / master keys, including the names of the exchanges
 
-After everything is registered, you'll receive the required number of tokens and you're ready to run Gunbot on the new license system.
+After everything is registered, you can deposit the required number of tokens to your registered wallet and you're ready to run Gunbot on the new license system.
 
 **Step 3. Enter your GUNTHY wallet address**
 
