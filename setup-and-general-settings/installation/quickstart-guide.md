@@ -21,8 +21,6 @@ The installation procedure is pretty straightforward, although there are slight 
 * Depending on your firewall: allow TCP traffic on the port used for the interface \(default port: 5000\)
 * Start executable file and visit the interface in your browser on: [http://localhost:5000](http://localhost:5000)
 
-![If you see this after starting the bot, all is good and you can open the interface in your browser](../../.gitbook/assets/image%20%2860%29.png)
-
 {% page-ref page="windows.md" %}
 
 {% page-ref page="macos.md" %}

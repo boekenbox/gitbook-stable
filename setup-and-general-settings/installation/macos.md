@@ -11,14 +11,13 @@ description: Instructions to install Gunbot on a macOS machine.
 3. Open [localhost:5000](http://localhost:5000) in a browser on the same system to access the Gunbot GUI \(modern browsers recommended, preferably Chrome or Firefox\)
 4. Make sure to enter your registered ERC-20 wallet \("Gunthy wallet"\) and your [registered API key](../profile-settings/connect-exchange.md) in Gunbot before starting the bot core for the first time.
 
-{% hint style="info" %}
-Depending on your systems settings, you may need to add a firewall rule to allow for incoming traffic on TCP port 5000.
+{% hint style="success" %}
+System security settings may show that the `gunthy-macos` file is damaged or dangerous.   
+One way to disable the OS restrictions on the Gunbot folder is using this command in a terminal window: `xattr -d -r com.apple.quarantine <foldername>`
 {% endhint %}
 
 {% hint style="info" %}
-### Note for core users
-
-the default setting is that the GUI starts automatically, but pair processing does not. Set `"start": true,` in `config.js` to start processing pairs.
+Depending on your systems settings, you may need to add a firewall rule to allow for incoming traffic on TCP port 5000.
 {% endhint %}
 
 {% hint style="danger" %}

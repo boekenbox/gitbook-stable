@@ -21,12 +21,6 @@ description: Instructions to install Gunbot on a Linux machine.
 Depending on your systems settings, you may need to add a firewall rule to allow for incoming traffic on TCP port 5000.
 {% endhint %}
 
-{% hint style="info" %}
-### Note for core users
-
-the default setting is that the GUI starts automatically, but pair processing does not. Set `"start": true,` in `config.js` to start processing pairs.
-{% endhint %}
-
 {% hint style="danger" %}
 ### Security notice
 
