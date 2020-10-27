@@ -27,6 +27,7 @@ Each method, and their variants for margin trading, has it's own wiki article de
 | `pp` | **Pingpong:** set a fixed buy and sell price, perfect for coins that stay within a predictable price range. |
 | `stepgain` | **Stepgain:** like `gain` , but after hitting initial buy or sell level a trend watcher will check if prices will further decrease or increase - making sure to only buy or sell when the trend reverses. |
 | `SMACROSS` | **SMA cross:** uses crossings of fast and slow SMA to trade when price direction changes. |
+| `SupportResistance` | **Support / Resistance:** buy at support, sell at resistance. |
 | `tsa` | **Time series an**a**lysis:** tries to predict future prices and trades on predicted trend reversals. |
 | `tssl` | **Trailing Stop / Stop Limit:** uses a moving range around market prices for buying and selling, trailing optimal buy and sell levels. |
 

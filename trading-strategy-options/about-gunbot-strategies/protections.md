@@ -14,7 +14,7 @@ See the tables below for details about protections/constraints per method.
 
 ## Protections for regular trading \(spot\)
 
-| Method | Allows for pyramid buying? | Protection against buying above EMA? | Protection against selling below break-even point? |
+| Method | Allows for pyramid buying? | Protection against buying above EMA? \("buy level"\) | Protection against selling below break-even point? \("gain"\) |
 | :--- | :--- | :--- | :--- |
 | `ADX` | no | no | optional |
 | `ATRTS` | no | no | yes |
@@ -29,6 +29,7 @@ See the tables below for details about protections/constraints per method.
 | `pp` | no | no | optional |
 | `SMACROSS` | yes | no | optional |
 | `stepgain` | no | yes | yes |
+| `SupportResistance` | yes | no | yes |
 | `tsa` | no | no | yes |
 | `tssl` | no | yes | yes |
 

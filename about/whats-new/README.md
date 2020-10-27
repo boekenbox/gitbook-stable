@@ -1,42 +1,62 @@
 ---
 description: >-
   Here's a quick overview of the most important changes introduced with Gunbot
-  v18.8.8
+  v20
 ---
 
 # What's new?
 
-Gunbot 18.8.8 offers much faster exchange connection on major exchanges, adds full support for Binance Futures. Includes bugfixes for known issues in the previous version.
+Gunbot v20 introduces a completely new interface built around the TradingView charting library, with easier options to create and edit strategy settings. Also comes with a ton of other changes and stability improvements.
 
 ## **Upgrading**
 
-**There are no config changes for v18.8.8 In case you are upgrading from v18.x, replacing only the executable file** \(gunthy-win.exe / gunthy-linux / gunthy-macos / gunthy-arm\) **is all that's needed to upgrade.**
+There are no breaking config changes for v20. In case you are upgrading from v18.x, replacing the executable file _\(gunthy-win.exe / gunthy-linux / gunthy-macos / gunthy-arm\)_ and _node\_modules_ folder is all that's needed.
 
-In case you are upgrading from an older version, refer to the changelogs of previous versions for instructions, or start with a fresh installation.
+![The GUI requires that password authentication is enabled in config.js. Set it like this.](../../.gitbook/assets/image%20%2874%29.png)
 
-\*\*\*\*[**Download release**](../../setup-and-general-settings/installation/download.md)\*\*\*\*
+New strategy parameters are automatically merged into your strategies, as soon as you login to the browser interface.
 
-## Changes in v18.8.8
+In case you are upgrading from an older version than v18, refer to the changelogs of previous versions for instructions, or start with a fresh installation.
 
-* **Support for websockets for major exchanges**: this allows for much lower delays on [supported exchanges](../supported-exchanges/websockets-support.md)
-* **Full Binance Futures support:** Native margin strategies, TradingView alerts and Market Maker all work on Binance Futures
-* **Support for Kraken forex trading pairs**
-* **Implement Okex Futures:** Native margin strategies and TradingView alerts supported
-* **New trading strategy:** Grid trading for margin / futures exchanges. Part of Market Maker plugin \(unlocked from token rank 10\)
-* **Add Binance and Kraken support in Market Maker**
+{% page-ref page="../../setup-and-general-settings/installation/download.md" %}
 
-## Bugfixes
+## Changes in v20
 
-* Fix stop orders, \(fake\) market orders, order quantity  on Kraken Futures
-* Fix for sometimes reverted trading history
-* Fix DU count
-* Disable post only for limit orders on Kraken Futures
-* Solve problem with pSar for bitRage hedging
-* Automatically switch to market orders for bitRage panic sell
+Only the most important changes are listed.
 
+### Core / GUI
 
+* **Completely new GUI:** improved performance, easier to use, better charting, improved trading terminal, more stats, additional config wizard for novice users
+* **Seamless config changes:** pair cycling is no longer interrupted when a config change happens. New settings take effect the next cycle
+* **New partner exchanges:** Bitget and Nash
+* **New strategy for spot trading**: [Support / Resistance](../../trading-strategy-options/regular-strategies-spot-trading/support-resistance.md)
+* **PND close**: an alternative to ROE trailing to aim for bigger profits in margin strategies. PND attempts to wait until a move plays out before closing position
+* **Alternate ROE trailing method  for margin strats:** with `ROE_SCALPER` the trailing range is an absolute ROE value
+* **Liquidity maker for spot trading:** provide [liquidity ](../../trading-strategy-options/misc-settings.md#liquidity-maker)and profit from bid/ask spread
+* **Easier config sharing**: import parts of `config.js` or `autoconfig.json` using the GUI
+* **Store more order history:** to improve profit/loss calculations and prevent unneeded "bought price" warnings, the complete order history is now locally saved over time 
+* **TradingView alerts**: option to change strategy by alert, enable `TV_TRADING_LIMIT_CAP` for Bitmex, better handling of multiple incoming emails
+* **Alerts \(beta\):** build your own strategy in a visual way using built-in TradingView charts
 
-\*\*\*\*
+### Market Maker
+
+* **New strategy variants**: Grid, Support/Resistance, Fibonacci, Pullback, One Scalper, x125 & Moto
+
+### AutoConfig
+
+* **Editor and stats in the GUI**: every single AutoConfig feature is now editable through the GUI, every config change is visible on the AutoConfig dashboard
+* **More filter types**: add pairs with linear regression filters, more [options ](../../how-to-work-with-gunbot/extras/autoconfig.md#generic-filters)to filter your own variables
+* **Use your own logic:** most values in Autoconfig jobs can now optionally use [custom JavaScript expressions](../../how-to-work-with-gunbot/extras/autoconfig.md#calculated-config-values-and-custom-filters). Expressions have access to almost all internal bot data
+* **Silent mode**: disable console logs for AutoConfig
+
+### Bugfixes
+
+* Numerous exchange specific trading execution fixes
+* Fix closelong / closeshort alerts for Kraken Futures and Binance Futures
+* Work around Kraken cloudflare issue in ccxt library
+* Add support for all new pairs on Kraken \(on other exchange this happens automatically\)
+* Prevent firing orders if MM bots receive sudden strange balance or ROE values
+* Fix problem that prevented proper handover from DU to RT
 
 {% page-ref page="../../setup-and-general-settings/installation/download.md" %}
 

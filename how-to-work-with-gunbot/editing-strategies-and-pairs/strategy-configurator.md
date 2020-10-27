@@ -30,3 +30,11 @@ Click on a strategy nickname to edit its settings.
 
 ![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/image%20%2842%29.png)
 
+
+
+## Editors for bitRage and Market Maker
+
+If you're a bitRage or Market Maker user, you can use the strategy editor in a different layout to manage the strategies for these modules.
+
+Just create a new strategy with both bitRage or Market Maker as buy and sell method, and the strategy editor opens in a different layout showing only the relevant settins in categories that make sense for bitRagen and Market Maker.
+

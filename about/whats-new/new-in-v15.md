@@ -6,7 +6,7 @@ description: >-
 
 # New in v15
 
-Gunbot v15 is a major release: it includes support for over 100 new exchanges - including Binance US and HitBTC - and a pre release of AutoConfig. 
+Gunbot v15 is a major release: it includes support for over 100 new exchanges - including Binance US and HitBTC - and a pre release of AutoConfig.
 
 ## **Upgrading**
 
@@ -17,7 +17,7 @@ Gunbot v15 is a major release: it includes support for over 100 new exchanges - 
 * Empty your browser cache for your Gunbot GUI \(for example with ctrl-F5\).
 * In case you used https for the GUI, also make sure to copy both the key and certificate files to the new folder.
 * If you have pairs that are in DU or RT, also copy the /json folder from your previous installation.
-* When you use email alerts, make sure the [syntax of your alerts](../../setup-and-general-settings/preferences/tradingview-add-on.md#alert-message-contents) is correct.
+* When you use email alerts, make sure the [syntax of your alerts](../../how-to-work-with-gunbot/extras/tradingview-add-on/#alert-message-contents) is correct.
 * If you also want to migrate your settings for the Telegram bot, copy the `tgconfig.json` file to your new folder as well.
 
 ## New features / changes in v15
@@ -25,7 +25,7 @@ Gunbot v15 is a major release: it includes support for over 100 new exchanges - 
 * **Over 100 new supported exchanges:** Gunbot now [supports](../supported-exchanges/) spot trading on all exchanges supported by the [ccxt library](https://github.com/ccxt/ccxt/wiki/Exchange-Markets)! This includes support for email alerts through the TradingView add-on.
 * **Trading fees setting moves to exchange section:** for easier strategy handling, the TRADING\_FEES setting is now configurable per exchange. It's no longer a strategy setting.
 * **Limit orders for TradingView add-on:** optionally you can now let the TradingView add-on place limit orders instead of market orders.
-* **Pre-release of AutoConfig:** with [AutoConfig ](../../how-to-work-with-gunbot/autoconfig.md)you can automate all kinds of things you previously could only do by hand. For example you can use it automatically add high volume trading pairs, assign a bag handling strategy for pairs that are not performing well, or automatically update pair overrides. It's called a pre-release because there no GUI for it yet, it's fully functional though.
+* **Pre-release of AutoConfig:** with [AutoConfig ](../../how-to-work-with-gunbot/extras/autoconfig.md)you can automate all kinds of things you previously could only do by hand. For example you can use it automatically add high volume trading pairs, assign a bag handling strategy for pairs that are not performing well, or automatically update pair overrides. It's called a pre-release because there no GUI for it yet, it's fully functional though.
 
 ## **Gunbot core bugfixes**
 
@@ -39,6 +39,4 @@ Notable fixes:
 * Fix an issue on Kraken and Bittrex that caused all pairs to wait when there was an open order for a single pair.
 * Fix an issue that could sometimes invert ROE on Bitmex.
 * Fix for TV stoploss alerts.
-
-
 

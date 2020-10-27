@@ -17,7 +17,7 @@ Gunbot v13/v14 focuses on bugfixes and improving user experience. That's why thi
 * If you have pairs that are already in DU or RT, also copy the /json folder from v12 to v13.
 * New strategy parameters for v13 will be automatically added through the GUI the first time you update a strategy. This happens on a per strategy basis.
 * Make sure to set the new Admin ID for Telegram, for better privacy.
-* When you use email alerts, make sure the [syntax of your alerts](../../setup-and-general-settings/preferences/tradingview-add-on.md#alert-message-contents) is correct.
+* When you use email alerts, make sure the [syntax of your alerts](../../how-to-work-with-gunbot/extras/tradingview-add-on/#alert-message-contents) is correct.
 * If you also want to migrate your settings for the Telegram bot, copy the `tgconfig.json` file to your new folder as well.
 
 _Due to new libraries used, you cannot simply overwrite the executable for this release._

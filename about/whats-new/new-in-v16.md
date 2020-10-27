@@ -6,7 +6,7 @@ description: >-
 
 # New in v16
 
-Gunbot v16 adds several new features and fixes known issues. 
+Gunbot v16 adds several new features and fixes known issues.
 
 ## **Upgrading**
 
@@ -21,13 +21,13 @@ In case you are upgrading from v14, use the instructions below.
 * Empty your browser cache for your Gunbot GUI \(for example with ctrl-F5\).
 * In case you used https for the GUI, also make sure to copy both the key and certificate files to the new folder.
 * If you have pairs that are in DU or RT, also copy the /json folder from your previous installation.
-* When you use email alerts, make sure the [syntax of your alerts](../../setup-and-general-settings/preferences/tradingview-add-on.md#alert-message-contents) is correct.
+* When you use email alerts, make sure the [syntax of your alerts](../../how-to-work-with-gunbot/extras/tradingview-add-on/#alert-message-contents) is correct.
 * If you also want to migrate your settings for the Telegram bot, copy the `tgconfig.json` file to your new folder as well.
 
 ## New features / changes in v16
 
-* **Support for specifying order rates for trades using TV add-on:** Limit orders can now be placed at a rate [specified in your alert](../../setup-and-general-settings/preferences/tradingview-add-on.md#alert-message-contents). 
-* **More filter types for AutoConfig:** several [new ticker filters](../../how-to-work-with-gunbot/autoconfig.md#ticker-filters) for adding pairs with AutoConfig.
+* **Support for specifying order rates for trades using TV add-on:** Limit orders can now be placed at a rate [specified in your alert](../../how-to-work-with-gunbot/extras/tradingview-add-on/#alert-message-contents). 
+* **More filter types for AutoConfig:** several [new ticker filters](../../how-to-work-with-gunbot/extras/autoconfig.md#ticker-filters) for adding pairs with AutoConfig.
 * **Backtesting option for Autoconfig:** simulate your filter settings for adding on historic ticker data.
 
 \*\*\*\*
@@ -42,8 +42,4 @@ Notable fixes:
 * Fixes for Kumex: prices, ROE trailing and UTA on \(MM only\).
 * Use AUD-BTC as BTC-MFI pair on btcmarkets.
 * Add support for M20 futures on Bitmex.
-
-
-
-
 

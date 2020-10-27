@@ -255,7 +255,7 @@ Parameter name in `config.js`: `EMASPREAD`
 
 {% tabs %}
 {% tab title="Description" %}
-Sets the minimum percentage difference between slow and fast EMA for `EMASPREAD`.
+Sets the minimum percentage difference between slow and medium EMA for `EMASPREAD`.
 
 When set to 1, the spread must reach at least 1% before `EMASPREAD` can trigger a buy or sell.
 {% endtab %}
@@ -1102,9 +1102,11 @@ Parameter name in `config.js`: `STDV`
 
 ## Renko candles
 
-![](https://user-images.githubusercontent.com/2372008/51115276-13a69500-1808-11e9-85b9-b221ef2cddeb.png)
+[Renko](https://github.com/boekenbox/gitbook/tree/74bed25d66f4b0422a81f67f250bcb09c6cf1780/wiki/Renko_Charts/README.md) candles can be used with the ichimoku-margin strategy. 
 
-[Renko](https://github.com/boekenbox/gitbook/tree/74bed25d66f4b0422a81f67f250bcb09c6cf1780/wiki/Renko_Charts/README.md) candles can be used with the ichimoku-margin strategy.
+{% hint style="info" %}
+Renko charts are supported in v18, not in later versions.
+{% endhint %}
 
 ### Use Renko
 

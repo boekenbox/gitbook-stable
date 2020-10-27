@@ -303,14 +303,148 @@ Parameter name in `config.js`: `BOUGHT_PRICE`
 {% endtab %}
 {% endtabs %}
 
+## Liquidity maker
+
+Use any strategy as a liquidity provider on spot markets, by using a simple staggered orders strategy that places orders at many positions in the order book.
+
+![Empty order book? Not anymore with liquidity maker.](../.gitbook/assets/image%20%2870%29.png)
+
+### Liquidity maker
+
+{% tabs %}
+{% tab title="Description" %}
+Enables a staggered orders strategy variant that continuously places up to 9 orders on the bid side of the order book. If there is enough quote balance, up to 9 orders are placed on the ask side as well. You profit from the spread between bid and ask, provided the spread is higher than your trading fees.
+
+Each order is in value of 1x `TRADING_LIMIT`. Potentially it can use your whole balance.
+
+This works in addition to your regular strategy. You can disable the regular strategy by setting both buy and sell enabled to "false".
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** true or false
+
+**Default value:** false
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| Strategy buy | Stop limit |
+| Strategy sell | RT Buy |
+|  | RT buyback |
+|  | RT sell |
+|  | Close |
+|  | DCA buy |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `LIQUIDITY`
+{% endtab %}
+{% endtabs %}
+
+### Liquidity taker 
+
+{% tabs %}
+{% tab title="Description" %}
+In addition to maker orders, use taker orders when reaching your targets or to DCA.
+
+When `GAIN` is reached, every round a market sell order of 1x `TRADING_LIMIT` gets fired to reduce your position in profit. 
+
+When price drops below the average bought price, every round a market buy order of 1x `TRADING_LIMIT` gets fired to bring down the average price per unit. 
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** true or false
+
+**Default value:** false
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| Strategy buy | Stop limit |
+| Strategy sell | RT Buy |
+|  | RT buyback |
+|  | RT sell |
+|  | Close |
+|  | DCA buy |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `LIQUIDITY_TAKER`
+{% endtab %}
+{% endtabs %}
+
+### Liquidity gain
+
+{% tabs %}
+{% tab title="Description" %}
+Option to enforce sell orders to be placed at or above break-even.  
+Disable this to provide pure liquidity.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** true or false
+
+**Default value:** true
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| Strategy sell | Stop limit |
+|  | RT Buy |
+|  | RT buyback |
+|  | RT sell |
+|  | Close |
+|  | DCA buy |
+|  | Strategy sell |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `LIQUIDITY_GAIN`
+{% endtab %}
+{% endtabs %}
+
+### Max invested base
+
+{% tabs %}
+{% tab title="Description" %}
+Limits the total position size for liquidity maker and taker orders. When the maximum value is reached, no more liquidity maker or taker orders that would add to the position are placed . 
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** numerical - represents a value in base currency
+
+**Default value:** 0.1
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| Strategy buy | Stop limit |
+| Strategy sell | RT Buy |
+|  | RT buyback |
+|  | RT sell |
+|  | Close |
+|  | DCA buy |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `MAX_INVESTMENT`
+{% endtab %}
+{% endtabs %}
+
+
+
 ## Order type settings
 
 On exchanges that support market orders, you can select which types of orders should be sent as limit or market.
 
-{% hint style="success" %}
-**Supported exchanges**
+{% hint style="info" %}
+**Not all exchanges support market orders**
 
-Binance, Bitfinex, Bitmex, Coinbase Pro, Kraken and Poloniex
+Test if your market orders execute before leaving your strategy run unattended.
 {% endhint %}
 
 ### Market Buy

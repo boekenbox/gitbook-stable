@@ -13,18 +13,22 @@ These exchanges are official Gunbot partners. We are in direct contact with thei
 | Exchange | Name in config | Native strategies | TradingView alerts |
 | :--- | :--- | :--- | :--- |
 | **Gunthy** | `gunthy` | Regular | Regular |
-| **Binance** | `binance` / `binanceus`  | Regular | Regular |
+| **Binance** | `binance` / `binanceus` | Regular | Regular |
 | **Binance Futures** | `binanceFutures` | Margin | Margin |
+| **Bitget** | `bitget` | Margin | Margin |
 | **HitBTC** | `hitbtc2` | Regular | Regular |
 | **Kraken Futures** | `krakenFutures` | Margin | Margin |
 | **KuCoin** | `kucoin` | Regular | Regular |
+| **Nash** | `nashio` | Regular | Regular |
 | **OKEx** | `okex3` | Regular & margin | Regular & margin |
+
+{% hint style="success" %}
+Gunthy and Nash do not require registering an additional api key in your license. Because they list Gunthy Token they are free to use for every Gunbot user.
+{% endhint %}
 
 ## Certified exchanges
 
 These exchanges have been supported in Gunbot for a long time, you can expect high quality API support.
-
-
 
 | Exchange | Name in config | Native strategies | TradingView alerts |
 | :--- | :--- | :--- | :--- |
@@ -38,19 +42,15 @@ These exchanges have been supported in Gunbot for a long time, you can expect hi
 | **Kraken** | `kraken` | Regular | Regular & Margin |
 | **Poloniex** | `poloniex` | Regular | Regular & Margin |
 
-
-
 ## Supported exchanges
 
 The following exchanges are supported through the [ccxt library](https://github.com/ccxt/ccxt/wiki/Exchange-Markets). They may not have been fully tried and tested in Gunbot yet.
 
-These exchanges support spot trading only, margin support is not yet connected in Gunbot. 
+These exchanges support spot trading only, margin support is not yet connected in Gunbot.
 
 You can use any of these exchanges for spot trading alerts using the TradingView add-on.
 
-
-
-|         | Name in config | Exchange |
+|  | Name in config | Exchange |
 | :--- | :--- | :--- |
 | [![\_1btcxe](https://user-images.githubusercontent.com/1294454/27766049-2b294408-5ecc-11e7-85cc-adaff013dc1a.jpg)](https://1btcxe.com) | `_1btcxe` | [1BTCXE](https://1btcxe.com) |
 | [![acx](https://user-images.githubusercontent.com/1294454/30247614-1fe61c74-9621-11e7-9e8c-f1a627afa279.jpg)](https://acx.io) | `acx` | [ACX](https://acx.io) |
@@ -164,10 +164,4 @@ You can use any of these exchanges for spot trading alerts using the TradingView
 | [![yobit](https://user-images.githubusercontent.com/1294454/27766910-cdcbfdae-5eea-11e7-9859-03fea873272d.jpg)](https://www.yobit.net) | `yobit` | [YoBit](https://www.yobit.net) |
 | [![zaif](https://user-images.githubusercontent.com/1294454/27766927-39ca2ada-5eeb-11e7-972f-1b4199518ca6.jpg)](https://zaif.jp) | `zaif` | [Zaif](https://zaif.jp) |
 | [![zb](https://user-images.githubusercontent.com/1294454/32859187-cd5214f0-ca5e-11e7-967d-96568e2e2bd1.jpg)](https://www.zb.com) | `zb` | [ZB](https://www.zb.com) |
-
-#### 
-
-
-
-
 

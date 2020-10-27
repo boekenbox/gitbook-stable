@@ -140,8 +140,6 @@ The following orders can prevent trading when occurring very often. When any of 
 
 * Increase the exchange delay for Poloniex.
 
-
-
 ### Stop trying to access exchanges you don't have a license to
 
 **Reason:** Gunbot core is not running on an already registered key

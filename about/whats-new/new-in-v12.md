@@ -11,9 +11,9 @@ description: >-
 * Fixes non triggering behavior of: `SL_DISABLE_BUY`, `RT_ONCE`, `RT_ONCE_AND_CONTINUE` and `COUNT_SELL`
 * Fix amounts for long orders on Bitmex when using `MARKET_BUY` or TradingView alerts.
 
-This is a recommended upgrade if you use any of the features mentioned above. 
+This is a recommended upgrade if you use any of the features mentioned above.
 
-To install, just [download](../../setup-and-general-settings/installation/download.md) the release and overwrite the gunthy executable file in your existing Gunbot folder. 
+To install, just [download](../../setup-and-general-settings/installation/download.md) the release and overwrite the gunthy executable file in your existing Gunbot folder.
 
 ## New features / changes in v12
 

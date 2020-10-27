@@ -9,7 +9,7 @@ description: Instructions to install Gunbot on a macOS machine.
 1. Unpack the release .zip file to a new folder.
 2. Start running Gunbot with the following command from a terminal in your Gunbot folder:  `./gunthy-macos`. Keep this terminal window open.
 3. Open [localhost:5000](http://localhost:5000) in a browser on the same system to access the Gunbot GUI \(modern browsers recommended, preferably Chrome or Firefox\)
-4. Make sure to enter your [registered ERC-20 wallet](../exchange-and-license-settings/gunthy-wallet/) \("Gunthy wallet"\) and your [registered API key](../exchange-and-license-settings/connect-exchange/) in Gunbot before starting the bot core for the first time.
+4. Make sure to enter your registered ERC-20 wallet \("Gunthy wallet"\) and your [registered API key](../profile-settings/connect-exchange.md) in Gunbot before starting the bot core for the first time.
 
 {% hint style="info" %}
 Depending on your systems settings, you may need to add a firewall rule to allow for incoming traffic on TCP port 5000.

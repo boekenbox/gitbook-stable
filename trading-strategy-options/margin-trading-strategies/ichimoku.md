@@ -12,8 +12,6 @@ Gunbot will open one position, either long or short, and close this position whe
 Please don't manually add to or reduce positions opened by Gunbot, unless you stop running Gunbot on this trading pair until you've closed this position.
 {% endhint %}
 
-
-
 For this strategy it is recommended to use an additional momentum indicator to confirm long and short entries.
 
 ### Long / Buy
@@ -78,8 +76,8 @@ This sets the target for closing a position.
 
 ROE is the Return On Equity for a position, the percentage profit and loss on your invested margin. This value is calculated in a similar way to how Bitmex calculates it, it does include leverage and does not include fees.
 
-**Examples:**  
-  
+**Examples:**
+
 Long position, 1x leverage.  
 When price moves 1% above the average entry price, 1% ROE is reached.
 
@@ -111,6 +109,72 @@ When price moves 1% below the average entry price, 20% ROE is reached.
 
 {% tab title="Name" %}
 Parameter name in `config.js`: `ROE`
+{% endtab %}
+{% endtabs %}
+
+### PND
+
+{% tabs %}
+{% tab title="Description" %}
+Use "PND" logic to close trades. This mode tries to not close a position before a pump or dump has fully played out - usually beats ROE trailing performance.
+
+Respects the minimum ROE set.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** true or false
+
+**Default value:** false
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| Close | RT buy |
+|  | RT buyback |
+|  | RT sell |
+|  | Close |
+|  | Stop limit |
+|  | Strategy buy |
+|  | Strategy sell |
+|  | DCA buy |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `PND`
+{% endtab %}
+{% endtabs %}
+
+### PND protection
+
+{% tabs %}
+{% tab title="Description" %}
+Threshold to close a position when it drops below ROE again.
+
+A value of 1.5 means that if ROE reached 1.5x the minimum target, the position will get closed immediately if the trend turns.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** numerical
+
+**Default value:** 1.5
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| Close | RT buy |
+|  | RT buyback |
+|  | RT sell |
+|  | Close |
+|  | Stop limit |
+|  | Strategy buy |
+|  | Strategy sell |
+|  | DCA buy |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `PND_PROTECTION`
 {% endtab %}
 {% endtabs %}
 
@@ -226,7 +290,9 @@ Parameter name in `config.js`: `STOP_SELL`
 
 {% tabs %}
 {% tab title="Description" %}
-Use this to enable tssl-style trailing for ROE.
+Use this to enable tssl-style trailing for ROE.  
+  
+Trailing limit is set with `ROE_LIMIT`.
 {% endtab %}
 
 {% tab title="Values" %}
@@ -253,19 +319,60 @@ Parameter name in `config.js`: `ROE_TRAILING`
 {% endtab %}
 {% endtabs %}
 
+### ROE Scalper
+
+{% tabs %}
+{% tab title="Description" %}
+Use this to enable an alternate trailing mechanism for closing positions.
+
+Trailing limit is set with `ROE_LIMIT`. Additionally `ROE_TRAILING` must be enabled.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** true or false
+
+**Default value:** false
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| Close | RT buy |
+|  | RT buyback |
+|  | RT sell |
+|  | Strategy sell |
+|  | Stop limit |
+|  | Close |
+|  | Strategy buy |
+|  | DCA buy |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `ROE_SCALPER`
+{% endtab %}
+{% endtabs %}
+
 ### ROE Limit
 
 {% tabs %}
 {% tab title="Description" %}
 This sets the range for ROE trailing.
 
-Setting a range of 5% at a ROE target of 1 would set an initial range between 0.95 and 1.05.
+**ROE trailing:**
+
+Range is a percentage of current ROE. Setting a `ROE_LIMIT` of 5 at a `ROE` target of 1 would set an initial range between 0.95 and 1.05.
+
+**ROE scalper:**
+
+Range is an absolute ROE value. Setting a ROE\_LIMIT of 5 at a `ROE` target of 10 means that the trailing stop is initially set at ROE 5 \(`ROE` minus `ROE_LIMIT`\).
+
+**Both**:
 
 As long as ROE keeps increasing, the range moves along with ROE. As soon as ROE start decreasing, the lower range gets frozen. A close order is placed when ROE crosses the lower limit.
 {% endtab %}
 
 {% tab title="Values" %}
-**Values:** numerical – represent a percentage of ROE.
+**Values:** numerical – represent a trailing range.
 
 **Default value:** 1
 {% endtab %}
@@ -326,7 +433,7 @@ It is possible to use negative values, this will increase the chance of receivin
 
 Example when set to 1 and a buy signal occurs at an ask price of 100: a limit order gets placed at a rate of 101. When set to -1 and a buy signal occurs at an ask price of 100: a limit order gets placed at a rate of 99.
 
-Don't use a negative gap together with `STOP_BUY` and/or `STOP_SELL`, as these stops do not combine well with position that do not always fill. 
+Don't use a negative gap together with `STOP_BUY` and/or `STOP_SELL`, as these stops do not combine well with position that do not always fill.
 {% endtab %}
 
 {% tab title="Values" %}

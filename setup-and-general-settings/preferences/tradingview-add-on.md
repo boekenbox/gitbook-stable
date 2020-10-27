@@ -75,9 +75,7 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
     </tr>
   </thead>
   <tbody></tbody>
-</table>
-
-<table>
+</table><table>
   <thead>
     <tr>
       <th style="text-align:left">BUY_EXCHANGE_BTC-ETH_0_rate</th>
@@ -89,9 +87,7 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
     </tr>
   </thead>
   <tbody></tbody>
-</table>
-
-| SHORT\_EXCHANGE\_XBT-USD | Short order for XBT-USD |
+</table>| SHORT\_EXCHANGE\_XBT-USD | Short order for XBT-USD |
 | :--- | :--- |
 
 
@@ -119,9 +115,7 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
     </tr>
   </thead>
   <tbody></tbody>
-</table>
-
-<table>
+</table><table>
   <thead>
     <tr>
       <th style="text-align:left">SHORT_EXCHANGE_XBT-USD_0_rate</th>
@@ -133,9 +127,7 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
     </tr>
   </thead>
   <tbody></tbody>
-</table>
-
-{% hint style="info" %}
+</table>{% hint style="info" %}
 **Note about trading limits**
 
 On **futures exchanges** every setting related to trading limits for margin trading must be specified in contracts.

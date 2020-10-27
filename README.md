@@ -1,7 +1,7 @@
 ---
 description: >-
-  This wiki is written for the latest stable Gunbot release: v18. Includes
-  support for over 100 exchanges!
+  This wiki is written for the latest stable Gunbot release: v20. Includes a
+  brand new browser interface!
 ---
 
 # Welcome to the Gunbot wiki
@@ -16,7 +16,7 @@ No need for a subscription, a one time fee gets you lifetime support and softwar
 
 ### Gunbot is used by thousands of users and has an awesome community ❤️
 
-![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/image%20%2829%29.png)
+![](.gitbook/assets/image%20%2840%29.png)
 
 {% page-ref page="setup-and-general-settings/installation/" %}
 
@@ -43,6 +43,7 @@ No need for a subscription, a one time fee gets you lifetime support and softwar
 | `pp` | [Regular](trading-strategy-options/regular-strategies-spot-trading/pingpong.md) | [Margin](trading-strategy-options/margin-trading-strategies/pingpong.md) |
 | `stepgain` | [Regular](trading-strategy-options/regular-strategies-spot-trading/stepgain.md) | [Margin](trading-strategy-options/margin-trading-strategies/stepgain.md) |
 | `SMACROSS` | [Regular](trading-strategy-options/regular-strategies-spot-trading/sma-cross.md) | [Margin](trading-strategy-options/margin-trading-strategies/sma-cross.md) |
+| `SupportResistance` | [Regular](trading-strategy-options/regular-strategies-spot-trading/support-resistance.md) | N/A |
 | `tsa` | [Regular](trading-strategy-options/regular-strategies-spot-trading/time-series-analysis.md) | [Margin](trading-strategy-options/margin-trading-strategies/time-series-analysis.md) |
 | `tssl` | [Regular](trading-strategy-options/regular-strategies-spot-trading/tssl-trailing-stop-stop-limit.md) | [Margin](trading-strategy-options/margin-trading-strategies/tssl-trailing-stop-stop-limit.md) |
 
