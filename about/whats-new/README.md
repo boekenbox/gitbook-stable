@@ -10,6 +10,14 @@ Gunbot v20 introduces a completely new interface built around the TradingView ch
 
 ## **Upgrading**
 
+{% hint style="success" %}
+**New: config import tool**
+
+It's now really easy to upload a config.js or autoconfig.json file in the interface, and import the parts you need from it. You can use this to setup a clean v20 installation while migrating your old pairs, strategies and other settings.  
+  
+**Steps to start with a clean installation:** unpack v20 and run, enter your Gunthy wallet address in the wizard and select "other" as exchange. Then go to _Profile_ &gt; _Import settings_ and select the parts from your old config to import.
+{% endhint %}
+
 There are no breaking config changes for v20. In case you are upgrading from v18.x, replacing the executable file _\(gunthy-win.exe / gunthy-linux / gunthy-macos / gunthy-arm\)_ and _node\_modules_ folder is all that's needed.
 
 ![The GUI requires that password authentication is enabled in config.js. Set it like this.](../../.gitbook/assets/image%20%2874%29.png)
