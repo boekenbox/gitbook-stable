@@ -33,7 +33,7 @@ The installation procedure is pretty straightforward, although there are slight 
 On Mac systems, expect to need to explicitly allow running various libraries used by Gunbot due to Gatekeeper.
 {% endhint %}
 
-## 3. Enter license related data
+## 3. Enter license data
 
 Before you can start trading with the bot, you'll need to enter a few things to make sure it will pass the license checks.
 

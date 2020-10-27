@@ -7,17 +7,9 @@ description: >-
 
 # Telegram
 
-{% hint style="info" %}
-The Telegram bot is fully integrated into Gunbot. All you need to do to start the Telegram bot is enable Telegram notifications in your Gunbot settings.
-
-After setting it up, type `/start` to your bot to open the menu.
-{% endhint %}
-
-## Get started
-
 To set this up, go to **Profile** &gt; **Telegram**.
 
-### Steps to create a Telegram bot
+## Steps to create a Telegram bot
 
 Notifications work by first creating a personal bot on Telegram, Gunbot then connects to this bot to push notifications to you.
 
@@ -27,6 +19,12 @@ This is how to create a bot:
 2. Talk to [@myidbot](https://telegram.me/myidbot) to see your Chat ID, save it.
 3. Enable Telegram notifications for Gunbot, and enter the token and ID you've just gathered. Use the ID for both the user and admin ID fields, this makes sure that only you can interact with the Telegram bot. _Alternatively, you can set a comma separated list for Admin ID, specifying multiple IDs who may interact with the bot._
 4. Start a chat with the username you've picked for your bot, and hit the start button. If you don't see a start button, write "/start" and click on it afterwards.
+
+{% hint style="info" %}
+The Telegram bot is fully integrated into Gunbot. All you need to do to start the Telegram bot is enable Telegram notifications in your Gunbot settings.
+
+After setting it up, type `/start` to your bot to open the menu.
+{% endhint %}
 
 ## Demo video
 

@@ -8,6 +8,8 @@ All Gunbot licenses use an API slot system. This allows you to update your regis
 
 Manage your API slots on **Profile &gt; Edit license**.
 
+![](../../.gitbook/assets/image%20%2898%29.png)
+
 ## Register a new API key
 
 On the **Edit license** page you can see how many API slots your license has, and enter up to this number of API keys to be registered for use.
@@ -27,8 +29,6 @@ Make sure you are actively running at least one pair when trying to edit your li
 
 For security reasons you will not see the option to edit your license when it's not actively running on an already registered API key.
 {% endhint %}
-
-![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/image-3.png)
 
 {% hint style="info" %}
 If you regularly switch between exchange accounts, it's easiest to leave your exchange API details in the exchange section for every exchange you plan to use.
