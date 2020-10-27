@@ -18,7 +18,7 @@ On the strategy pages you can find detailed explanations for each buy and sell m
 
 ## Create a new strategy
 
-![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/image%20%2821%29.png)
+![](../../.gitbook/assets/image%20%2899%29.png)
 
 Set a nickname for your strategy \(this can be anything you want, but don't use blank spaces in the nickname\), and select the main methods for buying and selling. Hit the **Create** button to save the new strategy.
 
@@ -28,7 +28,7 @@ You can create an unlimited number of strategies.
 
 Click on a strategy nickname to edit its settings.
 
-![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/image%20%2842%29.png)
+![](../../.gitbook/assets/image%20%2896%29.png)
 
 ## Duplicating and renaming strategies
 

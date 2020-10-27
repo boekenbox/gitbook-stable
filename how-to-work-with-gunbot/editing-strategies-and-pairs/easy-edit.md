@@ -12,6 +12,8 @@ First select the exchange you want to add a pair for.
 
 Then if the exchange supports it, you can select your desired trading pair from a list of all available pairs. If you don't see a list of trading pairs after selecting an exchange, add your pair manually in the [format ](trading-pairs/#pair-naming-conventions)Gunbot expects, like BTC-ETH or USDT-BTC.
 
+![](../../.gitbook/assets/image%20%2898%29.png)
+
 ## Step 2: name your new strategy, or select an existing strategy
 
 Give your strategy a name, so you can assign it to more trading pairs in the future or use it as template for strategy variations.
@@ -25,6 +27,8 @@ Follow the steps to create the trading conditions for your pair. This is exactly
 The wizard only shows you the most relevant settings so you can focus on the essentials. Some parameters like "min volume to sell" are automatically set in the background.
 
 If you later want to fine tune your strategy, you can use the advanced editor to edit every possible advanced strategy option.
+
+![](../../.gitbook/assets/image%20%2895%29.png)
 
 ## Step 4: review and save
 

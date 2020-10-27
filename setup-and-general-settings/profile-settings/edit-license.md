@@ -8,7 +8,7 @@ All Gunbot licenses use an API slot system. This allows you to update your regis
 
 Manage your API slots on **Profile &gt; Edit license**.
 
-![](../../.gitbook/assets/image%20%2898%29.png)
+![](../../.gitbook/assets/image%20%28103%29.png)
 
 ## Register a new API key
 
