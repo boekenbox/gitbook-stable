@@ -12,7 +12,7 @@ First select the exchange you want to add a pair for.
 
 Then if the exchange supports it, you can select your desired trading pair from a list of all available pairs. If you don't see a list of trading pairs after selecting an exchange, add your pair manually in the [format ](trading-pairs/#pair-naming-conventions)Gunbot expects, like BTC-ETH or USDT-BTC.
 
-![](../../.gitbook/assets/image%20%2898%29.png)
+![](../../.gitbook/assets/image%20%2899%29.png)
 
 ## Step 2: name your new strategy, or select an existing strategy
 

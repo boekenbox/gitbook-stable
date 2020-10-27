@@ -1358,7 +1358,7 @@ Besides the obligatory first set of filters, you can add up to 9 more sets. name
 }
 ```
 
-## Calculated config values and custom filters
+## Calculated values and custom filters
 
 Many elements in AutoConfig can be calculated at the time the job executes, this allows for completely dynamic scenarios for power users. Every valid javascript expression can be used.
 
@@ -1376,7 +1376,7 @@ To use an expression instead of a string or number, enter your expression as str
 "validExpression": " 1 + 2"
 ```
 
-Many internal data is made available to custom expressions. Use these with caution though, it is very common to encounter undefined data sooner or later - you can handle such errors though - for example by first placing a filter that checks if the data you'll use in an expression has a value bigger than 0.
+Many internal data is made available to custom expressions. Use these with caution though, it is very common to encounter undefined data sooner or later - you can handle such errors though - for example by first placing a filter that checks if the data you'll use in an expression exists and has a value bigger than 0.
 
 Use the following references to access internal data in your expressions:
 

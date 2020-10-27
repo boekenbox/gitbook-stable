@@ -88,13 +88,13 @@ Pairs on **Kraken Futures** follow the following conventions:
 * Monthly futures: XBT-MONTH, ETH-MONTH, LTC-MONTH, etc
 * Quarterly futures: XBT-QUART, ETH-QUART, LTC-QUART, etc
 
-Pairs on **Okex Futures** use the same notation as on their site, with hyphens in between the different parts of the pair. Example: USD-BTC-200417
+Pairs on **Okex Futures** use the similar notation as on their site, with hyphens in between the different parts of the pair and swapping the symbols. Valid example: USD-BTC-201016
 
 ## Override settings
 
 Overrides are pair specific settings, overruling the assigned strategy. Every strategy parameter can be used as an override.
 
-![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/image%20%2845%29.png)
+![](../../../.gitbook/assets/image%20%28105%29.png)
 
 You can use this, for example, to set a different trading limit for a specific pair.
 
