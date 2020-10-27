@@ -1407,7 +1407,7 @@ Availability of pair specific data depends on the context where you're trying to
       else {
       return false
       }
-    })(this)" ---> this example needs to be minified before it would work
+    })(this)" ---> this example needs to be minified before it would work, as all code needs to be in a single line.
 ```
 
 ## Backtesting for addPairs jobs
