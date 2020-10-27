@@ -14,8 +14,6 @@ To change them, go to **Global settings** &gt; **Advanced**
 
 Below you'll find detailed descriptions for cancel orders settings.
 
-### 
-
 ### Debug
 
 {% tabs %}
@@ -51,6 +49,4 @@ Setting this to true will lead to more detailed information being shown in the c
 Parameter name in `config.js`: `VERBOSE`
 {% endtab %}
 {% endtabs %}
-
-### 
 

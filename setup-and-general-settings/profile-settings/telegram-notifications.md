@@ -17,8 +17,6 @@ After setting it up, type `/start` to your bot to open the menu.
 
 To set this up, go to **Profile** &gt; **Telegram**.
 
-### 
-
 ### Steps to create a Telegram bot
 
 Notifications work by first creating a personal bot on Telegram, Gunbot then connects to this bot to push notifications to you.

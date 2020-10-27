@@ -11,12 +11,10 @@ To enter these, go to **Profiles &gt; Exchanges**.
 ![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/image-15.png)
 
 {% hint style="success" %}
-The master key is just the API key you've registered for an exchange.   
-  
+The master key is just the API key you've registered for an exchange.
+
 Using the same registered key for both the "master key" and "key" fields is OK.
 {% endhint %}
-
-
 
 Select your exchange and fill in all the fields for this exchange.
 
@@ -66,7 +64,6 @@ Select your exchange and fill in all the fields for this exchange.
       </td>
       <td style="text-align:left">
         <p>Time in seconds between processing two pairs on the same exchange.</p>
-        <p></p>
         <p>10 is generally a safe value, you can try lower delays if you see the
           bot running without errors for several hours.</p>
       </td>
@@ -78,7 +75,7 @@ Select your exchange and fill in all the fields for this exchange.
         and fees level.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><b>Passphrase </b>(needed for select exchanges)</td>
+      <td style="text-align:left"><b>Passphrase</b> (needed for select exchanges)</td>
       <td style="text-align:left">Some exchanges require a passphrase for each API key, it may be called
         slightly different on the exchange itself.</td>
     </tr>

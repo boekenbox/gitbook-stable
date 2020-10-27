@@ -1,7 +1,7 @@
 ---
 description: >-
   This wiki is written for the latest stable Gunbot release: v20. Includes a
-  brand new browser interface!
+  brand new interface!
 ---
 
 # Welcome to the Gunbot wiki
@@ -16,7 +16,7 @@ No need for a subscription, a one time fee gets you lifetime support and softwar
 
 ### Gunbot is used by thousands of users and has an awesome community ❤️
 
-![](.gitbook/assets/image%20%2840%29.png)
+![](.gitbook/assets/image%20%2896%29.png)
 
 {% page-ref page="setup-and-general-settings/installation/" %}
 

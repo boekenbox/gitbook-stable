@@ -10,7 +10,7 @@ Manage your API slots on **Profile &gt; Edit license**.
 
 ## Register a new API key
 
-On the **Edit license**  page you can see how many API slots your license has, and enter up to this number of API keys to be registered for use.
+On the **Edit license** page you can see how many API slots your license has, and enter up to this number of API keys to be registered for use.
 
 To register a new key, follow these steps:
 
@@ -23,7 +23,7 @@ After registering a key, you can use it as Master Key in your exchange settings.
 if you've lost access to your last working API key, contact your reseller to update the registered key.
 
 {% hint style="info" %}
-Make sure you are actively running at least one pair when trying to edit your license. 
+Make sure you are actively running at least one pair when trying to edit your license.
 
 For security reasons you will not see the option to edit your license when it's not actively running on an already registered API key.
 {% endhint %}
@@ -35,6 +35,4 @@ If you regularly switch between exchange accounts, it's easiest to leave your ex
 
 Then when you want to switch, just copy the master key from there and enter it on the Swap Licensed exchanges page.
 {% endhint %}
-
-
 

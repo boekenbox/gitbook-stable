@@ -8,13 +8,13 @@ description: >-
 
 ## 1. Download software
 
-The latest stable version of Gunbot is always available on Github. 
+The latest stable version of Gunbot is always available on Github.
 
 {% page-ref page="download.md" %}
 
 ## 2. Install & startup
 
-The installation procedure is pretty straightforward, although there are slight differences between operating systems. 
+The installation procedure is pretty straightforward, although there are slight differences between operating systems.
 
 * Unpack the zip file to a new folder
 * On Mac and Linux: set executable permission for the program
@@ -49,7 +49,7 @@ When you first start the interface, it will show a window that guides you throug
 Save the settings after completing the wizard.
 
 {% hint style="info" %}
-Pick "other" if your registered exchange is not listed on the setup wizard.   
+Pick "other" if your registered exchange is not listed on the setup wizard.  
 After saving, you can enter the exchange details on the profile page.
 {% endhint %}
 
@@ -74,6 +74,4 @@ If you read through at least the following pages, you should quickly get a much 
 {% page-ref page="../../how-to-work-with-gunbot/basic-workings/balance-settings.md" %}
 
 {% page-ref page="../../trading-strategy-options/about-gunbot-strategies/" %}
-
-
 

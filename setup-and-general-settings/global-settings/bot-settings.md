@@ -12,9 +12,7 @@ To change them, go to **Global settings** &gt; **Bot**
 
 ## Settings descriptions
 
-Below you'll find detailed descriptions for bot settings. 
-
-
+Below you'll find detailed descriptions for bot settings.
 
 ### Watch mode
 
@@ -77,6 +75,4 @@ Only set this to a low value when your bot actually has problems not trading aft
 Parameter name in `config.js`: `BOT_CCLEAN`
 {% endtab %}
 {% endtabs %}
-
-### 
 

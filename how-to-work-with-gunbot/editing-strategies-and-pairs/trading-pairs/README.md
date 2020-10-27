@@ -22,7 +22,7 @@ The _Use safe balance settings_ option makes sure that a few critical balance se
 
 ### Using filters to add multiple pairs at once
 
-Select the **Use filter rules** option to add pairs based on filters you set. This way you can for example easily add the top 10 volume USDT pairs. 
+Select the **Use filter rules** option to add pairs based on filters you set. This way you can for example easily add the top 10 volume USDT pairs.
 
 When you're done, hit the **Filter** button to add pairs matching your filters.
 
@@ -42,11 +42,11 @@ All pairs with BTC as base currency are written like: BTC-ETH, BTC-ATOM, BTC-ETH
 
 All pairs with USDT as base currency are written like: USDT-BTC, USDT-ETH, USDT-XMR
 
-The base coin is the one used to buy another asset. Be aware that some exchange show pair names in the exact reverse order. ****
+The base coin is the one used to buy another asset. Be aware that some exchange show pair names in the exact reverse order. _\*\*_
 
 ## Symbol name exceptions
 
-A small number of symbol names need to be written in a slightly different way than the exchange lists them on their site. 
+A small number of symbol names need to be written in a slightly different way than the exchange lists them on their site.
 
 <table>
   <thead>

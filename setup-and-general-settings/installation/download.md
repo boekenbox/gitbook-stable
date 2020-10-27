@@ -12,5 +12,3 @@ description: Up to date download locations for Gunbot.
 
 Beta and nightly builds are available in the Gunbot announcement channel on Telegram.
 
-
-

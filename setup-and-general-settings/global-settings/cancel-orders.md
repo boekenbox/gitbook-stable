@@ -14,8 +14,6 @@ To change them, go to **Global settings** &gt; **Cancel orders**
 
 Below you'll find detailed descriptions for cancel orders settings.
 
-
-
 ### Cancel orders enabled
 
 {% tabs %}
@@ -81,6 +79,4 @@ Enabling this changes the behavior of cancelling orders: orders are cancelled af
 Parameter name in `config.js`: `CANCEL_ONCAP`
 {% endtab %}
 {% endtabs %}
-
-### 
 

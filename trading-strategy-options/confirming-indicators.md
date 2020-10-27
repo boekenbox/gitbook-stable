@@ -1102,7 +1102,7 @@ Parameter name in `config.js`: `STDV`
 
 ## Renko candles
 
-[Renko](https://github.com/boekenbox/gitbook/tree/74bed25d66f4b0422a81f67f250bcb09c6cf1780/wiki/Renko_Charts/README.md) candles can be used with the ichimoku-margin strategy. 
+[Renko](https://github.com/boekenbox/gitbook/tree/74bed25d66f4b0422a81f67f250bcb09c6cf1780/wiki/Renko_Charts/README.md) candles can be used with the ichimoku-margin strategy.
 
 {% hint style="info" %}
 Renko charts are supported in v18, not in later versions.

@@ -150,8 +150,6 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
 * Want to flip between long and short? Open one position manually, then send long and short alerts at 2x that position size to keep flipping from long to short or vice versa.
 {% endhint %}
 
-#### 
-
 #### Change strategy by alert
 
 | Alert message | Action |
@@ -383,7 +381,7 @@ Parameter name in `config.js`: `TV_CLOSE_ALL`
 The maximum amount of base currency to be invested in a pair.
 
 {% hint style="warning" %}
-**Only works for spot trading and on** 
+**Only works for spot trading and on**
 {% endhint %}
 {% endtab %}
 

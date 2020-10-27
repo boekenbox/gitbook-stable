@@ -86,8 +86,6 @@ There are a few non-Gunbot variables that are also present in the scripts:
 
 "BTC\_PND Exchange = " should be set to the Exchange of the pair you are testing if you are using BTC\_PND\_PROTECTION.
 
-
-
 ![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/bt-12.png)
 
 PricesA / PricesB sets percentage range of candle prices that are read. You may also choose to use candle sources instead. Only this portion of the candle will register when crossing indicators or levels. There is a plot in gray on top of the candles that represents this area.

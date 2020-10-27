@@ -54,27 +54,25 @@ This page shows the minimum required settings for often used exchanges to create
 
 ## Nash
 
-#### Step 1: open settings
+### Step 1: open settings
 
 ![](../../.gitbook/assets/image%20%2868%29.png)
 
-#### Step 2: go to API keys and generate a new key
+### Step 2: go to API keys and generate a new key
 
 ![](../../.gitbook/assets/image%20%2865%29.png)
 
-#### Step 3: enter your password and 2FA code
+### Step 3: enter your password and 2FA code
 
 ![](../../.gitbook/assets/image%20%2867%29.png)
 
-#### Step 4: add whitelisted addresses \(optional\)
+### Step 4: add whitelisted addresses \(optional\)
 
 ![](../../.gitbook/assets/image%20%2866%29.png)
 
-#### Step 5: save the key and secret 
+### Step 5: save the key and secret
 
 ![](../../.gitbook/assets/image%20%2869%29.png)
-
-
 
 ## Poloniex
 

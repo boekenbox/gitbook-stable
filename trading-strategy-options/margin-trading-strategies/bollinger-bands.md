@@ -334,8 +334,8 @@ Parameter name in `config.js`: `STOP_SELL`
 
 {% tabs %}
 {% tab title="Description" %}
-Use this to enable tssl-style trailing for ROE.  
-  
+Use this to enable tssl-style trailing for ROE.
+
 Trailing limit is set with `ROE_LIMIT`.
 {% endtab %}
 

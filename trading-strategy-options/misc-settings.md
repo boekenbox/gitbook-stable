@@ -342,15 +342,15 @@ Parameter name in `config.js`: `LIQUIDITY`
 {% endtab %}
 {% endtabs %}
 
-### Liquidity taker 
+### Liquidity taker
 
 {% tabs %}
 {% tab title="Description" %}
 In addition to maker orders, use taker orders when reaching your targets or to DCA.
 
-When `GAIN` is reached, every round a market sell order of 1x `TRADING_LIMIT` gets fired to reduce your position in profit. 
+When `GAIN` is reached, every round a market sell order of 1x `TRADING_LIMIT` gets fired to reduce your position in profit.
 
-When price drops below the average bought price, every round a market buy order of 1x `TRADING_LIMIT` gets fired to bring down the average price per unit. 
+When price drops below the average bought price, every round a market buy order of 1x `TRADING_LIMIT` gets fired to bring down the average price per unit.
 {% endtab %}
 
 {% tab title="Values" %}
@@ -410,7 +410,7 @@ Parameter name in `config.js`: `LIQUIDITY_GAIN`
 
 {% tabs %}
 {% tab title="Description" %}
-Limits the total position size for liquidity maker and taker orders. When the maximum value is reached, no more liquidity maker or taker orders that would add to the position are placed . 
+Limits the total position size for liquidity maker and taker orders. When the maximum value is reached, no more liquidity maker or taker orders that would add to the position are placed .
 {% endtab %}
 
 {% tab title="Values" %}
@@ -434,8 +434,6 @@ Limits the total position size for liquidity maker and taker orders. When the ma
 Parameter name in `config.js`: `MAX_INVESTMENT`
 {% endtab %}
 {% endtabs %}
-
-
 
 ## Order type settings
 

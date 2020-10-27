@@ -36,8 +36,6 @@ S2 = P - (H - L)
 This strategy is a bit different from other strategies, it has much less configurable options. Confirming indicators or additional trailing are disabled.
 {% endhint %}
 
-
-
 ## Strategy parameters
 
 Following settings options are available for `SupportResistance` and can be set in the strategy configurator of the GUI or the strategies section of the config.js file.
@@ -280,7 +278,7 @@ Parameter name in `config.js`: `SMAPERIOD`
 This strategy cannot use DCA.  
 Averaging down is natively implemented by allowing multiple buy orders.
 
-## Reversal trading 
+## Reversal trading
 
 This strategy cannot use reversal trading.
 
@@ -291,10 +289,4 @@ This strategy cannot use TrailMe.
 ## Confirming indicators
 
 This strategy cannot use confirming indicators.
-
-
-
-
-
-
 

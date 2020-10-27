@@ -27,8 +27,6 @@ Examples of things you can do with AutoConfig:
 * **Set user variables as output for a filter job**, which can be used to filter on in other jobs.
 * **Complete orchestration of complex trading setups**: you can use javascript to create custom autoconfig filters and to set override or variable values. This allows for completely custom scenarios.
 
-
-
 ## How it works
 
 There is a single config file for AutoConfig \(`autoconfig.json`\), which can contain one or many jobs. As soon as Gunbot \(re\)starts or the `autoconfig.json` file is changed, all jobs in the config are scheduled \(any pre-existing scheduled job is removed in this process\).
@@ -49,8 +47,6 @@ All config options are available in the browser interface. Even if you prefer ma
 {% hint style="info" %}
 If you use a very fast schedule, for example with jobs that might update your bot config every few seconds, prevent unexpected config changes and make it a habit to not make manual settings changes using the browser anymore while AutoConfig jobs are running.
 {% endhint %}
-
-
 
 ## Job types \(with config examples\)
 
@@ -263,7 +259,7 @@ Excluded items do not need to be whole pair names, as long as part of the string
 
 **Other obligatory parameters:**
 
-**overrides**: contain zero or more overrides, these will be set for each pair that passes all filters when a job is executed. 
+**overrides**: contain zero or more overrides, these will be set for each pair that passes all filters when a job is executed.
 
 **clearOverrides** \(true/false\): when set to true, all existing overrides for a pair are removed before placing the new ones.
 
