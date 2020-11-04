@@ -23,9 +23,11 @@ Before you start setting up your alerts, you need:
 
 ## Alert message contents
 
-The alerts messages have to be in the following format in order for Gunbot to act on them. Alerts follow the same standardized pair syntax that also apply for normal Gunbot usage.
+The alerts have to be in the following format in order for Gunbot to act on them. Alerts follow the same standardized pair syntax that also apply for normal Gunbot usage, the alert text must be in the subject line of an email.
 
 Trading limits can only be specifically defined in buy/long alerts, for other alerts or alerts without specified amounts, the limits as set in your TradingView settings apply.
+
+It's recommended to enabled the "email-to-SMS" option on tradingview.com, which sends a plain text email instead of an html formatted message.
 
 _Replace_ `EXCHANGE` _with the name of your exchange._
 
@@ -130,17 +132,20 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
     <tr>
       <td style="text-align:left"><code>CLOSE_EXCHANGE_USDT-LTC</code>
       </td>
-      <td style="text-align:left">Close a margin position</td>
+      <td style="text-align:left">Close a margin position <em>(made for bitmex, not supported on every exchange)</em>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left"><code>CLOSELONG_EXCHANGE_XBT-USD</code>
       </td>
-      <td style="text-align:left">Close a long position</td>
+      <td style="text-align:left">Close a long position <em>(made for bitmex, not supported on every exchange)</em>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left"><code>CLOSESHORT_EXCHANGE_XBT-USD</code>
       </td>
-      <td style="text-align:left">Close a short position</td>
+      <td style="text-align:left">Close a short position <em>(made for bitmex, not supported on every exchange)</em>
+      </td>
     </tr>
   </tbody>
 </table>
@@ -159,7 +164,9 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
 {% hint style="info" %}
 **Note about trading limits**
 
-On **futures exchanges** every setting related to trading limits for margin trading must be specified in contracts.
+On **futures exchanges** settings related to trading limits for margin trading should be specified in contracts.
+
+On **binanceFutures** amounts are specified in quote: on USDT-BTC a trading limit of 1 represents 1 BTC order value.
 
 On **all other supported margin exchanges**, every setting related to margin trading limits must be specified in amounts of quote currency.
 {% endhint %}
