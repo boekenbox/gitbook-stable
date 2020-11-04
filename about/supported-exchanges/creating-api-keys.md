@@ -42,7 +42,7 @@ This page shows the minimum required settings for often used exchanges to create
 
 ## Huobi
 
-![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/bitfinex.PNG)
+![](../../.gitbook/assets/image%20%28106%29.png)
 
 ## Kraken
 
