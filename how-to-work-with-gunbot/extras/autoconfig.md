@@ -1221,7 +1221,7 @@ Usage:
 
 **Available trigger types for filters using triggers.**
 
-Note: only the most recent order for each pair is available for analysis, the orders must be placed by a Gunbot strategy. Data is kept between restarts, also for pairs that are no longer actively traded with Gunbot.
+Note: only the most recent order for each pair is available for analysis, the orders must be placed by a Gunbot strategy \(market maker not supported\). Data is kept between restarts, also for pairs that are no longer actively traded with Gunbot.
 
 * StrategyBuy
 * StrategySell
