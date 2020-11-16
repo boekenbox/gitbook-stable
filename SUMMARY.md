@@ -131,5 +131,5 @@
 
 * [Critical errors](troubleshooting/critical-errors.md)
 * [Bot does not trade](troubleshooting/my-bot-does-not-trade.md)
-* [Reset password](troubleshooting/reset-password-2fa.md)
+* [Reset password](troubleshooting/reset-password.md)
 
