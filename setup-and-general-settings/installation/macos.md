@@ -46,7 +46,7 @@ After you've done this, type `cd macos` to enter the actual program folder
 
 #### 3. Remove program restrictions \(to make sure macos allows running it\)
 
-![Command: xattr -d -r com.apple.quarantine &amp;lt;foldername&amp;gt;](../../.gitbook/assets/image%20%28113%29.png)
+![Command: xattr -d -r com.apple.quarantine &amp;lt;foldername&amp;gt;](../../.gitbook/assets/image%20%28115%29.png)
 
 #### 4. Make sure the gunthy-macos file is executable
 

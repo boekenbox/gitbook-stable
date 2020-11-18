@@ -8,7 +8,7 @@ description: Which candle stick periods are supported.
 
 Gunbot supports different values for `PERIOD` for each exchange.
 
-Currently the following periods are supported:
+Currently the following periods are known to work:
 
 ![](../../.gitbook/assets/image%20%2857%29.png)
 
