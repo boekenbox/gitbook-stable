@@ -30,10 +30,10 @@ The installation procedure is pretty straightforward, although there are slight 
 {% page-ref page="arm.md" %}
 
 {% hint style="info" %}
-On Mac systems, expect to need to explicitly allow running various libraries used by Gunbot due to Gatekeeper.
+On Mac systems, expect to need to explicitly allow running various libraries used by Gunbot due to Gatekeeper restrictions.
 {% endhint %}
 
-## 3. Enter license data
+## 3. Enter license data and connect an exchange
 
 Before you can start trading with the bot, you'll need to enter a few things to make sure it will pass the license checks.
 
@@ -41,8 +41,9 @@ When you first start the interface, it will show a window that guides you throug
 
 * Entering the wallet address where you hold your Gunthy tokens
 * Connecting one exchange for which you've registered an API key after your order. Make sure to use the same API key as you've registered.
+* Enter the fee percentage for the exchange you're connecting. This is used for properly calculating the break even point of every single trade the bot makes. If you're unsure, look it up the right percentage in the support docs of your exchange. On Binance \(spot\) the default fee level is 0.1.
 
-![](../../.gitbook/assets/image%20%2863%29.png)
+![](../../.gitbook/assets/image%20%28108%29.png)
 
 Save the settings after completing the wizard.
 

@@ -36,7 +36,7 @@ The following steps use the built in **Terminal** program to handle a few one ti
 
 #### 1. Move the downloaded zip file to a folder where you want to unpack it
 
-![](../../.gitbook/assets/image%20%28108%29.png)
+![](../../.gitbook/assets/image%20%28109%29.png)
 
 #### 2. Unpack the file
 
@@ -46,7 +46,7 @@ After you've done this, type `cd macos` to enter the actual program folder
 
 #### 3. Remove program restrictions \(to make sure macos allows running it\)
 
-![Command: xattr -d -r com.apple.quarantine &amp;lt;foldername&amp;gt;](../../.gitbook/assets/image%20%28109%29.png)
+![Command: xattr -d -r com.apple.quarantine &amp;lt;foldername&amp;gt;](../../.gitbook/assets/image%20%28110%29.png)
 
 #### 4. Make sure the gunthy-macos file is executable
 
