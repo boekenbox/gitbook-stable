@@ -20,7 +20,7 @@ Some target lines are movable, you can use these to visually change the target o
 
 The **Overview** and **Markets** sidebars let you quickly navigate between pairs, do manual trades or edit pair specific settings.
 
-![](../.gitbook/assets/image%20%2897%29.png)
+![](../.gitbook/assets/image%20%28120%29.png)
 
 ## Profit and loss
 
