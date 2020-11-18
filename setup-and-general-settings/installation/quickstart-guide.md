@@ -72,7 +72,7 @@ If you see a screen like this after starting trading, you're up and running. If 
 
 ## 5. Ready to go. Keep reading to get the most out of your bot
 
-Your bot should now be ready to start trading.
+Your bot should now be up and running.
 
 However, this is really just the beginning. There are a lot of strategy options, you should learn at least about the ones that will affect your trading strategy \(if you've picked one already\).
 
