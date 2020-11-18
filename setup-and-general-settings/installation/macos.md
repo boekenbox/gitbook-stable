@@ -28,10 +28,33 @@ Gunbot is intended to run on your local system. Making the Gunbot GUI available 
 Considerable efforts went into securing the GUI, but please understand that achieving 100% security is not realistic.
 {% endhint %}
 
-## Installation video
+## Installation steps \(visual\)
 
-{% embed url="https://youtu.be/W2dArdu8jus" caption="" %}
+The following steps use the built in **Terminal** program to handle a few one time steps. 
 
-_The video above was made for Gunbot v10, however the basic steps still apply._[    
-](https://gunbotbeta.gitbook.io/gunbot-beta/getting-started/installation/download)
+
+
+#### 1. Move the downloaded zip file to a folder where you want to unpack it
+
+![](../../.gitbook/assets/image%20%28108%29.png)
+
+#### 2. Unpack the file
+
+![In a terminal window, go to the folder where the .zip file is with the cd command, then unpack the zip](../../.gitbook/assets/image%20%28107%29.png)
+
+After you've done this, type `cd macos` to enter the actual program folder
+
+#### 3. Remove program restrictions \(to make sure macos allows running it\)
+
+![Command: xattr -d -r com.apple.quarantine &amp;lt;foldername&amp;gt;](../../.gitbook/assets/image%20%28109%29.png)
+
+#### 4. Make sure the gunthy-macos file is executable
+
+Type `chmod +x gunthy-macos` to make sure it can be ran as a program.
+
+#### 5. Start the bot
+
+Type `./gunthy-macos` to start running the software. 
+
+You can now access it in your browser using this link: [http://localhost:5000](http://localhost:5000)
 
