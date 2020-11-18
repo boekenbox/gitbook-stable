@@ -12,7 +12,7 @@ First select the exchange you want to add a pair for.
 
 Then if the exchange supports it, you can select your desired trading pair from a list of all available pairs. If you don't see a list of trading pairs after selecting an exchange, add your pair manually in the [format ](trading-pairs/#pair-naming-conventions)Gunbot expects, like BTC-ETH or USDT-BTC.
 
-![](../../.gitbook/assets/image%20%28110%29.png)
+![](../../.gitbook/assets/image%20%28111%29.png)
 
 ## Step 2: name your new strategy, or select an existing strategy
 
@@ -28,7 +28,7 @@ The wizard only shows you the most relevant settings so you can focus on the ess
 
 If you later want to fine tune your strategy, you can use the advanced editor to edit every possible advanced strategy option.
 
-![](../../.gitbook/assets/image%20%28113%29.png)
+![](../../.gitbook/assets/image%20%28114%29.png)
 
 ## Step 4: review and save
 

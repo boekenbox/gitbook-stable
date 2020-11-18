@@ -12,9 +12,11 @@ You can use an unlimited number of trading pairs, across multiple exchanges.
 
 ## Add trading pairs
 
-![](../../../.gitbook/assets/image%20%2854%29.png)
+![](../../../.gitbook/assets/image%20%28115%29.png)
 
 To start trading on a new pair, just enter or select the pair name, pick the exchange and strategy and hit the **Add** button. When you want to temporarily stop trading a pair, use the **Enabled** toggle to disable the pair.
+
+On exchanges that support it, a pair list is automatically provided in the correct format. For some exchanges you need add pair names manually.
 
 {% hint style="success" %}
 The _Use safe balance settings_ option makes sure that a few critical balance settings are automatically set to known working values, for each newly added BTC, USD, USDT or EUR pair.
@@ -26,7 +28,7 @@ Select the **Use filter rules** option to add pairs based on filters you set. Th
 
 When you're done, hit the **Filter** button to add pairs matching your filters.
 
-![](../../../.gitbook/assets/image%20%2855%29.png)
+![](../../../.gitbook/assets/image%20%28117%29.png)
 
 {% hint style="warning" %}
 Some exchange unfortunately just don't provide the data needed to filter pairs in this way, or their API rate limits are just too strict to do it in a practical way. In that case likely just nothing happens when you hit the filter button.

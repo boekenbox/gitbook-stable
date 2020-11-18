@@ -18,7 +18,7 @@ On the strategy pages you can find detailed explanations for each buy and sell m
 
 ## Create a new strategy
 
-![](../../.gitbook/assets/image%20%28100%29.png)
+![](../../.gitbook/assets/image%20%28109%29.png)
 
 Set a nickname for your strategy \(this can be anything you want, but don't use blank spaces in the nickname\), and select the main methods for buying and selling. Hit the **Create** button to save the new strategy.
 
