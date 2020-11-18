@@ -52,9 +52,27 @@ Pick "other" if your registered exchange is not listed on the setup wizard.
 After saving, you can enter the exchange details on the profile page.
 {% endhint %}
 
-## 4. Ready to go. Keep reading to get the most out of your bot
+## 4. Add a trading pair and configure your first strategy
 
-Your bot should now be ready to start trading when you add a trading pair and assign it a strategy.
+The easiest way to get started with strategies in Gunbot is using the **Easy edit** wizard. This guides you through the steps of adding a trading pair and configuring a strategy to execute.
+
+![Adding a pair is as easy as picking the exchange and entering the pair name](../../.gitbook/assets/image%20%28110%29.png)
+
+To configure the strategy, you can pick any of the included presets or enter a new name to create your own strategy.
+
+![&quot;gain&quot; is an easy strategy to learn.](../../.gitbook/assets/image%20%28114%29.png)
+
+Review your settings, then save the settings and hit the start trading button to run the bot you've just configured.
+
+![Save the settings and start trading to run the bot on the pair you&apos;ve just configured.](../../.gitbook/assets/image%20%28111%29.png)
+
+If you see a screen like this after starting trading, you're up and running. If the strategy has targets that can be translated to a price, you'd see the relevant targets right on the chart.
+
+![&quot;Buy at&quot; is where a gain strategy will buy.](../../.gitbook/assets/image%20%28112%29.png)
+
+## 5. Ready to go. Keep reading to get the most out of your bot
+
+Your bot should now be ready to start trading.
 
 However, this is really just the beginning. There are a lot of strategy options, you should learn at least about the ones that will affect your trading strategy \(if you've picked one already\).
 
