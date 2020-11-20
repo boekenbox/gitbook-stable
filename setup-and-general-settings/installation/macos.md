@@ -12,7 +12,7 @@ description: Instructions to install Gunbot on a macOS machine.
 4. Make sure to enter your registered ERC-20 wallet \("Gunthy wallet"\) and your [registered API key](../profile-settings/connect-exchange.md) in Gunbot before starting the bot core for the first time.
 
 {% hint style="success" %}
-System security settings may show that the `gunthy-macos` file is damaged or dangerous.   
+System security settings may show that the `gunthy-macos` file is damaged or dangerous.  
 One way to disable the OS restrictions on the Gunbot folder is using this command in a terminal window: `xattr -d -r com.apple.quarantine <foldername>`
 {% endhint %}
 
@@ -30,9 +30,7 @@ Considerable efforts went into securing the GUI, but please understand that achi
 
 ## Installation steps \(visual\)
 
-The following steps use the built in **Terminal** program to handle a few one time steps. 
-
-
+The following steps use the built in **Terminal** program to handle a few one time steps.
 
 #### 1. Move the downloaded zip file to a folder where you want to unpack it
 
@@ -46,7 +44,9 @@ After you've done this, type `cd macos` to enter the actual program folder
 
 #### 3. Remove program restrictions \(to make sure macos allows running it\)
 
-![Command: xattr -d -r com.apple.quarantine &amp;lt;foldername&amp;gt;](../../.gitbook/assets/image%20%28118%29.png)
+![](../../.gitbook/assets/image%20%28118%29.png)
+
+Type `xattr -d -r com.apple.quarantine <foldername>` to remove gatekeeper restrictions. Instead of &lt;foldername&gt;, use the full path to the folder where you have unpacked Gunbot.
 
 #### 4. Make sure the gunthy-macos file is executable
 
@@ -54,7 +54,7 @@ Type `chmod +x gunthy-macos` to make sure it can be ran as a program.
 
 #### 5. Start the bot
 
-Type `./gunthy-macos` to start running the software. 
+Type `./gunthy-macos` to start running the software.
 
 You can now access it in your browser using this link: [http://localhost:5000](http://localhost:5000)
 
