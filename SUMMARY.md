@@ -118,7 +118,6 @@
 ## More
 
 * [Config marketplace](more/config-marketplace.md)
-* [TradingView](https://wiki.gunthy.org/setup-and-general-settings/preferences/tradingview-add-on)
 
 ## Various
 
