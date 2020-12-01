@@ -8,7 +8,7 @@ All Gunbot licenses use an API slot system. This allows you to update your regis
 
 Manage your API slots on **Profile &gt; Edit license**.
 
-![](../../.gitbook/assets/image%20%28104%29.png)
+![](../../.gitbook/assets/image%20%28121%29.png)
 
 ## Register a new API key
 
@@ -17,7 +17,7 @@ On the **Edit license** page you can see how many API slots your license has, an
 To register a new key, follow these steps:
 
 * **Make sure to have an active trading pair running**, without errors, on an already registered API key
-* Go to the **Swap Exchanges** page, select the exchange, enter your key and save the changes.
+* Go to the **Edit license** page, select the exchange, enter your key and save the changes.
 * Refresh the page in case you don't see the form to update your keys.
 
 After registering a key, you can use it as Master Key in your exchange settings.

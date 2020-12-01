@@ -13,17 +13,20 @@ These exchanges are official Gunbot partners. We are in direct contact with thei
 | Exchange | Name in config | Native strategies | TradingView alerts |
 | :--- | :--- | :--- | :--- |
 | **Gunthy** | `gunthy` | Regular | Regular |
+| **Beaxy** | `beaxy` | Regular | Regular |
 | **Binance** | `binance` / `binanceus` | Regular | Regular |
 | **Binance Futures** | `binanceFutures` | Margin | Margin |
 | **Bitget** | `bitget` | Margin | Margin |
+| **FTX** | `ftx` | Regular & margin | Regular & margin |
 | **HitBTC** | `hitbtc2` | Regular | Regular |
 | **Kraken Futures** | `krakenFutures` | Margin | Margin |
 | **KuCoin** | `kucoin` | Regular | Regular |
 | **Nash** | `nashio` | Regular | Regular |
 | **OKEx** | `okex3` | Regular & margin | Regular & margin |
+| **Txbit** | `txbit` | Regular | Regular |
 
 {% hint style="success" %}
-Gunthy and Nash do not require registering an additional api key in your license. Because they list Gunthy Token they are free to use for every Gunbot user.
+Gunthy, Beaxy, Nash and Txbit do not require registering an additional api key in your license. Because they list Gunthy Token they are free to use for every Gunbot user.
 {% endhint %}
 
 ## Certified exchanges

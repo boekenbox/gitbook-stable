@@ -8,7 +8,7 @@ To be able to trade, you need to enter the exchange [API key](../../about/suppor
 
 To enter these, go to **Profiles &gt; Exchanges**.
 
-![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/image-15.png)
+![](../../.gitbook/assets/image%20%28122%29.png)
 
 {% hint style="success" %}
 The master key is just the API key you've registered for an exchange.
@@ -82,7 +82,56 @@ Select your exchange and fill in all the fields for this exchange.
     <tr>
       <td style="text-align:left"><b>Market</b> (needed for select exchanges)</td>
       <td style="text-align:left">Some exchanges require specifying the market the bot will be used on:
-        spot, swap or futures. Applies to Okex and BitGet.</td>
+        spot, swap or, delivery or futures. Applies to Binance Futures, FTX, Okex
+        and BitGet.</td>
+    </tr>
+  </tbody>
+</table>
+
+### 
+
+### Market selection
+
+If an exchange requires specifying a market type, you can only run pairs of that specific market type \(futures, for example\) in the same bot instance.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Exchange</th>
+      <th style="text-align:left">Market options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><code>binanceFutures</code>
+      </td>
+      <td style="text-align:left">
+        <p><b>futures</b>: USDT margined pairs</p>
+        <p><b>delivery</b>: coin margined pairs</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>ftx</code>
+      </td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>okex3</code>
+      </td>
+      <td style="text-align:left">
+        <p><b>spot</b>: spot trading</p>
+        <p><b>futures</b>: futures pairs</p>
+        <p><b>swap</b>: perpetual futures pairs</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>bitget</code>
+      </td>
+      <td style="text-align:left">
+        <p><b>spot</b>: spot trading</p>
+        <p><b>futures</b>: futures pairs</p>
+        <p><b>swap</b>: perpetual futures pairs</p>
+      </td>
     </tr>
   </tbody>
 </table>

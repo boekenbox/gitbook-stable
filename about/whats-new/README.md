@@ -18,11 +18,13 @@ It's now really easy to upload a config.js or autoconfig.json file in the interf
 **Steps to start with a clean installation:** unpack v20 and run, enter your Gunthy wallet address in the wizard and select "other" as exchange and save the changes. Then go to _Profile_ &gt; _Import settings_ and select the parts from your old config to import.
 {% endhint %}
 
-There are no breaking config changes for v20. In case you are upgrading from v18.x, replacing the executable file _\(gunthy-win.exe / gunthy-linux / gunthy-macos\)_ and _node\_modules_ folder is all that's needed.
+There are no breaking config changes for v20. In case you are upgrading from v18.x, replacing the executable file _\(gunthy-win.exe / gunthy-linux / gunthy-macos\)_ and _node\_modules_ folder is all that's needed to enter the new interface, and in most cases to start trading right away.
 
 ![The GUI requires that password authentication is enabled in config.js. Set it like this.](../../.gitbook/assets/image%20%2874%29.png)
 
 New strategy parameters are automatically merged into your strategies, as soon as you login to the browser interface.
+
+If you trade on **Binance Futures**, you must set the appropriate [market type](../../setup-and-general-settings/profile-settings/connect-exchange.md#market-selection) in the exchange settings.
 
 In case you are upgrading from an older version than v18, refer to the changelogs of previous versions for instructions, or start with a fresh installation.
 
@@ -46,6 +48,12 @@ Only the most important changes are listed.
 * **TradingView alerts**: option to change strategy by alert, enable `TV_TRADING_LIMIT_CAP` for Bitmex, better handling of multiple incoming emails
 * **Alerts \(beta\):** build your own strategy in a visual way using built-in TradingView charts
 
+#### New in v20.7:
+
+* **New exchanges supported**: FTX, Beaxy and Txbit
+* **Coin margined futures**: now supported on Binance Futures. Set [market type: delivery](../../setup-and-general-settings/profile-settings/connect-exchange.md#market-selection)
+* **Improved resource usage and cycling speed:** migrating from Node v9 to v14. Delete your gunbotgui.db file and set a new password to take full advantage
+
 ### Market Maker
 
 * **New strategy variants**: Grid, Support/Resistance, Fibonacci, Pullback, One Scalper, x125 & Moto
@@ -65,6 +73,17 @@ Only the most important changes are listed.
 * Add support for all new pairs on Kraken \(on other exchange this happens automatically\)
 * Prevent firing orders if MM bots receive sudden strange balance or ROE values
 * Fix problem that prevented proper handover from DU to RT
+
+#### Fixed in v20.7:
+
+* Fix MM orders at Bitget
+* Various GUI bugfixes and small improvements
+* Automatic fetching of pair lists for Binance Futures and Kraken
+* Fix problem with execution of stop limit orders on Binance Futures
+* Fix problem with execution of short alerts with TradingView add-ons
+* Fix 'length of undefined' error that sometimes caused a restart when trying to read the gui auth databased
+
+
 
 {% page-ref page="../../setup-and-general-settings/installation/download.md" %}
 
