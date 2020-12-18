@@ -10,7 +10,7 @@ A few settings in Gunbot work on a higher level, and are not part of any strateg
 
 Find these settings on the [global settings page](http://localhost:5000/globalsettings)
 
-![Global settings are available under the wheels icon](../../.gitbook/assets/image%20%2845%29.png)
+![Global settings are available under the wheels icon](../../.gitbook/assets/image%20%2845%29%20%281%29.png)
 
 {% page-ref page="import-settings.md" %}
 

@@ -9,12 +9,12 @@ All Gunbot licenses use an API slot system. This allows you to update your regis
 Manage your API slots on [**Profile** ](http://localhost:5000/profile)**&gt; Edit license**.
 
 {% hint style="info" %}
-**Make sure you are actively running at least one pair when trying to edit your license.** 
+**Make sure you are actively running at least one pair when trying to edit your license.**
 
 For security reasons you will not see the option to edit your license when it's not actively running on an already registered API key.
 {% endhint %}
 
-![Use this page to change which API keys you can use for trading](../../.gitbook/assets/image%20%2871%29.png)
+![Use this page to change which API keys you can use for trading](../../.gitbook/assets/image%20%2871%29%20%281%29.png)
 
 ## Register a new API key
 

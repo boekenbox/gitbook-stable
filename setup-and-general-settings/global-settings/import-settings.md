@@ -10,7 +10,5 @@ To change them, go to [**Global settings**](http://localhost:5000/globalsettings
 
 Just upload a valid config file, then select the parts you want to use in your bot.
 
-![](../../.gitbook/assets/image%20%2812%29.png)
-
-
+![](../../.gitbook/assets/image%20%2812%29%20%281%29.png)
 

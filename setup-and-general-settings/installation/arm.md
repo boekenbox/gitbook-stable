@@ -17,8 +17,6 @@ description: Instructions to install Gunbot on an ARM device.
 3. Open `localhost:5000` in a browser on the same system to access the Gunbot GUI \(modern browsers recommended, preferably Chrome or Firefox\)
 4. Make sure to enter your registered ERC-20 wallet \("Gunthy wallet"\) and your [registered API key](../profile-settings/connect-exchange.md) in Gunbot before starting the bot core for the first time.
 
-
-
 gunthy-arm is a 32-bit package, if your device runs a 64-bit OS the following steps in a terminal window might help getting it running:
 
 ```text
