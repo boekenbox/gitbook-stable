@@ -10,7 +10,7 @@ To change them, go to [**Global settings**](http://localhost:5000/globalsettings
 
 \*\*\*\*
 
-![](../../.gitbook/assets/image%20%2881%29.png)
+![](../../.gitbook/assets/image%20%2882%29.png)
 
 ## Settings descriptions
 
