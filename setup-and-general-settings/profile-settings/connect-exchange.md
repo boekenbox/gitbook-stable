@@ -6,9 +6,7 @@ description: How to connect Gunbot to your exchange account.
 
 To be able to trade, you need to enter the exchange [API key](../../about/supported-exchanges/creating-api-keys.md) and secret, as well as the trading fees level for each exchange.
 
-To enter these, go to **Profiles &gt; Exchanges**.
-
-![](../../.gitbook/assets/image%20%28122%29.png)
+To enter API keys, go to [**Profile** ](http://localhost:5000/profile)**&gt; Exchanges**. 
 
 {% hint style="success" %}
 The master key is just the API key you've registered for an exchange.
@@ -16,7 +14,11 @@ The master key is just the API key you've registered for an exchange.
 Using the same registered key for both the "master key" and "key" fields is OK.
 {% endhint %}
 
-Select your exchange and fill in all the fields for this exchange.
+![](../../.gitbook/assets/image%20%286%29.png)
+
+
+
+Select your [exchange](../../about/supported-exchanges/) and fill in all the fields for this exchange.
 
 <table>
   <thead>
