@@ -14,7 +14,7 @@ description: >-
 
 Чтобы изменить их, перейдите к **Settings** &gt; **IMAP Listener**.
 
-![&#x41F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x44B; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x435;&#x43A; &#x434;&#x43B;&#x44F; &#x43F;&#x43E;&#x434;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x44F; Gunbot &#x43A; &#x432;&#x430;&#x448;&#x435;&#x43C;&#x443; &#x43F;&#x43E;&#x447;&#x442;&#x43E;&#x432;&#x43E;&#x43C;&#x443; &#x44F;&#x449;&#x438;&#x43A;&#x443; IMAP.](../../.gitbook/assets/assets_-l_rejuz9k0bdqxsqvuh_-lmxt1yf3ouopnscbsy1_-lmxtqzhrd5k5wmakbnm_image.png)
+![&#x41F;&#x430;&#x440;&#x430;&#x43C;&#x435;&#x442;&#x440;&#x44B; &#x43D;&#x430;&#x441;&#x442;&#x440;&#x43E;&#x435;&#x43A; &#x434;&#x43B;&#x44F; &#x43F;&#x43E;&#x434;&#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x43D;&#x438;&#x44F; Gunbot &#x43A; &#x432;&#x430;&#x448;&#x435;&#x43C;&#x443; &#x43F;&#x43E;&#x447;&#x442;&#x43E;&#x432;&#x43E;&#x43C;&#x443; &#x44F;&#x449;&#x438;&#x43A;&#x443; IMAP.](../../.gitbook/assets/image%20%2816%29%20%281%29.png)
 
 {% hint style="info" %}
 Советы для пользователей Gmail
