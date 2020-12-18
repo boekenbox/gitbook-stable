@@ -98,7 +98,7 @@ Pairs on **Okex Futures** use the similar notation as on their site, with hyphen
 
 Overrides are pair specific settings, overruling the assigned strategy. Every strategy parameter can be used as an override.
 
-![](../../../.gitbook/assets/image%20%28105%29.png)
+![](../../../.gitbook/assets/image%20%2813%29.png)
 
 You can use this, for example, to set a different trading limit for a specific pair.
 

@@ -39,7 +39,7 @@ On Mac systems, expect to need to explicitly allow running various libraries use
 
 Before you can start trading with the bot, the welcome wizard guides you through a few essential settings.
 
-![](../../.gitbook/assets/image%20%2813%29.png)
+![](../../.gitbook/assets/image%20%2825%29.png)
 
 When you first start the interface, it will show a window that guides you through the initial setup of:
 
@@ -56,7 +56,7 @@ After saving, you can enter the exchange details on the profile page.
 
 The easiest way to get started with strategies in Gunbot is using the [**Easy edit**](http://localhost:5000/easy-edit) wizard. This guides you through the steps of adding a trading pair and configuring a strategy to execute.
 
-![](../../.gitbook/assets/image%20%2825%29.png)
+![](../../.gitbook/assets/image%20%2839%29.png)
 
 To configure the strategy, you can pick any of the included presets or enter a new name to create your own strategy.
 
