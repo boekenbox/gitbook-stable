@@ -6,9 +6,15 @@ description: Info about settings that control how Gunbot handles cancelling open
 
 Settings for cancelling orders are global, they affect all trading pairs.
 
-To change them, go to **Global settings** &gt; **Cancel orders**
+To change them, go to [**Global settings**](http://localhost:5000/globalsettings) &gt; **Cancel orders**
 
-![](../../.gitbook/assets/image%20%2842%29.png)
+![](../../.gitbook/assets/image%20%2870%29.png)
+
+{% hint style="success" %}
+The default behavior is to cancel open orders when prices move away from the order rate, to give the bot another chance to place an order at a rate that is more likely to fill.
+
+If you find it is too sensitive and cancels orders faster than you'd like to see, consider using the "oncap" option, which is more or less time based.
+{% endhint %}
 
 ## Settings descriptions
 
