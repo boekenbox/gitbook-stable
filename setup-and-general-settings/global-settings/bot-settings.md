@@ -8,7 +8,7 @@ The bot settings menu lets you change global settings that affect all trading pa
 
 To change them, go to **Global settings** &gt; **Bot**
 
-![](../../.gitbook/assets/image%20%2841%29.png)
+![](../../.gitbook/assets/image%20%2823%29.png)
 
 ## Settings descriptions
 
@@ -42,7 +42,7 @@ Use this option to trade pairs with cross-over between quote and base \(for exam
 
 When enabled, Gunbot won't sell all available quote units when selling, instead it will only sell the invested funds \(as defined in the trading limit\). Also affects the TradingView add-on.
 
-Only enable this when you really need it. If you experience errors when selling, try turning off this settings
+**Only enable this when you really need it, it is known to cause sell order execution problems when selling positions that were not bought by the bot. If you experience errors when selling, try turning off this settings**
 {% endtab %}
 
 {% tab title="Values" %}
