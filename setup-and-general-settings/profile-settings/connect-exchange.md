@@ -109,9 +109,17 @@ If an exchange requires specifying a market type, you can only run pairs of that
       </td>
     </tr>
     <tr>
+      <td style="text-align:left"><code>binance</code>
+      </td>
+      <td style="text-align:left"><b>spot</b>: spot trading (automatically set by GUI)</td>
+    </tr>
+    <tr>
       <td style="text-align:left"><code>ftx</code>
       </td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">
+        <p><b>spot</b>: spot trading</p>
+        <p><b>futures</b>: futures pairs</p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left"><code>okex3</code>

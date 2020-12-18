@@ -24,7 +24,7 @@ There are no breaking config changes for v20. In case you are upgrading from v18
 
 New strategy parameters are automatically merged into your strategies, as soon as you login to the browser interface.
 
-If you trade on **Binance Futures**, you must set the appropriate [market type](../../setup-and-general-settings/profile-settings/connect-exchange.md#market-selection) in the exchange settings.
+If you trade on **Binance**, you must set the appropriate [market type](../../setup-and-general-settings/profile-settings/connect-exchange.md#market-selection) in the exchange settings.
 
 In case you are upgrading from an older version than v18, refer to the changelogs of previous versions for instructions, or start with a fresh installation.
 
