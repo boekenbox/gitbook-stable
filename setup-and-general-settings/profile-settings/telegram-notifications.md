@@ -194,10 +194,6 @@ Parameter name in `config.js`: `TG_ORDER_TIMEOUT`
 Enable this to test if your Telegram bot is working.
 
 A test message will be sent on the first round for each pair. Disable after verifying your bot works.
-
-{% hint style="info" %}
-This option is temporarily not available. It will be activated again in one of the next Gunbot updates.
-{% endhint %}
 {% endtab %}
 
 {% tab title="Values" %}
