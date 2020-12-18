@@ -6,7 +6,7 @@ description: Information about global bot settings.
 
 The bot settings menu lets you change global settings that affect all trading pairs.
 
-To change them, go to **Global settings** &gt; **Bot**
+To change them, go to [**Global settings**](http://localhost:5000/globalsettings) &gt; **Bot**
 
 ![](../../.gitbook/assets/image%20%2823%29.png)
 
