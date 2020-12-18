@@ -43,7 +43,7 @@ As long as your token balance does not decrease, access to these modules stays. 
 
 After you've registered your wallet address, you'll receive an airdrop with the required amount of tokens for your license type. **Hold these tokens at all times to be sure your Gunbot can run.**
 
-These are the required amounts for undiscounted license types:
+These are the required amounts for _undiscounted_ license types:
 
 * **Starter**: 400 
 * **Standard**: 1000 

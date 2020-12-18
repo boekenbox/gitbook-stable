@@ -8,7 +8,9 @@ description: >-
 
 A few settings in Gunbot work on a higher level, and are not part of any strategy or pair settings. These are called Global settings and affect every trading pair.
 
-![Global settings are available under the wheels icon](../../.gitbook/assets/image%20%2844%29.png)
+Find these settings on the [global settings page](http://localhost:5000/globalsettings)
+
+![Global settings are available under the wheels icon](../../.gitbook/assets/image%20%2838%29.png)
 
 {% page-ref page="import-settings.md" %}
 
