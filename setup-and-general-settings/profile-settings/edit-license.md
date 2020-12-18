@@ -4,12 +4,12 @@ description: How to use the API slot feature to edit the registered keys in your
 
 # Edit license
 
-All Gunbot licenses use an API slot system. This allows you to update your registered API keys anytime or switch between different supported exchanges at no extra costs.
+All Gunbot licenses use an API slot system. This allows you to update your registered API keys anytime or switch between different supported exchanges.
 
 Manage your API slots on [**Profile** ](http://localhost:5000/profile)**&gt; Edit license**.
 
 {% hint style="info" %}
-**Make sure you are actively running at least one pair when trying to edit your license.**
+**Make sure you are actively running at least one pair when trying to edit your license.** 
 
 For security reasons you will not see the option to edit your license when it's not actively running on an already registered API key.
 {% endhint %}
