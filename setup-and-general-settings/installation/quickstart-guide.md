@@ -14,12 +14,12 @@ The latest stable version of Gunbot is always available on Github.
 
 ## 2. Install & startup
 
-The installation procedure is pretty straightforward, although there are slight differences between operating systems.
+The installation procedure is pretty straightforward, although there are slight differences between operating systems. The general steps are always the same:
 
-* Unpack the zip file to a new folder
-* On Mac and Linux: set executable permission for the program
-* Depending on your firewall: allow TCP traffic on the port used for the interface \(default port: 5000\)
-* Start executable file and visit the interface in your browser on: [http://localhost:5000](http://localhost:5000)
+1. Unpack the zip file to a new folder
+2. On Mac and Linux: set executable permission for the program
+3. Depending on your firewall: allow TCP traffic on the port used for the interface \(default port: 5000\)
+4. Start executable file and visit the interface in your browser on: [http://localhost:5000](http://localhost:5000)
 
 {% page-ref page="windows.md" %}
 
