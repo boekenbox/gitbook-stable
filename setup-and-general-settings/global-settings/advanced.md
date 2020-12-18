@@ -6,9 +6,11 @@ description: 'Advanced settings options, mainly affects logging.'
 
 Advanced settings are global, they affect all trading pairs.
 
-To change them, go to **Global settings** &gt; **Advanced**
+To change them, go to [**Global settings**](http://localhost:5000/globalsettings) &gt; **Advanced**
 
-![](../../.gitbook/assets/image%20%2843%29.png)
+\*\*\*\*
+
+![](../../.gitbook/assets/image%20%2871%29.png)
 
 ## Settings descriptions
 
