@@ -307,7 +307,7 @@ Parameter name in `config.js`: `BOUGHT_PRICE`
 
 Use any strategy as a liquidity provider on spot markets, by using a simple staggered orders strategy that places orders at many positions in the order book.
 
-![Empty order book? Not anymore with liquidity maker.](../.gitbook/assets/image%20%2870%29.png)
+![Empty order book? Not anymore with liquidity maker.](../.gitbook/assets/image%20%2872%29.png)
 
 ### Liquidity maker
 

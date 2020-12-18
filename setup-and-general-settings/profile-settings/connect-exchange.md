@@ -88,9 +88,7 @@ Select your exchange and fill in all the fields for this exchange.
   </tbody>
 </table>
 
-### 
-
-### Market selection
+## Market selection
 
 If an exchange requires specifying a market type, you can only run pairs of that specific market type \(futures, for example\) in the same bot instance.
 
