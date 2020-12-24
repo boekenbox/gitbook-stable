@@ -18,7 +18,7 @@ It's now really easy to upload a config.js or autoconfig.json file in the interf
 **Steps to start with a clean installation:** unpack v20 and run, enter your Gunthy wallet address in the wizard and select "other" as exchange and save the changes. Then go to _Profile_ &gt; _Import settings_ and select the parts from your old config to import.
 {% endhint %}
 
-There are no breaking config changes for v20. In case you are upgrading from v18.x, replacing the executable file _\(gunthy-win.exe / gunthy-linux / gunthy-macos\)_ and _node\_modules_ folder is all that's needed to enter the new interface, and in most cases to start trading right away.
+There are no breaking config changes for v20. In case you are upgrading from v18.x.
 
 ![The GUI requires that password authentication is enabled in config.js. Set it like this.](../../.gitbook/assets/image%20%2874%29.png)
 
@@ -53,6 +53,8 @@ Only the most important changes are listed.
 * **New exchanges supported**: FTX, Beaxy and Txbit
 * **Coin margined futures**: now supported on Binance Futures. Set [market type: delivery](../../setup-and-general-settings/profile-settings/connect-exchange.md#market-selection)
 * **Improved resource usage and cycling speed:** migrating from Node v9 to v14. Delete your gunbotgui.db file and set a new password to take full advantage
+* **Improved profit and loss stats**: in telegram alerts and in the interface
+* **Improved GUI styling and behavior:** stability fixes, performance improvements, and saving more state info to local storage
 
 ### Market Maker
 
