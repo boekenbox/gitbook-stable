@@ -94,6 +94,8 @@ Pairs on **Kraken Futures** follow the following conventions:
 
 Pairs on **Okex Futures** use the similar notation as on their site, with hyphens in between the different parts of the pair and swapping the symbols. Valid example: USD-BTC-201016
 
+Pairs on **FTX** follow this pattern: XRP-PERP, BTC-PERP
+
 ## Override settings
 
 Overrides are pair specific settings, overruling the assigned strategy. Every strategy parameter can be used as an override.
