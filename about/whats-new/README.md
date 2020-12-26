@@ -13,7 +13,7 @@ Gunbot v21 introduces support for FTX futures, Binance coin margined futures, Tx
 {% hint style="success" %}
 **Upgrade process using the config import tool**
 
-It's now really easy to upload a config.js or autoconfig.json file in the interface, and import the parts you need from it. You can use this to setup a clean v20 installation while migrating your old pairs, strategies and other settings.
+It's now really easy to upload a config.js or autoconfig.json file in the interface, and import the parts you need from it. You can use this to setup a clean v21 installation while migrating your old pairs, strategies and other settings.
 
 **Steps to start with a clean installation:** unpack v21 to a new folder and run, enter your Gunthy wallet address in the wizard and select "other" as exchange and save the changes. Then go to _Profile_ &gt; _Import settings_ and select the parts from your old config to import.
 {% endhint %}
