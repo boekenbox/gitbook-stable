@@ -42,7 +42,7 @@ These exchanges have been supported in Gunbot for a long time, you can expect hi
 | **CEX** | `cex` | Regular | Regular |
 | **Coinbase Pro** | `gdax` | Regular | Regular |
 | **Huobi Global** | `huobi` | Regular | Regular & Margin |
-| **Kraken** | `kraken` | Regular | Regular & Margin |
+| **Kraken** | `kraken` | Regular | Regular |
 | **Poloniex** | `poloniex` | Regular | Regular & Margin |
 
 ## Supported exchanges
