@@ -155,12 +155,6 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
 * Want to flip between long and short? Open one position manually, then send long and short alerts at 2x that position size to keep flipping from long to short or vice versa.
 {% endhint %}
 
-#### Change strategy by alert
-
-| Alert message | Action |
-| :--- | :--- |
-| `STRAT_BITMEX_XBT-USD_yourstratname` | Assigns strategy `yourstratname` to XBT-USD |
-
 {% hint style="info" %}
 **Note about trading limits**
 
@@ -174,6 +168,18 @@ On **all other supported margin exchanges**, every setting related to margin tra
 {% hint style="success" %}
 To test alerts on Bitmex Testnet, you should write the alerts like this: LONG\_BITMEXTESTNET\_XBT-USD
 {% endhint %}
+
+#### 
+
+#### Change strategy by alert
+
+You can use alerts to change the strategy of any valid pair that's already in your config.
+
+This alert type can also be used to \(indirectly\) add pairs to Gunbot, [using an AutoConfig job](https://marketplace.gunthy.io/product/add-pairs-using-tradingview-alerts/).
+
+| Alert message | Action |
+| :--- | :--- |
+| `STRAT_BITMEX_XBT-USD_yourstratname` | Assigns strategy `yourstratname` to XBT-USD |
 
 ## TradingView settings
 

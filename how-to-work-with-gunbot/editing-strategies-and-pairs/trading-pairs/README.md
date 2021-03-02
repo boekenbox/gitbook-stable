@@ -31,7 +31,7 @@ When you're done, hit the **Filter** button to add pairs matching your filters.
 ![](../../../.gitbook/assets/image%20%28117%29.png)
 
 {% hint style="warning" %}
-Some exchange unfortunately just don't provide the data needed to filter pairs in this way, or their API rate limits are just too strict to do it in a practical way. In that case likely just nothing happens when you hit the filter button.
+Some exchange unfortunately just don't provide the data needed to filter pairs in this way, or their API rate limits are too strict to do it in a practical way. In that case likely just nothing happens when you hit the filter button.
 {% endhint %}
 
 ## Pair naming conventions
@@ -44,7 +44,9 @@ All pairs with BTC as base currency are written like: BTC-ETH, BTC-ATOM, BTC-ETH
 
 All pairs with USDT as base currency are written like: USDT-BTC, USDT-ETH, USDT-XMR
 
-The base coin is the one used to buy another asset. Be aware that some exchange show pair names in the exact reverse order. _\*\*_
+{% hint style="info" %}
+The base coin in Gunbot is the one used to buy another asset. Be aware that some exchange show pair names in the exact reverse order. 
+{% endhint %}
 
 ## Symbol name exceptions
 
@@ -82,7 +84,7 @@ A small number of symbol names need to be written in a slightly different way th
 
 ## Pair naming for futures exchanges
 
-On **Binance Futures** USDT margined pairs, naming works the same as for spot trading: USDT-BTC, USDT-LTC, etc. For coin margined pairs the correct format is: USD-BTC-PERP or \_\*\*\_USD-COIN-EXPIRYDATE. It's recommended to use the GUI to just select the right pair names. Set `market: futures` to use USDT-margined pairs, set `market: delivery` to use coin margined pairs.
+On **Binance Futures** USDT margined pairs, naming works the same as for spot trading: USDT-BTC, USDT-LTC, etc. For coin margined pairs the correct format is: USD-BTC-PERP or USD-COIN-EXPIRYDATE. 
 
 Pairs on **Bitmex** use almost the same symbols as on Bitmex itself, but with a hyphen-minus between the two asset names. Example: XBT-USD
 
@@ -95,6 +97,10 @@ Pairs on **Kraken Futures** follow the following conventions:
 Pairs on **Okex Futures** use the similar notation as on their site, with hyphens in between the different parts of the pair and swapping the symbols. Valid example: USD-BTC-201016
 
 Pairs on **FTX** follow this pattern: XRP-PERP, BTC-PERP
+
+{% hint style="success" %}
+Make sure to use the correct [market type](../../../setup-and-general-settings/profile-settings/connect-exchange.md#market-selection), especially when using futures.
+{% endhint %}
 
 ## Override settings
 

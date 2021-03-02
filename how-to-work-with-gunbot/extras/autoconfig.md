@@ -38,7 +38,7 @@ When a job is processed, changes to `config.js` are only made for pairs that hav
 * One job can have one or many filters.
 * Within a job, you can set filters for which pairs it applies.
 
-If a job successfully completes, the changes are written to `config.js` and Gunbot restarts using the new settings. If a job causes no changes, for example because it tries to place already existing overrides, it won't cause a Gunbot restart.
+If a job successfully completes, the changes are written to `config.js` and Gunbot starts using the new settings. Most config changes, like pair override changes, are applied without causing a bot restart. If a job causes no changes, for example because it tries to place already existing overrides, it won't cause a Gunbot restart.
 
 Schedules are set per job in a [format similar to how cron jobs are set](https://www.npmjs.com/package/node-schedule#cron-style-scheduling). If you're not used to the format, use a website like [https://crontab-generator.org/](https://crontab-generator.org/) to generate it.
 

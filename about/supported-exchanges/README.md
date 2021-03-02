@@ -18,7 +18,7 @@ These exchanges are official Gunbot partners. We are in direct contact with thei
 | **Binance Futures** | `binanceFutures` | Margin | Margin |
 | **Bitget** | `bitget` | Margin | Margin |
 | **FTX** | `ftx` | Regular & margin | Regular & margin |
-| **HitBTC** | `hitbtc2` | Regular | Regular |
+| **HitBTC** | `hitbtc` | Regular | Regular |
 | **Kraken Futures** | `krakenFutures` | Margin | Margin |
 | **KuCoin** | `kucoin` | Regular | Regular |
 | **Nash** | `nashio` | Regular | Regular |
@@ -64,7 +64,6 @@ You can use any of these exchanges for spot trading alerts using the TradingView
 | [![bequant](https://user-images.githubusercontent.com/1294454/55248342-a75dfe00-525a-11e9-8aa2-05e9dca943c6.jpg)](https://bequant.io) | `bequant` | [Bequant](https://bequant.io) |
 | [![bibox](https://user-images.githubusercontent.com/1294454/34902611-2be8bf1a-f830-11e7-91a2-11b2f292e750.jpg)](https://www.bibox.com/signPage?id=11114745&lang=en) | `bibox` | [Bibox](https://www.bibox.com/signPage?id=11114745&lang=en) |
 | [![bigone](https://user-images.githubusercontent.com/1294454/42803606-27c2b5ec-89af-11e8-8d15-9c8c245e8b2c.jpg)](https://b1.run/users/new?code=D3LLBVFT) | `bigone` | [BigONE](https://b1.run/users/new?code=D3LLBVFT) |
-| [![binanceje](https://user-images.githubusercontent.com/1294454/54874009-d526eb00-4df3-11e9-928c-ce6a2b914cd1.jpg)](https://www.binance.je/?ref=35047921) | `binanceje` | [Binance Jersey](https://www.binance.je/?ref=35047921) |
 | [![binanceus](https://user-images.githubusercontent.com/1294454/65177307-217b7c80-da5f-11e9-876e-0b748ba0a358.jpg)](https://www.binance.us/?ref=35005074) | `binanceus` | [Binance US](https://www.binance.us/?ref=35005074) |
 | [![bit2c](https://user-images.githubusercontent.com/1294454/27766119-3593220e-5ece-11e7-8b3a-5a041f6bcc3f.jpg)](https://bit2c.co.il/Aff/63bfed10-e359-420c-ab5a-ad368dab0baf) | `bit2c` | [Bit2C](https://bit2c.co.il/Aff/63bfed10-e359-420c-ab5a-ad368dab0baf) |
 | [![bitbank](https://user-images.githubusercontent.com/1294454/37808081-b87f2d9c-2e59-11e8-894d-c1900b7584fe.jpg)](https://bitbank.cc/) | `bitbank` | [bitbank](https://bitbank.cc/) |

@@ -574,7 +574,7 @@ Parameter name in `config.js`: `PERIOD`
 {% tab title="Description" %}
 This sets the target for buying. Negative values are allowed.
 
-The bot will buy when price hits the set percentage from the lower Bollinger Band and the price is below the entry point as defined by `BUY_LEVEL`.
+The bot will buy when price hits the set percentage from the lower Bollinger Band.
 
 When set to 0, the lower Bollinger Band is the target. When set to 30, the target is 30% above the lower Bollinger Band - the upper band is at 100% from the lower band. Negative values are allowed.
 {% endtab %}

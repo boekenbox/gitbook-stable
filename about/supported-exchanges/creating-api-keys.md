@@ -14,7 +14,7 @@ This page shows the minimum required settings for often used exchanges to create
 
 ## Binance
 
-![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/binance.png)
+![](../../.gitbook/assets/image%20%28101%29.png)
 
 ## Binance Futures
 

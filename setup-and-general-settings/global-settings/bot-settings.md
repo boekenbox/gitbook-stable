@@ -68,7 +68,7 @@ Only set this to a low value when your bot actually has problems not trading aft
 {% tab title="Values" %}
 **Values:** numerical – represents time in hours.
 
-**Default value:** 2
+**Default value:** 200
 {% endtab %}
 
 {% tab title="Name" %}
