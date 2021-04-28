@@ -21,12 +21,11 @@ These exchanges are official Gunbot partners. We are in direct contact with thei
 | **HitBTC** | `hitbtc` | Regular | Regular |
 | **Kraken Futures** | `krakenFutures` | Margin | Margin |
 | **KuCoin** | `kucoin` | Regular | Regular |
-| **Nash** | `nashio` | Regular | Regular |
 | **OKEx** | `okex3` | Regular & margin | Regular & margin |
 | **Txbit** | `txbit` | Regular | Regular |
 
 {% hint style="success" %}
-Gunthy, Beaxy, Nash and Txbit do not require registering an additional api key in your license. Because they list Gunthy Token they are free to use for every Gunbot user.
+Gunthy, Beaxy, and Txbit do not require registering an additional api key in your license. Because they list Gunthy Token they are free to use for every Gunbot user.
 {% endhint %}
 
 ## Certified exchanges
@@ -44,6 +43,7 @@ These exchanges have been supported in Gunbot for a long time, you can expect hi
 | **Huobi Global** | `huobi` | Regular | Regular & Margin |
 | **Kraken** | `kraken` | Regular | Regular |
 | **Poloniex** | `poloniex` | Regular | Regular & Margin |
+| **Nash** | `nashio` | Regular | Regular |
 
 ## Supported exchanges
 

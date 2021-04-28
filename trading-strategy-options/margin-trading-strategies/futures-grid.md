@@ -1,4 +1,4 @@
-# Spotgrid
+# Futures Grid
 
 A grid like strategy with dynamic trading targets and integrated trailing for both buying and selling.
 
@@ -12,14 +12,14 @@ If you want to customize settings a lot, this strategy is not for you.
 
 ## Trading behavior
 
-When you run spotGrid on a pair in an uptrend, this is the kind of trading behavior to expect:
+When you run futuresGrid on a pair in an uptrend, this is the kind of trading behavior to expect:
 
 ![Typical spotGrid trades. Green arrows are buys, orange arrows are sells.](../../.gitbook/assets/image%20%28102%29.png)
 
 Let's break down what actually happens:
 
 * When the strategy first runs and there is no balance to sell, it immediately places a market buy order
-* If price goes down and it exceeds the spotGrid line in the chart, buy trailing is activated. As soon as trailing finishes, a buy order is placed. The break even price is now lower.
+* If price goes down and it exceeds the futuresGrid line in the chart, buy trailing is activated. As soon as trailing finishes, a buy order is placed. The break even price is now lower.
 * If price reaches the Sell target on the chart, sell trailing is activated and the complete position is sold at profit when trailing finishes.
 * After having sold, the strategy immediately starts buy trailing. If price goes up it will quickly open a new position, if price goes down it will place a buy order below the last sell rate.
 
@@ -39,14 +39,14 @@ The next trading targets are always visible on the chart.
 Keep in mind the targets lines are moving over time, they represent the current targets.
 {% endhint %}
 
-## How to create a spotGrid strategy
+## How to create a futuresGrid strategy
 
-* Using the advanced strategy editor: create a new strategy and select spotGrid as buy and sell method
-* Using Easy Edit: create a new strategy and select spotGrid as buy method
+* Using the advanced strategy editor: create a new strategy and select futuresGrid as buy and sell method
+* Using Easy Edit: create a new strategy and select futuresGrid as buy method
 
 ## Essential settings
 
-To use spotGrid, there are just three essential settings:
+To use futuresGrid, there are just three essential settings:
 
 <table>
   <thead>
@@ -91,19 +91,14 @@ To use spotGrid, there are just three essential settings:
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p><em>for futuresGrid only<b>           </b>        </em>
-        </p>
-        <p>&lt;em&gt;&lt;/em&gt;</p>
-        <p><b>Max open contracts                      </b>
-        </p>
+      <td style="text-align:left"><b>Max open contracts                      </b>
       </td>
       <td style="text-align:left">
         <p><b>Limits position size</b>
         </p>
         <p>
           <br />On an USDT-BTC pair, setting max open contracts to 0.1 means that no buy
-          order gets fired if it would result i the total position exceeding 0.1
+          order gets fired if it would result in the total position exceeding 0.1
           BTC.</p>
       </td>
     </tr>
@@ -219,6 +214,4 @@ There are a few additional settings you can use with this strategy.
 
 Besides settings mentioned on this page, no other strategy setting has any effect on spotGrid.
 {% endhint %}
-
-### 
 

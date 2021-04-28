@@ -1,16 +1,16 @@
-# Spotgrid
+# Spotgrid Advanced
 
-A grid like strategy with dynamic trading targets and integrated trailing for both buying and selling.
+A grid like strategy with dynamic trading targets and integrated trailing for both buying and selling. 
 
-The idea of this strategy is to always be in a position, use market orders only, average down when prices goes down, take profit when price exceeds break even. And do so with an absolute minimum ****number of settings.
+Based on [spotGrid](spotgrid.md), with additional configuration options and 'continuous trading'.
 
 {% hint style="info" %}
-This strategy is a bit different than all other Gunbot strategies: there are just a handful configurable options and it's "always in position": instead of waiting for the perfect entry it is always looking for chances to average down.  
+This strategy is a bit different than all other Gunbot strategies: there are just a few configurable options and it's "always in position": instead of waiting for the perfect entry it is always looking for chances to average down.  
   
 If you want to customize settings a lot, this strategy is not for you.
 {% endhint %}
 
-## Trading behavior
+## Regular trading behavior
 
 When you run spotGrid on a pair in an uptrend, this is the kind of trading behavior to expect:
 
@@ -39,14 +39,42 @@ The next trading targets are always visible on the chart.
 Keep in mind the targets lines are moving over time, they represent the current targets.
 {% endhint %}
 
-## How to create a spotGrid strategy
+## Continuous trading behavior
 
-* Using the advanced strategy editor: create a new strategy and select spotGrid as buy and sell method
-* Using Easy Edit: create a new strategy and select spotGrid as buy method
+CT, short for 'continuous trading', is a mechanism that lets you keep trading profitably even when the current price is far below the overall break even price. 
+
+The principle is very simple: if price is above the price of the last buy order, up to the number of units bought in this trade can be sold for a small profit in base and in quote. The base profits you keep, the quote profits can help bring down break even of the overall position.
+
+Besides the small profits from these partial trades, it allows your strategy to follow the market price more closely and sometimes fit in more DCA trades in one price range, compared to only waiting for prices to go down further to DCA.
+
+![Continuous trading example](../../.gitbook/assets/image%20%28125%29.png)
+
+The chart above shows several CT trades. Each sell order on this chart is only working with the units bought with the previous buy order. The number of units to 'CT sell' is configurable using the continuous trading limit multiplier, setting this to 1 would sell approx. the same number of units as last bought, 0.5 would sell approx. half of the units last bought. 
+
+#### What happens when?
+
+Assuming your settings allow CT orders:
+
+* When price goes down after a DCA order: another DCA order gets placed when grid DCA target is hit.
+* When price goes up after a DCA order: CT sell target is set above last buy rate, using 'gain' or 'auto gain'. When the target is reached, a CT sell order is placed.
+* When price goes down after a CT sell order: if grid DCA target is reached, a 'CT buy' order is placed for approx. the same number of units as the CT sell order. The position size after this order is more or less identical compared to before the CT sell order.
+* When price goes down after a CT buy order: a normal DCA order is placed when the DCA target hits.
+* When price goes up after a CT sell order: if price is below break even and the distance between last sell rate and current price is more than the distance between first support and resistance, a new CT buy order gets placed.
+
+{% hint style="info" %}
+Manual trading or changing settings related to trading limit can disrupt continuous trading.
+
+If you use CT, make it a habit to only change trading limit settings after a complete sell order.
+{% endhint %}
+
+## How to create a spotGridAdvanced strategy
+
+* Using the advanced strategy editor: create a new strategy and select spotGridAdvanced as buy and sell method
+* Using Easy Edit: create a new strategy and select spotGridAdvanced as buy method
 
 ## Essential settings
 
-To use spotGrid, there are just three essential settings:
+To use spotGridAdvanced, there are just three essential settings:
 
 <table>
   <thead>
@@ -90,29 +118,10 @@ To use spotGrid, there are just three essential settings:
           small balances that cannot be sold.</p>
       </td>
     </tr>
-    <tr>
-      <td style="text-align:left">
-        <p><em>for futuresGrid only<b>           </b>        </em>
-        </p>
-        <p>&lt;em&gt;&lt;/em&gt;</p>
-        <p><b>Max open contracts                      </b>
-        </p>
-      </td>
-      <td style="text-align:left">
-        <p><b>Limits position size</b>
-        </p>
-        <p>
-          <br />On an USDT-BTC pair, setting max open contracts to 0.1 means that no buy
-          order gets fired if it would result i the total position exceeding 0.1
-          BTC.</p>
-      </td>
-    </tr>
   </tbody>
 </table>
 
 There are a few more settings that can optionally be used with this strategy, described below
-
-
 
 ## Additional settings
 
@@ -209,6 +218,78 @@ There are a few additional settings you can use with this strategy.
           be held back when the next sell order happens.</p>
       </td>
     </tr>
+    <tr>
+      <td style="text-align:left"><b>Trading limit multiplier</b>
+      </td>
+      <td style="text-align:left">
+        <p><b>Controls the invest per DCA trade</b>
+        </p>
+        <p>&lt;b&gt;&lt;/b&gt;</p>
+        <p>Can be used to increase or decrease the invested amount with each consecutive
+          buy order. Examples with trading limit 100 USDT and max buy count 3:</p>
+        <p></p>
+        <p>1: each buy order is for 100 USDT</p>
+        <p>1.5: first buy 100, second buy 150, third buy 225</p>
+        <p>2: first buy 100, second buy 200, third buy 400&apos;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Trailing range multiplier</b>
+      </td>
+      <td style="text-align:left">
+        <p><b>Controls how big trailing ranges are</b>
+        </p>
+        <p>&lt;b&gt;&lt;/b&gt;</p>
+        <p>Can be used to increase or decrease the trailing range for all order types.</p>
+        <p></p>
+        <p>Default value 1 means that the hardcoded range is used. 1.5 would increase
+          the range with a factor 1.5x, a value of 0.5 would halve the default trailing
+          range</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Start continuous trading </b>
+      </td>
+      <td style="text-align:left">
+        <p><b>Controls from which number of buy orders continuous trading is allowed</b>
+        </p>
+        <p>
+          <br />A value of 3 means that when the position is 3x trading limit in size,
+          the next sell target is placed above the last buy rate instead of above
+          break even. Set a very high value to effectively disable this feature</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Continuous trading limit multiplier</b>
+      </td>
+      <td style="text-align:left">
+        <p><b>Controls how much funds to use for CT</b>
+        </p>
+        <p>
+          <br />Sets the ratio between last buy order invest in base, and the amount used
+          for trades during continuous trading.</p>
+        <p></p>
+        <p>Value between 0 and 1. When set to 0.5, halve of the base amount used
+          for the previous DCA trade will be used for continuous trading.</p>
+        <p></p>
+        <p>Setting 1 would use the same amount as the last DCA buy order</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Continuous trading restart multiplier</b>
+      </td>
+      <td style="text-align:left">
+        <p><b>Sets the distance between a CT sell and a buy above that<br /></b>
+          <br
+          />Default is 1, should usually not be changed.</p>
+        <p></p>
+        <p>Examples:
+          <br />1: buy target above last sell rate is placed once price is 1x the distance
+          between sup/res above last sell rate</p>
+        <p>0.5: buy target above last sell rate is placed once price is 0.5x the
+          distance between sup/res above last sell rate</p>
+      </td>
+    </tr>
   </tbody>
 </table>
 
@@ -217,8 +298,6 @@ There are a few additional settings you can use with this strategy.
 
  Buy and Sell enabled options can be set as pair overrides. Watch mode is respected.
 
-Besides settings mentioned on this page, no other strategy setting has any effect on spotGrid.
+Besides settings mentioned on this page, no other strategy setting has any effect on spotGridAdvanced.
 {% endhint %}
-
-### 
 
