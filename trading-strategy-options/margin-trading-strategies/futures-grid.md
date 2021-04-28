@@ -4,6 +4,8 @@ A grid like strategy with dynamic trading targets and integrated trailing for bo
 
 The idea of this strategy is to always be in a position, use market orders only, average down when prices goes down, take profit when price exceeds break even. And do so with an absolute minimum ****number of settings.
 
+This strategy is basically the same as "spotGrid", it's just made for futures and additionally offers the option to trade shorts.
+
 {% hint style="info" %}
 This strategy is a bit different than all other Gunbot strategies: there are just a handful configurable options and it's "always in position": instead of waiting for the perfect entry it is always looking for chances to average down.  
   
@@ -14,7 +16,7 @@ If you want to customize settings a lot, this strategy is not for you.
 
 When you run futuresGrid on a pair in an uptrend, this is the kind of trading behavior to expect:
 
-![Typical spotGrid trades. Green arrows are buys, orange arrows are sells.](../../.gitbook/assets/image%20%28102%29.png)
+![Typical futuresGrid trades. Green arrows are buys, orange arrows are sells.](../../.gitbook/assets/image%20%28102%29.png)
 
 Let's break down what actually happens:
 
@@ -60,7 +62,7 @@ To use futuresGrid, there are just three essential settings:
       <td style="text-align:left"><b>Trading limit                           </b>
       </td>
       <td style="text-align:left">
-        <p><b>The amount to invest per buy order.</b>
+        <p><b>The amount to invest per buy order</b>
         </p>
         <p>&lt;b&gt;&lt;/b&gt;</p>
         <p>On an USDT-BTC pair, a trading limit of 20 means that every buy order
@@ -72,7 +74,7 @@ To use futuresGrid, there are just three essential settings:
       <td style="text-align:left"><b>Max buy count</b>
       </td>
       <td style="text-align:left">
-        <p><b>Limits how many buy orders are allowed.</b>
+        <p><b>Limits how many buy orders are allowed</b>
         </p>
         <p>&lt;b&gt;&lt;/b&gt;</p>
         <p>Setting a max buy count of 10 means that the bot may do up to 10 buy orders
@@ -83,7 +85,7 @@ To use futuresGrid, there are just three essential settings:
       <td style="text-align:left"><b>Min volume to sell</b>
       </td>
       <td style="text-align:left">
-        <p><b>To ignore tiny balances. </b>
+        <p><b>To ignore tiny balances</b>
         </p>
         <p>&lt;b&gt;&lt;/b&gt;</p>
         <p>Set this to the minimum order size of the pair, to make the bot ignore
@@ -100,6 +102,24 @@ To use futuresGrid, there are just three essential settings:
           <br />On an USDT-BTC pair, setting max open contracts to 0.1 means that no buy
           order gets fired if it would result in the total position exceeding 0.1
           BTC.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Direction</b>
+      </td>
+      <td style="text-align:left">
+        <p><b>Sets the direction to trade</b>
+        </p>
+        <p></p>
+        <p>Pick either <code>LONG</code>, <code>SHORT </code>or <code>AUTO</code>
+        </p>
+        <p></p>
+        <p>The AUTO mode uses a non configurable trend detection that uses EMA, OBV
+          and ATR data from both 15m and 4h charts, and only opens a long or short
+          if confirmed by the trend definitions.</p>
+        <p></p>
+        <p>If in a position already and trend changes, the strategy will first attempt
+          to close at profit before opening a position in the opposite direction.</p>
       </td>
     </tr>
   </tbody>
@@ -170,6 +190,18 @@ There are a few additional settings you can use with this strategy.
         <p>The default value 1 means that the hardcoded levels are used.</p>
         <p>1.5 would increase the levels with a factor 1.5x, a value of 0.5 would
           halve the default levels.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Trading limit multiplier</b>
+      </td>
+      <td style="text-align:left">
+        <p>Can be used to increase or decrease the invested amount with each consecutive
+          buy order. Examples with trading limit 100 USDT and max buy count 3:</p>
+        <p></p>
+        <p>1: each buy order is for 100 USDT</p>
+        <p>1.5: first buy 100, second buy 150, third buy 225</p>
+        <p>2: first buy 100, second buy 200, third buy 400</p>
       </td>
     </tr>
     <tr>
