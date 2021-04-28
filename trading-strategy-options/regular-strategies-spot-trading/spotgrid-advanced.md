@@ -2,13 +2,7 @@
 
 A grid like strategy with dynamic trading targets and integrated trailing for both buying and selling. 
 
-Based on [spotGrid](spotgrid.md), with additional configuration options and 'continuous trading'.
-
-{% hint style="info" %}
-This strategy is a bit different than all other Gunbot strategies: there are just a few configurable options and it's "always in position": instead of waiting for the perfect entry it is always looking for chances to average down.  
-  
-If you want to customize settings a lot, this strategy is not for you.
-{% endhint %}
+Based on [spotGrid](spotgrid.md), with additional configuration options, trend detection and 'continuous trading'.
 
 ## Regular trading behavior
 
