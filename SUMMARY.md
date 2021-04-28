@@ -110,6 +110,7 @@
   * [SMA cross](trading-strategy-options/margin-trading-strategies/sma-cross.md)
   * [Tssl \(trailing stop / stop limit\)](trading-strategy-options/margin-trading-strategies/tssl-trailing-stop-stop-limit.md)
   * [Time series analysis](trading-strategy-options/margin-trading-strategies/time-series-analysis.md)
+* [Custom strategies](trading-strategy-options/custom-strategies.md)
 * [Balance settings](trading-strategy-options/balance-settings.md)
 * [Confirming indicators](trading-strategy-options/confirming-indicators.md)
 * [Dollar Cost Avg \(DCA\)](trading-strategy-options/dollar-cost-avg-dca.md)
