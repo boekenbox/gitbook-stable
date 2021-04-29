@@ -250,7 +250,7 @@ There are a few additional settings you can use with this strategy.
         <p>
           <br />A value of 3 means that when the position is 3x trading limit in size,
           the next sell target is placed above the last buy rate instead of above
-          break even. Set a very high value to effectively disable this feature</p>
+          break even. Set a very high value to effectively disable this feature.</p>
       </td>
     </tr>
     <tr>
@@ -266,14 +266,14 @@ There are a few additional settings you can use with this strategy.
         <p>Value between 0 and 1. When set to 0.5, halve of the base amount used
           for the previous DCA trade will be used for continuous trading.</p>
         <p></p>
-        <p>Setting 1 would use the same amount as the last DCA buy order</p>
+        <p>Setting 1 would use the same amount as the last DCA buy order.</p>
       </td>
     </tr>
     <tr>
       <td style="text-align:left"><b>Continuous trading restart multiplier</b>
       </td>
       <td style="text-align:left">
-        <p><b>Sets the distance between a CT sell and a buy above that<br /></b>
+        <p><b>Sets the minimum distance between a CT sell and a buy above that<br /></b>
           <br
           />Default is 1, should usually not be changed.</p>
         <p></p>
@@ -282,10 +282,99 @@ There are a few additional settings you can use with this strategy.
           between sup/res above last sell rate</p>
         <p>0.5: buy target above last sell rate is placed once price is 0.5x the
           distance between sup/res above last sell rate</p>
+        <p></p>
+        <p>There is a hardcoded minimum distance of 2x trading fees.</p>
       </td>
     </tr>
   </tbody>
 </table>
+
+This strategy can use a built in trend watches that monitors various indicators on 15m and 4h charts. You can use this to easily try to trade more when the market is actually favorable, and reduce risks when the market is going down.
+
+Of course no trend detection is perfect, this one will be no exception. If you have a strong personal opinion about trend, it's probably a good idea to stick to that.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Setting</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><b>Only open when trend is bullish</b>
+      </td>
+      <td style="text-align:left">
+        <p><b>Avoid opening a new trade when market looks down</b>
+        </p>
+        <p>
+          <br />When enabled, new positions are only opened when both 4h and 15m charts
+          indicate a bullish market.</p>
+        <p></p>
+        <p>This check is independent from the PERIOD in your strategy. Requires the
+          exchange to offer both 15m and 4h candle data</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>No DCA when trend not bullish</b>
+      </td>
+      <td style="text-align:left">
+        <p><b>Don&apos;t DCA while the market is bearish</b>
+        </p>
+        <p>
+          <br />When enabled, DCA trades are only allowed when both 4h and 15m charts
+          indicate a bullish market</p>
+        <p></p>
+        <p>This check is independent from the PERIOD in your strategy. Requires the
+          exchange to offer both 15m and 4h candle data</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Double DCA distance when trend not bullish</b>
+      </td>
+      <td style="text-align:left">
+        <p><b>Increase DCA distance while the market is bearish</b>
+        </p>
+        <p>
+          <br />When enabled, the DCA distance gets doubled when the 4h and/or 15m chart
+          do not indicate a bullish market</p>
+        <p></p>
+        <p>This check is independent from the PERIOD in your strategy. Requires the
+          exchange to offer both 15m and 4h candle data</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Trend CT grid multiplier</b>
+      </td>
+      <td style="text-align:left">
+        <p><b>Use a different CT buy target when trend is not bullish</b>
+        </p>
+        <p>
+          <br />Multiplier to adjust CT buy target while trend is not bullish and TREND_LOWER_DCA
+          is used</p>
+        <p></p>
+        <p>A value of 2 would double the distance, a value of 1 results in the same
+          behavior as when TREND_LOWER_DCA is disabled</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><b>Trend grid multiplier</b>
+      </td>
+      <td style="text-align:left">
+        <p><b>Use a different grid multiplier when trend is not bullish</b>
+        </p>
+        <p>&lt;b&gt;&lt;/b&gt;</p>
+        <p>Multiplier to adjust the next DCA target while trend is not bullish and
+          TREND_LOWER_DCA is used</p>
+        <p></p>
+        <p>A value of 2 would double the distance, a value of 1 results in the same
+          behavior as when TREND_LOWER_DCA is disabled</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
 
 {% hint style="info" %}
 **Other parameters**
