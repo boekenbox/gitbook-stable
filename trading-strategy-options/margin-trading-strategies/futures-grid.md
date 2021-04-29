@@ -44,7 +44,8 @@ Keep in mind the targets lines are moving over time, they represent the current 
 ## How to create a futuresGrid strategy
 
 * Using the advanced strategy editor: create a new strategy and select futuresGrid as buy and sell method
-* Using Easy Edit: create a new strategy and select futuresGrid as buy method
+
+
 
 ## Essential settings
 
