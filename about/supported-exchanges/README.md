@@ -12,7 +12,8 @@ These exchanges are official Gunbot partners. We are in direct contact with thei
 
 | Exchange | Name in config | Native strategies | TradingView alerts |
 | :--- | :--- | :--- | :--- |
-| **Gunthy** | `gunthy` | Regular | Regular |
+| **Gunthy** | `mex_gunthy / futures_gunthy` | Regular & margin | Regular & margin |
+| **Bybit** | `bybit` | Margin | Margin |
 | **Beaxy** | `beaxy` | Regular | Regular |
 | **Binance** | `binance` / `binanceus` | Regular | Regular |
 | **Binance Futures** | `binanceFutures` | Margin | Margin |

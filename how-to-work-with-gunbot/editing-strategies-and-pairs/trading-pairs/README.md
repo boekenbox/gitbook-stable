@@ -86,6 +86,8 @@ A small number of symbol names need to be written in a slightly different way th
 
 On **Binance Futures** USDT margined pairs, naming works the same as for spot trading: USDT-BTC, USDT-LTC, etc. For coin margined pairs the correct format is: USD-BTC-PERP or USD-COIN-EXPIRYDATE. 
 
+The long and short sides on **Bybit** are split into separate pairs in Gunbot. Use USDT-BTC-LONG for the long side of your strategy and USDT-BTC-SHORT for the short side of your strategy. Each side pair can only open positions in that direction.
+
 Pairs on **Bitmex** use almost the same symbols as on Bitmex itself, but with a hyphen-minus between the two asset names. Example: XBT-USD
 
 Pairs on **Kraken Futures** follow the following conventions:

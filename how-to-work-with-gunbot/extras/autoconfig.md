@@ -1176,6 +1176,20 @@ Generic filters can be used in any job type, regardless if they primarily use ti
 | `maxTimeSinceOrder` | Filter returns true when at most x minutes have passed since a defined order type, for the same pair. |
 | `custom` | Use any custom javascript expression, when the expression returns true the filter passes. |
 
+Custom filter examples:
+
+```text
+"Seconds since last order": {
+    "type": "custom",
+        "target": " (function timeCheck(data){if(typeof data.orders[0]==='undefined'){return false;} const lastOrderTime=data.orders[0].lastOrderTime;const secondsSinceLastOrder=(Date.now()-lastOrderTime)/1000;if(secondsSinceLastOrder<180){return true;}})(this)"
+}
+
+"Price and EMA": {
+    "type": "custom",
+        "target": " this.pair.ema1 > this.pair.Bid"
+}
+```
+
 Config building blocks for generic filters:
 
 ```text
