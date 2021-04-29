@@ -814,7 +814,37 @@ Parameter name in `config.js`: `EMA2`
 
 ## Dollar cost avg settings
 
-DCA is not intented to be used for margin trading.
+### DCA Method
+
+{% tabs %}
+{% tab title="Description" %}
+When set to **TENKAN** Gunbot will place DCA orders in exactly the same way as in the [Tenkan ](tenkan.md)strategy. Each DCA order is in size of `TRADING_LIMIT`.
+{% endtab %}
+
+{% tab title="Values" %}
+**Values:** NATIVE / TENKAN
+
+**Default value:** TENKAN   
+  
+Setting NATIVE effectively disables DCA in this strategy
+{% endtab %}
+
+{% tab title="Order types" %}
+| Affects | Does not affect |
+| :--- | :--- |
+| DCA  | Strategy buy |
+|  | Strategy sell |
+|  | Close |
+|  | RT sell |
+|  | Stop limit |
+|  | RT buyback |
+|  | RT buy |
+{% endtab %}
+
+{% tab title="Name" %}
+Parameter name in `config.js`: `DCA_METHOD`
+{% endtab %}
+{% endtabs %}
 
 ## Reversal trading settings
 
