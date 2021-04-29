@@ -22,6 +22,10 @@ Because strategies are a very long topic, the documentation is split into differ
 
 {% page-ref page="../margin-trading-strategies/" %}
 
+{% page-ref page="../custom-strategies.md" %}
+
+
+
 ## Presets
 
 You can save as many strategy presets as you want. The built-in presets are generally meant as a good starting point for an individual strategy.
