@@ -1181,7 +1181,7 @@ Custom filter examples:
 ```text
 "Seconds since last order": {
     "type": "custom",
-        "target": " (function timeCheck(data){if(typeof data.orders[0]==='undefined'){return false;} const lastOrderTime=data.orders[0].lastOrderTime;const secondsSinceLastOrder=(Date.now()-lastOrderTime)/1000;if(secondsSinceLastOrder<180){return true;}})(this)"
+        "target": " (function timeCheck(data){if(typeof data.orders==='undefined'){return false;} else if(typeof data.orders[0]==='undefined'){return false;} const lastOrderTime=data.orders[0].time;const secondsSinceLastOrder=(Date.now()-lastOrderTime)/1000;if(secondsSinceLastOrder<180){return true;}})(this)"
 }
 
 "Price and EMA": {
