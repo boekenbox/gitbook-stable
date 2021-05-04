@@ -366,8 +366,8 @@ else if (sellConditions) {
 
 ### "real" example strategies
 
-The following examples are not meant to show the basic principles like the ones before.   
-They are more or less ready made strategies you can build upon.
+The following examples are more or less ready made strategies you can build upon.  
+
 
 Note that every custom strategy will require testing on your side. Do not blindly use these examples.  
 One aspect that's absent in the examples is checking if referenced data is actually defined before firing orders, in some cases this will be an important aspect of a custom strategy.
