@@ -1341,7 +1341,7 @@ The strategy code runs once every time Gunbot processes the pair. This means tha
 To store variables in a more persistent way, you can use this object:  
 `gb.data.pairLedger.customStratStore`
 
-Data saved here generally stays available, and persists between bot restarts. However, there is no guarantee the data stays intact - if for the process gets killed it is possible the pair ledger gets reinitialized on next run.
+Data saved here generally stays available, and persists between bot restarts. However, there is no guarantee the data stays intact - if for the process gets killed it is possible the pair ledger gets reinitialized on next run. Gunbot native strategies are coded so that they or depend as little as possible on internal persistently stored data, working with exchange provided data as much as possible possible. Consider doing the same when coding custom strategies.
 
 ## Visualize strategy targets
 
