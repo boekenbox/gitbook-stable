@@ -254,55 +254,53 @@ else if (gotBag) {
 // require the Cryptopanic module
 // install https://www.npmjs.com/package/cryptopanic in an outside folder, 
 // then copy the modules to the 'user_modules' folder inside the Gunbot root folder
-gb.method.requirejs(['Cryptopanic'],
-    function (Cryptopanic) {
+const _ = gb.method.require(gb.modulesPath + '/cryptopanic')
 
-        // make a connection to Cryptopanic
-        const cp = new Cryptopanic({ auth_token: '<API_TOKEN>' })
+// make a connection to Cryptopanic
+const cp = new Cryptopanic({ auth_token: '<API_TOKEN>' })
 
-        // creata variables to store status of detected FUD
-        let koreaFud
-        let secFud
+// creata variables to store status of detected FUD
+let koreaFud
+let secFud
 
-        // get data from Cryptopanic and do a simple check if any of the BTC news includes 'Korea', and if there is XRP news that included 'SEC'
-        // this is not a complete solution, for example it does not consider if news is old or has already been traded
-        cp.currencies(['BTC', 'XRP'])
-            .filter('bearish')
-            .fetchPosts()
-            .then((articles) => {
+// get data from Cryptopanic and do a simple check if any of the BTC news includes 'Korea', and if there is XRP news that included 'SEC'
+// this is not a complete solution, for example it does not consider if news is old or has already been traded
+cp.currencies(['BTC', 'XRP'])
+    .filter('bearish')
+    .fetchPosts()
+    .then((articles) => {
 
-                // loop trough articles, search if specific strings exist and save result
-                articles.forEach(article => {
-                    // convert article object to string to easily search its contents
-                    const articleString = JSON.stringify(article)
+        // loop trough articles, search if specific strings exist and save result
+        articles.forEach(article => {
+            // convert article object to string to easily search its contents
+            const articleString = JSON.stringify(article)
 
-                    if (articleString.indexOf('Korea') > -1 && articleString.indexOf('BTC') > -1) {
-                        koreaFud = true
+            if (articleString.indexOf('Korea') > -1 && articleString.indexOf('BTC') > -1) {
+                koreaFud = true
+            }
+
+            if (articleString.indexOf('SEC') > -1 && articleString.indexOf('XRP') > -1) {
+                secFud = true
+            }
+        });
+
+        // fire BTC orders if Korea FUD detected
+        if (koreaFud) {
+            // first sell 1 BTC in a market order
+            gb.method.sellMarket(1, 'USDT-BTC')
+                // wait for the promise to resolve, then check if the order filled before placing a limit buy 5% below current price
+                .then((result) => {
+                    if (result.info.status === 'FILLED') {
+                        gb.method.buyLimit(1, gb.data.bid * 0.95, 'USDT-BTC')
                     }
+                })
+        }
 
-                    if (articleString.indexOf('SEC') > -1 && articleString.indexOf('XRP') > -1) {
-                        secFud = true
-                    }
-                });
+        // sell XRP if SEC FUD detected
+        if (secFud) {
+            gb.method.sellMarket(10000, 'USDT-XRP')
+        }
 
-                // fire BTC orders if Korea FUD detected
-                if (koreaFud) {
-                    // first sell 1 BTC in a market order
-                    gb.method.sellMarket(1, 'USDT-BTC')
-                        // wait for the promise to resolve, then check if the order filled before placing a limit buy 5% below current price
-                        .then((result) => {
-                            if (result.info.status === 'FILLED') {
-                                gb.method.buyLimit(1, gb.data.bid * 0.95, 'USDT-BTC')
-                            }
-                        })
-                }
-
-                // sell XRP if SEC FUD detected
-                if (secFud) {
-                    gb.method.sellMarket(10000, 'USDT-XRP')
-                }
-
-            })
     })
 ```
 
@@ -318,6 +316,11 @@ gb.method.requirejs(['Cryptopanic'],
 * Use the lodash module to simplify some code
 
 ```javascript
+// strategy uses two external modules: 'lodash' and 'tdsequential'
+// install them with npm in an outside folder, and copy the modules to the 'user_modules' folder inside the Gunbot root folder
+const _ = gb.method.require(gb.modulesPath + '/lodash')
+const TDSequential = gb.method.require(gb.modulesPath + '/tdsequential')
+
 // don't do anything unless current minute is first of the hour
 const currentMinute = new Date(Date.now()).getMinutes();
 if (currentMinute != 0) {
@@ -332,41 +335,336 @@ gb.data.pairLedger.my60mCandles = await gb.method.getCandles(300, 60, gb.data.pa
 const baseAmount = 100
 const buyAmount = baseAmount / gb.data.bid
 
-// the rest of the code depends on two external modules: 'lodash' and 'tdsequential'
-// install them with npm in an outside folder, and copy the modules to the 'user_modules' folder inside the Gunbot root folder
-gb.method.requirejs(['lodash', 'tdsequential'],
-    function (_, TDSequential) {
+// to calculate TD Sequential, first transform the collected candle data to the format required by this module
+let candles_60m_transformed = []
+gb.data.pairLedger.my60mCandles.close.forEach(function (item, index) {
+    let temp = {}
+    temp.time = item.timestamp
+    temp.close = item.value
+    temp.high = gb.data.pairLedger.my60mCandles.high[index].value
+    temp.low = gb.data.pairLedger.my60mCandles.low[index].value
+    temp.open = gb.data.pairLedger.my60mCandles.open[index].value
+    temp.volume = gb.data.pairLedger.my60mCandles.volume[index].value
+    candles_60m_transformed.push(temp)
+});
 
-        // to calculate TD Sequential, first transform the collected candle data to the format required by this module
-        let candles_60m_transformed = []
-        gb.data.pairLedger.my60mCandles.close.forEach(function (item, index) {
-            let temp = {}
-            temp.time = item.timestamp
-            temp.close = item.value
-            temp.high = gb.data.pairLedger.my60mCandles.high[index].value
-            temp.low = gb.data.pairLedger.my60mCandles.low[index].value
-            temp.open = gb.data.pairLedger.my60mCandles.open[index].value
-            temp.volume = gb.data.pairLedger.my60mCandles.volume[index].value
-            candles_60m_transformed.push(temp)
-        });
+// calculate TD Sequential and only use the most recent value
+const tdSequentialData = _.last(TDSequential(candles_60m_transformed))
 
-        // calculate TD Sequential and only store the most recent value
-        const tdSequentialData = _.last(TDSequential(candles_60m_transformed))
+// define trading conditions
+const buyConditions = tdSequentialData.buySetupIndex >= 8 && gb.data.bid > gb.data.ema1 && !gb.data.gotBag
+const sellConditions = tdSequentialData.sellSetupIndex >= 11 && gb.data.bid > gb.data.breakEven && gb.data.gotBag
 
-        // define trading conditions
-        const buyConditions = tdSequentialData.buySetupIndex >= 8 && gb.data.bid > gb.data.ema1 && !gb.data.gotBag
-        const sellConditions = tdSequentialData.sellSetupIndex >= 11 && gb.data.bid > gb.data.breakEven && gb.data.gotBag
-
-        // place orders if conditions are true
-        if (buyConditions) {
-            gb.method.buyMarket(buyAmount, gb.data.pairName)
-        }
-        else if (sellConditions) {
-            gb.method.sellMarket(gb.data.quoteBalance, gb.data.pairName)
-        }
-
-    })
+// place orders if conditions are true
+if (buyConditions) {
+    gb.method.buyMarket(buyAmount, gb.data.pairName)
+}
+else if (sellConditions) {
+    gb.method.sellMarket(gb.data.quoteBalance, gb.data.pairName)
+}
 ```
+
+### "real" example strategies
+
+The following examples are not meant to show the basic principles like the ones before.   
+They are more or less ready made strategies you can build upon.
+
+Note that every custom strategy will require testing on your side. Do not blindly use these examples.  
+One aspect that's absent in the examples is checking if referenced data is actually defined before firing orders, in some cases this will be an important aspect of a custom strategy.
+
+{% tabs %}
+{% tab title="Keltner crossover" %}
+```javascript
+// require external modules
+const kc = gb.method.require(gb.modulesPath + '/keltnerchannel').kc
+const _ = gb.method.require(gb.modulesPath + '/lodash')
+
+// forced short wait time between runs that do something
+// mostly to reduce risk of double orders in case the exchange doesn't update balances immediately
+let enoughTimePassed = false
+if (_.isNil(gb.data.pairLedger.customStratStore)) {
+    gb.data.pairLedger.customStratStore = {}
+
+    if (_.isNil(gb.data.pairLedger.customStratStore.timeCheck)) {
+        gb.data.pairLedger.customStratStore.timeCheck = Date.now()
+    }
+    else {
+        if (Date.now() - gb.data.pairLedger.customStratStore.timeCheck > 8000) {
+            enoughTimePassed = true
+        }
+    }
+}
+
+const setTimestamp = function () {
+    gb.data.pairLedger.customStratStore.timeCheck = Date.now()
+}
+
+if (enoughTimePassed) {
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // collect indicator data
+
+    let candlesReformatted = []
+
+    gb.data.candlesClose.forEach(function (item, index) {
+        let temp = {}
+        temp.close = item
+        temp.high = gb.data.candlesHigh[index]
+        temp.low = gb.data.candlesLow[index]
+        candlesReformatted.push(temp)
+    });
+
+    const keltnerChannel = kc(candlesReformatted, 20, 1, true)
+    const lowestPriceLast10Candles = Math.min(...gb.candlesLow.slice(-10))
+    const macd = gb.data.macd
+    const macdSignal = gb.data.macdSignal
+    let ema200
+    let obv
+    let obvMa21
+
+    gb.method.tulind.indicators.ema.indicator([gb.data.candlesClose], [200], function (err, results) {
+        ema200 = results[0]
+    });
+
+    gb.method.tulind.indicators.obv.indicator([gb.data.candlesClose, gb.data.candlesVolume], [], function (err, results) {
+        obv = results[0]
+    });
+
+    gb.method.tulind.indicators.sma.indicator([obv], [21], function (err, results) {
+        obvMa21 = results[0]
+    });
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // trading conditions
+
+    const buyAmount = parseFloat(gb.data.pairLedger.whatstrat.TRADING_LIMIT) / gb.data.bid
+    const sellTarget = gb.data.breakEven + ((gb.data.breakEven - lowestPriceLast10Candles) * 1.5)
+    const openSellRate = gb.data.openOrders?.[0]?.rate
+    const stopTarget = openSellRate - (openSellRate - gb.data.breakEven) - ((openSellRate - gb.data.breakEven) * 0.67)
+
+    const entryConditions = (
+        !gb.data.gotBag &&
+        // prev candle high > upper keltner
+        gb.candlesHigh[gb.candlesHigh.length - 2] > keltnerChannel.upper[keltnerChannel.upper.length - 2] &&
+        // prev full candle > ema 200
+        gb.candlesOpen[gb.candlesOpen.length - 2] > ema200[ema200.length - 2] &&
+        gb.candlesHigh[gb.candlesHigh.length - 2] > ema200[ema200.length - 2] &&
+        gb.candlesLow[gb.candlesLow.length - 2] > ema200[ema200.length - 2] &&
+        gb.candlesClose[gb.candlesClose.length - 2] > ema200[ema200.length - 2] &&
+        // candle open > upper keltner
+        gb.candlesOpen[gb.candlesOpen.length - 1] > keltnerChannel.upper[keltnerChannel.upper.length - 1] &&
+        // obv ma 21 > obv
+        obvMa21[obvMa21.length - 1] > obv[obv.length - 1] &&
+        // macd > signal
+        macd > macdSignal
+    )
+
+    const sellConditions = (
+        gb.data.gotBag &&
+        gb.data.openOrders.length === 0
+    )
+
+    const stopConditions = (
+        gb.data.gotBag &&
+        gb.data.openOrders.length > 0 &&
+        gb.data.bid < stopTarget
+    )
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // order handling
+
+    if (entryConditions) {
+        gb.method.buyMarket(buyAmount, gb.data.pairName)
+        setTimestamp()
+    }
+    else if (sellConditions) {
+        gb.method.sellLimit(gb.data.quoteBalance, sellTarget, gb.data.pairName)
+        setTimestamp()
+    }
+    else if (stopConditions) {
+        gb.method.sellMarket(gb.data.quoteBalance, gb.data.pairName)
+        setTimestamp()
+    }
+
+}
+
+
+```
+{% endtab %}
+
+{% tab title="Dual RSI" %}
+```javascript
+// forced short wait time between runs that do something
+// mostly to reduce risk of double orders in case the exchange doesn't update balances immediately
+let enoughTimePassed = false
+if (_.isNil(gb.data.pairLedger.customStratStore)) {
+    gb.data.pairLedger.customStratStore = {}
+
+    if (_.isNil(gb.data.pairLedger.customStratStore.timeCheck)) {
+        gb.data.pairLedger.customStratStore.timeCheck = Date.now()
+    }
+    else {
+        if (Date.now() - gb.data.pairLedger.customStratStore.timeCheck > 8000) {
+            enoughTimePassed = true
+        }
+    }
+}
+
+const setTimestamp = function () {
+    gb.data.pairLedger.customStratStore.timeCheck = Date.now()
+}
+
+if (enoughTimePassed) {
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // collect indicator data
+
+    let rsi10
+    let rsi20
+
+    gb.method.tulind.indicators.rsi.indicator([gb.data.candlesClose], [10], function (err, results) {
+        rsi10 = results[0]
+    });
+
+    gb.method.tulind.indicators.rsi.indicator([gb.data.candlesClose], [20], function (err, results) {
+        rsi20 = results[0]
+    });
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // trading conditions
+
+    const entryConditions = ( 
+        rsi10[rsi10.length - 1] > rsi20[rsi20.length - 1] &&
+        rsi10[rsi10.length - 2] < rsi20[rsi20.length - 2] 
+    )
+
+    const exitConditions = (
+        gb.data.gotBag &&
+        rsi10[rsi10.length - 1] < rsi20[rsi20.length - 1] &&
+        rsi10[rsi10.length - 2] > rsi20[rsi20.length - 2] 
+    )
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // order handling
+
+    const buyAmount = parseFloat(gb.data.pairLedger.whatstrat.TRADING_LIMIT) / gb.data.bid
+    
+    if (entryConditions) {
+        gb.method.buyMarket(buyAmount, gb.data.pairName)
+        setTimestamp()
+    }
+    else if (exitConditions) {
+        gb.method.sellMarket(gb.data.quoteBalance, gb.data.pairName)
+        setTimestamp()
+    }
+
+}
+
+
+
+
+```
+{% endtab %}
+
+{% tab title="Trail price after stochRsi target" %}
+```javascript
+// require external modules
+const _ = gb.method.require(gb.modulesPath + '/lodash')
+
+// forced short wait time between runs that do something
+// mostly to reduce risk of double orders in case the exchange doesn't update balances immediately
+let enoughTimePassed = false
+if (_.isNil(gb.data.pairLedger.customStratStore)) {
+    gb.data.pairLedger.customStratStore = {}
+
+    if (_.isNil(gb.data.pairLedger.customStratStore.timeCheck)) {
+        gb.data.pairLedger.customStratStore.timeCheck = Date.now()
+    }
+    else {
+        if (Date.now() - gb.data.pairLedger.customStratStore.timeCheck > 8000) {
+            enoughTimePassed = true
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// functions used in strategy 
+
+const setTimestamp = function () {
+    gb.data.pairLedger.customStratStore.timeCheck = Date.now()
+}
+
+const clearTrailingTargets = function () {
+
+    if (!_.isNil(gb.data.pairLedger.customStratStore.sellTrailingTarget)) {
+        delete gb.data.pairLedger.customStratStore.sellTrailingTarget
+    }
+
+    if (!_.isNil(gb.data.pairLedger.customStratStore.buyTrailingTarget)) {
+        delete gb.data.pairLedger.customStratStore.buyTrailingTarget
+    }
+}
+
+if (enoughTimePassed) {
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // start price trailing after hitting stochRsi target
+
+    const buyAmount = parseFloat(gb.data.pairLedger.whatstrat.TRADING_LIMIT) / gb.data.bid
+
+    // handle buy trailing, start trailing after stochRsi target hits
+    if (_.isNil(gb.data.pairLedger.customStratStore.buyTrailingTarget) && gb.data.stochRsi < 0.1 && !gb.data.gotBag) {
+        // set initial trailing stop
+        gb.data.pairLedger.customStratStore.buyTrailingTarget = spotData.ask * 1.005
+    }
+    else if (!_.isNil(gb.data.pairLedger.customStratStore.buyTrailingTarget) && gb.data.pairLedger.customStratStore.buyTrailingTarget > gb.data.ask * 1.005) {
+        // update trailing stop
+        gb.data.pairLedger.customStratStore.buyTrailingTarget = spotData.ask * 1.005
+    }
+
+    // handle sell trailing, start trailing after stochRsi target hits
+    if (_.isNil(gb.data.pairLedger.customStratStore.sellTrailingTarget) && gb.data.stochRsi > 0.9 && gb.data.gotBag) {
+        // set initial trailing stop
+        gb.data.pairLedger.customStratStore.sellTrailingTarget = gb.data.bid * 0.995
+    }
+    else if (!_.isNil(gb.data.pairLedger.customStratStore.sellTrailingTarget) && gb.data.pairLedger.customStratStore.sellTrailingTarget < gb.data.bid * 0.995) {
+        // update trailing stop
+        gb.data.pairLedger.customStratStore.sellTrailingTarget = gb.data.bid * 0.995
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // fire orders when hitting a trailing stop, remove trailing stop after placing order
+
+    if (!_.isNil(gb.data.pairLedger.customStratStore.buyTrailingTarget) ?
+        spotData.ask > gb.data.pairLedger.customStratStore.buyTrailingTarget :
+        false) {
+
+        gb.method.buyMarket(buyAmount, gb.data.pairName)
+        clearTrailingTargets()
+        setTimestamp()
+    }
+    else if (!_.isNil(gb.data.pairLedger.customStratStore.sellTrailingTarget) ?
+        spotData.bid < gb.data.pairLedger.customStratStore.sellTrailingTarget :
+        false) {
+
+        gb.method.sellMarket(gb.data.quoteBalance, gb.data.pairName)
+        clearTrailingTargets()
+        setTimestamp()
+
+    }
+}
+
+
+
+
+
+
+```
+{% endtab %}
+{% endtabs %}
 
 ## How to create and run a custom strategy
 
@@ -398,7 +696,7 @@ Alternatively, when calling a method you can wait for its [Promise](https://deve
 
 #### Built in modules
 
-The requirejs module allow you to use additional javascript modules, like those freely available on NPM.
+The require module allow you to use additional javascript modules, like those freely available on NPM.
 
 With [tulind](https://www.npmjs.com/package/tulind) you can easily calculate your own indicator values.
 
@@ -498,9 +796,25 @@ With [tulind](https://www.npmjs.com/package/tulind) you can easily calculate you
       <td style="text-align:left"><code>function</code>
       </td>
       <td style="text-align:left">
-        <p>Bring your own modules using <a href="https://www.npmjs.com/package/requirejs">requirejs</a>.</p>
+        <p>Bring your own modules using <a href="https://nodejs.org/en/knowledge/getting-started/what-is-require/">require</a>.</p>
         <p></p>
         <p>See the example strategies for a usage example.</p>
+        <p></p>
+        <p>To use an external module, first place it in a folder called &apos;user_modules&apos;
+          in the Gunbot root folder. Then require it in your strategy code, like
+          this:
+          <br />
+        </p>
+        <p>On Linux (and likely macOS): <code>const cryptopanic = gb.method.requirejs(gb.modulesPath + &apos;/cryptopanic&apos;)</code>
+          <br
+          />
+        </p>
+        <p>On Windows:
+          <br /><code>const cryptopanic = gb.method.requirejs(gb.modulesPath + &apos;\cryptopanic&apos;)<br /></code>
+        </p>
+        <p>The above assumes you have a module in a folder called cryptopanic in
+          the user_modules folder. <code>gb.modulesPath</code> returns the path to
+          whereever your gunbot folder is on your filesystem.</p>
       </td>
     </tr>
   </tbody>
@@ -533,6 +847,10 @@ Indicators mentioned in the list below are pre calculated using the indicator se
         <p></p>
         <p>Can also be used to store and access your own persistent variables. Make
           sure to not overwrite existing properties.</p>
+        <p></p>
+        <p>This has the same data as you see in the pair JSON files. Most items below
+          come from the ledger too, they are renamed for consistency and already
+          parsed as floating point numbers.</p>
       </td>
     </tr>
     <tr>
@@ -609,15 +927,15 @@ Indicators mentioned in the list below are pre calculated using the indicator se
       </td>
       <td style="text-align:left"><code>float</code>
       </td>
-      <td style="text-align:left">Break even price for current spot holdings. Includes trading fees as defined
-        in Gunbot exchange settings</td>
+      <td style="text-align:left">Break even price for current <b>spot </b>holdings. Includes trading fees
+        as defined in Gunbot exchange settings</td>
     </tr>
     <tr>
       <td style="text-align:left"><code>gb.data.gotBag</code>
       </td>
       <td style="text-align:left"><code>boolean</code>
       </td>
-      <td style="text-align:left">Indicates if value of <code>quoteBalance</code>for spot trading (including
+      <td style="text-align:left">Indicates if value of <code>quoteBalance</code>for <b>spot </b>trading (including
         on orders volume) exceeds min volume to sell as defined in Gunbot strategy</td>
     </tr>
     <tr>
@@ -625,14 +943,15 @@ Indicators mentioned in the list below are pre calculated using the indicator se
       </td>
       <td style="text-align:left"><code>float</code>
       </td>
-      <td style="text-align:left">Leverage of current futures position</td>
+      <td style="text-align:left">Leverage of current <b>futures </b>position</td>
     </tr>
     <tr>
       <td style="text-align:left"><code>gb.data.walletBalance</code>
       </td>
       <td style="text-align:left"><code>float</code>
       </td>
-      <td style="text-align:left">Wallet balance. Specific to futures</td>
+      <td style="text-align:left">Wallet balance. Specific to <b>futures</b>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left"><code>gb.data.availableMargin</code>
@@ -910,7 +1229,7 @@ Indicators mentioned in the list below are pre calculated using the indicator se
       </td>
       <td style="text-align:left"><code>object</code>
       </td>
-      <td style="text-align:left">Object with high and low fibonacci retracement levels</td>
+      <td style="text-align:left">Object with high and low Fibonacci retracement levels</td>
     </tr>
     <tr>
       <td style="text-align:left"><code>gb.data.vwma</code>
