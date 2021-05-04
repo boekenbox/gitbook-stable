@@ -329,7 +329,7 @@ if (currentMinute != 0) {
 
 // get 300 60m candles, and persistently save them 
 // to Gunbot pair ledger - for no real reason except showing that you can do this
-gb.data.pairLedger.my60mCandles = await gb.method.getCandles(300, 60, gb.data.pairName)
+gb.data.pairLedger.customStratStore.myCandles = await gb.method.getCandles(300, 60, gb.data.pairName)
 
 // balance "settings": invest 100 USDT, convert into quote amount needed for calling the buy method
 const baseAmount = 100
@@ -1334,6 +1334,15 @@ Indicators mentioned in the list below are pre calculated using the indicator se
   </tbody>
 </table>
 
+## Storing data
+
+The strategy code runs once every time Gunbot processes the pair. This means that any variable you assign inside the strategy gets reinitialized every time the code runs.
+
+To store variables in a more persistent way, you can use this object:  
+`gb.data.pairLedger.customStratStore`
+
+Data saved here generally stays available, and persists between bot restarts. However, there is no guarantee the data stays intact - if for the process gets killed it is possible the pair ledger gets reinitialized on next run.
+
 ## Visualize strategy targets
 
 To easily monitor a custom strategy, trading targets can be visualized as lines on the chart in the GUI.  
@@ -1351,5 +1360,5 @@ gb.data.pairLedger.customDcaTarget
 gb.data.pairLedger.customBuyTarget = 60000
 ```
 
-
+## Storing variables
 
