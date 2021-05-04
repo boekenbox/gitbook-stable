@@ -1334,9 +1334,22 @@ Indicators mentioned in the list below are pre calculated using the indicator se
   </tbody>
 </table>
 
+## Visualize strategy targets
 
+To easily monitor a custom strategy, trading targets can be visualized as lines on the chart in the GUI.  
+If you set any of the following targets to a price, it's automatically drawn on the chart.
 
+```javascript
+gb.data.pairLedger.customBuyTarget
+gb.data.pairLedger.customBuyTarget
+gb.data.pairLedger.customStopTarget
+gb.data.pairLedger.customCloseTarget
+gb.data.pairLedger.customTrailingTarget
+gb.data.pairLedger.customDcaTarget
 
+// example:
+gb.data.pairLedger.customBuyTarget = 60000
+```
 
 
 
