@@ -364,7 +364,7 @@ else if (sellConditions) {
 }
 ```
 
-### "real" example strategies
+### "real" strategy examples
 
 The following examples are more or less ready made strategies you can build upon.  
 Note that every custom strategy will require testing on your side. Do not blindly use these examples.  
