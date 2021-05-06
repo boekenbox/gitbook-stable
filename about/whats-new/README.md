@@ -1,12 +1,12 @@
 ---
 description: >-
   Here's a quick overview of the most important changes introduced with Gunbot
-  v21.9
+  v22
 ---
 
 # What's new?
 
-Gunbot v21.9 introduces support for trading at Bybit, comes with a bunch of new and easy to use strategies and allows you to code your own custom strategies.
+Gunbot v22 introduces support for trading at Bybit, comes with a bunch of new and easy to use strategies and allows you to code your own custom strategies.
 
 ## **Upgrading**
 

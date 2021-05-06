@@ -1362,5 +1362,15 @@ gb.data.pairLedger.customDcaTarget
 gb.data.pairLedger.customBuyTarget = 60000
 ```
 
-## Storing variables
+## Control strategy parameters from the GUI
+
+Just like with every other strategy in Gunbot you can use pair overrides to control individual parameters of a strategy for a specific pair. This example shows how you can refer to an override value:
+
+```javascript
+const buyAmount = parseFloat(gb.data.pairLedger.whatstrat.TRADING_LIMIT)
+```
+
+The whatstrat object is a merged object of all parameters in a Gunbot strategy and pair overrides, where pair overrides always take precedence over strategy values. Always make sure to parseFloat\(\) inputs where you expect a number, because the GUI saves these as string value.
+
+Parameters saved as pair override do not have to be known parameters in Gunbot, you can create your own settings this way.
 

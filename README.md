@@ -1,7 +1,5 @@
 ---
-description: >-
-  This wiki is written for the latest stable Gunbot release: v21. Includes a
-  brand new interface!
+description: 'This wiki is written for the latest stable Gunbot release: v22.'
 ---
 
 # Welcome to the Gunbot wiki
