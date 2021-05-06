@@ -790,7 +790,7 @@ With [tulind](https://www.npmjs.com/package/tulind) you can easily calculate you
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>gunbot.method.requirejs([&apos;#module#&apos;], function (moduleName) {</code>
+      <td style="text-align:left"><code>gunbot.method.require(module)</code>
       </td>
       <td style="text-align:left"><code>function</code>
       </td>
@@ -804,12 +804,12 @@ With [tulind](https://www.npmjs.com/package/tulind) you can easily calculate you
           this:
           <br />
         </p>
-        <p>On Linux (and likely macOS): <code>const cryptopanic = gb.method.requirejs(gb.modulesPath + &apos;/cryptopanic&apos;)</code>
+        <p>On Linux (and likely macOS): <code>const cryptopanic = gb.method.require(gb.modulesPath + &apos;/cryptopanic&apos;)</code>
           <br
           />
         </p>
         <p>On Windows:
-          <br /><code>const cryptopanic = gb.method.requirejs(gb.modulesPath + &apos;\cryptopanic&apos;)<br /></code>
+          <br /><code>const cryptopanic = gb.method.require(gb.modulesPath + &apos;\cryptopanic&apos;)<br /></code>
         </p>
         <p>The above assumes you have a module in a folder called cryptopanic in
           the user_modules folder. <code>gb.modulesPath</code> returns the path to
