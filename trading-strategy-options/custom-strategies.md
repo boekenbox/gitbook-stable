@@ -27,7 +27,7 @@ To get a better idea of what you can and can't do, here's a few facts:
 * There are basically no restrictions to what you can do with the provided trading methods, but of course exchange defined restrictions apply \(API usage rate limits, open orders limits, etc.\)
 * There are no protections against double orders, or any kind of other unwanted behavior
 * Make sure to use JavaScript code compatible with [Node v14.4.0](https://nodejs.org/ca/blog/release/v14.4.0/)
-* Using console.log\(\) logs to the main Gunbot console logs. Expect to console logs all the things
+* Using console.log\(\) logs to the main Gunbot console logs. Expect to console log all the things
 * Code runs inside an async function, you can use the `await`keyword to collect additional data like candle data for a different period
 * A strategy does not have to return anything, but you can use return statements to easily stop your code at a certain point
 * A strategy can use custom JavaScript modules. Save these in a folder named user\_modules inside your Gunbot folder.
