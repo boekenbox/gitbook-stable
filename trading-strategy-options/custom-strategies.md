@@ -1367,7 +1367,24 @@ gb.data.pairLedger.customBuyTarget = 60000
 Just like with every other strategy in Gunbot you can use pair overrides to control individual parameters of a strategy for a specific pair. This example shows how you can refer to an override value:
 
 ```javascript
-const buyAmount = parseFloat(gb.data.pairLedger.whatstrat.TRADING_LIMIT)
+// Set custom pair overrides in config.js
+// These show up in the GUI on the chart overview sidebar, and in the pair editor
+"pairs": {
+        "binance": {
+            "USDT-BTC": {
+                "strategy": "custom",
+                "enabled": true,
+                "override": {
+                    "USER_SETTING": true,
+                    "USER_TARGET": "2"
+                }
+            }
+        }
+    }
+
+// Refer to them like this in your strategy code
+const userSetting = gb.data.pairLedger.whatstrat.USER_SETTING
+const userTarget = parseFloat(gb.data.pairLedger.whatstrat.USER_TARGET)
 ```
 
 The whatstrat object is a merged object of all parameters in a Gunbot strategy and pair overrides, where pair overrides always take precedence over strategy values. Always make sure to parseFloat\(\) inputs where you expect a number, because the GUI saves these as string value.
