@@ -1352,7 +1352,7 @@ If you set any of the following targets to a price, it's automatically drawn on 
 
 ```javascript
 gb.data.pairLedger.customBuyTarget
-gb.data.pairLedger.customBuyTarget
+gb.data.pairLedger.customSellTarget
 gb.data.pairLedger.customStopTarget
 gb.data.pairLedger.customCloseTarget
 gb.data.pairLedger.customTrailingTarget

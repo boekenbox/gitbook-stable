@@ -245,6 +245,6 @@ There are a few additional settings you can use with this strategy.
 
  Buy and Sell enabled options can be set as pair overrides. Watch mode is respected.
 
-Besides settings mentioned on this page, no other strategy setting has any effect on spotGrid.
+Besides settings mentioned on this page, no other strategy setting has any effect on futuresGrid.
 {% endhint %}
 
