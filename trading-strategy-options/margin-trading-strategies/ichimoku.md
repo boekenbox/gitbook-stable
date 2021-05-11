@@ -599,6 +599,8 @@ Parameter name in `config.js`: `PERIOD`
 {% tabs %}
 {% tab title="Description" %}
 Set this to the number of candlestick periods you want to use for calculating Tenkan-sen.
+
+This parameter is for what's called "base line" on TradingView.
 {% endtab %}
 
 {% tab title="Values" %}
@@ -627,6 +629,8 @@ Parameter name in `config.js`: `TENKAN_PERIOD`
 {% tabs %}
 {% tab title="Description" %}
 Set this to the number of candlestick periods you want to use for calculating Kijun-sen.
+
+This parameter is for what's called "base line" on TradingView.
 {% endtab %}
 
 {% tab title="Values" %}
@@ -655,6 +659,8 @@ Parameter name in `config.js`: `KIJUN_PERIOD`
 {% tabs %}
 {% tab title="Description" %}
 Set this to the number of candlestick periods you want to use for calculating Senkou span.
+
+This parameter is for what's called "lead" on TradingView.
 {% endtab %}
 
 {% tab title="Values" %}
