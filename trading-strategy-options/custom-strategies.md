@@ -414,7 +414,7 @@ if (enoughTimePassed) {
     });
 
     const keltnerChannel = kc(candlesReformatted, 20, 1, true)
-    const lowestPriceLast10Candles = Math.min(...gb.candlesLow.slice(-10))
+    const lowestPriceLast10Candles = Math.min(...gb.data.candlesLow.slice(-10))
     const macd = gb.data.macd
     const macdSignal = gb.data.macdSignal
     let ema200
@@ -445,14 +445,14 @@ if (enoughTimePassed) {
     const entryConditions = (
         !gb.data.gotBag &&
         // prev candle high > upper keltner
-        gb.candlesHigh[gb.candlesHigh.length - 2] > keltnerChannel.upper[keltnerChannel.upper.length - 2] &&
+        gb.data.candlesHigh[gb.gb.data.candlesHigh.length - 2] > keltnerChannel.upper[keltnerChannel.upper.length - 2] &&
         // prev full candle > ema 200
-        gb.candlesOpen[gb.candlesOpen.length - 2] > ema200[ema200.length - 2] &&
-        gb.candlesHigh[gb.candlesHigh.length - 2] > ema200[ema200.length - 2] &&
-        gb.candlesLow[gb.candlesLow.length - 2] > ema200[ema200.length - 2] &&
-        gb.candlesClose[gb.candlesClose.length - 2] > ema200[ema200.length - 2] &&
+        gb.data.candlesOpen[gb.data.candlesOpen.length - 2] > ema200[ema200.length - 2] &&
+        gb.data.candlesHigh[gb.data.candlesHigh.length - 2] > ema200[ema200.length - 2] &&
+        gb.data.candlesLow[gb.data.candlesLow.length - 2] > ema200[ema200.length - 2] &&
+        gb.data.candlesClose[gb.data.candlesClose.length - 2] > ema200[ema200.length - 2] &&
         // candle open > upper keltner
-        gb.candlesOpen[gb.candlesOpen.length - 1] > keltnerChannel.upper[keltnerChannel.upper.length - 1] &&
+        gb.data.candlesOpen[gb.data.candlesOpen.length - 1] > keltnerChannel.upper[keltnerChannel.upper.length - 1] &&
         // obv ma 21 > obv
         obvMa21[obvMa21.length - 1] > obv[obv.length - 1] &&
         // macd > signal
