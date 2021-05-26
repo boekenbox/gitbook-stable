@@ -1,5 +1,7 @@
 ---
-description: Instructions to install Gunbot on an ARM device.
+description: >-
+  Instructions to install Gunbot on an ARM device, for Gunbot Standard and
+  higher.
 ---
 
 # ARM installation
