@@ -149,8 +149,7 @@ There are a few additional settings you can use with this strategy.
         <p><b>To stop trading a pair after the position closes</b>
         </p>
         <p>&lt;b&gt;&lt;/b&gt;</p>
-        <p>When enabled, no buy orders are placed when there is no balance left to
-          sell.</p>
+        <p>When enabled, no new position gets opened.</p>
         <p>Averaging down of the current position continues.</p>
       </td>
     </tr>
@@ -224,17 +223,6 @@ There are a few additional settings you can use with this strategy.
         </p>
         <p>&lt;b&gt;&lt;/b&gt;</p>
         <p>By default 50 candles are used to calculate support and resistance.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><b>Keep quote</b>
-      </td>
-      <td style="text-align:left">
-        <p><b>Keep a number of units when selling </b>
-        </p>
-        <p>&lt;b&gt;&lt;/b&gt;</p>
-        <p>By setting keep quote at any number above 0, this number of units will
-          be held back when the next sell order happens.</p>
       </td>
     </tr>
   </tbody>
