@@ -115,16 +115,6 @@ To use this strategy, these are the settings you can configure:
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><b>Stop limit</b>
-      </td>
-      <td style="text-align:left">
-        <p><b>Target to close a trade at loss</b>
-        </p>
-        <p>&lt;b&gt;&lt;/b&gt;</p>
-        <p>Setting 20 would close a position at loss when -20% ROE is reached.</p>
-      </td>
-    </tr>
-    <tr>
       <td style="text-align:left"><b>Market close</b>
       </td>
       <td style="text-align:left">
