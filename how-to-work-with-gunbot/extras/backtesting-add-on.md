@@ -29,7 +29,7 @@ With the Gunbot TradingView add-on you can trade on alerts sent from custom stra
 
 While every effort has been made to ensure these simulations of Gunbot contain the same logic as Gunbot, they will not always buy or sell at the exact same time or prices as Gunbot \(because of TradingView's inability to use ticker prices\).
 
-This is close as you can get in TradingView to the real thing. Backtesting the past does NOT guarantee profit in the present or future. Emotionless, Double Up, Reversal Trading, UTA and tsa are not included due to limitations in TradingView.
+This is close as you can get in TradingView to the real thing. Backtesting the past does NOT guarantee profit in the present or future. Emotionless, Double Up, Reversal Trading, UTA, spotGrid \(and similar\) and tsa are not included due to limitations in TradingView.
 {% endhint %}
 
 ## Getting started
