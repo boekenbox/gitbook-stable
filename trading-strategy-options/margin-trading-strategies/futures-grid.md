@@ -83,17 +83,6 @@ To use futuresGrid, there are just three essential settings:
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><b>Min volume to sell</b>
-      </td>
-      <td style="text-align:left">
-        <p><b>To ignore tiny balances</b>
-        </p>
-        <p>&lt;b&gt;&lt;/b&gt;</p>
-        <p>Set this to the minimum order size of the pair, to make the bot ignore
-          small balances that cannot be sold.</p>
-      </td>
-    </tr>
-    <tr>
       <td style="text-align:left"><b>Max open contracts                      </b>
       </td>
       <td style="text-align:left">
