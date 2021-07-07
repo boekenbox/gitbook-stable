@@ -1,5 +1,5 @@
 ---
-description: 'This wiki is written for the latest stable Gunbot release: v22.'
+description: 'This wiki is written for the latest stable Gunbot release: v23.'
 ---
 
 # Welcome to the Gunbot wiki
@@ -34,6 +34,7 @@ No need for a subscription, a one time fee gets you lifetime support and softwar
 | `BBTA` | [Regular](trading-strategy-options/regular-strategies-spot-trading/bollinger-bands-ta.md) | [Margin](trading-strategy-options/margin-trading-strategies/bollinger-bands-ta.md) |
 | `EMASPREAD` | [Regular](trading-strategy-options/regular-strategies-spot-trading/ema-spread.md) | [Margin](trading-strategy-options/margin-trading-strategies/ema-spread.md) |
 | `emotionless` | [Regular](trading-strategy-options/regular-strategies-spot-trading/emotionless.md) | N/A |
+| `futuresGrid` | N/A | [Margin](trading-strategy-options/margin-trading-strategies/futures-grid.md) |
 | `gain` | [Regular](trading-strategy-options/regular-strategies-spot-trading/gain.md) | [Margin](trading-strategy-options/margin-trading-strategies/gain.md) |
 | `ichimoku` | [Regular](trading-strategy-options/regular-strategies-spot-trading/ichimoku.md) | [Margin](trading-strategy-options/margin-trading-strategies/ichimoku.md) |
 | `MACD` | [Regular](trading-strategy-options/regular-strategies-spot-trading/macd.md) | [Margin](trading-strategy-options/margin-trading-strategies/macd.md) |
@@ -42,6 +43,9 @@ No need for a subscription, a one time fee gets you lifetime support and softwar
 | `stepgain` | [Regular](trading-strategy-options/regular-strategies-spot-trading/stepgain.md) | [Margin](trading-strategy-options/margin-trading-strategies/stepgain.md) |
 | `SMACROSS` | [Regular](trading-strategy-options/regular-strategies-spot-trading/sma-cross.md) | [Margin](trading-strategy-options/margin-trading-strategies/sma-cross.md) |
 | `SupportResistance` | [Regular](trading-strategy-options/regular-strategies-spot-trading/support-resistance.md) | N/A |
+| `spotGrid` | \`\`[Regular](trading-strategy-options/regular-strategies-spot-trading/spotgrid.md) | N/A |
+| `spotGridAdvanced` | [Regular](trading-strategy-options/regular-strategies-spot-trading/spotgrid-advanced.md) | N/A |
+| `tenkan` | N/A | [Margin](trading-strategy-options/margin-trading-strategies/tenkan.md) |
 | `tsa` | [Regular](trading-strategy-options/regular-strategies-spot-trading/time-series-analysis.md) | [Margin](trading-strategy-options/margin-trading-strategies/time-series-analysis.md) |
 | `tssl` | [Regular](trading-strategy-options/regular-strategies-spot-trading/tssl-trailing-stop-stop-limit.md) | [Margin](trading-strategy-options/margin-trading-strategies/tssl-trailing-stop-stop-limit.md) |
 

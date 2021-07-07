@@ -5,6 +5,7 @@
 ## About
 
 * [What's new?](about/whats-new/README.md)
+  * [New in v22](about/whats-new/new-in-v22.md)
   * [New in v20](about/whats-new/new-in-v20.md)
   * [New in v18](about/whats-new/new-in-v18.md)
   * [New in v16.7+](about/whats-new/new-in-v16.7+.md)
@@ -68,6 +69,7 @@
 * [Extra modules](how-to-work-with-gunbot/extras/README.md)
   * [AutoConfig](how-to-work-with-gunbot/extras/autoconfig.md)
   * [Backtesting](how-to-work-with-gunbot/extras/backtesting-add-on.md)
+  * [Code editor](how-to-work-with-gunbot/extras/code-editor.md)
   * [TradingView Alerts](how-to-work-with-gunbot/extras/tradingview-add-on/README.md)
     * [IMAP listener](how-to-work-with-gunbot/extras/tradingview-add-on/imap-listener.md)
   * [Alerts \(beta\)](how-to-work-with-gunbot/extras/alerts-beta.md)

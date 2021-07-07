@@ -12,7 +12,7 @@ This strategy is a bit different than most other Gunbot strategies: there are ju
 
 When you run `stepGrid` with auto step size, this is the kind of trading behavior to expect:
 
-![Default stepGrid settings. Each arrow is an order: green = buy, orange = sell](../../.gitbook/assets/image%20%28128%29.png)
+![Default stepGrid settings. Each arrow is an order: green = buy, orange = sell](../../.gitbook/assets/image%20%28129%29.png)
 
 Let's break down what actually happens:
 
