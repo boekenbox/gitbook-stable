@@ -92,6 +92,7 @@
   * [Stepgain](trading-strategy-options/regular-strategies-spot-trading/stepgain.md)
   * [Spotgrid](trading-strategy-options/regular-strategies-spot-trading/spotgrid.md)
   * [Spotgrid Advanced](trading-strategy-options/regular-strategies-spot-trading/spotgrid-advanced.md)
+  * [StepGrid](trading-strategy-options/regular-strategies-spot-trading/stepgrid.md)
   * [SMA cross](trading-strategy-options/regular-strategies-spot-trading/sma-cross.md)
   * [Support / Resistance](trading-strategy-options/regular-strategies-spot-trading/support-resistance.md)
   * [Tssl \(trailing stop / stop limit\)](trading-strategy-options/regular-strategies-spot-trading/tssl-trailing-stop-stop-limit.md)

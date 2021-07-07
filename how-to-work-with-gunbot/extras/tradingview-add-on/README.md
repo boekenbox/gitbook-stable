@@ -54,17 +54,22 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
     <tr>
       <td style="text-align:left"><code>SELL_EXCHANGE_USDT-BTC</code>
       </td>
-      <td style="text-align:left">Sell BTC for USDT</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>SELL_EXCHANGE_USDT-BTC_100</code>
+      <td style="text-align:left">
+        <p>Sell BTC for USDT</p>
+        <p></p>
+        <ul>
+          <li>Normal situation: full balance is sold</li>
+          <li>When using<code>TV_PYRAMID, </code>the amount is defined by<code>TV_TRADING_LIMIT_SELL</code>
+          </li>
+          <li><code>When using MULTIPLE BASE, </code>the amount is the same as the last
+            buy order made by the bot on the same trading pair</li>
+        </ul>
       </td>
-      <td style="text-align:left">Sell BTC for USDT with a trading limit 100 USDT</td>
     </tr>
     <tr>
       <td style="text-align:left"><code>STOPLOSS_EXCHANGE_BTC-ETH</code>
       </td>
-      <td style="text-align:left">Sell ETh for BTC if stoploss is triggered</td>
+      <td style="text-align:left">Sell ETH for BTC if stoploss is triggered</td>
     </tr>
     <tr>
       <td style="text-align:left"><code>BUY_EXCHANGE_USDT-BTC_amount_rate</code>

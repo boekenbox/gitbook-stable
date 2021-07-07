@@ -14,7 +14,7 @@ No need for a subscription, a one time fee gets you lifetime support and softwar
 
 ### Gunbot is used by thousands of users and has an awesome community ❤️
 
-![](.gitbook/assets/image%20%2892%29.png)
+![ Gunbot trading with default settings using the stepGrid strategy](.gitbook/assets/image%20%28127%29.png)
 
 {% page-ref page="setup-and-general-settings/installation/" %}
 
