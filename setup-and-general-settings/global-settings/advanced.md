@@ -14,7 +14,7 @@ To change them, go to [**Global settings**](http://localhost:5000/globalsettings
 
 ## Settings descriptions
 
-Below you'll find detailed descriptions for cancel orders settings.
+Below you'll find detailed descriptions for the settings on this page.
 
 ### Debug
 

@@ -8,6 +8,8 @@ Manage your private settings like exchange keys, API slots, Gunthy wallet and mo
 
 ![](../../.gitbook/assets/image%20%2881%29.png)
 
+{% page-ref page="connect-exchange.md" %}
+
 {% page-ref page="gunthy-wallet.md" %}
 
 {% page-ref page="edit-license.md" %}
