@@ -15,10 +15,11 @@ Gunbot v23 adds support for okex v5 api, includes a native code editor, a much f
 
 Using the config import tool you can easily upgrade to a clean new installation, and migrate all your settings.
 
-**Steps to start with a clean installation:**   
-- unpack v22 to a new folder and run,   
-- enter your Gunthy wallet address in the wizard, select "other" as exchange and save changes.   
-- then go to _Profile_ &gt; _Import settings_ and select the parts from your old config to import.
+**Steps to start with a clean installation:**
+
+* unpack v22 to a new folder and run,   
+* enter your Gunthy wallet address in the wizard, select "other" as exchange and save changes.   
+* then go to _Profile_ &gt; _Import settings_ and select the parts from your old config to import.
 {% endhint %}
 
 There are no breaking config changes for this version, in case you are upgrading from v22.
@@ -40,8 +41,6 @@ Only the most important changes are listed.
 * **Code editor:** using the new [code editor](../../how-to-work-with-gunbot/extras/code-editor.md) you can read and edit config files, internal data and custom strategies right from the Gunbot interface. 
 * **Kraken:** add support for all newly introduced markets
 * **GUI performance**: much faster loading times, less resource usage, smoother charts
-
-
 
 ### **Bugfixes / Improvements \(core\)**
 
@@ -68,8 +67,6 @@ Only the most important changes are listed.
 * Fix mobile save button not appearing
 * Show potential moto entry prices on chart. 
 * Fix exporting chart entities to alert module
-
-
 
 {% page-ref page="../../setup-and-general-settings/installation/download.md" %}
 

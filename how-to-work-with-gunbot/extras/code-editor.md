@@ -4,8 +4,7 @@ description: Built-in editor for Gunbot JSON config files and custom JavaScript 
 
 # Code editor
 
-Edit Gunbot config files, view internal data and work on custom strategies right in the Gunbot interface.   
-
+Edit Gunbot config files, view internal data and work on custom strategies right in the Gunbot interface.
 
 Unless you prefer working with config files or JavaScript code, you will never need this editor.  
 If you do prefer config files, this editor allows you to configure everything you would normally do with an external text editor, and makes sure you don't save any invalid JSON to your configs.
@@ -34,7 +33,6 @@ Currently the following file types are supported:
       </td>
       <td style="text-align:left">
         <p>Used to define AutoConfig jobs. Read and write support.</p>
-        <p></p>
         <p>Editor has templates for all job and filter types, as autocomplete suggestions.</p>
       </td>
     </tr>
@@ -50,7 +48,6 @@ Currently the following file types are supported:
         <p>Custom JavaScript strategies, saved in the <code>/customStrategies</code> folder.
           <br
           />Read and write support.</p>
-        <p></p>
         <p>Editor has autocomplete suggestions for all Gunbot specific methods and
           data.</p>
       </td>
@@ -68,8 +65,6 @@ Currently the following file types are supported:
     </tr>
   </tbody>
 </table>
-
-
 
 ## Code suggestions
 

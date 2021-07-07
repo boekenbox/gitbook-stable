@@ -6,8 +6,6 @@ description: >-
 
 # New in v22
 
-
-
 ## Changes in v21
 
 Only the most important changes are listed.

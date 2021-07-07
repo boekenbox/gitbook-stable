@@ -56,12 +56,11 @@ _Replace_ `EXCHANGE` _with the name of your exchange._
       </td>
       <td style="text-align:left">
         <p>Sell BTC for USDT</p>
-        <p></p>
         <ul>
           <li>Normal situation: full balance is sold</li>
-          <li>When using<code>TV_PYRAMID, </code>the amount is defined by<code>TV_TRADING_LIMIT_SELL</code>
+          <li>When using<code>TV_PYRAMID,</code> the amount is defined by<code>TV_TRADING_LIMIT_SELL</code>
           </li>
-          <li><code>When using MULTIPLE BASE, </code>the amount is the same as the last
+          <li><code>When using MULTIPLE BASE,</code> the amount is the same as the last
             buy order made by the bot on the same trading pair</li>
         </ul>
       </td>
@@ -173,8 +172,6 @@ On **all other supported margin exchanges**, every setting related to margin tra
 {% hint style="success" %}
 To test alerts on Bitmex Testnet, you should write the alerts like this: LONG\_BITMEXTESTNET\_XBT-USD
 {% endhint %}
-
-#### 
 
 #### Change strategy by alert
 

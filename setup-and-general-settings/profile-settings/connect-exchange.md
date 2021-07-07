@@ -16,7 +16,7 @@ The master key is just the API key you've registered for an exchange.
 Using the same registered key for both the "master key" and "key" fields is OK.
 {% endhint %}
 
-![](../../.gitbook/assets/image%20%286%29%20%281%29.png)
+![](../../.gitbook/assets/image%20%286%29%20%281%29%20%281%29.png)
 
 ### Settings in detail
 
