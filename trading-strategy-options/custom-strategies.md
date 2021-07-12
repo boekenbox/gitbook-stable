@@ -13,7 +13,7 @@ A strategy runs as an async function, executed once every time a trading pair 'c
 
 
 {% hint style="success" %}
-This is available in Gunbot Ultimate.
+Custom strategies are available in Gunbot Ultimate.
 {% endhint %}
 
 ## Technical info
@@ -329,6 +329,10 @@ if (currentMinute != 0) {
 
 // get 300 60m candles, and persistently save them 
 // to Gunbot pair ledger - for no real reason except showing that you can do this
+if (_.isNil(gb.data.pairLedger.customStratStore)){
+    // create custom strategy store
+    gb.data.pairLedger.customStratStore = {}
+}
 gb.data.pairLedger.customStratStore.myCandles = await gb.method.getCandles(300, 60, gb.data.pairName)
 
 // balance "settings": invest 100 USDT, convert into quote amount needed for calling the buy method
@@ -337,14 +341,14 @@ const buyAmount = baseAmount / gb.data.bid
 
 // to calculate TD Sequential, first transform the collected candle data to the format required by this module
 let candles_60m_transformed = []
-gb.data.pairLedger.my60mCandles.close.forEach(function (item, index) {
+gb.data.pairLedger.customStratStore.myCandles.close.forEach(function (item, index) {
     let temp = {}
     temp.time = item.timestamp
     temp.close = item.value
-    temp.high = gb.data.pairLedger.my60mCandles.high[index].value
-    temp.low = gb.data.pairLedger.my60mCandles.low[index].value
-    temp.open = gb.data.pairLedger.my60mCandles.open[index].value
-    temp.volume = gb.data.pairLedger.my60mCandles.volume[index].value
+    temp.high = gb.data.pairLedger.customStratStore.myCandles.high[index].value
+    temp.low = gb.data.pairLedger.customStratStore.myCandles.low[index].value
+    temp.open = gb.data.pairLedger.customStratStore.myCandles.open[index].value
+    temp.volume = gb.data.pairLedger.customStratStore.myCandles.volume[index].value
     candles_60m_transformed.push(temp)
 });
 

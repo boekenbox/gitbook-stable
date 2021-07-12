@@ -14,11 +14,11 @@ This page shows the minimum required settings for often used exchanges to create
 
 ## Binance
 
-![](../../.gitbook/assets/image%20%28101%29.png)
+![](../../.gitbook/assets/image%20%288%29.png)
 
 ## Binance Futures
 
-![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/binance.jpg)
+![](../../.gitbook/assets/image%20%2884%29.png)
 
 ## Bitfinex
 
@@ -50,7 +50,7 @@ This page shows the minimum required settings for often used exchanges to create
 
 ## Kucoin
 
-![](https://raw.githubusercontent.com/boekenbox/gitbook-images/master/kucoin.png)
+![](../../.gitbook/assets/image%20%2873%29.png)
 
 ## Nash
 
